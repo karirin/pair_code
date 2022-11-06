@@ -1,0 +1,112 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use App\Http\Requests\HelloRequest;
+use Validator;
+use Illuminate\Support\Facades\DB;
+use App\Person;
+use App\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Hash;
+
+class UserController extends Controller
+{
+
+    public function add(Request $request)
+    {
+        return view('user.add');
+    }
+
+    protected function create(Request $request)
+    {
+        $dir = 'sample';
+        $file_name = $request->file('image')->getClientOriginalName();
+        $request->file('image')->storeAs('public/' . $dir, $file_name);
+        $param = [
+            'name' => $request->name,
+            'password' => Hash::make($request->password),
+            'image' => $request->file('image')->storeAs('storage/' . $dir, $file_name),
+        ];
+        DB::table('users')->insert($param);
+        return view('top.index');
+    }
+
+
+    public function login(Request $request)
+    {
+        $param = ['message' => 'ログインして下さい。'];
+        return view('user.login', $param);
+    }
+
+    public function logout(Request $request)
+    {
+        $this->guard()->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return $this->loggedOut($request) ?: redirect('/top');
+    }
+
+    public function auth(Request $request)
+    {
+        $name = $request->name;
+        $password = $request->password;
+        if (Auth::attempt([
+            'name' => $name,
+            'password' => $password
+        ])) {
+            $msg = 'ログインしました。（' . Auth::user()->name . '）';
+        } else {
+            $msg = 'ログインに失敗しました。';
+        }
+        $users = User::get();
+        return view('top.index', ['users' => $users, 'message' => $msg]);
+    }
+
+    protected function loggedOut(Request $request)
+    {
+        //
+    }
+
+    protected function guard()
+    {
+        return Auth::guard();
+    }
+
+    public function test_login(Request $request)
+    {
+        $name = $request->name;
+        $password = $request->password;
+        if (Auth::attempt([
+            'name' => $name,
+            'password' => $password
+        ])) {
+            $msg = 'ログインしました。（' . Auth::user()->name . '）';
+        } else {
+            $msg = 'ログインに失敗しました。';
+        }
+        $current_user = Auth::user();
+        $users = User::get();
+        $skills = explode(" ", $current_user->skill);
+        $licences = explode(" ", $current_user->licence);
+        $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences];
+        return view('top.index', $param);
+    }
+
+    public function edit(Request $request)
+    {
+        $current_user = Auth::user();
+        $current_user->name = $request->user_name;
+        $current_user->age = $request->user_age;
+        $current_user->occupation = $request->user_occupation;
+        $current_user->address = $request->address;
+        $current_user->skill = $request->myskills;
+        $current_user->licence = $request->mylicences;
+        $current_user->workhistory = $request->user_workhistory;
+        $current_user->save(); // https://yama-weblog.com/using-fill-method-to-be-a-simple-code/
+        return redirect('/top');
+    }
+}

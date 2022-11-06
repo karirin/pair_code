@@ -1,0 +1,252 @@
+/* ///////////////////////// */
+
+
+/*      　トップ画面          */
+
+
+/* ///////////////////////// */
+
+.match_top .match_user {
+    display: inline-block;
+    width: 23%;
+    vertical-align: text-top;
+    line-height: initial;
+    margin-right: 0.7rem;
+    margin-bottom: 1rem;
+}
+
+.match_top .match_user_img {
+    border-radius: 10rem;
+    width: 12rem;
+    height: 12rem;
+}
+
+.match_top .match_user_profile {
+    margin-top: 0.5rem;
+}
+
+.match_top .match_user_prof {
+    font-size: 0.5rem;
+}
+
+.match_top .match_user_occupation {
+    font-weight: 700;
+    font-size: 12px;
+    padding: 4px 6px;
+    border-radius: 2px;
+}
+
+.match_top .match_user_age {
+    font-size: 15px;
+}
+
+.edit_address {
+    width: auto;
+}
+
+.edit_name {
+    display: inline-block;
+    width: 50%;
+}
+
+.edit_profile_img .fa-image_range {
+    top: 10.5%;
+    right: 41%;
+}
+
+.edit_btns {
+    margin-top: 1rem;
+}
+
+.edit_btns .profile_close {
+    width: 92px;
+}
+
+.tag .user_age {
+    display: inline-block;
+}
+
+
+/* ///////////////////////// */
+
+
+/*      ユーザー詳細画面      */
+
+
+/* ///////////////////////// */
+
+.modal_match {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(152, 152, 152, 0.7);
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.matchuser_detaile {
+    display: none;
+    position: fixed;
+    z-index: 15;
+    left: 50%;
+    border-radius: 8px;
+    -webkit-transform: translate(-50%, -10%);
+    transform: translate(-50%, -10%);
+    font-size: 1.3rem;
+    background-color: #fefefb;
+    color: #000;
+    width: 300px;
+    height: auto;
+    top: 20%;
+}
+
+.matchuser_detaile .matchuser_name {
+    font-weight: 1000;
+}
+
+.matchuser_detaile .matchuser_age {
+    font-size: x-small;
+}
+
+.matchuser_detaile .matchuser_address {
+    font-size: x-small;
+}
+
+.matchuser_detaile .matchuser_profile {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.matchuser_detaile .matchuser_img {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+.matchuser_detaile .matchuser_occupation {
+    font-size: x-small;
+}
+
+.matchuser_detaile .far.fa-times-circle {
+    top: -12%;
+    font-size: 1.5rem;
+}
+
+.match_good_btn {
+    display: inline-block;
+    padding: 7px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #FFF;
+    background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+    transition: .4s;
+    font-size: 0.8rem;
+    width: 40%;
+}
+
+.match_good_btn:hover {
+    background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
+}
+
+.match_good_btn .fas.fa-thumbs-up {
+    margin-right: 0.5rem;
+}
+
+.flash_message {
+    padding: 0.5em 1em;
+    background: -moz-linear-gradient(#FFC107, #ff8b5f);
+    background: -webkit-linear-gradient(#FFC107, #ff8b5f);
+    background: linear-gradient(to right, #FFC107, #ff8b5f);
+    color: #FFF;
+    position: fixed;
+    left: 4%;
+    bottom: 10%;
+    transition: 1s;
+    font-size: 1.25rem;
+    border-radius: 8px;
+}
+
+.match_message {
+    padding: 0.5em 1em;
+    background: -moz-linear-gradient(#FFC107, #ff8b5f);
+    background: -webkit-linear-gradient(#FFC107, #ff8b5f);
+    background: linear-gradient(to right, #FFC107, #ff8b5f);
+    color: #FFF;
+    position: fixed;
+    left: 4%;
+    bottom: 10%;
+    transition: 1s;
+    font-size: 1.25rem;
+    border-radius: 8px;
+    z-index: 15;
+    display: none;
+}
+
+
+/* ///////////////////////// */
+
+
+/*        マッチ画面        */
+
+
+/* ///////////////////////// */
+
+.matching_card {
+    text-align: center;
+}
+
+.card {
+    width: 40%;
+    height: 50%;
+    border: solid 0.1rem;
+    display: inline-block;
+    padding: 50px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 15%;
+    margin: auto;
+    text-align: center;
+}
+
+.card .comment {
+    white-space: pre-wrap;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.card .fas.fa-times-circle {
+    font-size: 40px;
+}
+
+.card .fas.fa-times-circle:hover {
+    opacity: 0.5;
+}
+
+.card .fas.fa-heart {
+    font-size: 40px;
+}
+
+.card .fas.fa-heart:hover {
+    opacity: 0.5;
+}
+
+.card .matching_btn {
+    display: flex;
+    justify-content: space-around;
+    vertical-align: top;
+}
+
+.matching_img {
+    border-radius: 10rem;
+    border: solid 0.3rem;
+    width: 12rem;
+    height: 12rem;
+}
+
+.match_process {
+    text-align: center;
+}
