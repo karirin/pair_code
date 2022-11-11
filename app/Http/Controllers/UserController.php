@@ -62,8 +62,12 @@ class UserController extends Controller
         } else {
             $msg = 'ログインに失敗しました。';
         }
+        $current_user = Auth::user();
         $users = User::get();
-        return view('top.index', ['users' => $users, 'message' => $msg]);
+        $skills = explode(" ", $current_user->skill);
+        $licences = explode(" ", $current_user->licence);
+        $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences];
+        return view('top.index', $param);
     }
 
     protected function loggedOut(Request $request)
@@ -103,9 +107,10 @@ class UserController extends Controller
         $current_user->age = $request->user_age;
         $current_user->occupation = $request->user_occupation;
         $current_user->address = $request->address;
-        $current_user->skill = $request->myskills;
-        $current_user->licence = $request->mylicences;
+        $current_user->skill = $request->myprofile_skills;
+        $current_user->licence = $request->myprofile_licences;
         $current_user->workhistory = $request->user_workhistory;
+        log::debug($request);
         $current_user->save(); // https://yama-weblog.com/using-fill-method-to-be-a-simple-code/
         return redirect('/top');
     }

@@ -35,10 +35,6 @@ class HelloController extends Controller
         return view('hello.show', ['items' => $items]);
     }
 
-    public function post(Request $request)
-    {
-        return view('hello.index', ['items' => $items]);
-    }
 
     public function add(Request $request)
     {

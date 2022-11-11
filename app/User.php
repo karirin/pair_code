@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
@@ -37,55 +39,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function getData_id()
+    public function check_match($user_id, $current_user_id)
     {
-        return $this->id;
+        $match_flg = DB::select('select user_id from `matchs` where user_id = ' . $current_user_id . ' and matched_user_id = ' . $user_id);
+        log::debug($match_flg);
+        return count($match_flg);
     }
 
-
-    public function getData_image()
+    public function check_matchs($user_id, $current_user_id)
     {
-        return $this->image;
-    }
-
-    public function getData_occupation()
-    {
-        return $this->occupation;
-    }
-
-    public function getData_age()
-    {
-        return $this->age;
-    }
-
-    public function getData_profile()
-    {
-        return $this->profile;
-    }
-
-
-    public function getData_name()
-    {
-        return $this->name;
-    }
-
-    public function getData_address()
-    {
-        return $this->address;
-    }
-
-    public function getData_workhistory()
-    {
-        return $this->workhistory;
-    }
-
-    public function getData_skill()
-    {
-        return $this->skill;
-    }
-
-    public function getData_licence()
-    {
-        return $this->licence;
+        $matchs_flg = DB::select('select user_id from `matchs` where (user_id = ' . $current_user_id . ' and matched_user_id = ' . $user_id . ') or (user_id = ' . $user_id  . ' and matched_user_id = ' . $current_user_id . ')');
+        return count($matchs_flg);
     }
 }

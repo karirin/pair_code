@@ -118,7 +118,7 @@ $(document).on('click', ".match_user", function() {
     var $target_modal = $(this).data("target");
     $('.modal_match').fadeIn();
     $('.matchuser_detaile').fadeIn();
-    $('.matchuser_detaile .matchuser_img')[0].setAttribute('src', $($target_modal + ' > .match_user_img')[0].getAttribute('src'));
+    $('.matchuser_detaile .matchuser_img').attr('src', $($target_modal + ' > .match_user_img')[0].getAttribute('src'));
     $('.matchuser_detaile .matchuser_name').replaceWith('<div class="matchuser_name">' + $($target_modal + ' > .match_user_name')[0].value + '</div>');
     $('.matchuser_detaile .matchuser_age').replaceWith('<span class="matchuser_age">' + $($target_modal + ' > .match_user_profile > div > .match_user_age').text() + '</span>');
     $('.matchuser_detaile .matchuser_address').replaceWith('<span class="matchuser_address">' + $($target_modal + ' > .match_user_address')[0].value + '</span>');
@@ -147,13 +147,18 @@ $(document).on('click', ".far.fa-times-circle", function() {
 
 // いいねをクリックしたとき
 $(document).on('click', ".match_good_btn", function() {
+    $.ajaxSetup({
+        headers: {
+            "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+        },
+    });
     var user_id = $(this).next().val(),
-        user_name = $(this).parent().prev().prev().prev().prev().text(),
+        user_name = $(this).parent().prev().prev().prev().prev().prev().text(),
         matchs_flg = $(this).next().next()[0].value,
         match_good_btn = $(this);
     $.ajax({
         type: 'POST',
-        url: '../ajax_match_process.php',
+        url: '/ajax_match_process',
         dataType: 'text',
         data: {
             user_id: user_id

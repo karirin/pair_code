@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     @section('header')
     @if (Auth::check())
     <ul class="main_ul">
@@ -16,10 +17,12 @@
             <a sytle="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('top') }}" class="top_link_header_login"><img
                     src="../Untitled.svg"></a>
         </li>
-        <li class="header_menu_wide"><a href="../match/matching.php" style="vertical-align: middle;"><i
+        <li class="top_link prof_page"><a class="prof_modal" href="#"><img src="{{asset($current_user->image)}}"
+                    class="user_image"></a></li>
+        <li class="header_menu_wide"><a href="{{ asset('match/match') }}" style="vertical-align: middle;"><i
                     class="fas fa-thumbs-up" style="margin-right: 0.5rem;font-size: 1.5rem;"></i>お相手から</a>
         </li>
-        <li class="header_menu"><a href="../message/message_top.php" style="vertical-align: middle;">
+        <li class="header_menu"><a href="{{ asset('message/message_top') }}" style="vertical-align: middle;">
                 <i class="fas fa-comment" style="margin-right: 0.5rem;"></i>メッセージ
             </a></li>
         <li class="header_menu_wide" style="vertical-align: middle;"><a href="{{ asset('user/logout') }}"
@@ -43,6 +46,7 @@
     @endif
     @show
     <div class="content">
+        @yield('profile')
         @yield('content')
     </div>
     @section('footer')
@@ -51,6 +55,7 @@
             href="https://twitter.com/karirin3948">Twitter</a>
     </div>
     <script src=" https://code.jquery.com/jquery-3.4.1.min.js "></script>
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
     <script src="{{ asset('/js/common.js') }}"></script>
     <script src="{{ asset('/js/match.js') }}"></script>

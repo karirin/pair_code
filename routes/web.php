@@ -33,6 +33,16 @@ Route::post('user/add', 'UserController@create');
 
 Route::get('user/logout', 'UserController@logout')->name('logout');
 
+Route::get('match/match', 'MatchController@index');
+
+Route::get('message/message', 'MessageController@index');
+Route::get('message/add', 'MessageController@index');
+Route::post('message/add', 'MessageController@add');
+
+Route::get('message/message_top', 'Message_relationController@index');
+
+Route::post('/ajax_match_process', 'MatchController@ajax_match_process');
+
 Route::get('person', 'PersonController@index');
 
 Route::get('person/find', 'PersonController@find');
