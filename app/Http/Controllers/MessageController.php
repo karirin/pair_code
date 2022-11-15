@@ -19,7 +19,9 @@ class MessageController extends Controller
         $destination_user = User::find($request->user_id);
         $message_c = new Message;
         $messages = DB::select('select * from messages where ( user_id = ' . $current_user->id . ' and destination_user_id = ' . $destination_user->id . ' ) or ( user_id = ' . $destination_user->id . ' and destination_user_id = ' . $current_user->id . ' )');
-        $param = ['current_user' => $current_user, 'messages' => $messages, 'destination_user' => $destination_user, 'message_c' => $message_c];
+        $skills = explode(" ", $current_user->skill);
+        $licences = explode(" ", $current_user->licence);
+        $param = ['current_user' => $current_user, 'messages' => $messages, 'destination_user' => $destination_user, 'message_c' => $message_c, 'skills' => $skills, 'licences' => $licences];
         return view('message.message', $param);
     }
 

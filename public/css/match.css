@@ -49,9 +49,13 @@
     width: 50%;
 }
 
+.slide_prof .edit_profile_img .fa-image_range {
+    top: 22.5%;
+    right: 47%;
+}
+
 .edit_profile_img .fa-image_range {
-    top: 10.5%;
-    right: 41%;
+    right: 45%;
 }
 
 .edit_btns {
@@ -197,17 +201,43 @@
 }
 
 .card {
-    width: 40%;
+    width: 25%;
     height: 50%;
-    border: solid 0.1rem;
     display: inline-block;
-    padding: 50px;
     position: absolute;
     left: 0;
     right: 0;
     top: 15%;
     margin: auto;
     text-align: center;
+    border-radius: 8px;
+    background-color: #fefefb;
+}
+
+.old_card {
+    width: 25%;
+    height: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 15%;
+    margin: auto;
+    text-align: center;
+    border-radius: 8px;
+    background-color: #fefefb;
+}
+
+.card .profile_name {
+    font-size: 1rem;
+    text-align: left;
+    margin-left: 1.5rem;
+}
+
+.card img {
+    width: 100%;
+    height: 90%;
+    border-radius: 8px 8px 0 0;
 }
 
 .card .comment {
@@ -234,10 +264,10 @@
     opacity: 0.5;
 }
 
-.card .matching_btn {
-    display: flex;
-    justify-content: space-around;
-    vertical-align: top;
+.matching_btn {
+    position: absolute;
+    left: 40%;
+    top: 67%;
 }
 
 .matching_img {
@@ -249,4 +279,10 @@
 
 .match_process {
     text-align: center;
+}
+
+.fa-image_range.fa {
+    border: 1px solid;
+    padding: 1rem;
+    border-radius: 4rem;
 }

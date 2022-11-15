@@ -25,7 +25,9 @@ class Message_relationController extends Controller
             ->where('m.user_id', '=', $current_user->id)
             ->get();
         $message_relation =  new Message_relation;
-        $param = ['current_user' => $current_user, 'users' => $users, 'message_relations' => $message_relations];
+        $skills = explode(" ", $current_user->skill);
+        $licences = explode(" ", $current_user->licence);
+        $param = ['current_user' => $current_user, 'users' => $users, 'message_relations' => $message_relations, 'skills' => $skills, 'licences' => $licences];
         return view('message.message_top', $param);
     }
 }

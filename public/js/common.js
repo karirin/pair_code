@@ -498,7 +498,7 @@ if (document.getElementById('skill_input') != null || document.getElementById('s
     // let skill_input_narrower = document.getElementById('skill_input_narrower');
 
     //skill_input.addEventListener('change', inputChange_skill);
-    skill_input_narrow.addEventListener('change', inputChange_skill);
+    skill_input_narrow.addEventListener('change', inputChange_skill_narrow);
     // skill_input_narrower.addEventListener('change', inputChange_skill);
 
     var //skill = document.getElementById("skill"),
@@ -575,7 +575,7 @@ if (document.getElementById('skill_input') != null || document.getElementById('s
     // }
 }
 
-function inputChange_skill() {
+function inputChange_skill_narrow() {
     var fome_x_name = $('#skill_input').val(),
         fome_x_name_narrow = $('#skill_input_narrow').val(),
         // fome_x_name_narrower = $(this).val(),
@@ -659,6 +659,7 @@ function inputChange_skill() {
         // i_element_narrower.setAttribute("class", "far fa-times-circle skill");
         //input_element.setAttribute("type", "button");
         input_element_narrow.setAttribute("type", "button");
+        input_element_narrow.setAttribute("style", "display:none;");
         // input_element_narrower.setAttribute("type", "button");
 
         // タグの改行があった場合
@@ -1597,8 +1598,7 @@ $(document).on('click', '.edit_done', function() {
         licences_narrow = new Array(),
         // licences_narrower = new Array(),s
         workhistory_count = $('.edit_workhistory').val().length;
-    console.log(myprofile_skill);
-    console.log($('.edit_workhistory').val());
+
     // skills = skills.join(' ');
     // skill_div.value = skills;
     // skill_div_narrow.value = skills;

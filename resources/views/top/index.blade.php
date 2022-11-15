@@ -51,7 +51,7 @@
                         @php
                         $i = 0;
                         @endphp
-                        @foreach ($skills as $skill)
+                        @foreach ($skills as $skill)@if($skill!='')
                         @if (3 <= $i) <span id="child-span_myprofile" class="skill_tag extra" style="display: none;">
                             {{$skill}}</span>
                             @else
@@ -60,6 +60,7 @@
                             @php
                             $i++
                             @endphp
+                            @endif
                             @endforeach
                             <i class="fas fa-plus skill_btn"></i>
                     </div>
@@ -69,6 +70,7 @@
                         $j = 0;
                         @endphp
                         @foreach ($licences as $licence)
+                        @if($licence!='')
                         @if (3 <= $j) <span id="child-span" class="licence_tag extra" style="display: none;">
                             {{$licence}}</span>
                             @else
@@ -77,6 +79,7 @@
                             @php
                             $j++
                             @endphp
+                            @endif
                             @endforeach
                             <i class="fas fa-plus licence_btn"></i>
                     </div>
@@ -106,14 +109,17 @@
                 @php
                 $k = 0;
                 @endphp
-                <div id="myprofile_skill">@foreach($skills as $skill)@if(3 <= $k)<span id="child-span_myprofile"
-                        class="skill_tag extra" style="display: none;">{{$skill}}<label><input type="button"
-                                style="display:none;"><i
+
+                <div id="myprofile_skill">@foreach($skills as $skill)@if($skill!='')@if(3 <= $k)<span
+                        id="child-span_myprofile" class="skill_tag extra" style="display: none;">{{$skill}}<label><input
+                                type="button" style="display:none;"><i
                                 class="far  fa-times-circle skill_myprofile"></i></label></span>
                         @else<span id="child-span_myprofile" class="skill_tag">{{$skill}}<label><input type="button"
                                     style="display:none;"><i
                                     class="far  fa-times-circle skill_myprofile"></i></label></span>
-                        @endif@php$k++@endphp@endforeach</div><i class="fas fa-plus myprofile_skill_btn"></i>
+                        @endif@php$k++@endphp@endif
+                        @endforeach
+                </div><i class="fas fa-plus myprofile_skill_btn"></i>
                 <input placeholder="skill Stack" name="skills" id="skill_myprofile_input" style="display:block;" />
                 <input type="hidden" name="myprofile_skills" id="myprofile_skills">
                 <input type="hidden" name="skill_count" id="myprofile_skill_count">
@@ -123,13 +129,17 @@
                     @php
                     $l = 0;
                     @endphp
-                    @foreach ($licences as $licence)@if(3 <= $l)<span id="child-span" class="licence_tag extra"
-                        style="display: none;">{{$licence}}<label><input type="button" style="display:none;"><i
-                                class="far fa-times-circle licence"></i></label></span>@else
+                    @foreach ($licences as $licence)@if($licence!='')@if(3 <= $l)<span id="child-span"
+                        class="licence_tag extra" style="display: none;">{{$licence}}<label><input type="button"
+                                style="display:none;"><i class="far fa-times-circle licence"></i></label></span>@else
                         <span id="child-span" class="licence_tag">{{$licence}}<label><input type="button"
-                                    style="display:none;"><i
-                                    class="far fa-times-circle licence"></i></label></span>@endif@php$l++@endphp@endforeach<i
-                            class="fas fa-plus myprofile_licence_btn"></i>
+                                    style="display:none;"><i class="far fa-times-circle licence"></i></label></span>
+                        @endif
+                        @endif
+                        @php
+                        $l++
+                        @endphp
+                        @endforeach<i class="fas fa-plus myprofile_licence_btn"></i>
                 </div>
                 <input placeholder="licence Stack" name="name" id="licence_input" />
                 <input type="hidden" name="myprofile_licences" id="myprofile_licences">
@@ -180,187 +190,25 @@
         </div>
         <p class="match_message">
         </p>
-        <div class="modal_match"></div>
-        <div class="matchuser_detaile">
-            <i class="far fa-times-circle" style="display:inline;"></i>
-            <img class="matchuser_img">
-            <div style="padding: 1rem;">
-                <div class="matchuser_name"></div>
-                <span class="matchuser_age"></span>
-                <span class="matchuser_address"></span>
-                <span class="matchuser_occupation"></span>
-                <div class="matchuser_profile"></div>
-                <div style="text-align:right;">
-                    <a href="#" class="match_good_btn"><i class="fas fa-thumbs-up"></i>いいね</a>
-                    <input type="hidden" class="user_id">
-                    <input type="hidden" class="matchs_flg">
-                </div>
+        @else
+        <div class="description">
+            <span>
+                Test Appは自分のサービスをユーザーに<br>テストしてもらうサービスです。<br>
+                他ユーザーのサービスをテストすることもできます。
+            </span>
+        </div>
+        <form method="post" action="{{ asset('user/test_login') }}">
+            @csrf
+            <div class="test_btn">
+                <input type="hidden" name="name" class="user_name_input" value="test_user">
+                <input type="hidden" name="password" class="user_pass_input" value="karirin3948">
+                <input class="test_login btn btn-outline-dark" type="submit" name="test_login" value="おためしログイン">
             </div>
-        </div>
-        <div class="modal_prof"></div>
-        <div class="slide_prof">
-            <a class="prof_close" href="#">
-                <p><i class="fas fa-angle-right"></i></p>
-            </a>
-            <form method="post" action="{{ asset('user/edit') }}" enctype="multipart/form-data">
-                @csrf
-                <div class="profile">
-                    <div class="edit_profile_img">
-                        <label>
-                            <div class="fa-image_range">
-                                <i class="far fa-image"></i>
-                            </div>
-                            <input type="file" name="image_name" id="edit_profile_img_narrower" accept="image/*"
-                                multiple>
-                        </label>
-                        <img name="profile_image" class="editing_profile_img" src="{{asset($current_user->image)}}">
-                        <label>
-                            <i class="far fa-times-circle profile_clear"></i>
-                            <input type="button" id="profile_clear">
-                        </label>
-                    </div>
-                    <img src="{{asset($current_user->image)}}" class="mypage">
-                    <h3 class="profile_name_narrower">{{$current_user->name}}</h3>
-                    <input type="hidden" name="id" class="user_id" value="{{$current_user->id}}">
-                    <input type="file" name="image" class="image" value="{{asset($current_user->image)}}"
-                        style="display:none;">
-                    <div class="tag">
-                        <div class="tags">
-                            <div class="tag_skill">
-                                <p class="tag_tittle">スキル</p>
-                                @php
-                                $i = 0;
-                                @endphp
-                                @foreach ($skills as $skill)
-                                @if (3 <= $i) <span id="child-span_narrow" class="skill_tag extra"
-                                    style="display: none;">
-                                    {{$skill}}</span>
-                                    @else
-                                    <span id="child-span_narrow" class="skill_tag">{{$skill}}</span>
-                                    @endif
-                                    @php
-                                    $i++
-                                    @endphp
-                                    @endforeach
-                                    <i class="fas fa-plus skill_btn_narrow"></i>
-                            </div>
-                            <div class="tag_licence">
-                                <p class="tag_tittle">取得資格</p>
-                                @php
-                                $j = 0;
-                                @endphp
-                                @foreach ($licences as $licence)
-                                @if (3 <= $j) <span id="child-span_narrow" class="licence_tag extra"
-                                    style="display: none;">
-                                    {{$licence}}</span>
-                                    @else
-                                    <span id="child-span_narrow" class="licence_tag">{{$licence}}</span>
-                                    @endif
-                                    @php
-                                    $j++
-                                    @endphp
-                                    @endforeach
-                                    <i class="fas fa-plus licence_btn_narrow"></i>
-                            </div>
-                        </div>
-                        <div class="background">
-                            <p class="tag_tittle">職歴</p>
-                            <p class="user_workhistory">{{$current_user->workhistory}}</p>
-                        </div>
-                    </div>
-                    <div class="myprofile_btn">
-                        <button class="btn btn btn-outline-dark profile_edit_btn" type="button"
-                            name="follow">プロフィール編集</button>
-                    </div>
-                </div>
-                <div class="form" style="margin:0;">
-                    <p class="tag_tittle" style="text-align:left;">スキル</p>
-                    <div id="skill_narrow">
-                        @php
-                        $k = 0;
-                        @endphp
-                        @foreach ($skills as $skill)
-                        @if (3 <= $k) <span id="child-span_narrow" class="skill_tag extra" style="display: none;">
-                            {{$skill}}<label><input type="button" style="display:none;"><i
-                                    class="far  fa-times-circle skill_narrow"></i></label></span>
-                            @else
-                            <span id="child-span_narrow" class="skill_tag">{{$skill}}<label><input type="button"
-                                        style="display:none;"><i class="far  fa-times-circle skill_narrow"></i></label>
-                            </span>
-                            @endif
-                            @php
-                            $k++
-                            @endphp
-                            @endforeach
-                            <i class="fas fa-plus skill_btn_narrow"></i>
-                    </div>
-                    <input placeholder="skill Stack" name="skills" id="skill_input_narrow" />
-                    <input type="hidden" name="skills" id="skills_narrow">
-                    <input type="hidden" name="skill_count" id="skill_count_narrow">
-                    <input type="hidden" name="myskills" value="{{$current_user->skill}}">
-                    <div id="licence">
-                        <p class="tag_tittle">取得資格</p>
-                        <div id="licence_narrow">
-                            @php
-                            $l = 0;
-                            @endphp
-                            @foreach ($licences as $licence)
-                            @if (3 <= $l) <span id="child-span_narrow" class="licence_tag extra" style="display: none;">
-                                {{$licence}}<label><input type="button" style="display:none;"><i
-                                        class="far fa-times-circle licence"></i></label></span>
-                                @else
-                                <span id="child-span_narrow" class="licence_tag">{{$licence}}<label><input type="button"
-                                            style="display:none;"><i
-                                            class="far fa-times-circle licence"></i></label></span>
-                                @endif
-                                @php
-                                $l++
-                                @endphp
-                                @endforeach
-                        </div>
-                        <i class="fas fa-plus licence_btn_narrow"></i>
-                    </div>
-                    <input placeholder="licence Stack" name="name" id="licence_input_narrow" />
-                    <input type="hidden" name="licences" id="licences_narrow">
-                    <input type="hidden" name="licence_count" id="licence_count_narrow">
-                    <input type="hidden" name="mylicences" value="{{$current_user->licence}}">
-                    <div class="background">
-                        <p class="tag_tittle">職歴</p>
-                        <p class="workhistory_narrow">{{$current_user->workhistory}}</p>
-                        <div class="error_workhistory" style="display: none;">
-                            <span style="color:rgb(220, 53, 69);">100文字以内で入力してください</span>
-                        </div>
-                    </div>
-                    <div class="btn_flex">
-                        <button class="btn btn-outline-info profile_close" type="button">閉じる</button>
-                        <button class="btn btn-outline-dark profile_narrow_close" type="button"
-                            style="width: 100%;">閉じる</button>
-                        <input type="submit" class="btn btn-outline-dark edit_done" value="編集完了">
-                    </div>
-                </div>
-
-        </div>
-</form>
-</div>
-@else
-<div class="description">
-    <span>
-        Test Appは自分のサービスをユーザーに<br>テストしてもらうサービスです。<br>
-        他ユーザーのサービスをテストすることもできます。
-    </span>
-</div>
-<form method="post" action="{{ asset('user/test_login') }}">
-    @csrf
-    <div class="test_btn">
-        <input type="hidden" name="name" class="user_name_input" value="test_user">
-        <input type="hidden" name="password" class="user_pass_input" value="karirin3948">
-        <input class="test_login btn btn-outline-dark" type="submit" name="test_login" value="おためしログイン">
+        </form>
     </div>
-</form>
-</div>
-@endif
-@endsection
-@section('footer')
-@parent
-@endsection
-</div>
+    @endif
+    @endsection
+    @section('footer')
+    @parent
+    @endsection
+    </div>

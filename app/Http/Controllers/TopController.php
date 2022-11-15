@@ -20,7 +20,6 @@ class TopController extends Controller
         $current_user = Auth::user();
         $users = User::get();
         $path = $request->path();
-        log::debug($path);
         if ($current_user != "") {
             $skills = explode(" ", $current_user->skill);
             $licences = explode(" ", $current_user->licence);

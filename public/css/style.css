@@ -18,6 +18,10 @@ a:hover {
     text-decoration-line: none;
 }
 
+body {
+    background-color: #fdff8b0a;
+}
+
 body.top {
     margin: 0;
     width: 100vw;
@@ -467,16 +471,24 @@ nav.navbar.navbar-dark {
 }
 
 .profile .edit_profile_img {
-    width: 20rem;
-    height: 20rem;
+    width: 10rem;
+    height: 10rem;
     display: none;
+}
+
+.editing_profile_img {
+    opacity: 0.3;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 10rem;
+    border: solid 0.3rem;
 }
 
 .profile .editing_profile_img {
     border-radius: 10rem;
     opacity: 0.3;
-    width: 20rem;
-    height: 20rem;
+    width: 10rem;
+    height: 10rem;
     border-radius: 10rem;
     border: solid 0.3rem;
 }
@@ -512,13 +524,22 @@ nav.navbar.navbar-dark {
     position: absolute;
     width: 3rem;
     height: 3rem;
-    top: 29%;
+    top: 10.5%;
     right: 26%;
     border-radius: 1rem;
 }
 
 .edit_profile_img .fa-image_range:hover {
     background-color: rgb(182, 182, 182);
+}
+
+.slide_prof .edit_name {
+    margin-left: -2rem;
+}
+
+.edit_profile_img .editing_profile_img {
+    margin-left: -2rem;
+    margin-bottom: 2rem;
 }
 
 .edit_comment.border_white {
@@ -591,6 +612,7 @@ img.mypage {
 .tag {
     display: inline-block;
     margin-left: 1.5rem;
+    text-align: left;
 }
 
 .tags {
@@ -1671,11 +1693,12 @@ img.my_preview {
 
 .edit_name {
     margin-top: -1.3rem;
+    margin-left: -10rem;
     width: 118%;
 }
 
 .profile .edit_name {
-    margin-top: -1.3rem;
+    margin-top: 1rem;
     width: 10rem;
 }
 

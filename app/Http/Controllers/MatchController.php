@@ -14,7 +14,9 @@ class MatchController extends Controller
     {
         $current_user = Auth::user();
         $users = User::get();
-        $param = ['current_user' => $current_user, 'users' => $users];
+        $skills = explode(" ", $current_user->skill);
+        $licences = explode(" ", $current_user->licence);
+        $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences];
         return view('match.match', $param);
     }
 
