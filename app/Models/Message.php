@@ -50,6 +50,6 @@ class Message extends Model
             return $time;
         }
 
-        return (int)$time . $unit;
+        return (int) $time . $unit;
     }
 }

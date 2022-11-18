@@ -9,6 +9,7 @@ use Validator;
 use Illuminate\Support\Facades\DB;
 use App\Person;
 use App\User;
+use App\Models\Message_relation;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Hash;
@@ -23,6 +24,7 @@ class UserController extends Controller
 
     protected function create(Request $request)
     {
+        $this->validate($request, User::$rules);
         $dir = 'sample';
         $file_name = $request->file('image')->getClientOriginalName();
         $request->file('image')->storeAs('public/' . $dir, $file_name);
@@ -34,7 +36,6 @@ class UserController extends Controller
         DB::table('users')->insert($param);
         return view('top.index');
     }
-
 
     public function login(Request $request)
     {
@@ -52,6 +53,7 @@ class UserController extends Controller
 
     public function auth(Request $request)
     {
+        $this->validate($request, User::$rules);
         $name = $request->name;
         $password = $request->password;
         if (Auth::attempt([
@@ -66,7 +68,9 @@ class UserController extends Controller
         $users = User::get();
         $skills = explode(" ", $current_user->skill);
         $licences = explode(" ", $current_user->licence);
-        $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences];
+        $message = new Message_relation;
+        $message_count = $message->getmessagecount($current_user->id);
+        $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count];
         return view('top.index', $param);
     }
 
@@ -96,14 +100,15 @@ class UserController extends Controller
         $users = User::get();
         $skills = explode(" ", $current_user->skill);
         $licences = explode(" ", $current_user->licence);
-        $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences];
+        $message = new Message_relation;
+        $message_count = $message->getmessagecount($current_user->id);
+        $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count];
         return view('top.index', $param);
     }
 
     public function edit(Request $request)
     {
         $current_user = Auth::user();
-        log::debug($request);
         if ($request->current_name != $request->user_name) {
             $current_user->name = $request->user_name;
         }
@@ -146,7 +151,6 @@ class UserController extends Controller
         if ($request->current_workhistory != $request->user_workhistory_narrow) {
             $current_user->workhistory = $request->user_workhistory_narrow;
         }
-        log::debug($current_user);
         $current_user->save(); // https://yama-weblog.com/using-fill-method-to-be-a-simple-code/
         return redirect('/top');
     }

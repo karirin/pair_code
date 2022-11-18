@@ -25,7 +25,8 @@
                     class="fas fa-thumbs-up" style="margin-right: 0.5rem;font-size: 1.5rem;"></i>お相手から</a>
         </li>
         <li class="header_menu"><a href="{{ asset('message/message_top') }}" style="vertical-align: middle;">
-                <i class="fas fa-comment" style="margin-right: 0.5rem;"></i>メッセージ
+                <i class="fas fa-comment" style="margin-right: 0.5rem;"></i>メッセージ<span
+                    style="margin-left: 0.3rem;">@if($message_count!=0){{$message_count}}@endif</span>
             </a></li>
         <li class="header_menu_wide" style="vertical-align: middle;"><a href="{{ asset('user/logout') }}"
                 style="vertical-align: middle;"><i class="fas fa-sign-out-alt"
@@ -69,6 +70,7 @@
             </div>
         </div>
     </div>
+    @if (Auth::check())
     <div class="modal_prof"></div>
     <div class="slide_prof">
         <a class="prof_close" href="#">
@@ -246,7 +248,10 @@
     </div>
     </form>
     </div>
-    @if(request()->path()=='match/match'||request()->path()=='message/message_top'||!Auth::check())
+    @endif
+    <p class="match_message">
+    </p>
+    @if(request()->path()=='match/match'||request()->path()=='message/message_top'||request()->path()=='message/message'||!Auth::check())
     <div class="footer bottom">
         @else
         <div class="footer">

@@ -5,6 +5,9 @@
 @endsection
 @section('content')
 @foreach ($users as $user)
+@if($user_class->check_match($current_user->id,$user->id))
+@if($user_class->check_unmatch($current_user->id,$user->id)==0)
+@if($user_class->check_matchs($current_user->id,$user->id)!=2)
 <div id="match{{$user->id}}" class="match_card card">
     <img src="{{asset($user->image)}}">
     <label>
@@ -17,6 +20,9 @@
     <input type="hidden" id="match{{$user->id}}_userid" value="{{$user->id}}">
     <input type="hidden" class="match_user_id" value="{{$current_user->id}}">
 </div>
+@endif
+@endif
+@endif
 @endforeach
 <div class="matching_btn">
     <label>

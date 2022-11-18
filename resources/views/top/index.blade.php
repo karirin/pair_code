@@ -188,8 +188,6 @@
             @endif
             @endforeach
         </div>
-        <p class="match_message">
-        </p>
         @else
         <div class="description">
             <span>

@@ -196,8 +196,9 @@ $(document).on('click', '#match_btn', function() {
     var current_user_id = $('.match_user_id').val(),
         target_modal = $(this).data("target"),
         match_modal = $(this).data("match"),
-        user_id = $('' + target_modal + '_userid').val(),
-        card = $('.match_card:last');
+        card = $('.match_card:last')[0],
+        user_id = card.id.substr(5, 2),
+        user_name = $('#' + card.id + ' > .profile_name').text();
     $(card).animate({
         "marginLeft": "758px"
     }).fadeOut().removeClass('match_card');
@@ -210,26 +211,16 @@ $(document).on('click', '#match_btn', function() {
             user_id: user_id
         }
     }).done(function() {
-        var cookies = document.cookie;
-        var cookiesArray = cookies.split(';');
-
-        for (var c of cookiesArray) {
-            var cArray = c.split('=');
-            if (cArray[0] == ' username') {
-                $('.modal_match').fadeIn();
-                $(match_modal).fadeIn();
-                $('.match_clear').fadeIn();
-                $(document).on('click', '.far.fa-times-circle.match_clear', function() {
-                    $('.modal_match').hide();
-                    $(match_modal).hide();
-                    $('.far.fa-times-circle.match_clear').hide();
-                });
-            }
-        }
-    }).fail(function() {});
+        $('.match_message').fadeIn();
+        $('.match_message').text(user_name + 'さんとマッチしました！');
+        $('.match_message').fadeOut(5000);
+        console.log("test1");
+    }).fail(function() {
+        console.log("test2");
+    });
 });
 
-$(document).on('click', '#unmatch_btn', function(e) {
+$(document).on('click', '#unmatch_btn', function() {
     $.ajaxSetup({
         headers: {
             "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
@@ -237,18 +228,67 @@ $(document).on('click', '#unmatch_btn', function(e) {
     });
     var current_user_id = $('.unmatch_user_id').val(),
         target_modal = $(this).data("target"),
-        user_id = $('' + target_modal + '_userid').val(),
-        card = $('.match_card:last');
+        card = $('.match_card:last')[0],
+        user_id = card.id.substr(5, 2);
     $(card).animate({
         "marginRight": "758px"
     }).fadeOut().removeClass('match_card');
     $.ajax({
         type: 'POST',
-        url: '../ajax_unmatch_process.php',
+        url: '/ajax_unmatch_process',
         dataType: 'text',
         data: {
             current_user_id: current_user_id,
             user_id: user_id
         }
     }).done(function() {}).fail(function() {});
+});
+
+
+// 必須チェック解除
+$(document).ready(function() {
+    $('.user_name_input').change(function() {
+        var str = $(this).value;
+        if (str != '') {
+            $('.user_name_input')[0].setAttribute("style", "border-color: #ced4da;");
+            $('.user_name_error').fadeOut();
+        }
+    });
+    $('.user_pass_input').change(function() {
+        var str = $(this).value;
+        if (str != '') {
+            $('.user_pass_input')[0].setAttribute("style", "border-color: #ced4da;");
+            $('.user_pass_error').fadeOut();
+        }
+    });
+});
+
+// テスト投稿の必須チェック
+// $(document).on('click', '.post_process_btn', function() {
+//     if ($('.url_form')[0].value == '' && $('.service')[0].value == '') {
+//         $('.url_form')[0].setAttribute("style", "border-color: #dc3545;");
+//         $('.service')[0].setAttribute("style", "border-color: #dc3545;");
+//         $('.post_url_error').fadeIn();
+//         $('.post_service_error').fadeIn();
+//         return false;
+//     }
+// });
+
+$(document).on('click', '.submit_btn', function() {
+    if ($('.user_name_input')[0].value == '' && $('.user_pass_input')[0].value == '') {
+        $('.user_name_input')[0].setAttribute("style", "border-color: #dc3545;");
+        $('.user_pass_input')[0].setAttribute("style", "border-color: #dc3545;");
+        $('.user_name_error').fadeIn();
+        $('.user_pass_error').fadeIn();
+    }
+    if ($('.user_name_input')[0].value == '') {
+        $('.user_name_input')[0].setAttribute("style", "border-color: #dc3545;");
+        $('.user_name_error').fadeIn();
+        return false;
+    }
+    if ($('.user_pass_input')[0].value == '') {
+        $('.user_pass_input')[0].setAttribute("style", "border-color: #dc3545;");
+        $('.user_pass_error').fadeIn();
+        return false;
+    }
 });

@@ -29,7 +29,13 @@ class Message_relation extends Model
 
     public function getNewmessagecount($current_user_id, $destination_user_id)
     {
-        $new_message_count = DB::select('select message_count from message_relations where ( user_id = ' . $current_user_id . ' and destination_user_id = ' . $destination_user_id . ' ) or ( user_id = ' . $destination_user_id . ' and destination_user_id = ' . $current_user_id . ' )');
+        $new_message_count = DB::select('select message_count from message_relations where user_id = ' . $current_user_id . ' and destination_user_id = ' . $destination_user_id);
+        return $new_message_count[0]->message_count;
+    }
+
+    public function getmessagecount($current_user_id)
+    {
+        $new_message_count = DB::select('select sum(message_count) as message_count from message_relations where user_id = ' . $current_user_id);
         return $new_message_count[0]->message_count;
     }
 }

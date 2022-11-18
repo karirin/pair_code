@@ -11,10 +11,16 @@
             @csrf
             <div class="user_title">ユーザー名</div>
             <input type="text" name="name" class="user_name_input form-control" placeholder="ニックネーム">
+            <div style="height: 27px;text-align:left;margin: 0 20%;">
+                <span class="user_name_error" style="display:none;color: #dc3545;">ユーザー名を入力してください</span>
+            </div>
             <div class="user_title">パスワード</div>
             <input type="password" name="password" class="user_pass_input form-control" style="margin-bottom:0;">
-            <div style="display:inline-block;width: 60%;margin-bottom: 1rem;text-align:left;font-size:0.9rem;">
+            <div style="display:inline-block;width: 60%;text-align:left;font-size:0.9rem;">
                 ※英数字8文字以上
+            </div>
+            <div style="height: 27px;text-align:left;margin: 0 20%;">
+                <span class="user_pass_error" style="display:none;color: #dc3545;">パスワードを入力してください</span>
             </div>
             <div style="width:60%;display:inline-block;text-align:left;">
                 <div class="image_select">プロフィール画像を選んでください。</div>
@@ -31,7 +37,7 @@
 
             <div class="flex_btn margin_top">
                 <input class="btn btn-outline-info" type="button" onclick="history.back()" value="戻る">
-                <input class="btn btn-outline-dark" type="submit" value="登録">
+                <input class="btn btn-outline-dark submit_btn" type="submit" value="登録">
             </div>
         </form>
     </div>
