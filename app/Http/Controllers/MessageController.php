@@ -24,7 +24,7 @@ class MessageController extends Controller
         $skills = explode(" ", $current_user->skill);
         $licences = explode(" ", $current_user->licence);
         $message_count = $message_relation->getmessagecount($current_user->id);
-        Message_relation::where('destination_user_id', $request->user_id)->where('user_id', $current_user->id)->update(['message_count' => 0]);;
+        Message_relation::where('destination_user_id', $request->user_id)->where('user_id', $current_user->id)->update(['message_count' => 0]);
         $param = ['current_user' => $current_user, 'messages' => $messages, 'destination_user' => $destination_user, 'message_c' => $message_c, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count];
 
         return view('message.message', $param);

@@ -4,41 +4,42 @@
 @parent
 @endsection
 @section('content')
-@foreach ($users as $user)
-@if($user_class->check_match($current_user->id,$user->id))
-@if($user_class->check_unmatch($current_user->id,$user->id)==0)
-@if($user_class->check_matchs($current_user->id,$user->id)!=2)
-<div id="match{{$user->id}}" class="match_card card">
-    <img src="{{asset($user->image)}}">
-    <label>
-        <i class="far fa-times-circle profile_clear"></i>
-        <input type="button" id="profile_clear">
-    </label>
-    <h3 class="profile_name">{{$user->name}}</h3>
-    <p class="comment">{{$user->profile}}</p>
-    <input type="hidden" class="unmatch_user_id" value="{{$current_user->id}}">
-    <input type="hidden" id="match{{$user->id}}_userid" value="{{$user->id}}">
-    <input type="hidden" class="match_user_id" value="{{$current_user->id}}">
-</div>
-@endif
-@endif
-@endif
-@endforeach
-<div class="matching_btn">
-    <label>
-        <div class="fa-image_range fa" style="margin-right: 8rem;">
-            <i class="fa-solid fa-reply" style="font-size: 25px;"></i>
-        </div>
-        <input type="button" id="unmatch_btn" style="display:none;">
-    </label>
-    <label>
-        <div class="fa-image_range fa">
-            <i class="fas fa-thumbs-up" style="font-size: 25px;"></i>
-        </div>
-        <input type="button" id="match_btn" style="display:none">
-    </label>
-</div>
-@endsection
-@section('footer')
-@parent
-@endsection
+<div class="col-9.5 match_top">
+    <h3 class="page_title">お相手から</h3>
+    @foreach ($users as $user)
+    @if($user_class->check_match($current_user->id,$user->id))
+    @if($user_class->check_unmatch($current_user->id,$user->id)==0)
+    @if($user_class->check_matchs($current_user->id,$user->id)!=2)
+    <div id="match{{$user->id}}" class="match_card card">
+        <img src="{{asset($user->image)}}">
+        <label>
+            <i class="far fa-times-circle profile_clear"></i>
+            <input type="button" id="profile_clear">
+        </label>
+        <h3 class="profile_name">{{$user->name}}</h3>
+        <input type="hidden" class="unmatch_user_id" value="{{$current_user->id}}">
+        <input type="hidden" id="match{{$user->id}}_userid" value="{{$user->id}}">
+        <input type="hidden" class="match_user_id" value="{{$current_user->id}}">
+    </div>
+    @endif
+    @endif
+    @endif
+    @endforeach
+    <div class="matching_btn">
+        <label>
+            <div class="fa-image_range fa" style="margin-right: 8rem;">
+                <i class="fa-solid fa-reply" style="font-size: 25px;"></i>
+            </div>
+            <input type="button" id="unmatch_btn" style="display:none;">
+        </label>
+        <label>
+            <div class="fa-image_range fa">
+                <i class="fas fa-thumbs-up" style="font-size: 25px;"></i>
+            </div>
+            <input type="button" id="match_btn" style="display:none">
+        </label>
+    </div>
+    @endsection
+    @section('footer')
+    @parent
+    @endsection

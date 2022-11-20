@@ -181,6 +181,8 @@ $(document).on('click', ".match_good_btn", function() {
             $('.match_message').fadeIn();
             $('.match_message').text(user_name + 'さんとマッチしました！');
             $('.match_message').fadeOut(5000);
+            $('.fas.fa-comment').css('margin-right', '');
+            $('.fas.fa-comment').after('<span class="new_mark"></span>');
         }
         match_good_btn.fadeOut();
     }).fail(function() {});
@@ -214,10 +216,9 @@ $(document).on('click', '#match_btn', function() {
         $('.match_message').fadeIn();
         $('.match_message').text(user_name + 'さんとマッチしました！');
         $('.match_message').fadeOut(5000);
-        console.log("test1");
-    }).fail(function() {
-        console.log("test2");
-    });
+        $('.fas.fa-comment').css('margin-right', '');
+        $('.fas.fa-comment').after('<span class="new_mark"></span>');
+    }).fail(function() {});
 });
 
 $(document).on('click', '#unmatch_btn', function() {

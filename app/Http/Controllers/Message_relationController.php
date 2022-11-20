@@ -28,7 +28,12 @@ class Message_relationController extends Controller
         $message_relation =  new Message_relation;
         $skills = explode(" ", $current_user->skill);
         $licences = explode(" ", $current_user->licence);
-        $message_count = $message_relation->getmessagecount($current_user->id);
+        $message_c = Message_relation::where('user_id', $current_user->id)->first();
+        if ($message_c != "") {
+            $message_count = $message_c->message_count;
+        } else {
+            $message_count = '';
+        }
         $param = ['current_user' => $current_user, 'users' => $users, 'message_relations' => $message_relations, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count];
         return view('message.message_top', $param);
     }

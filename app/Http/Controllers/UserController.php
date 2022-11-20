@@ -69,7 +69,12 @@ class UserController extends Controller
         $skills = explode(" ", $current_user->skill);
         $licences = explode(" ", $current_user->licence);
         $message = new Message_relation;
-        $message_count = $message->getmessagecount($current_user->id);
+        $message_c = Message_relation::where('user_id', $current_user->id)->first();
+        if ($message_c != "") {
+            $message_count = $message_c->message_count;
+        } else {
+            $message_count = '';
+        }
         $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count];
         return view('top.index', $param);
     }
@@ -100,8 +105,12 @@ class UserController extends Controller
         $users = User::get();
         $skills = explode(" ", $current_user->skill);
         $licences = explode(" ", $current_user->licence);
-        $message = new Message_relation;
-        $message_count = $message->getmessagecount($current_user->id);
+        $message_c = Message_relation::where('user_id', $current_user->id)->first();
+        if ($message_c != "") {
+            $message_count = $message_c->message_count;
+        } else {
+            $message_count = '';
+        }
         $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count];
         return view('top.index', $param);
     }

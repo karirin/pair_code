@@ -23,13 +23,22 @@ class TopController extends Controller
         $path = $request->path();
         $message = new Message_relation;
         if ($current_user != "") {
-            $message_count = $message->getmessagecount($current_user->id);
+            $message_c = Message_relation::where('user_id', $current_user->id)->first();
+            if ($message_c != "") {
+                $message_count = $message_c->message_count;
+            } else {
+                $message_count = '';
+            }
             $skills = explode(" ", $current_user->skill);
             $licences = explode(" ", $current_user->licence);
+            // $current_count = $user->check_match_current_user($current_user->id);
+            // $current_count = $user->check_match_user($current_user->id);
             $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count];
         } else {
             $param = ['users' => $users];
         }
+        $user = new User;
+
         return view('top.index', $param);
     }
 }
