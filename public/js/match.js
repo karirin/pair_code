@@ -9,6 +9,30 @@ var user_age = $('.form .age').text(),
     user_workhistory_narrow = $('.form .workhistory_narrow').text();
 
 window.onload = function() {
+    switch (location.pathname) {
+        case "/top":
+        case "/user/test_login":
+            $('.sagasu')[0].setAttribute("style", 'background-color: antiquewhite;');
+            break;
+        case "/match/match":
+            $('.oaitekara')[0].setAttribute("style", 'background-color: antiquewhite;');
+            break;
+        case "/message/message_top":
+            $('.messe-ji')[0].setAttribute("style", 'background-color: antiquewhite;');
+            break;
+        case "/message/message":
+        case "/message/add":
+            $('.messe-ji')[0].setAttribute("style", 'background-color: antiquewhite;');
+            break;
+        case "/user/profile":
+            $('.profile')[0].setAttribute("style", 'background-color: antiquewhite;');
+            break;
+        case "/top":
+            $('.sagasu')[0].setAttribute("style", 'background-color: antiquewhite;');
+            break;
+    }
+
+    // 職種ごとで色分け
     for (i = 0; i < $('.match_user').length; i++) {
         switch ($('.match_user_occupation')[i].textContent) {
             case "ネットワークエンジニア":
@@ -49,15 +73,18 @@ window.onload = function() {
 // 編集ボタン押下時の処理
 $(document).on('click', '.profile_edit_btn', function() {
     scroll_position = $(window).scrollTop();
-    $('.profile_edit_btn').fadeOut();
-    $('.myprofile_count').fadeOut();
-    $('.follow_user').fadeOut();
+    // $('.profile_edit_btn').fadeOut();
+    // $('.myprofile_count').fadeOut();
+    // $('.follow_user').fadeOut();
+    $('.profile_edit_btn').hide();
+    $('.myprofile_count').hide();
+    $('.follow_user').hide();
     $('.comment').replaceWith('<textarea class="edit_comment form-control" type="text" name="user_comment" >' + user_comment);
     $('.profile_name').replaceWith('<input class="edit_name form-control" type="text" name="user_name" value="' + user_name + '">');
     $('.profile_name_narrow').replaceWith('<input class="edit_name form-control" type="text" name="user_name_narrow" value="' + user_name_narrow + '">');
     $('.form .age').replaceWith('<input class="edit_age form-control" type="number" name="user_age" value="' + user_age + '" style="width: 30%;display: inline-block;margin-right: 0.5rem;">');
     $('.form .age_narrow').replaceWith('<input class="edit_age form-control" type="number" name="user_age_narrow" value="' + user_age_narrow + '" style="width: 30%;display: inline-block;margin-right: 0.5rem;">');
-    $('.form .occupation').replaceWith('<select name="occupation" class="form-control edit_occupation" value="' + user_occupation + '"><option value="ネットワークエンジニア">ネットワークエンジニア</option><option value="Webエンジニア">Webエンジニア</option><option value="フロントエンドエンジニア">フロントエンドエンジニア</option><option value="インフラエンジニア">インフラエンジニア</option><option value="サーバーエンジニア">サーバーエンジニア</option><option value="データベースエンジニア">データベースエンジニア</option><option value="IoTエンジニア">IoTエンジニア</option><option value="制御・組み込みエンジニア">制御・組み込みエンジニア</option><option value="テストエンジニア">テストエンジニア</option><option value="その他">その他</option></select>');
+    $('.form .occupation').replaceWith('<select name="occupation" class="form-control edit_occupation" style="width: 126%;" value="' + user_occupation + '"><option value="ネットワークエンジニア">ネットワークエンジニア</option><option value="Webエンジニア">Webエンジニア</option><option value="フロントエンドエンジニア">フロントエンドエンジニア</option><option value="インフラエンジニア">インフラエンジニア</option><option value="サーバーエンジニア">サーバーエンジニア</option><option value="データベースエンジニア">データベースエンジニア</option><option value="IoTエンジニア">IoTエンジニア</option><option value="制御・組み込みエンジニア">制御・組み込みエンジニア</option><option value="テストエンジニア">テストエンジニア</option><option value="その他">その他</option></select>');
     $('.form .occupation_narrow').replaceWith('<select name="occupation_narrow" class="form-control edit_occupation" value="' + user_occupation_narrow + '"><option value="ネットワークエンジニア">ネットワークエンジニア</option><option value="Webエンジニア">Webエンジニア</option><option value="フロントエンドエンジニア">フロントエンドエンジニア</option><option value="インフラエンジニア">インフラエンジニア</option><option value="サーバーエンジニア">サーバーエンジニア</option><option value="データベースエンジニア">データベースエンジニア</option><option value="IoTエンジニア">IoTエンジニア</option><option value="制御・組み込みエンジニア">制御・組み込みエンジニア</option><option value="テストエンジニア">テストエンジニア</option><option value="その他">その他</option></select>');
     $(".form .edit_occupation option[value='" + user_occupation + "']").prop('selected', true);
     $('.form .address').replaceWith('<select name="address" class="form-control edit_address" value="' + user_address + '"><option value="北海道">北海道</option><option value="青森県">青森県</option><option value="岩手県">岩手県</option><option value="宮城県">宮城県</option><option value="秋田県">秋田県</option><option value="山形県">山形県</option><option value="福島県">福島県</option><option value="茨城県">茨城県</option><option value="栃木県">栃木県</option><option value="群馬県">群馬県</option><option value="埼玉県">埼玉県</option><option value="千葉県">千葉県</option><option value="東京都">東京都</option><option value="神奈川県">神奈川県</option><option value="新潟県">新潟県</option><option value="富山県">富山県</option><option value="石川県">石川県</option><option value="福井県">福井県</option><option value="山梨県">山梨県</option><option value="長野県">長野県</option><option value="岐阜県">岐阜県</option><option value="静岡県">静岡県</option><option value="愛知県">愛知県</option><option value="三重県">三重県</option><option value="滋賀県">滋賀県</option><option value="京都府">京都府</option><option value="大阪府">大阪府</option><option value="兵庫県">兵庫県</option><option value="奈良県">奈良県</option><option value="和歌山県">和歌山県</option><option value="鳥取県">鳥取県</option><option value="島根県">島根県</option><option value="岡山県">岡山県</option><option value="広島県">広島県</option><option value="山口県">山口県</option><option value="徳島県">徳島県</option><option value="香川県">香川県</option><option value="愛媛県">愛媛県</option><option value="高知県">高知県</option><option value="福岡県">福岡県</option><option value="佐賀県">佐賀県</option><option value="長崎県">長崎県</option><option value="熊本県">熊本県</option><option value="大分県">大分県</option><option value="宮崎県">宮崎県</option><option value="鹿児島県">鹿児島県</option><option value="沖縄県">沖縄県</option></select>');
@@ -71,10 +98,13 @@ $(document).on('click', '.profile_edit_btn', function() {
     $('.btn_flex').css('display', 'flex');
     $('.profile').addClass('editing');
     $('.form').css('display', 'inline-block');
-    $('.tag').fadeOut();
+    // $('.tag').fadeOut();
+    $('.tag').hide();
     $('.col-3').css('margin-top', '-2rem');
-    $('.edit_btns').fadeIn();
-    $('.profile_count').fadeOut();
+    // $('.edit_btns').fadeIn();
+    $('.edit_btns').show();
+    // $('.profile_count').fadeOut();
+    $('.profile_count').hide();
     $('.edit_workhistory').change(function() {
         var str = $('.edit_workhistory')[0].value.length;
         if (str < 100) {
@@ -94,14 +124,20 @@ $(document).on('click', ".profile_close", function() {
     $('.edit_profile_img').css('display', 'none');
     $('.btn_flex').css('display', 'none');
     $('.profile').removeClass('editing');
-    $('.profile_edit_btn').fadeIn();
-    $('.follow_user').fadeIn();
+    // $('.profile_edit_btn').fadeIn();
+    // $('.follow_user').fadeIn();
+    $('.profile_edit_btn').show();
+    $('.follow_user').show();
     $('.edit_btns').fadeOut();
     $('.col-3').css('margin-top', '0rem');
-    $('.myprofile_btn').fadeIn();
-    $('.form').fadeOut();
-    $('.tag').fadeIn();
-    $('.profile_count').fadeIn();
+    // $('.myprofile_btn').fadeIn();
+    $('.myprofile_btn').show();
+    // $('.form').fadeOut();
+    $('.form').hide();
+    // $('.tag').fadeIn();
+    $('.tag').show();
+    // $('.profile_count').fadeIn();
+    $('.profile_count').show();
 });
 
 $(document).on('click', ".profile_narrow_close", function() {

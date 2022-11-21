@@ -4,9 +4,9 @@
 @parent
 @endsection
 @section('content')
-@foreach ($message_relations as $message_relation)
-<div class="col-9">
+<div class="col-9" style="margin-left: 22%;">
     <h3 class="page_title">メッセージ</h3>
+    @foreach ($message_relations as $message_relation)
     <div class="message_list">
         <a href='message?user_id={{$message_relation->destination_user_id}}' id="message_link">
             <div class="destination_user_list">

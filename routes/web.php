@@ -28,6 +28,7 @@ Route::post('user/login', 'UserController@auth');
 Route::post('user/test_login', 'UserController@test_login');
 Route::get('user/add', 'UserController@add');
 Route::post('user/edit', 'UserController@edit');
+Route::get('user/profile', 'UserController@profile');
 
 Route::post('user/add', 'UserController@create');
 

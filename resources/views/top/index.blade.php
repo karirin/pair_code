@@ -6,7 +6,7 @@
 @endsection
 @section('content')
 @if (Auth::check())
-<div class="col-9 match_top">
+<div class="col-9 match_top" style="margin-left: 22%;">
     <h3 class="page_title">さがす</h3>
     @foreach ($users as $user)
     @if ($user->id != $current_user->id)

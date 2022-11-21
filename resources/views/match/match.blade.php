@@ -4,7 +4,7 @@
 @parent
 @endsection
 @section('content')
-<div class="col-9.5 match_top">
+<div class="col-9.5 match_top" style="margin-left: 22%;">
     <h3 class="page_title">お相手から</h3>
     @foreach ($users as $user)
     @if($user_class->check_match($current_user->id,$user->id))

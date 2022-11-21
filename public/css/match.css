@@ -54,11 +54,13 @@
 }
 
 .edit_profile_img .fa-image_range {
-    right: 45%;
+    right: 54%;
 }
 
 .edit_btns {
-    margin-top: 1rem;
+    margin-top: 7rem;
+    text-align: right;
+    margin-right: 4rem;
 }
 
 .edit_btns .profile_close {

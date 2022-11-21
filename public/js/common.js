@@ -272,27 +272,27 @@ $(document).on('click', ".modal_close", function() {
     $('.slide_menu').removeClass('open');
 });
 
-// 編集ボタン押下時の処理
-$(document).on('click', '.edit_btn', function() {
-    scroll_position = $(window).scrollTop();
-    $('.edit_btn').fadeOut();
-    $('body').addClass('fixed').css({ 'top': -scroll_position });
-    $('.comment').replaceWith('<textarea class="edit_comment form-control" type="text" name="user_comment" >' + user_comment);
-    $('.profile_name').replaceWith('<input class="edit_name form-control" type="text" name="user_name" value="' + user_name + '">');
-    $('.comment_narrow').replaceWith('<textarea class="edit_comment form-control" type="text" name="user_comment" >' + user_comment_narrow);
-    $('.profile_name_narrow').replaceWith('<input class="edit_name form-control" type="text" name="user_name" value="' + user_name_narrow + '">');
-    $('.comment_narrower').replaceWith('<textarea class="edit_comment form-control" type="text" name="user_comment" >' + user_comment_narrower);
-    $('.profile_name_narrower').replaceWith('<input class="edit_name form-control" type="text" name="user_name" value="' + user_name_narrower + '">');
-    $('.workhistory').replaceWith('<textarea class="edit_workhistory form-control" type="text" name="user_workhistory" >' + user_workhistory);
-    $('.workhistory_narrow').replaceWith('<textarea class="edit_workhistory_narrow form-control" type="text" name="user_workhistory" >' + user_workhistory_narrow);
-    $('.workhistory_narrower').replaceWith('<textarea class="edit_workhistory_narrower form-control" type="text" name="user_workhistory" >' + user_workhistory_narrower);
-    $('.mypage').css('display', 'none');
-    $('.edit_profile_img').css('display', 'inline-block');
-    $('.btn_flex').css('display', 'flex');
-    $('.profile').addClass('editing');
-    $('.form').css('display', 'inline-block');
-    $('.tag').fadeOut();
-});
+// // 編集ボタン押下時の処理
+// $(document).on('click', '.edit_btn', function() {
+//     scroll_position = $(window).scrollTop();
+//     $('.edit_btn').fadeOut();
+//     $('body').addClass('fixed').css({ 'top': -scroll_position });
+//     $('.comment').replaceWith('<textarea class="edit_comment form-control" type="text" name="user_comment" >' + user_comment);
+//     $('.profile_name').replaceWith('<input class="edit_name form-control" type="text" name="user_name" value="' + user_name + '">');
+//     $('.comment_narrow').replaceWith('<textarea class="edit_comment form-control" type="text" name="user_comment" >' + user_comment_narrow);
+//     $('.profile_name_narrow').replaceWith('<input class="edit_name form-control" type="text" name="user_name" value="' + user_name_narrow + '">');
+//     $('.comment_narrower').replaceWith('<textarea class="edit_comment form-control" type="text" name="user_comment" >' + user_comment_narrower);
+//     $('.profile_name_narrower').replaceWith('<input class="edit_name form-control" type="text" name="user_name" value="' + user_name_narrower + '">');
+//     $('.workhistory').replaceWith('<textarea class="edit_workhistory form-control" type="text" name="user_workhistory" >' + user_workhistory);
+//     $('.workhistory_narrow').replaceWith('<textarea class="edit_workhistory_narrow form-control" type="text" name="user_workhistory" >' + user_workhistory_narrow);
+//     $('.workhistory_narrower').replaceWith('<textarea class="edit_workhistory_narrower form-control" type="text" name="user_workhistory" >' + user_workhistory_narrower);
+//     $('.mypage').css('display', 'none');
+//     $('.edit_profile_img').css('display', 'inline-block');
+//     $('.btn_flex').css('display', 'flex');
+//     $('.profile').addClass('editing');
+//     $('.form').css('display', 'inline-block');
+//     $('.tag').fadeOut();
+// });
 
 // モーダル画面出力ボタン押下時の処理
 $(document).on('click', '.modal_btn', function() {

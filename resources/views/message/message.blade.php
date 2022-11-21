@@ -4,7 +4,7 @@
 @parent
 @endsection
 @section('content')
-<div class="col-9">
+<div class="col-9" style="margin-left: 22%;">
     <h3 class="page_title">メッセージ</h3>
     <div class="message">
         <h2 class="center">{{$destination_user->name}}</h2>

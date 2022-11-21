@@ -20,6 +20,8 @@ a:hover {
 
 body {
     background-color: #fdff8b0a;
+    height: 92%;
+    margin: 0;
 }
 
 body.top {
@@ -40,10 +42,6 @@ body.fixed {
 
 .row {
     margin: 0;
-}
-
-.col-4 {
-    text-align: center;
 }
 
 ul {
@@ -357,10 +355,10 @@ nav.navbar.navbar-dark {
 
 .footer {
     text-align: center;
-    padding: 0.5rem 0;
-    margin-top: 4rem;
+    padding: 1rem 0;
     background-color: burlywood;
     width: 103.12%;
+    height: 55px;
 }
 
 .footer a {
@@ -394,10 +392,12 @@ nav.navbar.navbar-dark {
 .new_mark {
     background-color: red;
     display: inline-block;
-    width: 6%;
-    height: 23%;
+    width: 2.5%;
+    height: 2%;
     vertical-align: text-top;
     border-radius: 100%;
+    position: absolute;
+    top: 53%;
 }
 
 .page_title {
@@ -405,6 +405,11 @@ nav.navbar.navbar-dark {
     line-height: 34px;
     font-weight: 800;
     margin-top: 3rem;
+}
+
+.content {
+    min-height: 95%;
+    margin-bottom: -16px;
 }
 
 
@@ -505,10 +510,11 @@ nav.navbar.navbar-dark {
 
 .editing_profile_img {
     opacity: 0.3;
-    width: 10rem;
-    height: 10rem;
+    width: 8rem;
+    height: 8rem;
     border-radius: 10rem;
     border: solid 0.3rem;
+    margin-top: 2.5rem;
 }
 
 .profile .editing_profile_img {
@@ -536,7 +542,7 @@ nav.navbar.navbar-dark {
 
 .edit_profile_img .far.fa-times-circle {
     top: 4%;
-    right: 60%;
+    right: 80%;
     z-index: 10;
     font-size: 3rem;
     color: black;
@@ -551,7 +557,7 @@ nav.navbar.navbar-dark {
     position: absolute;
     width: 3rem;
     height: 3rem;
-    top: 10.5%;
+    top: 20%;
     right: 26%;
     border-radius: 1rem;
 }
@@ -565,8 +571,7 @@ nav.navbar.navbar-dark {
 }
 
 .edit_profile_img .editing_profile_img {
-    margin-left: -2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.3rem;
 }
 
 .edit_comment.border_white {
@@ -627,9 +632,10 @@ img.mypage {
 
 .tag_tittle {
     text-decoration-color: #000;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
     font-size: 17px;
     font-weight: bold;
+    margin-top: 1rem;
 }
 
 .tag.tag_tittle:nth-child(2) {
@@ -1720,7 +1726,7 @@ img.my_preview {
 
 .edit_name {
     margin-top: -1.3rem;
-    margin-left: -10rem;
+    margin-left: -7.5rem;
     width: 118%;
 }
 
