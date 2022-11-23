@@ -53,14 +53,15 @@
     right: 47%;
 }
 
-.edit_profile_img .fa-image_range {
-    right: 54%;
-}
+
+/* .edit_profile_img .fa-image_range {
+    right: 70%;
+} */
 
 .edit_btns {
-    margin-top: 7rem;
-    text-align: right;
-    margin-right: 4rem;
+    position: fixed;
+    bottom: 15%;
+    right: 10%;
 }
 
 .edit_btns .profile_close {
@@ -95,7 +96,7 @@
     display: none;
     position: fixed;
     z-index: 15;
-    left: 50%;
+    left: 37%;
     border-radius: 8px;
     -webkit-transform: translate(-50%, -10%);
     transform: translate(-50%, -10%);
@@ -105,6 +106,29 @@
     width: 300px;
     height: auto;
     top: 20%;
+}
+
+.matchuser_detaile_prof {
+    display: none;
+    position: fixed;
+    z-index: 15;
+    left: 65%;
+    border-radius: 8px;
+    -webkit-transform: translate(-50%, -10%);
+    transform: translate(-50%, -10%);
+    font-size: 1.3rem;
+    background-color: #fefefb;
+    color: #000;
+    width: 300px;
+    height: auto;
+    top: 21.5%;
+}
+
+.matchuser_detaile_prof h6 {
+    padding: 0em 0.5em;
+    color: #494949;
+    background: transparent;
+    border-left: solid 5px #ff9800;
 }
 
 .matchuser_detaile .matchuser_name {
@@ -170,6 +194,22 @@
     transition: 1s;
     font-size: 1.25rem;
     border-radius: 8px;
+}
+
+.login_message {
+    padding: 0.5em 1em;
+    background: -moz-linear-gradient(#FFC107, #ff8b5f);
+    background: -webkit-linear-gradient(#FFC107, #ff8b5f);
+    background: linear-gradient(to right, #FFC107, #ff8b5f);
+    color: #FFF;
+    position: fixed;
+    left: 4%;
+    bottom: 10%;
+    transition: 1s;
+    font-size: 1.25rem;
+    border-radius: 8px;
+    z-index: 15;
+    display: none;
 }
 
 .match_message {
@@ -267,6 +307,22 @@
 
 .card .fas.fa-heart:hover {
     opacity: 0.5;
+}
+
+.card .match_card_color {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px 8px 0 0;
+    position: absolute;
+    background-color: #f4433652;
+}
+
+.card .unmatch_card_color {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px 8px 0 0;
+    position: absolute;
+    background-color: #3f51b547;
 }
 
 .matching_btn {

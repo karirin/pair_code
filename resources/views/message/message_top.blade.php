@@ -19,7 +19,7 @@
                             <span
                                 class="destination_user_text">{{@$message_relation->getNewmessage($current_user->id,$message_relation->destination_user_id)}}</span>
                             <span id="message_count">
-                                @if($message_count!=0){{@$message_relation->getNewmessagecount($current_user->id,$message_relation->destination_user_id)}}@elseif($message_count=='match')マッチしたユーザーにメッセージを送りましょう@endif
+                                @if($message_relation->message_count!=0){{@$message_relation->getNewmessagecount($current_user->id,$message_relation->destination_user_id)}}@elseif($message_relation->message_count=='match')マッチしたユーザーにメッセージを送りましょう@endif
                             </span>
                         </div>
                     </div>

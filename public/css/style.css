@@ -397,7 +397,7 @@ nav.navbar.navbar-dark {
     vertical-align: text-top;
     border-radius: 100%;
     position: absolute;
-    top: 53%;
+    top: 52%;
 }
 
 .page_title {
@@ -526,6 +526,12 @@ nav.navbar.navbar-dark {
     border: solid 0.3rem;
 }
 
+.profile_edit_btn {
+    position: absolute;
+    right: 10%;
+    bottom: 14%;
+}
+
 .edit_profile_img {
     width: 8rem;
     height: 8rem;
@@ -533,10 +539,10 @@ nav.navbar.navbar-dark {
 }
 
 .edit_profile_img .far.fa-image {
-    position: absolute;
     top: 33%;
     right: 35%;
     z-index: 10;
+    margin: 30%;
     color: rgb(0, 0, 0);
 }
 
@@ -554,10 +560,9 @@ nav.navbar.navbar-dark {
 }
 
 .edit_profile_img .fa-image_range {
-    position: absolute;
     width: 3rem;
     height: 3rem;
-    top: 20%;
+    top: 25%;
     right: 26%;
     border-radius: 1rem;
 }

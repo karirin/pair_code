@@ -8,6 +8,13 @@
 
 <form method="post" action="{{ asset('user/edit') }}" enctype="multipart/form-data">
     @csrf
+    <input type="hidden" name="current_name" value="{{$current_user->name}}">
+    <input type="hidden" name="current_age" value="{{$current_user->age}}">
+    <input type="hidden" name="current_occupation" value="{{$current_user->occupation}}">
+    <input type="hidden" name="current_address" value="{{$current_user->address}}">
+    <input type="hidden" name="current_skill" value="{{$current_user->skill}}">
+    <input type="hidden" name="current_licence" value="{{$current_user->licence}}">
+    <input type="hidden" name="current_workhistory" value="{{$current_user->workhistory}}">
     <div style="margin-left: 20%;width:100%;">
         <h3 class="page_title">プロフィール</h3>
         <div class="tag" style="display: block;">
@@ -31,7 +38,7 @@
                     </div>
                 </div>
                 <div class="col-9" style="margin-top: 1rem;margin-left: 1rem;">
-                    <div class="tags">
+                    <div class="tags" style="width: 60%;">
                         <div class="tag_skill" style="margin-bottom: 1rem;">
                             <p class="tag_tittle" style="margin-top: 0;">スキル</p>
                             @php
@@ -117,8 +124,8 @@
                     $k = 0;
                     @endphp
 
-                    <div id="myprofile_skill">@foreach($skills as $skill)@if($skill!='')@if(3 <= $k)<span
-                            id="child-span_myprofile" class="skill_tag extra" style="display: none;">
+                    <div id="myprofile_skill" style="width: 60%;">@foreach($skills as $skill)@if($skill!='')@if(3 <=
+                            $k)<span id="child-span_myprofile" class="skill_tag extra" style="display: none;">
                             {{$skill}}<label><input type="button" style="display:none;"><i
                                     class="far  fa-times-circle skill_myprofile"></i></label></span>
                             @else<span id="child-span_myprofile" class="skill_tag">{{$skill}}<label><input type="button"
@@ -132,7 +139,7 @@
                     <input type="hidden" name="skill_count" id="myprofile_skill_count">
                     <input type="hidden" name="myskills" value="{{$current_user->skill}}">
                     <p class="tag_tittle">取得資格</p>
-                    <div id="licence">
+                    <div id="licence" style="width: 60%;">
                         @php
                         $l = 0;
                         @endphp

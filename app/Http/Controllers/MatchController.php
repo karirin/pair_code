@@ -20,11 +20,12 @@ class MatchController extends Controller
         $skills = explode(" ", $current_user->skill);
         $licences = explode(" ", $current_user->licence);
         $message = new Message_relation;
-        $message_c = Message_relation::where('user_id', $current_user->id)->first();
-        if ($message_c != "") {
-            $message_count = $message_c->message_count;
-        } else {
-            $message_count = '';
+        $message_cs = Message_relation::where('user_id', $current_user->id)->get();
+        $message_count = 0;
+        foreach ($message_cs as $message_c) {
+            if ($message_c->message_count != 0 || $message_c->message_count == 'match') {
+                $message_count++;
+            }
         }
         $param = ['current_user' => $current_user, 'users' => $users, 'user_class' => $user_class, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count];
         return view('match.match', $param);
@@ -39,7 +40,7 @@ class MatchController extends Controller
             'matched_user_id' => $request->user_id,
         ];
         $user = new User;
-        DB::table('matches')->insert($param);
+        //DB::table('matches')->insert($param);
         $match = Match::where('matched_user_id', $current_user->id)->where('user_id', $request->user_id)->first();
         if (!empty($match)) {
             DB::table('message_relations')->insert(['user_id' => $current_user->id, 'destination_user_id' => $request->user_id]);
@@ -52,6 +53,6 @@ class MatchController extends Controller
     {
         $current_user = Auth::user();
         $users = User::get();
-        Match::where('user_id', $request->user_id)->where('matched_user_id', $current_user->id)->update(['unmatch_flg' => 1]);
+        //Match::where('user_id', $request->user_id)->where('matched_user_id', $current_user->id)->update(['unmatch_flg' => 1]);
     }
 }

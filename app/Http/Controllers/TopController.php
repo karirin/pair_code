@@ -23,11 +23,12 @@ class TopController extends Controller
         $path = $request->path();
         $message = new Message_relation;
         if ($current_user != "") {
-            $message_c = Message_relation::where('user_id', $current_user->id)->first();
-            if ($message_c != "") {
-                $message_count = $message_c->message_count;
-            } else {
-                $message_count = '';
+            $message_cs = Message_relation::where('user_id', $current_user->id)->get();
+            $message_count = 0;
+            foreach ($message_cs as $message_c) {
+                if ($message_c->message_count != 0 || $message_c->message_count == 'match') {
+                    $message_count++;
+                }
             }
             $skills = explode(" ", $current_user->skill);
             $licences = explode(" ", $current_user->licence);

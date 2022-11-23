@@ -18,14 +18,20 @@ class MessageController extends Controller
     {
         $current_user = Auth::user();
         $destination_user = User::find($request->user_id);
-        $message_c = new Message;
+        $message_class = new Message;
         $message_relation = new Message_relation;
         $messages = DB::select('select * from messages where ( user_id = ' . $current_user->id . ' and destination_user_id = ' . $destination_user->id . ' ) or ( user_id = ' . $destination_user->id . ' and destination_user_id = ' . $current_user->id . ' )');
         $skills = explode(" ", $current_user->skill);
         $licences = explode(" ", $current_user->licence);
-        $message_count = $message_relation->getmessagecount($current_user->id);
+        $message_cs = Message_relation::where('user_id', $current_user->id)->get();
+        $message_count = 0;
+        foreach ($message_cs as $message_c) {
+            if ($message_c->message_count != 0 || $message_c->message_count == 'match') {
+                $message_count++;
+            }
+        }
         Message_relation::where('destination_user_id', $request->user_id)->where('user_id', $current_user->id)->update(['message_count' => 0]);
-        $param = ['current_user' => $current_user, 'messages' => $messages, 'destination_user' => $destination_user, 'message_c' => $message_c, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count];
+        $param = ['current_user' => $current_user, 'messages' => $messages, 'destination_user' => $destination_user, 'message_class' => $message_class, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count];
 
         return view('message.message', $param);
     }
@@ -35,7 +41,7 @@ class MessageController extends Controller
         $this->validate($request, Message::$rules);
         $current_user = Auth::user();
         $destination_user = User::find($request->user_id);
-        $message_c = new Message;
+        $message_class = new Message;
         $message = new Message;
         $message->user_id = $request->current_user_id;
         $message->destination_user_id = $request->destination_user_id;
@@ -51,8 +57,15 @@ class MessageController extends Controller
         $messages = DB::select('select * from messages where ( user_id = ' . $current_user->id . ' and destination_user_id = ' . $destination_user->id . ' ) or ( user_id = ' . $destination_user->id . ' and destination_user_id = ' . $current_user->id . ' )');
         Message_relation::where('user_id', $request->user_id)->where('destination_user_id', $current_user->id)->increment('message_count', 1);
         $message_relation = new Message_relation;
-        $message_count = $message_relation->getmessagecount($current_user->id);
-        $param = ['current_user' => $current_user, 'destination_user' => $destination_user, 'messages' => $messages, 'message_c' => $message_c, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count];
+        $message_cs = Message_relation::where('user_id', $current_user->id)->get();
+        $message_count = 0;
+        foreach ($message_cs as $message_c) {
+            if ($message_c->message_count != 0 || $message_c->message_count == 'match') {
+                $message_count++;
+            }
+        }
+        log::debug($message_count);
+        $param = ['current_user' => $current_user, 'destination_user' => $destination_user, 'messages' => $messages, 'message_class' => $message_class, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count];
         return view('message.message', $param);
     }
 }

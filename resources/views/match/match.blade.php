@@ -11,6 +11,10 @@
     @if($user_class->check_unmatch($current_user->id,$user->id)==0)
     @if($user_class->check_matchs($current_user->id,$user->id)!=2)
     <div id="match{{$user->id}}" class="match_card card">
+        <span class="match_card_color" style="display:none;">
+            <i class="fa-regular fa-thumbs-up" style="margin:30% 0;font-size: 5rem;"></i></span>
+        <span class="unmatch_card_color" style="display:none;">
+            <i class="fa-regular fa-thumbs-up" style="margin:30% 0;font-size: 5rem;"></i></span>
         <img src="{{asset($user->image)}}">
         <label>
             <i class="far fa-times-circle profile_clear"></i>

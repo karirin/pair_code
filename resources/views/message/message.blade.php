@@ -13,7 +13,7 @@
             @if ($message->user_id === "$current_user->id")
             <div class="mycomment right">
                 <span class="message_created_at">
-                    {{@$message_c->convert_to_fuzzy_time($message->created_at)}}
+                    {{@$message_class->convert_to_fuzzy_time($message->created_at)}}
                 </span>
                 <p>{{$message->text}}
                     @if (!empty($message->image))
@@ -29,7 +29,7 @@
                     <img src="{{asset($message->image)}}">
                     @endif
                 </div><span
-                    class="message_created_at">{{@$message_c->convert_to_fuzzy_time($message->created_at)}}</span>
+                    class="message_created_at">{{@$message_class->convert_to_fuzzy_time($message->created_at)}}</span>
                 @endif
             </div>
             @endforeach

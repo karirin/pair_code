@@ -26,6 +26,7 @@
         </form>
     </div>
 </div>
+<p class="login_message">{{$message}}</p>
 @endsection
 @section('footer')
 @parent

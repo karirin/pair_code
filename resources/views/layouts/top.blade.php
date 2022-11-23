@@ -33,8 +33,7 @@
             </li>
             <li class="header_menu"><a href="{{ asset('message/message_top') }}" class="messe-ji"
                     style="vertical-align: middle;">
-                    @if($message_count==''&&$message_count!=0||$message_count=='match')<i
-                        class="fas fa-comment"></i><span class="new_mark"></span><span
+                    @if($message_count!=0)<i class="fas fa-comment"></i><span class="new_mark"></span><span
                         style="margin-left: 2.3rem">メッセージ　</spna>@else<i class="fas fa-comment"
                             style="margin-right: 2rem;font-size: 1.5rem;"></i>メッセージ　@endif
                 </a></li>
@@ -83,6 +82,16 @@
                 <input type="hidden" class="user_id">
                 <input type="hidden" class="matchs_flg">
             </div>
+        </div>
+    </div>
+    <div class="matchuser_detaile_prof">
+        <div style="padding: 1rem;">
+            <h6>スキル</h6>
+            <div class="matchuser_skill"></div>
+            <h6 style="margin-top: 1rem;">資格</h6>
+            <span class="matchuser_licence"></span>
+            <h6 style="margin-top: 1rem;">職歴</h6>
+            <span class=" matchuser_workhistory"></span>
         </div>
     </div>
     @if (Auth::check())

@@ -68,6 +68,11 @@ window.onload = function() {
             default:
         }
     }
+
+    if ($('.login_message')[0].textContent !== "") {
+        $('.login_message').fadeIn();
+        $('.login_message').fadeOut(1000);
+    }
 }
 
 // 編集ボタン押下時の処理
@@ -84,7 +89,7 @@ $(document).on('click', '.profile_edit_btn', function() {
     $('.profile_name_narrow').replaceWith('<input class="edit_name form-control" type="text" name="user_name_narrow" value="' + user_name_narrow + '">');
     $('.form .age').replaceWith('<input class="edit_age form-control" type="number" name="user_age" value="' + user_age + '" style="width: 30%;display: inline-block;margin-right: 0.5rem;">');
     $('.form .age_narrow').replaceWith('<input class="edit_age form-control" type="number" name="user_age_narrow" value="' + user_age_narrow + '" style="width: 30%;display: inline-block;margin-right: 0.5rem;">');
-    $('.form .occupation').replaceWith('<select name="occupation" class="form-control edit_occupation" style="width: 126%;" value="' + user_occupation + '"><option value="ネットワークエンジニア">ネットワークエンジニア</option><option value="Webエンジニア">Webエンジニア</option><option value="フロントエンドエンジニア">フロントエンドエンジニア</option><option value="インフラエンジニア">インフラエンジニア</option><option value="サーバーエンジニア">サーバーエンジニア</option><option value="データベースエンジニア">データベースエンジニア</option><option value="IoTエンジニア">IoTエンジニア</option><option value="制御・組み込みエンジニア">制御・組み込みエンジニア</option><option value="テストエンジニア">テストエンジニア</option><option value="その他">その他</option></select>');
+    $('.form .occupation').replaceWith('<select name="occupation" class="form-control edit_occupation" style="width: 90%;" value="' + user_occupation + '"><option value="ネットワークエンジニア">ネットワークエンジニア</option><option value="Webエンジニア">Webエンジニア</option><option value="フロントエンドエンジニア">フロントエンドエンジニア</option><option value="インフラエンジニア">インフラエンジニア</option><option value="サーバーエンジニア">サーバーエンジニア</option><option value="データベースエンジニア">データベースエンジニア</option><option value="IoTエンジニア">IoTエンジニア</option><option value="制御・組み込みエンジニア">制御・組み込みエンジニア</option><option value="テストエンジニア">テストエンジニア</option><option value="その他">その他</option></select>');
     $('.form .occupation_narrow').replaceWith('<select name="occupation_narrow" class="form-control edit_occupation" value="' + user_occupation_narrow + '"><option value="ネットワークエンジニア">ネットワークエンジニア</option><option value="Webエンジニア">Webエンジニア</option><option value="フロントエンドエンジニア">フロントエンドエンジニア</option><option value="インフラエンジニア">インフラエンジニア</option><option value="サーバーエンジニア">サーバーエンジニア</option><option value="データベースエンジニア">データベースエンジニア</option><option value="IoTエンジニア">IoTエンジニア</option><option value="制御・組み込みエンジニア">制御・組み込みエンジニア</option><option value="テストエンジニア">テストエンジニア</option><option value="その他">その他</option></select>');
     $(".form .edit_occupation option[value='" + user_occupation + "']").prop('selected', true);
     $('.form .address').replaceWith('<select name="address" class="form-control edit_address" value="' + user_address + '"><option value="北海道">北海道</option><option value="青森県">青森県</option><option value="岩手県">岩手県</option><option value="宮城県">宮城県</option><option value="秋田県">秋田県</option><option value="山形県">山形県</option><option value="福島県">福島県</option><option value="茨城県">茨城県</option><option value="栃木県">栃木県</option><option value="群馬県">群馬県</option><option value="埼玉県">埼玉県</option><option value="千葉県">千葉県</option><option value="東京都">東京都</option><option value="神奈川県">神奈川県</option><option value="新潟県">新潟県</option><option value="富山県">富山県</option><option value="石川県">石川県</option><option value="福井県">福井県</option><option value="山梨県">山梨県</option><option value="長野県">長野県</option><option value="岐阜県">岐阜県</option><option value="静岡県">静岡県</option><option value="愛知県">愛知県</option><option value="三重県">三重県</option><option value="滋賀県">滋賀県</option><option value="京都府">京都府</option><option value="大阪府">大阪府</option><option value="兵庫県">兵庫県</option><option value="奈良県">奈良県</option><option value="和歌山県">和歌山県</option><option value="鳥取県">鳥取県</option><option value="島根県">島根県</option><option value="岡山県">岡山県</option><option value="広島県">広島県</option><option value="山口県">山口県</option><option value="徳島県">徳島県</option><option value="香川県">香川県</option><option value="愛媛県">愛媛県</option><option value="高知県">高知県</option><option value="福岡県">福岡県</option><option value="佐賀県">佐賀県</option><option value="長崎県">長崎県</option><option value="熊本県">熊本県</option><option value="大分県">大分県</option><option value="宮崎県">宮崎県</option><option value="鹿児島県">鹿児島県</option><option value="沖縄県">沖縄県</option></select>');
@@ -163,14 +168,19 @@ $(document).on('click', ".match_user", function() {
     var $target_modal = $(this).data("target");
     $('.modal_match').fadeIn();
     $('.matchuser_detaile').fadeIn();
+    $('.matchuser_detaile_prof').fadeIn();
     $('.matchuser_detaile .matchuser_img').attr('src', $($target_modal + ' > .match_user_img')[0].getAttribute('src'));
     $('.matchuser_detaile .matchuser_name').replaceWith('<div class="matchuser_name">' + $($target_modal + ' > .match_user_name')[0].value + '</div>');
     $('.matchuser_detaile .matchuser_age').replaceWith('<span class="matchuser_age">' + $($target_modal + ' > .match_user_profile > div > .match_user_age').text() + '</span>');
     $('.matchuser_detaile .matchuser_address').replaceWith('<span class="matchuser_address">' + $($target_modal + ' > .match_user_address')[0].value + '</span>');
     $('.matchuser_detaile .matchuser_profile').replaceWith('<div class="matchuser_profile">' + $($target_modal + ' > .match_user_profile > .match_user_prof').text() + '</div>');
     $('.matchuser_detaile .matchuser_occupation').replaceWith('<span class="matchuser_occupation">' + $($target_modal + ' > .match_user_occupation')[0].value + '</span>');
+    $('.matchuser_detaile_prof .matchuser_skill').replaceWith('<span id="child-span_myprofile" class="matchuser_skill" style="font-size: 1rem;">' + $($target_modal + ' > .match_user_skill')[0].value + '</span>');
+    $('.matchuser_detaile_prof .matchuser_licence').replaceWith('<span id="child-span_myprofile" class="matchuser_licence" style="font-size: 1rem;">' + $($target_modal + '  > .match_user_licence')[0].value + '</span>');
+    $('.matchuser_detaile_prof .matchuser_workhistory').replaceWith('<span class="matchuser_workhistory" style="font-size: 1rem;">' + $($target_modal + ' > .match_user_workhistory')[0].value + '</span>');
     $('.matchuser_detaile .user_id').val($($target_modal + ' > .match_user_id')[0].value);
     $('.matchuser_detaile .matchs_flg').val($($target_modal + ' > .matchs_flg')[0].value);
+    $('.matchuser_detaile_prof').fadeIn();
     if ($($target_modal + ' > .match_flg')[0].value != 0) {
         $('.match_good_btn').hide();
     } else {
@@ -182,12 +192,14 @@ $(document).on('click', ".match_user", function() {
 $(document).on('click', ".modal_match", function() {
     $('.modal_match').fadeOut();
     $('.matchuser_detaile').fadeOut();
+    $('.matchuser_detaile_prof').fadeOut();
 });
 
 // モーダル画面の×印をクリック
 $(document).on('click', ".far.fa-times-circle", function() {
     $('.modal_match').fadeOut();
     $('.matchuser_detaile').fadeOut();
+    $('.matchuser_detaile_prof').fadeOut();
 });
 
 // いいねをクリックしたとき
@@ -218,7 +230,10 @@ $(document).on('click', ".match_good_btn", function() {
             $('.match_message').text(user_name + 'さんとマッチしました！');
             $('.match_message').fadeOut(5000);
             $('.fas.fa-comment').css('margin-right', '');
-            $('.fas.fa-comment').after('<span class="new_mark"></span>');
+            if (!$('.new_mark').length) {
+                $('.fas.fa-comment').after('<span class="new_mark"></span>');
+                $('.new_mark').after('<span style="margin-left: 2rem;"></span>');
+            }
         }
         match_good_btn.fadeOut();
     }).fail(function() {});
@@ -237,9 +252,16 @@ $(document).on('click', '#match_btn', function() {
         card = $('.match_card:last')[0],
         user_id = card.id.substr(5, 2),
         user_name = $('#' + card.id + ' > .profile_name').text();
-    $(card).animate({
-        "marginLeft": "758px"
-    }).fadeOut().removeClass('match_card');
+    $('#' + card.id + ' > .match_card_color').fadeIn();
+    $(function() {
+        setInterval(function() {
+            $(card)[0].animate({
+                "marginLeft": "200px",
+                transform: 'rotate(100deg)'
+            }, 1000);
+            $(card).fadeOut().removeClass('match_card');
+        }, 1000);
+    });
     $.ajax({
         type: 'POST',
         url: '/ajax_match_process',
@@ -253,7 +275,10 @@ $(document).on('click', '#match_btn', function() {
         $('.match_message').text(user_name + 'さんとマッチしました！');
         $('.match_message').fadeOut(5000);
         $('.fas.fa-comment').css('margin-right', '');
-        $('.fas.fa-comment').after('<span class="new_mark"></span>');
+        if (!$('.new_mark').length) {
+            $('.fas.fa-comment').after('<span class="new_mark"></span>');
+            $('.new_mark').after('<span style="margin-left: 2rem;"></span>');
+        }
     }).fail(function() {});
 });
 
@@ -267,9 +292,16 @@ $(document).on('click', '#unmatch_btn', function() {
         target_modal = $(this).data("target"),
         card = $('.match_card:last')[0],
         user_id = card.id.substr(5, 2);
-    $(card).animate({
-        "marginRight": "758px"
-    }).fadeOut().removeClass('match_card');
+    $('#' + card.id + ' > .unmatch_card_color').fadeIn();
+    $(function() {
+        setInterval(function() {
+            $(card)[0].animate({
+                "marginLeft": "-200px",
+                transform: 'rotate(-100deg)'
+            }, 1000);
+            $(card).fadeOut().removeClass('match_card');
+        }, 1000);
+    });
     $.ajax({
         type: 'POST',
         url: '/ajax_unmatch_process',
