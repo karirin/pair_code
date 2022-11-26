@@ -35,7 +35,8 @@ class Message_relationController extends Controller
                 $message_count++;
             }
         }
-        $param = ['current_user' => $current_user, 'users' => $users, 'message_relations' => $message_relations, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count];
+        $message_class = new Message;
+        $param = ['current_user' => $current_user, 'users' => $users, 'message_relations' => $message_relations, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'message_class' => $message_class];
         return view('message.message_top', $param);
     }
 }

@@ -32,9 +32,7 @@ class TopController extends Controller
             }
             $skills = explode(" ", $current_user->skill);
             $licences = explode(" ", $current_user->licence);
-            // $current_count = $user->check_match_current_user($current_user->id);
-            // $current_count = $user->check_match_user($current_user->id);
-            $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count];
+            $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'top_message' => ''];
         } else {
             $param = ['users' => $users];
         }

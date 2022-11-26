@@ -25,8 +25,10 @@
                     </div>
 
                     <div class="col-3">
-                        <!-- <span
-                                class="new_message_time">< convert_to_fuzzy_time($new_message['created_at']); ?></span> -->
+                        @if(@$message_class->convert_to_fuzzy_time($message_relation->getNewcreated_at($current_user->id,$message_relation->destination_user_id))!="1970年1月1日")
+                        <span
+                            class="new_message_time">{{@$message_class->convert_to_fuzzy_time($message_relation->getNewcreated_at($current_user->id,$message_relation->destination_user_id))}}</span>
+                        @endif
                     </div>
                 </div>
         </a>

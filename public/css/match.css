@@ -12,12 +12,13 @@
     line-height: initial;
     margin-right: 1.7rem;
     margin-bottom: 3rem;
+    margin-right: 1.4rem;
 }
 
 .match_top .match_user_img {
     border-radius: 10rem;
-    width: 12rem;
-    height: 12rem;
+    width: 10rem;
+    height: 10rem;
 }
 
 .match_top .match_user_profile {
@@ -29,14 +30,15 @@
 }
 
 .match_top .match_user_occupation {
+    font-size: 0.3rem;
     font-weight: 700;
-    font-size: 12px;
     padding: 4px 6px;
     border-radius: 2px;
 }
 
 .match_top .match_user_age {
-    font-size: 15px;
+    font-size: 0.8rem;
+    font-weight: 900;
 }
 
 .edit_address {
@@ -196,23 +198,10 @@
     border-radius: 8px;
 }
 
-.login_message {
-    padding: 0.5em 1em;
-    background: -moz-linear-gradient(#FFC107, #ff8b5f);
-    background: -webkit-linear-gradient(#FFC107, #ff8b5f);
-    background: linear-gradient(to right, #FFC107, #ff8b5f);
-    color: #FFF;
-    position: fixed;
-    left: 4%;
-    bottom: 10%;
-    transition: 1s;
-    font-size: 1.25rem;
-    border-radius: 8px;
-    z-index: 15;
-    display: none;
-}
-
-.match_message {
+.login_message,
+.match_message,
+.top_message,
+.add_message {
     padding: 0.5em 1em;
     background: -moz-linear-gradient(#FFC107, #ff8b5f);
     background: -webkit-linear-gradient(#FFC107, #ff8b5f);
@@ -282,7 +271,7 @@
 .card img {
     width: 100%;
     height: 100%;
-    border-radius: 8px 8px 0 0;
+    border-radius: 8px;
 }
 
 .card .comment {
@@ -312,17 +301,17 @@
 .card .match_card_color {
     width: 100%;
     height: 100%;
-    border-radius: 8px 8px 0 0;
+    border-radius: 8px;
     position: absolute;
-    background-color: #f4433652;
+    background-color: #f3483ca8;
 }
 
 .card .unmatch_card_color {
     width: 100%;
     height: 100%;
-    border-radius: 8px 8px 0 0;
+    border-radius: 8px;
     position: absolute;
-    background-color: #3f51b547;
+    background-color: #6b81febd;
 }
 
 .matching_btn {

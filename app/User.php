@@ -7,6 +7,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Notifications\Notifiable;
+use App\Models\SocialUser;
+use Socialite;
 
 class User extends Authenticatable
 {
@@ -35,6 +37,43 @@ class User extends Authenticatable
         'password' => 'required'
     );
 
+    public function socialUsers()
+    {
+        return $this->hasMany(SocialUser::class);
+    }
+
+    public function callback()
+    {
+        $providerUser = Socialite::driver('Twitter')->user();
+
+        // 既に存在するユーザーかを確認
+        $socialUser = SocialUser::where('provider_user_id', $providerUser->id)->first();
+
+        if ($socialUser) {
+            // 既存のユーザーはログインしてトップページへ
+            Auth::login($socialUser->user, true);
+            return redirect('/');
+        }
+
+        // 新しいユーザーを作成
+        $user = new User();
+        $user->unique_id = $providerUser->nickname;
+        $user->name = $providerUser->name;
+        $user->avatar = $providerUser->user['profile_image_url_https'];
+        $user->bio = $providerUser->user['description'];
+
+        $socialUser = new SocialUser();
+        $socialUser->provider_user_id = $providerUser->id;
+
+        DB::transaction(function () use ($user, $socialUser) {
+            $user->save();
+            $user->socialUsers()->save($socialUser);
+        });
+
+        Auth::login($user, true);
+        return redirect('/');
+    }
+
     /**
      * The attributes that should be cast to native types.
      *
@@ -43,6 +82,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function check_user($name, $password)
+    {
+        $user_flg = DB::select('select * from users where name = ' . $name . ' and password = ' . $password);
+        return count($user_flg);
+    }
 
     public function check_match($user_id, $current_user_id)
     {

@@ -45,7 +45,7 @@ class MatchController extends Controller
         if (!empty($match)) {
             DB::table('message_relations')->insert(['user_id' => $current_user->id, 'destination_user_id' => $request->user_id]);
             DB::table('message_relations')->insert(['destination_user_id' => $current_user->id, 'user_id' => $request->user_id]);
-            Message_relation::where('destination_user_id', $request->user_id)->where('user_id', $current_user->id)->update(['message_count' => "match"]);;
+            Message_relation::where('destination_user_id', $request->user_id)->where('user_id', $current_user->id)->orwhere('user_id', $request->user_id)->where('destination_user_id', $current_user->id)->update(['message_count' => "match"]);;
         }
     }
 
@@ -53,6 +53,6 @@ class MatchController extends Controller
     {
         $current_user = Auth::user();
         $users = User::get();
-        //Match::where('user_id', $request->user_id)->where('matched_user_id', $current_user->id)->update(['unmatch_flg' => 1]);
+        Match::where('user_id', $request->user_id)->where('matched_user_id', $current_user->id)->update(['unmatch_flg' => 1]);
     }
 }

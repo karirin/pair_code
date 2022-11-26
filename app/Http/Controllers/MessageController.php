@@ -64,7 +64,6 @@ class MessageController extends Controller
                 $message_count++;
             }
         }
-        log::debug($message_count);
         $param = ['current_user' => $current_user, 'destination_user' => $destination_user, 'messages' => $messages, 'message_class' => $message_class, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count];
         return view('message.message', $param);
     }

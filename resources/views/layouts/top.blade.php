@@ -50,13 +50,13 @@
     @else
     <nav class="navbar navbar-dark">
         <ul class="main_ul">
-            <li class="top_link">
+            <li class="top_link" style="margin: 0 auto 0 0;">
                 <a sytle="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('top') }}" class="top_link_header">Pair
                     Code</a>
             </li>
-            <li class="header"><a href="{{ asset('user/login') }}" style="vertical-align: middle;"><i
+            <li class="header" style="margin: 0;"><a href="{{ asset('user/login') }}" style="vertical-align: middle;"><i
                         class="fas fa-sign-in-alt" style="margin-right: 0.5rem;"></i>ログイン</a></li>
-            <li class="header"><a href="{{ asset('user/add') }}" style="vertical-align: middle;"><i
+            <li class="header" style="margin: 0;"><a href="{{ asset('user/add') }}" style="vertical-align: middle;"><i
                         class="fas fa-user-plus" style="margin-right: 0.5rem;"></i>新規登録</a></li>
         </ul>
     </nav>
@@ -109,6 +109,7 @@
             <input type="hidden" name="current_skill" value="{{$current_user->skill}}">
             <input type="hidden" name="current_licence" value="{{$current_user->licence}}">
             <input type="hidden" name="current_workhistory" value="{{$current_user->workhistory}}">
+            <input type="hidden" class="match_user_btn" value>
             <div class="profile">
                 <div class="edit_profile_img">
                     <label>

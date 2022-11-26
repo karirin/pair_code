@@ -38,4 +38,10 @@ class Message_relation extends Model
         $new_message_count = DB::select('select message_count from message_relations where user_id = ' . $current_user_id);
         return $new_message_count[0]->message_count;
     }
+
+    public function getNewcreated_at($current_user_id, $destination_user_id)
+    {
+        $new_message = DB::select('select created_at from messages where (user_id = ' . $current_user_id . ' and destination_user_id = ' . $destination_user_id . ') or (user_id = ' . $current_user_id  . ' and destination_user_id = ' . $destination_user_id . ') ORDER BY created_at DESC');
+        return $new_message[0]->created_at;
+    }
 }

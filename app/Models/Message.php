@@ -22,6 +22,7 @@ class Message extends Model
     //  作成時間を～前で表示する
     public function convert_to_fuzzy_time($time_db)
     {
+        log::debug($time_db);
         ini_set("date.timezone", "Asia/Tokyo");
         $unix = strtotime($time_db);
         $date = new DateTime();

@@ -65,13 +65,13 @@
             </div>
         </div>
     </div>
-    </body>
-    @endsection
-    @section('footer')
-    @parent
-    @endsection
-    <script>
-    $(window).on('load', function() {
-        $('html, body').scrollTop($(document).height());
-    });
-    </script>
+</div>
+@endsection
+@section('footer')
+@parent
+@endsection
+<script>
+$(window).on('load', function() {
+    $('html, body').scrollTop($(document).height());
+});
+</script>

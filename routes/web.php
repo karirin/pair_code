@@ -32,7 +32,11 @@ Route::get('user/profile', 'UserController@profile');
 
 Route::post('user/add', 'UserController@create');
 
+Route::post('user/edit_detail', 'UserController@edit_detail');
+
 Route::get('user/logout', 'UserController@logout')->name('logout');
+
+Route::get('user/skip', 'UserController@skip');
 
 Route::get('match/match', 'MatchController@index');
 
@@ -69,6 +73,11 @@ Route::resource('rest', 'RestappController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::prefix('auth')->group(function () {
+    Route::get('twitter', 'AuthController@login');
+    Route::get('twitter/callback', 'AuthController@callback');
+});
 
 // Route::post('hello', 'HelloController@post');
 // Route::get('hello', 'HelloController@index');

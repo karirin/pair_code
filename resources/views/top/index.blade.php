@@ -37,6 +37,7 @@
     @endif
     @endforeach
 </div>
+<p class="top_message">{{$top_message}}</p>
 @else
 <div class="description">
     <span>

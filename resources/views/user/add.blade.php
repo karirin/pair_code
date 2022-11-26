@@ -6,7 +6,7 @@
 @section('content')
 <div class="row">
     <div class="col-6 offset-3 center">
-        <h2>新規登録</h2>
+        <h2 style="margin-top: 2rem;">新規登録</h2>
         <form method="post" action="{{ asset('user/add') }}" enctype="multipart/form-data">
             @csrf
             <div class="user_title">ユーザー名</div>
@@ -37,11 +37,12 @@
 
             <div class="flex_btn margin_top">
                 <input class="btn btn-outline-info" type="button" onclick="history.back()" value="戻る">
-                <input class="btn btn-outline-dark submit_btn" type="submit" value="登録">
+                <input class="btn btn-outline-dark submit_btn" type="submit" value="次へ">
             </div>
         </form>
     </div>
 </div>
+<p class="add_message">{{$add_message}}</p>
 @endsection
 @section('footer')
 @parent

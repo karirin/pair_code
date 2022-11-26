@@ -80,7 +80,7 @@
                     </div>
                     <div class="background" style="margin-bottom: 1rem;">
                         <p class="tag_tittle">職歴</p>
-                        <p class="user_workhistory">{{$current_user->workhistory}}</p>
+                        <p class="user_workhistory" style="width: 70%;">{{$current_user->workhistory}}</p>
                     </div>
                 </div>
             </div>
@@ -88,11 +88,11 @@
                     class="btn btn btn-outline-dark profile_edit_btn" type="button" name="follow">プロフィール編集</button>
             </div>
         </div>
-        <div class="form">
+        <div class="form" style="width: 100%;">
             <div class="row">
                 <div class="col-3">
                     <div class="edit_profile_img">
-                        <label>
+                        <label style="position: absolute;margin: 25% 13%;">
                             <div class="fa-image_range">
                                 <i class="far fa-image"></i>
                             </div>
@@ -106,14 +106,14 @@
                     </div>
                     <h3 class="profile_name">{{$current_user->name}}</h3>
                     <div class="user_age">
-                        <p class="tag_tittle">年齢</p>
+                        <p class="tag_tittle" style="margin-top: 0.5rem;">年齢</p>
                         <div class="age">{{$current_user->age}}</div>歳
                     </div>
-                    <div class="user_address" style="margin-top: 0.5rem;">
+                    <div class="user_address">
                         <p class="tag_tittle" style="display: inline-block;">住所</p>
                         <div class="address">{{$current_user->address}}</div>
                     </div>
-                    <div class="user_occupation" style="margin-top: 0.5rem;">
+                    <div class="user_occupation">
                         <p class="tag_tittle" style="display: inline-block;">職種</p>
                         <div class="occupation">{{$current_user->occupation}}</div>
                     </div>

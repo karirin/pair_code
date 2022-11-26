@@ -6,7 +6,7 @@
 @section('content')
 <div class="row">
     <div class="col-6 offset-3 center">
-        <h2>ログイン</h2>
+        <h2 style="margin-top: 2rem;">ログイン</h2>
         <form action="/user/login" method="post">
             @csrf
             <div class="user_title">ユーザー名</div>
@@ -24,8 +24,13 @@
                 <input class="btn btn-outline-dark submit_btn" type="submit" value="ログイン">
             </div>
         </form>
+        <a href="/auth/twitter" class="btn-social-long-twitter">
+            <i class="fa-brands fa-twitter" style="margin-right: 1rem;"></i> <span>Twitterでログイン</span>
+        </a>
     </div>
+
 </div>
+
 <p class="login_message">{{$message}}</p>
 @endsection
 @section('footer')

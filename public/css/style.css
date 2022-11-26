@@ -20,7 +20,7 @@ a:hover {
 
 body {
     background-color: #fdff8b0a;
-    height: 92%;
+    height: 91%;
     margin: 0;
 }
 
@@ -69,11 +69,6 @@ ul li a {
 
 ul li a:hover {
     background-color: antiquewhite;
-}
-
-ul.main_ul li:hover {
-    background-color: #dbe3f1;
-    border-radius: 1rem;
 }
 
 ul li.top_link {
@@ -357,8 +352,7 @@ nav.navbar.navbar-dark {
     text-align: center;
     padding: 1rem 0;
     background-color: burlywood;
-    width: 103.12%;
-    height: 55px;
+    height: 60px;
 }
 
 .footer a {
@@ -410,6 +404,47 @@ nav.navbar.navbar-dark {
 .content {
     min-height: 95%;
     margin-bottom: -16px;
+}
+
+.btn-social-long-twitter:hover {
+    color: #FFF;
+}
+
+
+/* Twitterログインボタン */
+
+.btn-social-long-twitter .fa-twitter {
+    font-size: 15px!important;
+}
+
+.btn-social-long-twitter {
+    color: #FFF;
+    display: inline-block;
+    text-align: center;
+    font-size: 15px;
+    overflow: hidden;
+    text-decoration: none;
+    background: hsla(0, 0%, 62%, .2);
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+    background-color: #55acee;
+    direction: ltr;
+    font-weight: 900;
+    padding: 5px 30px 5px 15px;
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.btn-social-long-twitter .fa-twitter {
+    font-size: 30px;
+}
+
+.btn-social-long-twitter span {
+    display: inline-block;
+    transition: .5s;
+}
+
+.btn-social-long-twitter:hover {
+    opacity: 0.8;
 }
 
 
@@ -640,7 +675,7 @@ img.mypage {
     margin-bottom: 0px;
     font-size: 17px;
     font-weight: bold;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 
 .tag.tag_tittle:nth-child(2) {
@@ -1731,7 +1766,7 @@ img.my_preview {
 
 .edit_name {
     margin-top: -1.3rem;
-    margin-left: -7.5rem;
+    margin-left: -8.5rem;
     width: 118%;
 }
 
