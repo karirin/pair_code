@@ -303,7 +303,8 @@
     height: 100%;
     border-radius: 8px;
     position: absolute;
-    background-color: #f3483ca8;
+    background-color: #ff948cdb;
+    color: #FFF;
 }
 
 .card .unmatch_card_color {
@@ -311,7 +312,8 @@
     height: 100%;
     border-radius: 8px;
     position: absolute;
-    background-color: #6b81febd;
+    background-color: #666768db;
+    color: #FFF;
 }
 
 .matching_btn {

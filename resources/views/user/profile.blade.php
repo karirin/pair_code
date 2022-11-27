@@ -5,7 +5,6 @@
 @parent
 @endsection
 @section('content')
-
 <form method="post" action="{{ asset('user/edit') }}" enctype="multipart/form-data">
     @csrf
     <input type="hidden" name="current_name" value="{{$current_user->name}}">
@@ -16,10 +15,21 @@
     <input type="hidden" name="current_licence" value="{{$current_user->licence}}">
     <input type="hidden" name="current_workhistory" value="{{$current_user->workhistory}}">
     <div style="margin-left: 20%;width:100%;">
+        <div id="splash">
+            <div style="background-color: #fdff8b0a;width: 100%;height: 100%;">
+                <div id="splash_logo">
+                    <div class="spinner-border" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+                <!--画像部分は適宜差し換えてください-->
+                <!--/splash-->
+            </div>
+        </div>
         <h3 class="page_title">プロフィール</h3>
         <div class="tag" style="display: block;">
             <div class="row">
-                <div class="col-2">
+                <div class="col-3">
                     <img src="{{asset($current_user->image)}}" class="mypage" style="margin-top: 1rem;">
                     <h3 class="profile_name_prof">{{$current_user->name}}</h3>
                     <input type="hidden" class="current_user_id" value="{{$current_user->id}}">
@@ -37,7 +47,7 @@
                         <div class="user_occupation">{{$current_user->occupation}}</div>
                     </div>
                 </div>
-                <div class="col-9" style="margin-top: 1rem;margin-left: 1rem;">
+                <div class="col-8" style="margin-top: 1rem;margin-left: 1rem;">
                     <div class="tags" style="width: 60%;">
                         <div class="tag_skill" style="margin-bottom: 1rem;">
                             <p class="tag_tittle" style="margin-top: 0;">スキル</p>

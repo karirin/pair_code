@@ -40,4 +40,54 @@ class TopController extends Controller
 
         return view('top.index', $param);
     }
+
+    public function privacy_poricy(Request $request)
+    {
+        $current_user = Auth::user();
+        $users = User::get();
+        $path = $request->path();
+        $message = new Message_relation;
+        if ($current_user != "") {
+            $message_cs = Message_relation::where('user_id', $current_user->id)->get();
+            $message_count = 0;
+            foreach ($message_cs as $message_c) {
+                if ($message_c->message_count != 0 || $message_c->message_count == 'match') {
+                    $message_count++;
+                }
+            }
+            $skills = explode(" ", $current_user->skill);
+            $licences = explode(" ", $current_user->licence);
+            $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'top_message' => ''];
+        } else {
+            $param = ['users' => $users];
+        }
+        $user = new User;
+
+        return view('privacy_poricy', $param);
+    }
+
+    public function terms_of_service(Request $request)
+    {
+        $current_user = Auth::user();
+        $users = User::get();
+        $path = $request->path();
+        $message = new Message_relation;
+        if ($current_user != "") {
+            $message_cs = Message_relation::where('user_id', $current_user->id)->get();
+            $message_count = 0;
+            foreach ($message_cs as $message_c) {
+                if ($message_c->message_count != 0 || $message_c->message_count == 'match') {
+                    $message_count++;
+                }
+            }
+            $skills = explode(" ", $current_user->skill);
+            $licences = explode(" ", $current_user->licence);
+            $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'top_message' => ''];
+        } else {
+            $param = ['users' => $users];
+        }
+        $user = new User;
+
+        return view('terms_of_service', $param);
+    }
 }

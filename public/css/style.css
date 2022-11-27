@@ -376,7 +376,6 @@ nav.navbar.navbar-dark {
 
 .privacy_policy_title {
     text-align: center;
-    margin-top: 3rem;
 }
 
 .privacy_policy {
@@ -445,6 +444,59 @@ nav.navbar.navbar-dark {
 
 .btn-social-long-twitter:hover {
     opacity: 0.8;
+}
+
+
+/* Loading背景画面設定　*/
+
+#splash {
+    /*fixedで全面に固定*/
+    position: fixed;
+    width: 100%;
+    height: 84%;
+    z-index: 999;
+    background-color: #fff;
+    text-align: center;
+    color: #fff;
+}
+
+
+/* Loading画像中央配置　*/
+
+#splash_logo {
+    position: absolute;
+    top: 40%;
+    left: 36%;
+    transform: translate(-50%, -50%);
+    color: #000;
+}
+
+
+/* Loading アイコンの大きさ設定　*/
+
+#splash_logo img {
+    width: 260px;
+}
+
+
+/* fadeUpをするアイコンの動き */
+
+.fadeUp {
+    animation-name: fadeUpAnime;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeUpAnime {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 

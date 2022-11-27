@@ -7,6 +7,15 @@
 @section('content')
 @if (Auth::check())
 <div class="col-9 match_top" style="margin-left: 22%;">
+    <div id="splash" style="height: 100%;">
+        <div style="background-color: #fdff8b0a;width: 100%;height: 100%;">
+            <div id="splash_logo">
+                <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
     <h3 class="page_title">さがす</h3>
     @foreach ($users as $user)
     @if ($user->id != $current_user->id)
@@ -30,6 +39,7 @@
             <input type="hidden" class="match_user_skill" value="{{$user->skill}}">
             <input type="hidden" class="match_user_licence" value="{{$user->licence}}">
             <input type="hidden" class="match_user_workhistory" value="{{$user->workhistory}}">
+            <input type="hidden" class="click_flg" value>
             <img src="{{$user->image}}" class="match_user_img" style="display:none;">
         </div>
     </div>

@@ -5,6 +5,17 @@
 @endsection
 @section('content')
 <div class="col-9" style="margin-left: 22%;">
+    <div id="splash">
+        <div style="background-color: #fdff8b0a;width: 100%;height: 100%;">
+            <div id="splash_logo">
+                <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+            <!--画像部分は適宜差し換えてください-->
+            <!--/splash-->
+        </div>
+    </div>
     <h3 class="page_title">メッセージ</h3>
     @foreach ($message_relations as $message_relation)
     <div class="message_list">
