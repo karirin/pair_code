@@ -11,7 +11,6 @@ var user_age = $('.form .age').text(),
 window.onload = function() {
     $("#splash").delay(100).fadeOut('slow'); //ローディング画面を1.5秒（1500ms）待機してからフェードアウト
     $("#splash_logo").delay(100).fadeOut('slow'); //ロゴを1.2秒（1200ms）待機してからフェードアウト
-
     $("#splash-logo").delay(1200).fadeOut('slow'); //ロゴを1.2秒でフェードアウトする記述
 
     //=====ここからローディングエリア（splashエリア）を1.5秒でフェードアウトした後に動かしたいJSをまとめる
@@ -205,6 +204,7 @@ $(document).on('click', ".match_user", function() {
     $('.matchuser_detaile_prof').fadeIn();
     $('.matchuser_detaile .matchuser_img').attr('src', $($target_modal + ' > .match_user_img')[0].getAttribute('src'));
     $('.matchuser_detaile .matchuser_name').replaceWith('<div class="matchuser_name">' + $($target_modal + ' > .match_user_name')[0].value + '</div>');
+    console.log($($target_modal + ' > .match_user_profile > div > .match_user_age').text());
     $('.matchuser_detaile .matchuser_age').replaceWith('<span class="matchuser_age">' + $($target_modal + ' > .match_user_profile > div > .match_user_age').text() + '</span>');
     $('.matchuser_detaile .matchuser_address').replaceWith('<span class="matchuser_address">' + $($target_modal + ' > .match_user_address')[0].value + '</span>');
     $('.matchuser_detaile .matchuser_profile').replaceWith('<div class="matchuser_profile">' + $($target_modal + ' > .match_user_profile > .match_user_prof').text() + '</div>');

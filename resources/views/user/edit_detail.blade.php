@@ -113,7 +113,7 @@
     <div class="flex_btn margin_top" style="margin: 0 32%;width: 35%;">
         <input class="btn btn-outline-info" type="button" onclick="history.back()" value="戻る">
         <a class="skip_btn"
-            href="/user/skip?name={{$name}}&password={{$password}}&hash_password={{$hash_password}}&$image={{$image}}">スキップ</a>
+            href="/user/skip?name={{$name}}&password={{$password}}&hash_password={{$hash_password}}&image={{$image}}">スキップ</a>
         <input class="btn btn-outline-dark edit_done" type="submit" value="登録">
     </div>
     <input type="hidden" name="name" value="{{$name}}">

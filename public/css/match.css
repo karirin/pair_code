@@ -233,7 +233,6 @@
 .card {
     width: 25%;
     height: 50%;
-    display: inline-block;
     position: absolute;
     left: 45%;
     right: 0;

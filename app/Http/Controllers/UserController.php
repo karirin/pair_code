@@ -19,7 +19,8 @@ class UserController extends Controller
 
     public function add(Request $request)
     {
-        return view('user.add');
+        $add_message = '';
+        return view('user.add', ['add_message' => $add_message]);
     }
 
     protected function create(Request $request)
@@ -28,20 +29,18 @@ class UserController extends Controller
         // $user = new User;
         // $user_flg = $user->check_user($request->name, $request->password);
         $user_flg = User::where('name', $request->name)->first();
-        log::debug($user_flg);
         if ($user_flg != '') {
             $add_message = 'すでに存在するユーザー名です';
             return view('user.add', ['add_message' => $add_message]);
         } else {
             if ($request->file('image') != '') {
-                $dir = 'sample';
                 $file_name = $request->file('image')->getClientOriginalName();
-                $request->file('image')->storeAs('public/' . $dir, $file_name);
+                $request->file('image')->storeAs('public/sample', $file_name);
                 $param = [
                     'name' => $request->name,
                     'password' => $request->password,
                     'hash_password' => Hash::make($request->password),
-                    'image' => $request->file('image')->storeAs('storage/' . $dir, $file_name),
+                    'image' => 'storage/sample/'.$file_name,
                 ];
             } else {
                 $param = [
@@ -228,8 +227,12 @@ class UserController extends Controller
     public function edit(Request $request)
     {
         $current_user = Auth::user();
-
         $current_user->name = $request->user_name;
+        if($request->file('image_name')!=''){
+        $file_name = $request->file('image_name')->getClientOriginalName();
+        $request->file('image_name')->storeAs('public/sample', $file_name);
+        $current_user->image = 'storage/sample/'.$file_name;
+        }
         $current_user->age = $request->user_age;
         $current_user->occupation = $request->occupation;
         $current_user->address = $request->address;

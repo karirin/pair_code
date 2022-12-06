@@ -14,7 +14,7 @@
     <input type="hidden" name="current_skill" value="{{$current_user->skill}}">
     <input type="hidden" name="current_licence" value="{{$current_user->licence}}">
     <input type="hidden" name="current_workhistory" value="{{$current_user->workhistory}}">
-    <div style="margin-left: 20%;width:100%;">
+    <div style="margin-left: 20%;width:100%;display: inline-block;">
         <div id="splash">
             <div style="background-color: #fdff8b0a;width: 100%;height: 100%;">
                 <div id="splash_logo">
@@ -55,8 +55,7 @@
                             $i = 0;
                             @endphp
                             @foreach ($skills as $skill)@if($skill!='')
-                            @if (3 <= $i) <span id="child-span_myprofile" class="skill_tag extra"
-                                style="display: none;">
+                            @if (3 <= $i) <span id="child-span_myprofile" class="skill_tag extra" style="display: none;">
                                 {{$skill}}</span>
                                 @else
                                 <span id="child-span_myprofile" class="skill_tag">{{$skill}}</span>
@@ -94,15 +93,15 @@
                     </div>
                 </div>
             </div>
-            <div class="myprofile_btn" style="text-align: right;width: 67%;"> <button
-                    class="btn btn btn-outline-dark profile_edit_btn" type="button" name="follow">プロフィール編集</button>
-            </div>
+        </div>
+        <div class="myprofile_btn" style="position: fixed;bottom: 15%;right: 0%;width:100%;">
+            <button class="btn btn btn-outline-dark profile_edit_btn" type="button" name="follow">プロフィール編集</button>
         </div>
         <div class="form" style="width: 100%;">
             <div class="row">
                 <div class="col-3">
                     <div class="edit_profile_img">
-                        <label style="position: absolute;margin: 25% 13%;">
+                        <label style="position: absolute;margin: 25% 13%;z-index: 10;">
                             <div class="fa-image_range">
                                 <i class="far fa-image"></i>
                             </div>
@@ -134,13 +133,9 @@
                     $k = 0;
                     @endphp
 
-                    <div id="myprofile_skill" style="width: 60%;">@foreach($skills as $skill)@if($skill!='')@if(3 <=
-                            $k)<span id="child-span_myprofile" class="skill_tag extra" style="display: none;">
-                            {{$skill}}<label><input type="button" style="display:none;"><i
-                                    class="far  fa-times-circle skill_myprofile"></i></label></span>
-                            @else<span id="child-span_myprofile" class="skill_tag">{{$skill}}<label><input type="button"
-                                        style="display:none;"><i
-                                        class="far  fa-times-circle skill_myprofile"></i></label></span>
+                    <div id="myprofile_skill" style="width: 60%;">@foreach($skills as $skill)@if($skill!='')@if(3 <= $k)<span id="child-span_myprofile" class="skill_tag extra" style="display: none;">
+                            {{$skill}}<label><input type="button" style="display:none;"><i class="far  fa-times-circle skill_myprofile"></i></label></span>
+                            @else<span id="child-span_myprofile" class="skill_tag">{{$skill}}<label><input type="button" style="display:none;"><i class="far  fa-times-circle skill_myprofile"></i></label></span>
                             @endif@php$k++@endphp@endif
                             @endforeach
                     </div><i class="fas fa-plus myprofile_skill_btn"></i>
@@ -153,12 +148,8 @@
                         @php
                         $l = 0;
                         @endphp
-                        @foreach ($licences as $licence)@if($licence!='')@if(3 <= $l)<span id="child-span"
-                            class="licence_tag extra" style="display: none;">{{$licence}}<label><input type="button"
-                                    style="display:none;"><i
-                                    class="far fa-times-circle licence"></i></label></span>@else
-                            <span id="child-span" class="licence_tag">{{$licence}}<label><input type="button"
-                                        style="display:none;"><i class="far fa-times-circle licence"></i></label></span>
+                        @foreach ($licences as $licence)@if($licence!='')@if(3 <= $l)<span id="child-span" class="licence_tag extra" style="display: none;">{{$licence}}<label><input type="button" style="display:none;"><i class="far fa-times-circle licence"></i></label></span>@else
+                            <span id="child-span" class="licence_tag">{{$licence}}<label><input type="button" style="display:none;"><i class="far fa-times-circle licence"></i></label></span>
                             @endif
                             @endif
                             @php

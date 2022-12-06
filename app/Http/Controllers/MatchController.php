@@ -40,12 +40,31 @@ class MatchController extends Controller
             'matched_user_id' => $request->user_id,
         ];
         $user = new User;
-        //DB::table('matches')->insert($param);
-        $match = Match::where('matched_user_id', $current_user->id)->where('user_id', $request->user_id)->first();
+        DB::table('matches')->insert($param);
+        //$sql = Match::where('matched_user_id', $current_user->id)->where('user_id', $request->user_id)->toSql();
+        //$match = Match::where('matched_user_id', $current_user->id)->where('user_id', $request->user_id)->first();
+        $match = DB::select('select * from matches where matched_user_id= ' . $current_user->id . ' and user_id = ' . $request->user_id);
+        log::debug($match);
+        log::debug($request->user_id); //22
+        log::debug($current_user->id); //1
         if (!empty($match)) {
             DB::table('message_relations')->insert(['user_id' => $current_user->id, 'destination_user_id' => $request->user_id]);
             DB::table('message_relations')->insert(['destination_user_id' => $current_user->id, 'user_id' => $request->user_id]);
-            Message_relation::where('destination_user_id', $request->user_id)->where('user_id', $current_user->id)->orwhere('user_id', $request->user_id)->where('destination_user_id', $current_user->id)->update(['message_count' => "match"]);;
+            // DB::table('matches')
+            //     ->where('matched_user_id', $request->user_id)
+            //     ->where('user_id', $current_user->id)
+            //     ->update(['match_flg' => '1']);
+            DB::table('matches')
+                ->where('matched_user_id', $current_user->id)
+                ->where('user_id', $request->user_id)
+                ->update(['match_flg' => '1']);
+            //->toSql();
+            //log::debug($sql);
+
+            //->update(['match_flg' => '1']);
+            //Match::where('matched_user_id', $request->user_id)->where('user_id', $current_user->id)->update(['match_flg' => "1"]);
+            //Match::where('matched_user_id', $current_user->id)->where('user_id', $request->user_id)->update(['match_flg' => "1"]);
+            Message_relation::where('destination_user_id', $request->user_id)->where('user_id', $current_user->id)->orwhere('user_id', $request->user_id)->where('destination_user_id', $current_user->id)->update(['message_count' => "match"]);
         }
     }
 

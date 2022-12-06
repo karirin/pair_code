@@ -158,6 +158,10 @@ nav.navbar.navbar-dark {
     color: rgb(184, 184, 184);
 }
 
+.fa-solid.fa-angle-left:hover {
+    opacity: 0.5;
+}
+
 .margin_top {
     margin-top: 1rem;
 }
@@ -352,7 +356,7 @@ nav.navbar.navbar-dark {
     text-align: center;
     padding: 1rem 0;
     background-color: burlywood;
-    height: 60px;
+    height: 55px;
 }
 
 .footer a {
@@ -401,7 +405,7 @@ nav.navbar.navbar-dark {
 }
 
 .content {
-    min-height: 95%;
+    min-height: 93.8%;
     margin-bottom: -16px;
 }
 
@@ -453,7 +457,7 @@ nav.navbar.navbar-dark {
     /*fixedで全面に固定*/
     position: fixed;
     width: 100%;
-    height: 84%;
+    height: 86%;
     z-index: 999;
     background-color: #fff;
     text-align: center;
@@ -464,9 +468,9 @@ nav.navbar.navbar-dark {
 /* Loading画像中央配置　*/
 
 #splash_logo {
-    position: absolute;
+    position: fixed;
     top: 40%;
-    left: 36%;
+    left: 55%;
     transform: translate(-50%, -50%);
     color: #000;
 }

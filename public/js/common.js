@@ -136,9 +136,9 @@ $(document).on('change', '#my_image', function() {
 $(document).on('change', '#edit_profile_img,#edit_profile_img_narrow,#edit_profile_img_narrower', function() {
     $('.far.fa-times-circle.profile_clear').show();
     $(document).on('click', '#profile_clear', function() {
-        $('#edit_profile_img,#edit_profile_img_narrow,#edit_profile_img_narrower').val('');
+        $('#edit_profile_img,#edit_profile_img_narrow,#edit_profile_img_narrower').hide();
         $('.far.fa-times-circle.profile_clear').hide();
-        $('.editing_profile_img').hide();
+        $('.editing_profile_img').attr('src','');
     });
 });
 

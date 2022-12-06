@@ -27,7 +27,6 @@ class AuthController extends Controller
         if ($socialUser) {
             // 既存のユーザーはログインしてトップページへ
             Auth::login($socialUser->user, true);
-            log::debug($socialUser);
             return redirect('/top');
         }
 
@@ -35,9 +34,8 @@ class AuthController extends Controller
         $user = new User();
         $user->unique_id = $providerUser->nickname;
         $user->name = $providerUser->name;
-        $user->image = $providerUser->user['profile_image_url_https'];
+        $user->image = 'https://twitars.now.sh/'.$providerUser->id.'/original';
         $user->workhistory = $providerUser->user['description'];
-
         $socialUser = new SocialUser();
         $socialUser->provider_user_id = $providerUser->id;
 

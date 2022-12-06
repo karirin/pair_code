@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Notifications\Notifiable;
 
 class Match extends Model
-{    
+{
+    protected $table = 'matches';
 
+    protected $guarded = array('id');
 }

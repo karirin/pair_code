@@ -5,53 +5,37 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/match.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
+<body style="height: auto;">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @section('header')
     @if (Auth::check())
     @if(request()->path()!='privacy_poricy' && request()->path()!='terms_of_service')
     <div style="position: fixed;">
         <ul>
-            <li class="top_link" style="margin-top: -2rem;">
+            <li class="top_link">
                 <a sytle="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('top') }}" class="top_link_header_login">Pair
                     Code</a>
             </li>
-            <li class="top_link prof_page"><a class="prof_modal" href="#"><img src="{{asset($current_user->image)}}"
-                        class="user_image"></a></li>
-            <li class="header_menu_wide" style="margin-top: 4rem;"><a href="{{ asset('top') }}" class="sagasu"
-                    style="vertical-align: middle;"><i class="fa-solid fa-magnifying-glass"
-                        style="margin-right: 2rem;font-size: 1.5rem;"></i>さがす　　　</a>
+            <li class="top_link prof_page"><a class="prof_modal" href="#"><img src="{{asset($current_user->image)}}" class="user_image"></a></li>
+            <li class="header_menu_wide" style="margin-top: 4rem;"><a href="{{ asset('top') }}" class="sagasu" style="vertical-align: middle;"><i class="fa-solid fa-magnifying-glass" style="margin-right: 2rem;font-size: 1.5rem;"></i>さがす　　　</a>
             </li>
-            <li class="header_menu_wide"><a href="{{ asset('match/match') }}" class="oaitekara"
-                    style="vertical-align: middle;"><i class="fas fa-thumbs-up"
-                        style="margin-right: 2rem;font-size: 1.5rem;"></i><span class="new_match_mark"
-                        style="display: none;"></span>お相手から　</a>
+            <li class="header_menu_wide"><a href="{{ asset('match/match') }}" class="oaitekara" style="vertical-align: middle;"><i class="fas fa-thumbs-up" style="margin-right: 2rem;font-size: 1.5rem;"></i><span class="new_match_mark" style="display: none;"></span>お相手から　</a>
             </li>
-            <li class="header_menu"><a href="{{ asset('message/message_top') }}" class="messe-ji"
-                    style="vertical-align: middle;">
-                    @if($message_count!=0)<i class="fas fa-comment"></i><span class="new_mark"></span><span
-                        style="margin-left: 2.3rem">メッセージ　</spna>@else<i class="fas fa-comment"
-                            style="margin-right: 2rem;font-size: 1.5rem;"></i>メッセージ　@endif
+            <li class="header_menu"><a href="{{ asset('message/message_top') }}" class="messe-ji" style="vertical-align: middle;">
+                    @if($message_count!=0)<i class="fas fa-comment"></i><span class="new_mark"></span><span style="margin-left: 2.3rem">メッセージ　</spna>@else<i class="fas fa-comment" style="margin-right: 2rem;font-size: 1.5rem;"></i>メッセージ　@endif
                 </a></li>
-            <li class="header_menu"><a href="{{ asset('user/profile') }}" class="profile"
-                    style="vertical-align: middle;"><i class="fa-regular fa-circle-user"></i><span
-                        style="margin-left: 2.2rem">プロフィール</spna>
+            <li class="header_menu"><a href="{{ asset('user/profile') }}" class="profile" style="vertical-align: middle;"><i class="fa-regular fa-circle-user"></i><span style="margin-left: 2.2rem">プロフィール</spna>
                 </a></li>
-            <li class="header_menu_wide" class="roguauto" style="vertical-align: middle;"><a
-                    href="{{ asset('user/logout') }}" style="vertical-align: middle;"><i class="fas fa-sign-out-alt"
-                        style="margin-right: 2rem;font-size: 1.5rem;"></i>ログアウト　</a>
+            <li class="header_menu_wide" class="roguauto" style="vertical-align: middle;"><a href="{{ asset('user/logout') }}" style="vertical-align: middle;"><i class="fas fa-sign-out-alt" style="margin-right: 2rem;font-size: 1.5rem;"></i>ログアウト　</a>
             </li>
             @else
             <div>
                 <ul>
                     <li class="top_link">
-                        <a sytle="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('top') }}"
-                            class="top_link_header_login">Pair
+                        <a sytle="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('top') }}" class="top_link_header_login">Pair
                             Code</a>
                     </li>
                     @endif
@@ -64,12 +48,8 @@
                         <a sytle="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('top') }}" class="top_link_header">Pair
                             Code</a>
                     </li>
-                    <li class="header" style="margin: 0;"><a href="{{ asset('user/login') }}"
-                            style="vertical-align: middle;"><i class="fas fa-sign-in-alt"
-                                style="margin-right: 0.5rem;"></i>ログイン</a></li>
-                    <li class="header" style="margin: 0;"><a href="{{ asset('user/add') }}"
-                            style="vertical-align: middle;"><i class="fas fa-user-plus"
-                                style="margin-right: 0.5rem;"></i>新規登録</a></li>
+                    <li class="header" style="margin: 0;"><a href="{{ asset('user/login') }}" style="vertical-align: middle;"><i class="fas fa-sign-in-alt" style="margin-right: 0.5rem;"></i>ログイン</a></li>
+                    <li class="header" style="margin: 0;"><a href="{{ asset('user/add') }}" style="vertical-align: middle;"><i class="fas fa-user-plus" style="margin-right: 0.5rem;"></i>新規登録</a></li>
                 </ul>
             </nav>
             @endif
@@ -127,8 +107,7 @@
                                 <div class="fa-image_range">
                                     <i class="far fa-image"></i>
                                 </div>
-                                <input type="file" name="image_name" id="edit_profile_img_narrower" accept="image/*"
-                                    multiple>
+                                <input type="file" name="image_name" id="edit_profile_img_narrower" accept="image/*" multiple>
                             </label>
                             <img name="profile_image" class="editing_profile_img" src="{{asset($current_user->image)}}">
                             <label>
@@ -139,8 +118,7 @@
                         <img src="{{asset($current_user->image)}}" class="mypage">
                         <h3 class="profile_name_narrow">{{$current_user->name}}</h3>
                         <input type="hidden" name="id" class="user_id" value="{{$current_user->id}}">
-                        <input type="file" name="image" class="image" value="{{asset($current_user->image)}}"
-                            style="display:none;">
+                        <input type="file" name="image" class="image" value="{{asset($current_user->image)}}" style="display:none;">
                         <div class="tag">
                             <div class="age">
                                 <p class="tag_tittle">年齢</p>
@@ -161,8 +139,7 @@
                                     $i = 0;
                                     @endphp
                                     @foreach ($skills as $skill)@if($skill!='' )
-                                    @if (3 <= $i)<span id="child-span_narrow" class="skill_tag extra"
-                                        style="display: none;">
+                                    @if (3 <= $i)<span id="child-span_narrow" class="skill_tag extra" style="display: none;">
                                         {{$skill}}</span>
                                         @else
                                         <span id="child-span_narrow" class="skill_tag">{{$skill}}</span>
@@ -181,8 +158,7 @@
                                     @endphp
                                     @foreach ($licences as $licence)
                                     @if($licence!='')
-                                    @if (3 <= $j) <span id="child-span_narrow" class="licence_tag extra"
-                                        style="display: none;">
+                                    @if (3 <= $j) <span id="child-span_narrow" class="licence_tag extra" style="display: none;">
                                         {{$licence}}</span>
                                         @else
                                         <span id="child-span_narrow" class="licence_tag">{{$licence}}</span>
@@ -201,8 +177,7 @@
                             </div>
                         </div>
                         <div class="myprofile_btn">
-                            <button class="btn btn btn-outline-dark profile_edit_btn" type="button"
-                                name="follow">プロフィール編集</button>
+                            <button class="btn btn btn-outline-dark profile_edit_btn" type="button" name="follow">プロフィール編集</button>
                         </div>
                     </div>
                     <div class="form" style="margin:0;text-align:left;">
@@ -226,11 +201,7 @@
                             @foreach ($skills as $skill)
                             @if($skill!='')
                             @if (3 <= $k) <span id="child-span_narrow" class="skill_tag extra" style="display: none;">
-                                {$skill}}<label><input type="button" style="display:none;"><i
-                                        class="far  fa-times-circle skill_narrow"></i></label></span>@else<span
-                                    id="child-span_narrow" class="skill_tag">{{$skill}}<label><input type="button"
-                                            style="display:none;"><i
-                                            class="far  fa-times-circle skill_narrow"></i></label></span>
+                                {$skill}}<label><input type="button" style="display:none;"><i class="far  fa-times-circle skill_narrow"></i></label></span>@else<span id="child-span_narrow" class="skill_tag">{{$skill}}<label><input type="button" style="display:none;"><i class="far  fa-times-circle skill_narrow"></i></label></span>
                                 @endif
                                 @endif
                                 @php
@@ -251,14 +222,10 @@
                                 @endphp
                                 @foreach ($licences as $licence)
                                 @if($licence!='')
-                                @if (3 <= $l) <span id="child-span_narrow" class="licence_tag extra"
-                                    style="display: none;">
-                                    {{$licence}}<label><input type="button" style="display:none;"><i
-                                            class="far fa-times-circle licence"></i></label></span>
+                                @if (3 <= $l) <span id="child-span_narrow" class="licence_tag extra" style="display: none;">
+                                    {{$licence}}<label><input type="button" style="display:none;"><i class="far fa-times-circle licence"></i></label></span>
                                     @else
-                                    <span id="child-span_narrow" class="licence_tag">{{$licence}}<label><input
-                                                type="button" style="display:none;"><i
-                                                class="far fa-times-circle licence"></i></label></span>
+                                    <span id="child-span_narrow" class="licence_tag">{{$licence}}<label><input type="button" style="display:none;"><i class="far fa-times-circle licence"></i></label></span>
                                     @endif
                                     @endif
                                     @php
@@ -281,8 +248,7 @@
                         </div>
                         <div class="btn_flex">
                             <button class="btn btn-outline-info profile_close" type="button">閉じる</button>
-                            <button class="btn btn-outline-dark profile_narrow_close" type="button"
-                                style="width: 100%;">閉じる</button>
+                            <button class="btn btn-outline-dark profile_narrow_close" type="button" style="width: 100%;">閉じる</button>
                             <input type="submit" class="btn btn-outline-dark edit_done" value="編集完了">
                         </div>
                     </div>
@@ -293,8 +259,7 @@
     <p class="match_message">
     </p>
     <div class="footer">
-        <a href="https://forms.gle/eLx24ykodQaRKqiV9">お問い合わせ</a> / <a
-            href="{{ asset('privacy_poricy') }}">プライバシーポリシー</a> / <a href="{{ asset('terms_of_service') }}">利用規約</a> /
+        <a href="https://forms.gle/eLx24ykodQaRKqiV9">お問い合わせ</a> / <a href="{{ asset('privacy_poricy') }}">プライバシーポリシー</a> / <a href="{{ asset('terms_of_service') }}">利用規約</a> /
         <a href="https://twitter.com/karirin3948">Twitter</a>
     </div>
     <script src=" https://code.jquery.com/jquery-3.4.1.min.js "></script>

@@ -4,10 +4,11 @@
 @parent
 @endsection
 @section('content')
-<div class="col-9" style="margin-left: 22%;">
-    <h3 class="page_title">メッセージ</h3>
-    <div class="message">
-        <h2 class="center">{{$destination_user->name}}</h2>
+<div class="col-9" style="margin-left: 22%;display: inline-block;">
+    <div style="background-color:#ffffffb0;width: 100%;height: 10%;position: fixed;z-index: 10;">
+        <div style="position: fixed;width: 100%;height: 10%;z-index: 10;font-size: 2rem;padding: 0.8rem 0rem;"><a href="{{ asset('message/message_top') }}" style="color: #000;"><i class="fa-solid fa-angle-left" style="margin-right: 1rem;vertical-align: text-top;font-size:2.2rem;"></i></a>{{$destination_user->name}}</div>
+    </div>
+    <div class="message" style="margin-top: 5rem;">
         @foreach ($messages as $message)
         <div class="my_message">
             @if ($message->user_id === "$current_user->id")
@@ -28,19 +29,16 @@
                     @if (!empty($message->image))
                     <img src="{{asset($message->image)}}">
                     @endif
-                </div><span
-                    class="message_created_at">{{@$message_class->convert_to_fuzzy_time($message->created_at)}}</span>
+                </div><span class="message_created_at">{{@$message_class->convert_to_fuzzy_time($message->created_at)}}</span>
                 @endif
             </div>
             @endforeach
 
-            <div class="message_process">
-                <form method="post" action="/message/add?user_id={{$destination_user->id}}"
-                    enctype="multipart/form-data">
+            <div class="message_process" style="margin-bottom: 2rem;">
+                <form method="post" action="/message/add?user_id={{$destination_user->id}}" enctype="multipart/form-data">
                     @csrf
                     <div class="message_text">
-                        <textarea id="message_counter" class="textarea form-control" placeholder="メッセージを入力ください"
-                            name="text"></textarea>
+                        <textarea id="message_counter" class="textarea form-control" placeholder="メッセージを入力ください" name="text"></textarea>
                         <div class="counter">
                             <span class="message_count">0</span><span>/300</span>
                         </div>
@@ -54,8 +52,7 @@
                                 <input type="file" name="image" id="my_image" accept="image/*" multiple>
                             </label>
                         </div>
-                        <button class="btn btn-outline-primary" type="submit" name="post" value="post"
-                            id="post">送信</button>
+                        <button class="btn btn-outline-primary" type="submit" name="post" value="post" id="post">送信</button>
                     </div>
                     <div class="message_image_detail">
                         <div><img class="my_preview"></div>
@@ -69,9 +66,9 @@
 @endsection
 @section('footer')
 @parent
-@endsection
 <script>
-$(window).on('load', function() {
-    $('html, body').scrollTop($(document).height());
-});
+    $(window).on('load', function() {
+        $('html, body').scrollTop($(document).height());
+    });
 </script>
+@endsection

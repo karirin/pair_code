@@ -4,18 +4,12 @@
 @parent
 @endsection
 @section('content')
-<div class="col-9" style="margin-left: 22%;">
-    <div id="splash">
-        <div style="background-color: #fdff8b0a;width: 100%;height: 100%;">
-            <div id="splash_logo">
-                <div class="spinner-border" role="status">
-                    <span class="sr-only">Loading...</span>
-                </div>
-            </div>
-            <!--画像部分は適宜差し換えてください-->
-            <!--/splash-->
-        </div>
+<div id="splash_logo">
+    <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
     </div>
+</div>
+<div class="col-9 message_top" style="margin-left: 22%;margin-bottom: 1.5rem;display: none;">
     <h3 class="page_title">メッセージ</h3>
     @foreach ($message_relations as $message_relation)
     <div class="message_list">
@@ -27,8 +21,7 @@
                     <div class="destination_user_info_detail">
                         <div class="destination_user_name">{{$message_relation->name}}</div>
                         <div class="destination_user_message_info">
-                            <span
-                                class="destination_user_text">{{@$message_relation->getNewmessage($current_user->id,$message_relation->destination_user_id)}}</span>
+                            <span class="destination_user_text">{{@$message_relation->getNewmessage($current_user->id,$message_relation->destination_user_id)}}</span>
                             <span id="message_count">
                                 @if($message_relation->message_count!=0){{@$message_relation->getNewmessagecount($current_user->id,$message_relation->destination_user_id)}}@elseif($message_relation->message_count=='match')マッチしたユーザーにメッセージを送りましょう@endif
                             </span>
@@ -37,14 +30,12 @@
 
                     <div class="col-3">
                         @if(@$message_class->convert_to_fuzzy_time($message_relation->getNewcreated_at($current_user->id,$message_relation->destination_user_id))!="1970年1月1日")
-                        <span
-                            class="new_message_time">{{@$message_class->convert_to_fuzzy_time($message_relation->getNewcreated_at($current_user->id,$message_relation->destination_user_id))}}</span>
+                        <span class="new_message_time">{{@$message_class->convert_to_fuzzy_time($message_relation->getNewcreated_at($current_user->id,$message_relation->destination_user_id))}}</span>
                         @endif
                     </div>
                 </div>
         </a>
-        <button class="btn modal_btn message_list_delete" data-target="#delete_modal{{$message_relation->id}}"
-            type="button" data-toggle="delete" title="削除"><i class="far fa-trash-alt"></i></button>
+        <button class="btn modal_btn message_list_delete" data-target="#delete_modal{{$message_relation->id}}" type="button" data-toggle="delete" title="削除"><i class="far fa-trash-alt"></i></button>
         <div class="delete_confirmation" id="delete_modal{{$message_relation->id}}">
             <p class="modal_title">こちらのユーザーとのメッセージを削除しますか？</p>
             <p class="post_content">{{$message_relation->name}}</p>
@@ -61,4 +52,9 @@
 @endsection
 @section('footer')
 @parent
+<script>
+    setTimeout(function() {
+        $(".message_top").css("display", "inline-block");
+    }, 840);
+</script>
 @endsection

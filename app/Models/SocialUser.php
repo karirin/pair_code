@@ -15,13 +15,11 @@ class SocialUser extends Model
 {
     public function user()
     {
-        log::debug("@@@@@@@@@@@3");
         return $this->belongsTo(User::class);
     }
 
     public function callback()
     {
-        log::debug("@@@@@@@@@@@1");
         $providerUser = Socialite::driver('Twitter')->user();
 
         // 既に存在するユーザーかを確認
@@ -30,11 +28,11 @@ class SocialUser extends Model
         if ($socialUser) {
             // 既存のユーザーはログインしてトップページへ
             Auth::login($socialUser->user, true);
-            log::debug("@@@@@@@@@@@2");
             return redirect('/top');
         }
 
         // 新しいユーザーを作成
+        log::debug($providerUser);
         $user = new User();
         $user->unique_id = $providerUser->nickname;
         $user->name = $providerUser->name;
