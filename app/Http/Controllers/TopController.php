@@ -9,6 +9,7 @@ use Validator;
 use Illuminate\Support\Facades\DB;
 use App\Person;
 use App\User;
+use App\Match;
 use App\Models\Message_relation;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
@@ -32,7 +33,8 @@ class TopController extends Controller
             }
             $skills = explode(" ", $current_user->skill);
             $licences = explode(" ", $current_user->licence);
-            $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'top_message' => ''];
+            $match_flg = Match::where('matched_user_id', $current_user->id)->where('match_flg', '!=', 1)->where('unmatch_flg', '!=', 1)->first();
+            $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'top_message' => '', 'match_flg' => $match_flg];
         } else {
             $param = ['users' => $users];
         }

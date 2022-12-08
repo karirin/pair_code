@@ -14,7 +14,7 @@
     <input type="hidden" name="current_skill" value="{{$current_user->skill}}">
     <input type="hidden" name="current_licence" value="{{$current_user->licence}}">
     <input type="hidden" name="current_workhistory" value="{{$current_user->workhistory}}">
-    <div style="margin-left: 20%;width:100%;display: inline-block;">
+    <div style="margin-left: 20%;width:70%;display: inline-block;">
         <div id="splash">
             <div style="background-color: #fdff8b0a;width: 100%;height: 100%;">
                 <div id="splash_logo">
@@ -99,9 +99,9 @@
         </div>
         <div class="form" style="width: 100%;">
             <div class="row">
-                <div class="col-3">
+                <div class="col-4">
                     <div class="edit_profile_img">
-                        <label style="position: absolute;margin: 25% 13%;z-index: 10;">
+                        <label style="position: absolute;z-index: 10;top: 10%;left: 19%;">
                             <div class="fa-image_range">
                                 <i class="far fa-image"></i>
                             </div>
@@ -127,7 +127,7 @@
                         <div class="occupation">{{$current_user->occupation}}</div>
                     </div>
                 </div>
-                <div class="col-9">
+                <div class="col-8">
                     <p class="tag_tittle">スキル</p>
                     @php
                     $k = 0;

@@ -274,6 +274,56 @@ $(document).on('click', ".match_good_btn", function() {
     }).fail(function() {});
 });
 
+// メッセージを送信したとき
+$(document).on('click', ".message_btn", function() {
+    $.ajaxSetup({
+        headers: {
+            "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+        },
+    });
+    // var user_id = $(this).next().val(),
+    //     user_name = $(this).parent().prev().prev().prev().prev().prev().text(),
+    //     matchs_flg = $(this).next().next()[0].value,
+    //     match_good_btn = $(this);
+    var current_user_id= $('.current_user_id').val(),
+        user_id = $('.destination_user_id').val(),
+        text = $('#message_counter').val(),
+        current_user_img = $('.message_user_img').attr('src'),
+        date=new Date(),
+        h = date.getHours(),
+        mi = date.getMinutes(),
+        day = h + ':' + mi;
+    $.ajax({
+        type: 'POST',
+        url: '/ajax_message_process',
+        dataType: 'text',
+        data: {
+            current_user_id: current_user_id,
+            user_id: user_id,
+            text: text
+        }
+    }).done(function() {
+        // if (matchs_flg == 0) {
+        //     $('.match_message').fadeIn();
+        //     $('.match_message').text(user_name + 'さんにいいねを送りました');
+        //     $('.match_message').fadeOut(5000);
+        // } else {
+        //     $('.match_message').fadeIn();
+        //     $('.match_message').text(user_name + 'さんとマッチしました！');
+        //     $('.match_message').fadeOut(5000);
+        //     $('.fas.fa-comment').css('margin-right', '');
+        //     if (!$('.new_mark').length) {
+        //         $('.fas.fa-comment').after('<span class="new_mark"></span>');
+        //         $('.new_mark').after('<span style="margin-left: 2rem;"></span>');
+        //     }
+        // }
+        // match_good_btn.fadeOut();
+        // $('#matchuser_' + user_id + ' > .click_flg').val(1);
+        $('.message_add').replaceWith('<div class="my_message"><div class="mycomment right"><span class="message_created_at">'+day+'</span><p>'+text+'</p><img src='+current_user_img+'  class="message_user_img"></div></div><input type="hidden" class="message_add">');
+    }).fail(function() {});
+});
+
+
 // マッチ機能処理
 $(document).on('click', '#match_btn', function() {
     $.ajaxSetup({

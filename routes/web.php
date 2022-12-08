@@ -48,6 +48,8 @@ Route::post('message/add', 'MessageController@add');
 
 Route::get('message/message_top', 'Message_relationController@index');
 
+Route::post('/ajax_message_process', 'MessageController@ajax_message_process');
+
 Route::post('/ajax_match_process', 'MatchController@ajax_match_process');
 
 Route::post('/ajax_unmatch_process', 'MatchController@ajax_unmatch_process');

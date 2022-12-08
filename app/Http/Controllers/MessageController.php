@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Match;
 use App\Models\Message;
 use App\Models\Message_relation;
 use Illuminate\Support\Facades\Auth;
@@ -31,8 +32,8 @@ class MessageController extends Controller
             }
         }
         Message_relation::where('destination_user_id', $request->user_id)->where('user_id', $current_user->id)->update(['message_count' => 0]);
-        $param = ['current_user' => $current_user, 'messages' => $messages, 'destination_user' => $destination_user, 'message_class' => $message_class, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count];
-
+        $match_flg = Match::where('matched_user_id', $current_user->id)->where('match_flg', '!=', 1)->where('unmatch_flg', '!=', 1)->first();
+        $param = ['current_user' => $current_user, 'messages' => $messages, 'destination_user' => $destination_user, 'message_class' => $message_class, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'match_flg' => $match_flg];
         return view('message.message', $param);
     }
 
@@ -59,12 +60,31 @@ class MessageController extends Controller
         $message_relation = new Message_relation;
         $message_cs = Message_relation::where('user_id', $current_user->id)->get();
         $message_count = 0;
+        $match_flg = Match::where('matched_user_id', $current_user->id)->where('match_flg', '!=', 1)->where('unmatch_flg', '!=', 1)->first();
         foreach ($message_cs as $message_c) {
             if ($message_c->message_count != 0 || $message_c->message_count == 'match') {
                 $message_count++;
             }
         }
-        $param = ['current_user' => $current_user, 'destination_user' => $destination_user, 'messages' => $messages, 'message_class' => $message_class, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count];
+        $param = ['current_user' => $current_user, 'destination_user' => $destination_user, 'messages' => $messages, 'message_class' => $message_class, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'match_flg' => $match_flg];
         return view('message.message', $param);
+    }
+
+    public function ajax_message_process(Request $request)
+    {
+        $current_user = Auth::user();
+        $date = new DateTime();
+        $date->modify('+9 hour');
+        $created_at = $date->format('Y-m-d H:i:s');
+        log::debug("created_at");
+        log::debug($created_at);
+        log::debug("created_at");
+        $param = [
+            'user_id' => $current_user->id,
+            'destination_user_id' => $request->user_id,
+            'text' => $request->text,
+            'created_at' => $created_at,
+        ];
+        DB::table('messages')->insert($param);
     }
 }

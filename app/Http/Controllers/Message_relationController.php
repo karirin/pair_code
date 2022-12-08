@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Match;
 use App\Models\Message;
 use App\Models\Message_relation;
 use Illuminate\Support\Facades\Auth;
@@ -36,7 +37,8 @@ class Message_relationController extends Controller
             }
         }
         $message_class = new Message;
-        $param = ['current_user' => $current_user, 'users' => $users, 'message_relations' => $message_relations, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'message_class' => $message_class];
+        $match_flg = Match::where('matched_user_id', $current_user->id)->where('match_flg', '!=', 1)->where('unmatch_flg', '!=', 1)->first();
+        $param = ['current_user' => $current_user, 'users' => $users, 'message_relations' => $message_relations, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'message_class' => $message_class, 'match_flg' => $match_flg];
         return view('message.message_top', $param);
     }
 }

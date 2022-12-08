@@ -22,8 +22,9 @@
             <li class="top_link prof_page"><a class="prof_modal" href="#"><img src="{{asset($current_user->image)}}" class="user_image"></a></li>
             <li class="header_menu_wide" style="margin-top: 4rem;"><a href="{{ asset('top') }}" class="sagasu" style="vertical-align: middle;"><i class="fa-solid fa-magnifying-glass" style="margin-right: 2rem;font-size: 1.5rem;"></i>さがす　　　</a>
             </li>
-            <li class="header_menu_wide"><a href="{{ asset('match/match') }}" class="oaitekara" style="vertical-align: middle;"><i class="fas fa-thumbs-up" style="margin-right: 2rem;font-size: 1.5rem;"></i><span class="new_match_mark" style="display: none;"></span>お相手から　</a>
-            </li>
+            <li class="header_menu"><a href="{{ asset('match/match') }}" class="oaitekara" style="vertical-align: middle;">
+                    @if($match_flg!='')<i class="fas fa-thumbs-up" style="font-size: 1.5rem;"></i><span class="new_match_mark"></span><span style="margin-left: 2.3rem">お相手から　<span>@else<i class="fas fa-thumbs-up" style="margin-right: 2rem;font-size: 1.5rem;"></i><span class="new_match_mark" style="display: none;"></span>お相手から　@endif
+                </a></li>
             <li class="header_menu"><a href="{{ asset('message/message_top') }}" class="messe-ji" style="vertical-align: middle;">
                     @if($message_count!=0)<i class="fas fa-comment"></i><span class="new_mark"></span><span style="margin-left: 2.3rem">メッセージ　</spna>@else<i class="fas fa-comment" style="margin-right: 2rem;font-size: 1.5rem;"></i>メッセージ　@endif
                 </a></li>

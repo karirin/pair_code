@@ -32,6 +32,9 @@
                 <div style="font-size: 1.8rem;font-weight:900;margin-top: 0.5rem;">スキップしました</div>
             </i>
         </span>
+        <span class="back_card_color" style="background:linear-gradient(rgb(0 0 0 / 0%) 0, #000 2000px);">
+
+        </span>
         <div id="matchuser_{{$user->id}}">
             <input type="hidden" class="match_flg" value="{{$user->check_match($user->id,$current_user->id)}}">
             <input type="hidden" class="matchs_flg" value="{{$user->check_matchs($user->id,$current_user->id)}}">
@@ -48,12 +51,12 @@
                 </div>
             </div>
             <input type="hidden" class="click_flg" value="0">
-            <img src=" {{asset($user->image)}}" class="match_user_img" style="width: 100%;height: 100%;">
+            <img src=" {{asset($user->image)}}" class="match_user_img" style="width: 100%;height: 100%;border-radius: 8px;">
             <label>
                 <i class="far fa-times-circle profile_clear"></i>
                 <input type="button" id="profile_clear">
             </label>
-            <h3 class="profile_name">{{$user->name}}</h3>
+            <h3 class="profile_name" style="color: #fff;">{{$user->name}}</h3>
             <input type="hidden" class="unmatch_user_id" value="{{$current_user->id}}">
             <input type="hidden" id="match{{$user->id}}_userid" value="{{$user->id}}">
             <input type="hidden" class="match_user_id" value="{{$current_user->id}}">

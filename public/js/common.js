@@ -135,10 +135,12 @@ $(document).on('change', '#my_image', function() {
 
 $(document).on('change', '#edit_profile_img,#edit_profile_img_narrow,#edit_profile_img_narrower', function() {
     $('.far.fa-times-circle.profile_clear').show();
+    $('#edit_profile_img').attr('name', 'image_name');
     $(document).on('click', '#profile_clear', function() {
         $('#edit_profile_img,#edit_profile_img_narrow,#edit_profile_img_narrower').hide();
         $('.far.fa-times-circle.profile_clear').hide();
         $('.editing_profile_img').attr('src','');
+        $('#edit_profile_img').attr('name', 'edit_image_name');
     });
 });
 

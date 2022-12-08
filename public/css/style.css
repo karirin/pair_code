@@ -394,7 +394,18 @@ nav.navbar.navbar-dark {
     vertical-align: text-top;
     border-radius: 100%;
     position: absolute;
-    top: 52%;
+    top: 58%;
+}
+
+.new_match_mark {
+    background-color: red;
+    display: inline-block;
+    width: 2.5%;
+    height: 2%;
+    vertical-align: text-top;
+    border-radius: 100%;
+    position: absolute;
+    top: 44%;
 }
 
 .page_title {
@@ -457,7 +468,7 @@ nav.navbar.navbar-dark {
     /*fixedで全面に固定*/
     position: fixed;
     width: 100%;
-    height: 86%;
+    height: 87%;
     z-index: 999;
     background-color: #fff;
     text-align: center;
@@ -605,7 +616,6 @@ nav.navbar.navbar-dark {
     height: 8rem;
     border-radius: 10rem;
     border: solid 0.3rem;
-    margin-top: 2.5rem;
 }
 
 .profile .editing_profile_img {
@@ -633,7 +643,7 @@ nav.navbar.navbar-dark {
     top: 33%;
     right: 35%;
     z-index: 10;
-    margin: 30%;
+    margin: 33%;
     color: rgb(0, 0, 0);
 }
 

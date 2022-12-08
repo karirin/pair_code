@@ -9,6 +9,7 @@ use Validator;
 use Illuminate\Support\Facades\DB;
 use App\Person;
 use App\User;
+use App\Match;
 use App\Models\Message_relation;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
@@ -40,7 +41,7 @@ class UserController extends Controller
                     'name' => $request->name,
                     'password' => $request->password,
                     'hash_password' => Hash::make($request->password),
-                    'image' => 'storage/sample/'.$file_name,
+                    'image' => 'storage/sample/' . $file_name,
                 ];
             } else {
                 $param = [
@@ -85,7 +86,8 @@ class UserController extends Controller
                 }
             }
             $top_message = $request->name . 'さんがログインしました';
-            $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'message' => $message, 'top_message' => $top_message];
+            $match_flg = Match::where('matched_user_id', $current_user->id)->where('match_flg', '!=', 1)->where('unmatch_flg', '!=', 1)->first();
+            $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'message' => $message, 'top_message' => $top_message, 'match_flg' => $match_flg];
             return view('top.index', $param);
         }
     }
@@ -115,7 +117,8 @@ class UserController extends Controller
                 }
             }
             $top_message = $request->name . 'さんがログインしました';
-            $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'message' => $message, 'top_message' => $top_message];
+            $match_flg = Match::where('matched_user_id', $current_user->id)->where('match_flg', '!=', 1)->where('unmatch_flg', '!=', 1)->first();
+            $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'message' => $message, 'top_message' => $top_message, 'match_flg' => $match_flg];
             return view('top.index', $param);
         }
     }
@@ -162,8 +165,9 @@ class UserController extends Controller
             }
         }
         $top_message = $request->name . 'さんがログインしました';
+        $match_flg = Match::where('matched_user_id', $current_user->id)->where('match_flg', '!=', 1)->where('unmatch_flg', '!=', 1)->first();
         $param = [
-            'current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'message' => $message, 'top_message' => $top_message
+            'current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'message' => $message, 'top_message' => $top_message, 'match_flg' => $match_flg
         ];
         return view('top.index', $param);
     }
@@ -203,7 +207,8 @@ class UserController extends Controller
             }
         }
         $top_message = $request->name . 'さんがログインしました';
-        $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'top_message' => $top_message];
+        $match_flg = Match::where('matched_user_id', $current_user->id)->where('match_flg', '!=', 1)->where('unmatch_flg', '!=', 1)->first();
+        $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'top_message' => $top_message, 'match_flg' => $match_flg];
         return view('top.index', $param);
     }
 
@@ -220,7 +225,8 @@ class UserController extends Controller
                 $message_count++;
             }
         }
-        $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count];
+        $match_flg = Match::where('matched_user_id', $current_user->id)->where('match_flg', '!=', 1)->where('unmatch_flg', '!=', 1)->first();
+        $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'match_flg' => $match_flg];
         return view('/user/profile', $param);
     }
 
@@ -228,10 +234,10 @@ class UserController extends Controller
     {
         $current_user = Auth::user();
         $current_user->name = $request->user_name;
-        if($request->file('image_name')!=''){
-        $file_name = $request->file('image_name')->getClientOriginalName();
-        $request->file('image_name')->storeAs('public/sample', $file_name);
-        $current_user->image = 'storage/sample/'.$file_name;
+        if ($request->file('image_name') != '') {
+            $file_name = $request->file('image_name')->getClientOriginalName();
+            $request->file('image_name')->storeAs('public/sample', $file_name);
+            $current_user->image = 'storage/sample/' . $file_name;
         }
         $current_user->age = $request->user_age;
         $current_user->occupation = $request->occupation;

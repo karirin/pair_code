@@ -22,22 +22,16 @@ class Message extends Model
     //  作成時間を～前で表示する
     public function convert_to_fuzzy_time($time_db)
     {
-        log::debug($time_db);
         ini_set("date.timezone", "Asia/Tokyo");
         $unix = strtotime($time_db);
         $date = new DateTime();
         $date->modify('+9 hour');
         $now = strtotime($date->format('Y-m-d H:i:s'));
+        log::debug($now2);
         $diff_sec = $now - $unix;
-        if ($diff_sec < 60) {
-            $time   = $diff_sec;
-            $unit   = "秒前";
-        } elseif ($diff_sec < 3600) {
-            $time   = $diff_sec / 60;
-            $unit   = "分前";
-        } elseif ($diff_sec < 86400) {
-            $time   = $diff_sec / 3600;
-            $unit   = "時間前";
+        if ($diff_sec < 86400) {
+            $time   = date("H", $unix);
+            $unit   = ":" . date("i", $unix);
         } elseif ($diff_sec < 2764800) {
             $time   = $diff_sec / 86400;
             $unit   = "日前";
