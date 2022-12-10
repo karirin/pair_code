@@ -285,12 +285,11 @@ nav.navbar.navbar-dark {
 }
 
 .description {
-    font-weight: bold;
-    line-height: 3rem;
-    margin-left: 58%;
-    margin-top: 6%;
-    width: 550px;
-    font-size: 18px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 900;
+    margin: 0 10%;
+    border-bottom: 2px solid burlywood;
 }
 
 .test_login {
@@ -386,28 +385,6 @@ nav.navbar.navbar-dark {
     margin-bottom: 3rem;
 }
 
-.new_mark {
-    background-color: red;
-    display: inline-block;
-    width: 2.5%;
-    height: 2%;
-    vertical-align: text-top;
-    border-radius: 100%;
-    position: absolute;
-    top: 58%;
-}
-
-.new_match_mark {
-    background-color: red;
-    display: inline-block;
-    width: 2.5%;
-    height: 2%;
-    vertical-align: text-top;
-    border-radius: 100%;
-    position: absolute;
-    top: 44%;
-}
-
 .page_title {
     font-size: 28px;
     line-height: 34px;
@@ -459,6 +436,15 @@ nav.navbar.navbar-dark {
 
 .btn-social-long-twitter:hover {
     opacity: 0.8;
+}
+
+.howtouse{
+    display: inline-block;
+    width: 35%;
+    border: solid 1px #ddd;
+    padding: 1rem;
+    text-align: left;
+    margin:1rem;
 }
 
 
@@ -1662,6 +1648,57 @@ img.my_preview {
     left: 468px;
 }
 
+.pointer{
+    display: none;
+    font-size:3rem;
+    z-index: 15;
+    top: 40%;
+    left: 30%;
+    position:absolute;
+}
+
+.pointer2{
+    display: none;
+    font-size:3rem;
+    z-index: 20;
+    top: 80%;
+    left: 38%;
+    position:absolute;
+}
+
+.help_message{
+        padding: 0.5em 1em;
+        margin: 2em 0;
+        color: #2c2c2f;
+        background: #cde4ff;/*背景色*/
+        position: absolute;
+        width: 20%;
+        height: 40%;
+        top: 10%;
+        left: 42%;
+        border-radius: 1rem;
+        z-index:15;
+}
+
+.help_message2{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #2c2c2f;
+    background: #cde4ff;/*背景色*/
+    position: absolute;
+    width: 20%;
+    height: 40%;
+    top: 55%;
+    left: 51%;
+    border-radius: 1rem;
+    z-index: 20;
+}
+
+.help_message p,
+.help_message2 p {
+    margin: 0; 
+    padding: 0;
+}
 
 /* ///////////////////////// */
 

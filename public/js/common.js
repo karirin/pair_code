@@ -60,7 +60,6 @@ $(function() {
     setTimeout(function() { $($message).slideToggle('slow'); }, 2000);
 });
 
-
 //================================
 // 画像処理
 //================================
@@ -308,7 +307,6 @@ $(document).on('click', '.modal_btn', function() {
 // 投稿モーダル画面出力処理
 $(document).on('click', '.post_modal', function() {
     scroll_position = $(window).scrollTop();
-    console.log($(this));
     $('body').addClass('fixed').css({ 'top': -scroll_position });
     //   $('#myskills').replaceWith('');
     $('.slide_menu').removeClass('open');

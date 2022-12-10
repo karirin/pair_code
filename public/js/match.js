@@ -281,19 +281,21 @@ $(document).on('click', ".message_btn", function() {
             "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
         },
     });
-    // var user_id = $(this).next().val(),
-    //     user_name = $(this).parent().prev().prev().prev().prev().prev().text(),
-    //     matchs_flg = $(this).next().next()[0].value,
-    //     match_good_btn = $(this);
     var current_user_id= $('.current_user_id').val(),
         user_id = $('.destination_user_id').val(),
         text = $('#message_counter').val(),
-        current_user_img = $('.message_user_img').attr('src'),
+        current_user_img = $('.image').val(),
         date=new Date(),
         h = date.getHours(),
         mi = date.getMinutes(),
-        day = h + ':' + mi;
-    $.ajax({
+        hh = ('0' + h).slice(-2),
+        mmi = ('0' + mi).slice(-2),
+        day = hh + ':' + mmi;
+        var jqxhr;
+        if (jqxhr) {
+            return;
+        }
+        jqxhr = $.ajax({
         type: 'POST',
         url: '/ajax_message_process',
         dataType: 'text',
@@ -303,23 +305,9 @@ $(document).on('click', ".message_btn", function() {
             text: text
         }
     }).done(function() {
-        // if (matchs_flg == 0) {
-        //     $('.match_message').fadeIn();
-        //     $('.match_message').text(user_name + 'さんにいいねを送りました');
-        //     $('.match_message').fadeOut(5000);
-        // } else {
-        //     $('.match_message').fadeIn();
-        //     $('.match_message').text(user_name + 'さんとマッチしました！');
-        //     $('.match_message').fadeOut(5000);
-        //     $('.fas.fa-comment').css('margin-right', '');
-        //     if (!$('.new_mark').length) {
-        //         $('.fas.fa-comment').after('<span class="new_mark"></span>');
-        //         $('.new_mark').after('<span style="margin-left: 2rem;"></span>');
-        //     }
-        // }
-        // match_good_btn.fadeOut();
-        // $('#matchuser_' + user_id + ' > .click_flg').val(1);
-        $('.message_add').replaceWith('<div class="my_message"><div class="mycomment right"><span class="message_created_at">'+day+'</span><p>'+text+'</p><img src='+current_user_img+'  class="message_user_img"></div></div><input type="hidden" class="message_add">');
+        $('.message_add').replaceWith('<div class="my_message"><div class="mycomment right"><span class="message_created_at"> '+ day +' </span><p>'+text+'</p><img src='+current_user_img+'  class="message_user_img"></div></div><input type="hidden" class="message_add">');
+        $('#message_counter').val('');
+        $('html, body').scrollTop($(document).height());
     }).fail(function() {});
 });
 
@@ -360,9 +348,9 @@ $(document).on('click', '#match_btn', function() {
         $('.match_message').text(user_name + 'さんとマッチしました！');
         $('.match_message').fadeOut(5000);
         $('.fas.fa-comment').css('margin-right', '');
-        if (!$('.new_mark').length) {
-            $('.fas.fa-comment').after('<span class="new_mark"></span>');
-            $('.new_mark').after('<span style="margin-left: 2rem;"></span>');
+        if ($('.new_mark').css('display') == 'none') {
+            $('.new_mark').fadeIn();
+            $('.new_mark').next('span').css('margin-left', '2rem');
         }
     }).fail(function() {});
 });

@@ -12,17 +12,8 @@
     </div>
 </div>
 <div class="col-9 match_top" style="margin-left: 22%;display:none;">
-    <!-- <div id="splash" style="height: 100%;">
-        <div style="background-color: #fdff8b0a;width: 100%;height: 100%;">
-            <div id="splash_logo">
-                <div class="spinner-border" role="status">
-                    <span class="sr-only">Loading...</span>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
     <h3 class="page_title">さがす</h3>
+    <i class="fa-solid fa-circle-question help_btn"></i>
     @foreach ($users as $user)
     @if ($user->id != $current_user->id)
     @if ($user->check_match($user->id,$current_user->id) === 0)
@@ -53,31 +44,155 @@
     @endif
     @endforeach
 </div>
+<div class="modal_help"></div>
+<i class="fa-solid fa-arrow-pointer pointer" style="display: none;"></i>
+<i class="fa-solid fa-arrow-pointer pointer2" style="display: none;"></i>
+<div class="help_message" style="display:none;">
+    気になるエンジニアをチェック</br>
+    ユーザー画像をクリックします
+</div>
+<div class="help_message2" style="display:none;">
+    「いいね」ボタンをクリックします
+</div>
 <p class="top_message">{{$top_message}}</p>
 @else
-<div class="description">
-    <span>
-        Test Appは自分のサービスをユーザーに<br>テストしてもらうサービスです。<br>
-        他ユーザーのサービスをテストすることもできます。
-    </span>
-</div>
-<form method="post" action="{{ asset('user/test_login') }}">
-    @csrf
-    <div class="test_btn">
-        <input type="hidden" name="name" class="user_name_input" value="test_user">
-        <input type="hidden" name="password" class="user_pass_input" value="karirin3948">
-        <input class="test_login btn btn-outline-dark" type="submit" name="test_login" value="おためしログイン">
+<image src="storage/top/remote-team.png" style="width:50%;height: 90%;">
+    <div>
+
     </div>
-</form>
-</div>
-@endif
-@endsection
-@section('footer')
-@parent
-<script>
-    setTimeout(function() {
-        $(".match_top").css("display", "inline-block");
-    }, 840);
-</script>
-@endsection
-</div>
+    <form method="post" action="{{ asset('user/test_login') }}">
+        @csrf
+        <div class="test_btn">
+            <input type="hidden" name="name" class="user_name_input" value="test_user">
+            <input type="hidden" name="password" class="user_pass_input" value="karirin3948">
+            <input class="test_login btn btn-outline-dark" type="submit" name="test_login" value="おためしログイン">
+        </div>
+    </form>
+    <div style="text-align: center;">
+        <div class="description">CONCEPT</div>
+        <image src="storage/top/undraw_Engineering_team_a7n2.png" style="width:40%;height: 40%;">
+            <div style="font-size: 1.3rem;line-height: 2;">
+                エンジニア同士で交流することができる「Pair Code」</br>
+
+                職場以外でエンジニアの方と接する機会はありますでしょうか？</br>
+
+                成長速度が速いIT業界において、同業種の人と交流することは大切です</br>
+
+                「Pair Code」はマッチしたエンジニア同士でコミュニケーション、情報共有することができるサービスです
+            </div>
+    </div>
+    <div style="text-align: center;margin: 3rem 0;">
+        <div class="description">HOW TO USE</div>
+        <div style="font-size: 1.3rem;line-height: 2;">
+            <div class="howtouse">
+                <div style="text-align: center;">
+                    <image src="storage/top/undraw_People_search_re_5rre.png" style="width:40%;height: 30%;">
+                </div>
+                <h3>1．エンジニアをさがす</h3>
+                <div style="font-size:1.1rem;">トップ画面から登録しているエンジニアを閲覧することができます</div>
+            </div>
+
+            <div class="howtouse">
+                <div style="text-align: center;">
+                    <image src="storage/top/undraw_Spread_love_re_v3cl.png" style="width:50%;height: 30%;">
+                </div>
+                <h3>2．気になるエンジニアにいいね</h3>
+                <div style="font-size:1.1rem;">ユーザー詳細画面から「いいね」をクリックすると、相手に「いいね」を送ることができます</div>
+            </div>
+
+            <div class="howtouse">
+                <div style="text-align: center;">
+                    <image src="storage/top/undraw_couple_love_re_3fw6.png" style="width:50%;height: 30%;">
+                </div>
+                <h3>3．マッチング</h3>
+                <div style="font-size:1.1rem;">お相手から画面から「いいね」を送りマッチングすることができます</div>
+            </div>
+
+            <div class="howtouse">
+                <div style="text-align: center;">
+                    <image src="storage/top/undraw_Chat_re_re1u.png" style="width:50%;height: 30%;">
+                </div>
+                <h3>4．メッセージ</h3>
+                <div style="font-size:1.1rem;">マッチングした相手とはメッセージのやり取りをすることができます</div>
+            </div>
+        </div>
+    </div>
+    @endif
+    @endsection
+    @section('footer')
+    @parent
+    <script>
+        setTimeout(function() {
+            $(".match_top").css("display", "inline-block");
+        }, 840);
+
+        // ヘルプボタンクリック時
+        $(document).on('click', '.help_btn', function() {
+            $('.modal_help').fadeIn();
+            $('.pointer').fadeIn();
+            $('.help_message').fadeIn();
+            $('.match_user:first').css({
+                'z-index': '15',
+                'position': 'relative'
+            });
+            setInterval(function() {
+                $('.pointer').animate({
+                    'left': '34%',
+                    'top': '30%'
+                });
+                $('.pointer').fadeOut();
+                $('.pointer').animate({
+                    'left': '30%',
+                    'top': '40%'
+                });
+                $('.pointer').fadeIn();
+            }, 1000);
+            // ユーザー詳細画面
+            $(document).on('click', ".match_user", function() {
+                var $target_modal = $(this).data("target");
+                $('.modal_match').hide();
+                $('.fa-times-circle').hide();
+                $('.matchuser_detaile').fadeIn();
+                $('.matchuser_detaile_prof').fadeIn();
+                $('.matchuser_detaile .matchuser_img').attr('src', $($target_modal + ' > .match_user_img')[0].getAttribute('src'));
+                $('.matchuser_detaile .matchuser_name').replaceWith('<div class="matchuser_name">' + $($target_modal + ' > .match_user_name')[0].value + '</div>');
+                $('.matchuser_detaile .matchuser_age').replaceWith('<span class="matchuser_age">' + $($target_modal + ' > .match_user_profile > div > .match_user_age').text() + '</span>');
+                $('.matchuser_detaile .matchuser_address').replaceWith('<span class="matchuser_address">' + $($target_modal + ' > .match_user_address')[0].value + '</span>');
+                $('.matchuser_detaile .matchuser_profile').replaceWith('<div class="matchuser_profile">' + $($target_modal + ' > .match_user_profile > .match_user_prof').text() + '</div>');
+                $('.matchuser_detaile .matchuser_occupation').replaceWith('<span class="matchuser_occupation">' + $($target_modal + ' > .match_user_occupation')[0].value + '</span>');
+                $('.matchuser_detaile_prof .matchuser_skill').replaceWith('<span id="child-span_myprofile" class="matchuser_skill" style="font-size: 1rem;">' + $($target_modal + ' > .match_user_skill')[0].value + '</span>');
+                $('.matchuser_detaile_prof .matchuser_licence').replaceWith('<span id="child-span_myprofile" class="matchuser_licence" style="font-size: 1rem;">' + $($target_modal + '  > .match_user_licence')[0].value + '</span>');
+                $('.matchuser_detaile_prof .matchuser_workhistory').replaceWith('<span class="matchuser_workhistory" style="font-size: 1rem;">' + $($target_modal + ' > .match_user_workhistory')[0].value + '</span>');
+                $('.matchuser_detaile .user_id').val($($target_modal + ' > .match_user_id')[0].value);
+                $('.matchuser_detaile .matchs_flg').val($($target_modal + ' > .matchs_flg')[0].value);
+                $('.matchuser_detaile_prof').fadeIn();
+                if ($($target_modal + ' > .click_flg')[0].value != 0) {
+                    $('.match_good_btn').hide();
+                } else {
+                    $('.match_good_btn').show();
+                }
+                $('.match_user:first').css({
+                    'z-index': '0',
+                    'position': 'unset'
+                });
+                $('.help_message').fadeOut();
+                $('.help_message2').fadeIn();
+                $('.pointer').fadeOut();
+                $('.pointer2').fadeIn();
+                setInterval(function() {
+                    $('.pointer2').animate({
+                        'left': '45%',
+                        'top': '73%'
+                    });
+                    $('.pointer2').fadeOut();
+                    $('.pointer2').animate({
+                        'left': '38%',
+                        'top': '80%'
+                    });
+                    $('.pointer2').fadeIn();
+                }, 1000);
+            });
+        });
+    </script>
+    @endsection
+    </div>

@@ -6,7 +6,7 @@
 @section('content')
 <div class="col-9" style="margin-left: 22%;display: inline-block;">
     <div style="background-color:#ffffffb0;width: 100%;height: 10%;position: fixed;z-index: 10;font-size: 2rem;">
-        <div style="width: 17%;background-color: #fff;">
+        <div style="width: 28%;background-color: #fff;">
             <span style="background-color:#fdff8b0a;width: 100%;height: 100%;display: inline-block;line-height: 2;"><a href="{{ asset('message/message_top') }}" style="color: #000;"><i class="fa-solid fa-angle-left" style="margin-right: 1rem;vertical-align: text-top;font-size:2.2rem;"></i></a>{{$destination_user->name}}</span>
         </div>
     </div>
@@ -45,6 +45,7 @@
                 </div>
                 <input type="hidden" class="destination_user_id" name="destination_user_id" value="{{$destination_user->id}}">
                 <input type="hidden" class="current_user_id" name="current_user_id" value="{{$current_user->id}}">
+                <input type="hidden" class="image" name="image" value="{{asset($current_user->image)}}">
             </div>
             <div class="message_btn">
                 <div class="message_image">
