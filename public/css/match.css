@@ -15,6 +15,15 @@
     margin-right: 1.4rem;
 }
 
+.match_top .sample_user {
+    display: inline-block;
+    vertical-align: text-top;
+    line-height: initial;
+    margin-right: 1.7rem;
+    margin-bottom: 3rem;
+    margin-right: 1.4rem;
+}
+
 .match_top .match_user_img {
     border-radius: 10rem;
     width: 12rem;

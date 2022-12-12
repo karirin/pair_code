@@ -262,7 +262,7 @@
     </p>
     <div class="footer">
         <a href="https://forms.gle/eLx24ykodQaRKqiV9">お問い合わせ</a> / <a href="{{ asset('privacy_poricy') }}">プライバシーポリシー</a> / <a href="{{ asset('terms_of_service') }}">利用規約</a> /
-        <a href="https://twitter.com/karirin3948">Twitter</a>
+        <a href="https://twitter.com/karirin3948">Twitter</a> / <span style="color: white;">© 2022 Pair Code.</span>
     </div>
     <script src=" https://code.jquery.com/jquery-3.4.1.min.js "></script>
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />

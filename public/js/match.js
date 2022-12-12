@@ -204,7 +204,6 @@ $(document).on('click', ".match_user", function() {
     $('.matchuser_detaile_prof').fadeIn();
     $('.matchuser_detaile .matchuser_img').attr('src', $($target_modal + ' > .match_user_img')[0].getAttribute('src'));
     $('.matchuser_detaile .matchuser_name').replaceWith('<div class="matchuser_name">' + $($target_modal + ' > .match_user_name')[0].value + '</div>');
-    console.log($($target_modal + ' > .match_user_profile > div > .match_user_age').text());
     $('.matchuser_detaile .matchuser_age').replaceWith('<span class="matchuser_age">' + $($target_modal + ' > .match_user_profile > div > .match_user_age').text() + '</span>');
     $('.matchuser_detaile .matchuser_address').replaceWith('<span class="matchuser_address">' + $($target_modal + ' > .match_user_address')[0].value + '</span>');
     $('.matchuser_detaile .matchuser_profile').replaceWith('<div class="matchuser_profile">' + $($target_modal + ' > .match_user_profile > .match_user_prof').text() + '</div>');
@@ -275,7 +274,7 @@ $(document).on('click', ".match_good_btn", function() {
 });
 
 // メッセージを送信したとき
-$(document).on('click', ".message_btn", function() {
+$(document).on('click', ".message_submit", function() {
     $.ajaxSetup({
         headers: {
             "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
@@ -284,26 +283,33 @@ $(document).on('click', ".message_btn", function() {
     var current_user_id= $('.current_user_id').val(),
         user_id = $('.destination_user_id').val(),
         text = $('#message_counter').val(),
-        current_user_img = $('.image').val(),
+        current_user_img = $('#my_image').val(),
         date=new Date(),
         h = date.getHours(),
         mi = date.getMinutes(),
         hh = ('0' + h).slice(-2),
         mmi = ('0' + mi).slice(-2),
         day = hh + ':' + mmi;
-        var jqxhr;
-        if (jqxhr) {
-            return;
-        }
-        jqxhr = $.ajax({
+
+        //アップロードするファイルのデータ取得
+        var fileData = document.getElementById("my_image").files[0];
+        //フォームデータを作成する
+        var form = new FormData();
+        //フォームデータにアップロードファイルの情報追加
+        form.append("file", fileData);
+        console.log(form);
+        $.ajax({
         type: 'POST',
         url: '/ajax_message_process',
         dataType: 'text',
         data: {
             current_user_id: current_user_id,
             user_id: user_id,
-            text: text
-        }
+            text: text,
+            image: form
+        },
+        processData: false,
+        contentType: false,
     }).done(function() {
         $('.message_add').replaceWith('<div class="my_message"><div class="mycomment right"><span class="message_created_at"> '+ day +' </span><p>'+text+'</p><img src='+current_user_img+'  class="message_user_img"></div></div><input type="hidden" class="message_add">');
         $('#message_counter').val('');

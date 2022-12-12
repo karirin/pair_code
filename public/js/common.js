@@ -60,6 +60,24 @@ $(function() {
     setTimeout(function() { $($message).slideToggle('slow'); }, 2000);
 });
 
+//=====================================================
+// <img>要素 → Base64形式の文字列に変換
+//   img       : HTMLImageElement
+//   mime_type : string "image/png", "image/jpeg" など
+//=====================================================
+function ImageToBase64(img, mime_type) {
+    // New Canvas
+    var canvas = document.createElement('canvas');
+    canvas.width  = img.width;
+    canvas.height = img.height;
+    // Draw Image
+    var ctx = canvas.getContext('2d');
+    console.log(img);
+    ctx.drawImage(img, 0, 0);
+    // To Base64
+    return canvas.toDataURL(mime_type);
+}
+
 //================================
 // 画像処理
 //================================
@@ -75,11 +93,12 @@ $('#my_image').on('change', function(e) {
     reader.readAsDataURL(e.target.files[0]);
 });
 
-$('#my_image').on('change', function(e) {
-    //画像を選択した際に、メッセージテキストに画像情報を追加する
-    var img = document.getElementById('my_image');
-    $('#message').val = ImageToBase64(img, "image/jpeg");
-});
+// $('#my_image').on('change', function(e) {
+//     //画像を選択した際に、メッセージテキストに画像情報を追加する
+//     var img = document.getElementById('my_image');
+//     console.log(img);
+//     $('#message').val = ImageToBase64(img, "image/jpeg");
+// });
 
 $('#edit_image,#edit_image_narrow,#edit_image_narrower').on('change', function(e) {
     var reader = new FileReader();
@@ -331,18 +350,18 @@ $(document).on('click', '.prof_modal', function() {
 });
 
 // ヘルプモーダル画面出力処理
-$(document).on('click', '.help_btn', function() {
-    scroll_position = $(window).scrollTop();
-    $('body').addClass('fixed').css({ 'top': -scroll_position });
-    $('.help_disp').fadeIn();
-    $('.modal_help').fadeIn();
-    $('.far.fa-times-circle.help_clear').fadeIn();
-    $(document).on('click', '.far.fa-times-circle.help_clear', function() {
-        $('.help_disp').fadeOut();
-        $('.modal_help').fadeOut();
-        $('.far.fa-times-circle.help_clear').fadeOut();
-    });
-});
+// $(document).on('click', '.help_btn', function() {
+//     scroll_position = $(window).scrollTop();
+//     $('body').addClass('fixed').css({ 'top': -scroll_position });
+//     $('.help_disp').fadeIn();
+//     $('.modal_help').fadeIn();
+//     $('.far.fa-times-circle.help_clear').fadeIn();
+//     $(document).on('click', '.far.fa-times-circle.help_clear', function() {
+//         $('.help_disp').fadeOut();
+//         $('.modal_help').fadeOut();
+//         $('.far.fa-times-circle.help_clear').fadeOut();
+//     });
+// });
 
 $(document).on('click', '.withdraw', function() {
     scroll_position = $(window).scrollTop();

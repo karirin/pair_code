@@ -489,6 +489,17 @@ nav.navbar.navbar-dark {
     opacity: 0;
 }
 
+.help_btn{
+    position: absolute;
+    right: 3%;
+    top: 8%;
+    font-size: 2rem;
+}
+
+.help_btn:hover{
+    opacity: 0.5;
+}
+
 @keyframes fadeUpAnime {
     from {
         opacity: 0;
@@ -1648,6 +1659,10 @@ img.my_preview {
     left: 468px;
 }
 
+.fa-solid.fa-arrow-pointer{
+    color: #fff;
+}
+
 .pointer{
     display: none;
     font-size:3rem;
@@ -1655,6 +1670,7 @@ img.my_preview {
     top: 40%;
     left: 30%;
     position:absolute;
+    color: #000!important;
 }
 
 .pointer2{
@@ -1664,6 +1680,25 @@ img.my_preview {
     top: 80%;
     left: 38%;
     position:absolute;
+    color: #000!important;
+}
+
+.pointer3{
+    font-size:3rem;
+    z-index: 25;
+    top: 88%;
+    left: 60%;
+    position:absolute;
+    color: #000!important;
+}
+
+.pointer4{
+    font-size:3rem;
+    z-index: 25;
+    top: 88%;
+    left: 44%;
+    position:absolute;
+    color: #000!important;
 }
 
 .help_message{
@@ -1694,10 +1729,51 @@ img.my_preview {
     z-index: 20;
 }
 
+.help_message3{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #2c2c2f;
+    background: #cde4ff;/*背景色*/
+    position: absolute;
+    width: 20%;
+    height: 40%;
+    top: 55%;
+    left: 72%;
+    border-radius: 1rem;
+    z-index: 20;
+}
+
+.help_message4{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #2c2c2f;
+    background: #cde4ff;/*背景色*/
+    position: absolute;
+    width: 20%;
+    height: 40%;
+    top: 55%;
+    left: 23%;
+    border-radius: 1rem;
+    z-index: 20;
+}
+
 .help_message p,
 .help_message2 p {
     margin: 0; 
     padding: 0;
+}
+
+.help_close{
+    z-index: 15;
+    font-size: 2rem;
+    position: absolute;
+    left: 45%;
+    top: 5%;
+}
+
+
+.help_close:hover{
+    opacity: 0.8;
 }
 
 /* ///////////////////////// */

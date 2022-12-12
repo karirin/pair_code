@@ -54,7 +54,7 @@
                         <input type="file" name="image" id="my_image" accept="image/*" multiple>
                     </label>
                 </div>
-                <button class="btn btn-outline-primary message_btn" name="post" value="post" id="post">送信</button>
+                <button class="btn btn-outline-primary message_submit" name="post" value="post" id="post">送信</button>
             </div>
             <div class="message_image_detail">
                 <div><img class="my_preview"></div>

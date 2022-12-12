@@ -27,8 +27,6 @@ class UserController extends Controller
     protected function create(Request $request)
     {
         $this->validate($request, User::$rules);
-        // $user = new User;
-        // $user_flg = $user->check_user($request->name, $request->password);
         $user_flg = User::where('name', $request->name)->first();
         if ($user_flg != '') {
             $add_message = 'すでに存在するユーザー名です';

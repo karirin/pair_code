@@ -76,15 +76,25 @@ class MessageController extends Controller
         $date = new DateTime();
         $date->modify('+9 hour');
         $created_at = $date->format('Y-m-d H:i:s');
-        log::debug("created_at");
-        log::debug($created_at);
-        log::debug("created_at");
-        $param = [
-            'user_id' => $current_user->id,
-            'destination_user_id' => $request->user_id,
-            'text' => $request->text,
-            'created_at' => $created_at,
-        ];
+        if ($request->file('image') != '') {
+            $file_name = $request->file('image')->getClientOriginalName();
+            $request->file('image')->storeAs('public/sample', $file_name);
+            $image = 'storage/sample/' . $file_name;
+            $param = [
+                'user_id' => $current_user->id,
+                'destination_user_id' => $request->user_id,
+                'text' => $request->text,
+                'image' => $image,
+                'created_at' => $created_at,
+            ];
+        } else {
+            $param = [
+                'user_id' => $current_user->id,
+                'destination_user_id' => $request->user_id,
+                'text' => $request->text,
+                'created_at' => $created_at,
+            ];
+        }
         DB::table('messages')->insert($param);
     }
 }
