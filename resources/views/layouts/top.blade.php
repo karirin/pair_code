@@ -72,7 +72,8 @@
                     <span class="matchuser_occupation"></span>
                     <div class="matchuser_profile"></div>
                     <div style="text-align:right;">
-                        <a href="#" class="match_good_btn"><i class="fas fa-thumbs-up"></i>いいね</a>
+                        <a href="#" class="match_good_btn" id="match_good_btn"><i class="fas fa-thumbs-up"></i>いいね</a>
+                        <a href="#" class="good_btn" id="good_btn" style="display: none;"><i class="fas fa-thumbs-up"></i>いいね</a>
                         <input type="hidden" class="user_id">
                         <input type="hidden" class="matchs_flg">
                     </div>

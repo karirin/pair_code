@@ -490,7 +490,7 @@ nav.navbar.navbar-dark {
 }
 
 .help_btn{
-    position: absolute;
+    position: fixed;
     right: 3%;
     top: 8%;
     font-size: 2rem;
@@ -1666,7 +1666,7 @@ img.my_preview {
 .pointer{
     display: none;
     font-size:3rem;
-    z-index: 15;
+    z-index: 20;
     top: 40%;
     left: 30%;
     position:absolute;
