@@ -12,7 +12,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @section('header')
     @if (Auth::check())
-    @if(request()->path()!='privacy_poricy' && request()->path()!='terms_of_service')
+    @if(request()->path()!='privacy_poricy' && request()->path()!='terms_of_service' && request()->path()!='user/edit_detail')
     <div style="position: fixed;">
         <ul>
             <li class="top_link">

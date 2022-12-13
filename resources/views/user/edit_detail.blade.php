@@ -11,8 +11,7 @@
         <div class="col-3">
             <div class="user_age">
                 <p class="tag_tittle">年齢</p>
-                <input class="edit_age form-control" type="number" name="age"
-                    style="width: 35%;display: inline-block;margin-right: 0.5rem;">歳
+                <input class="edit_age form-control" type="number" name="age" style="width: 35%;display: inline-block;margin-right: 0.5rem;">歳
             </div>
             <div class="user_address" style="margin-top: 0.5rem;">
                 <p class="tag_tittle" style="display: inline-block;">住所</p>
@@ -91,8 +90,7 @@
                 <input type="hidden" name="skill_count" id="myprofile_skill_count">
                 <input type="hidden" name="myskills">
             </div>
-            <input placeholder="skill Stack" name="skills" id="skill_myprofile_input" style="display:block;"
-                class="ui-autocomplete-input" autocomplete="off">
+            <input placeholder="skill Stack" name="skills" id="skill_myprofile_input" style="display:block;" class="ui-autocomplete-input" autocomplete="off">
             <p class="tag_tittle">取得資格</p>
             <div id="licence">
                 <input type="hidden" name="myprofile_licences" id="myprofile_licences">
@@ -102,19 +100,17 @@
             <input placeholder="licence Stack" name="name" id="licence_input" style="display: block;" />
             <div class="background">
                 <p class="tag_tittle">職歴</p>
-                <textarea class="edit_workhistory form-control" style="height: 30%;width: 70%;" type="text"
-                    name="user_workhistory"></textarea>
+                <textarea class="edit_workhistory form-control" style="height: 30%;width: 70%;" type="text" name="user_workhistory"></textarea>
                 <div class="error_workhistory" style="display: none;">
                     <span style="color:rgb(220, 53, 69);">100文字以内で入力してください</span>
                 </div>
             </div>
         </div>
     </div>
-    <div class="flex_btn margin_top" style="margin: 0 32%;width: 35%;">
-        <input class="btn btn-outline-info" type="button" onclick="history.back()" value="戻る">
-        <a class="skip_btn"
-            href="/user/skip?name={{$name}}&password={{$password}}&hash_password={{$hash_password}}&image={{$image}}">スキップ</a>
-        <input class="btn btn-outline-dark edit_done" type="submit" value="登録">
+    <div class="flex_btn margin_top" style="margin: 0 34%;width: 35%;">
+        <input style="width: 90px;" class="btn btn-outline-info" type="button" onclick="history.back()" value="戻る">
+        <a class="btn btn-outline-primary skip_btn" href="/user/skip?name={{$name}}&password={{$password}}&hash_password={{$hash_password}}&image={{$image}}">スキップ</a>
+        <input style="width: 90px;" class="btn btn-outline-dark edit_done" type="submit" value="登録">
     </div>
     <input type="hidden" name="name" value="{{$name}}">
     <input type="hidden" name="password" value="{{$password}}">

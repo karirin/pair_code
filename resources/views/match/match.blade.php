@@ -17,12 +17,14 @@
         </div>
     </div>
     <div class="help_message3" style="display:none;">
-        気になるエンジニアをチェック</br>
-        ユーザー画像をクリックします
+        <span class="help-title">マッチングの流れ</span>
+        「いいね」ボタンをクリックすると</br>
+        マッチングすることができます
     </div>
     <div class="help_message4" style="display:none;">
-        気になるエンジニアをチェック</br>
-        ユーザー画像をクリックします
+        <span class="help-title">マッチングの流れ</span>
+        「スキップ」ボタンをクリックすると</br>
+        マッチングをキャンセルすることができます
     </div>
     <h3 class="page_title">お相手から</h3>
     <i class="fa-solid fa-circle-question help_btn" style="position: absolute;right: 3%;top: 8%;font-size: 2rem;"></i>
@@ -126,6 +128,9 @@
                 $('.pointer3').fadeIn();
             }, 1000);
             $(document).on('click', '#sample_match_btn', function() {
+                $('.profile_name').css({
+                    'z-index': '15'
+                });
                 $('.help_message3').fadeOut();
                 $('#pointer3').removeClass('pointer3');
                 $('#pointer3').fadeOut();
@@ -135,7 +140,7 @@
                 $('#sample_match_btn').prop("disabled", true);
                 $('#sample_unmatch_btn').prop("disabled", false);
                 $('#match0')[0].animate({
-                    "marginLeft": "200px",
+                    "marginLeft": "100px",
                     transform: 'rotate(50deg)'
                 }, 1000);
                 setInterval(function() {
@@ -156,7 +161,7 @@
                     $('#match0 > .match_card_color').fadeOut();
                     $('#match0 > .unmatch_card_color').fadeIn();
                     $('#match0')[0].animate({
-                        "marginLeft": "-200px",
+                        "marginLeft": "-100px",
                         transform: 'rotate(-50deg)'
                     }, 1000);
                     $('#sample_unmatch_btn').prop("disabled", true);
@@ -179,6 +184,9 @@
                 $('#pointer4').fadeOut();
                 $('.help_message3').fadeOut();
                 $('.help_message4').fadeOut();
+                $('.profile_name').css({
+                    'z-index': '0'
+                });
             });
         });
     </script>

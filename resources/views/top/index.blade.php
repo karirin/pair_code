@@ -50,10 +50,11 @@
 <i class="fa-solid fa-arrow-pointer pointer2" id="pointer2" style="display: none;"></i>
 <i class="fa-regular fa-circle-xmark help_close" style="display: none;"></i>
 <div class="help_message" style="display:none;">
-    気になるエンジニアをチェック</br>
-    ユーザー画像をクリックします
+    <span class="help-title">いいねの流れ</span>
+    気になるエンジニアをクリック
 </div>
 <div class="help_message2" style="display:none;">
+    <span class="help-title">いいねの流れ</span>
     「いいね」ボタンをクリックします
 </div>
 <p class="top_message">{{$top_message}}</p>
@@ -196,6 +197,10 @@
                     });
                     $('.pointer2').fadeIn();
                 }, 1000);
+                $(document).on('click', ".match_good_btn", function() {
+                    $('#pointer2').removeClass('pointer2');
+                    $('#pointer2').fadeOut();
+                });
             });
             $(document).on('click', ".help_close", function() {
                 $('.matchuser_detaile').fadeOut();

@@ -40,6 +40,8 @@ Route::get('user/logout', 'UserController@logout')->name('logout');
 
 Route::get('user/skip', 'UserController@skip');
 
+Route::get('user/add_match', 'UserController@add_match');
+
 Route::get('match/match', 'MatchController@index');
 
 Route::get('message/message', 'MessageController@index');

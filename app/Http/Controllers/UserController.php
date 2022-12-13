@@ -86,7 +86,7 @@ class UserController extends Controller
             $top_message = $request->name . 'さんがログインしました';
             $match_flg = Match::where('matched_user_id', $current_user->id)->where('match_flg', '!=', 1)->where('unmatch_flg', '!=', 1)->first();
             $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'message' => $message, 'top_message' => $top_message, 'match_flg' => $match_flg];
-            return view('top.index', $param);
+            return view('user.add_match', $param);
         }
     }
 
@@ -247,6 +247,13 @@ class UserController extends Controller
         return redirect('/user/profile');
     }
 
+    public function add_match(Request $request)
+    {
+        $current_user = Auth::user();
+        $users = User::get();
+        $param = ['users' => $users, 'current_user' => $current_user];
+        return view('user.add_match', $param);
+    }
 
     // public function edit(Request $request)
     // {

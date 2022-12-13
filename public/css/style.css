@@ -1701,61 +1701,78 @@ img.my_preview {
     color: #000!important;
 }
 
-.help_message{
+/* .help_message{
+    font-size: 1rem;
         padding: 0.5em 1em;
         margin: 2em 0;
         color: #2c2c2f;
-        background: #cde4ff;/*背景色*/
+        background-color: #ffe3bf;
         position: absolute;
-        width: 20%;
-        height: 40%;
-        top: 10%;
-        left: 42%;
+        top: 19%;
+        left: 40%;
         border-radius: 1rem;
         z-index:15;
+} */
+
+.help_message {
+    top: 30%;
+    left: 38%;
+    background-color: #fff;
+    position: absolute;
+    margin: 2em 0;
+    padding: 0.5em 1em;
+    border: solid 3px burlywood;
+    z-index: 15;
 }
 
 .help_message2{
-    padding: 0.5em 1em;
-    margin: 2em 0;
-    color: #2c2c2f;
-    background: #cde4ff;/*背景色*/
-    position: absolute;
-    width: 20%;
-    height: 40%;
-    top: 55%;
+    top: 67%;
     left: 51%;
-    border-radius: 1rem;
-    z-index: 20;
+    background-color: #fff;
+    position: absolute;
+    margin: 2em 0;
+    padding: 0.5em 1em;
+    border: solid 3px burlywood;
+    z-index: 15;
 }
 
 .help_message3{
-    padding: 0.5em 1em;
-    margin: 2em 0;
-    color: #2c2c2f;
-    background: #cde4ff;/*背景色*/
-    position: absolute;
-    width: 20%;
-    height: 40%;
-    top: 55%;
+    top: 70%;
     left: 72%;
-    border-radius: 1rem;
-    z-index: 20;
+    background-color: #fff;
+    position: absolute;
+    margin: 2em 0;
+    padding: 0.5em 1em;
+    border: solid 3px burlywood;
+    z-index: 15;
 }
 
 .help_message4{
-    padding: 0.5em 1em;
-    margin: 2em 0;
-    color: #2c2c2f;
-    background: #cde4ff;/*背景色*/
+    top: 70%;
+    left: 18%;
+    background-color: #fff;
     position: absolute;
-    width: 20%;
-    height: 40%;
-    top: 55%;
-    left: 23%;
-    border-radius: 1rem;
-    z-index: 20;
+    margin: 2em 0;
+    padding: 0.5em 1em;
+    border: solid 3px burlywood;
+    z-index: 15;
 }
+
+.help-title {
+    position: absolute;
+    display: inline-block;
+    top: -27px;
+    left: -3px;
+    padding: 0 9px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 15px;
+    background: burlywood;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
+}
+
 
 .help_message p,
 .help_message2 p {

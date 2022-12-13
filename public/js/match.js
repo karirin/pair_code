@@ -163,8 +163,6 @@ $(document).on('click', ".profile_close", function() {
     $('.edit_profile_img').css('display', 'none');
     $('.btn_flex').css('display', 'none');
     $('.profile').removeClass('editing');
-    // $('.profile_edit_btn').fadeIn();
-    // $('.follow_user').fadeIn();
     $('.profile_edit_btn').show();
     $('.follow_user').show();
     $('.edit_btns').fadeOut();
@@ -283,7 +281,6 @@ $(document).on('click', ".message_submit", function() {
     var current_user_id= $('.current_user_id').val(),
         user_id = $('.destination_user_id').val(),
         text = $('#message_counter').val(),
-        current_user_img = $('#my_image').val(),
         date=new Date(),
         h = date.getHours(),
         mi = date.getMinutes(),
@@ -292,12 +289,11 @@ $(document).on('click', ".message_submit", function() {
         day = hh + ':' + mmi;
 
         //アップロードするファイルのデータ取得
-        var fileData = document.getElementById("my_image").files[0];
+        var fiup_file = document.getElementById("my_image").files[0];
         //フォームデータを作成する
-        var form = new FormData();
+        let form = $('#upload-form').get()[0];//フォームデータを格納
         //フォームデータにアップロードファイルの情報追加
-        form.append("file", fileData);
-        console.log(form);
+        var formData = new FromData(form);//FormDataオブジェクト作成
         $.ajax({
         type: 'POST',
         url: '/ajax_message_process',
@@ -330,8 +326,9 @@ $(document).on('click', '#match_btn', function() {
         match_modal = $(this).data("match"),
         card = $('.match_card:last')[0],
         user_id = card.id.substr(5, 2),
-        user_name = $('#' + card.id + ' > .profile_name').text();
+        user_name = $('#' + card.id + ' > #matchuser_'+ user_id +' > .profile_name').text();
     $('#' + card.id + ' > .match_card_color').fadeIn();
+    $('#' + card.id + ' > #matchuser_'+ user_id +' > .profile_name').css({'z-index': '15'});
     $(function() {
         setInterval(function() {
             $(card)[0].animate({
@@ -372,6 +369,7 @@ $(document).on('click', '#unmatch_btn', function() {
         card = $('.match_card:last')[0],
         user_id = card.id.substr(5, 2);
     $('#' + card.id + ' > .unmatch_card_color').fadeIn();
+    $('#' + card.id + ' > #matchuser_'+ user_id +' > .profile_name').css({'z-index': '15'});
     $(function() {
         setInterval(function() {
             $(card)[0].animate({
