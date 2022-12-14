@@ -122,6 +122,10 @@
     @section('footer')
     @parent
     <script>
+        setTimeout(function() {
+            $(".match_top").css("display", "inline-block");
+        }, 840);
+
         // ヘルプボタンクリック時
         $(document).on('click', '.help_btn', function() {
             $('.match_user:first').hide();
