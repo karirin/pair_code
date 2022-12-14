@@ -1808,7 +1808,8 @@ img.my_preview {
 .modal_match,
 .modal_testcase,
 .modal_help,
-.modal_post {
+.modal_post
+ {
     display: none;
     position: fixed;
     top: 0;
