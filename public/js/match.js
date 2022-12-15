@@ -244,7 +244,7 @@ $(document).on('click', ".match_good_btn", function() {
     console.log($(this));
     var user_id = $(this).next().val(),
         user_name = $(this).parent().prev().prev().prev().prev().prev().text(),
-        matchs_flg = $(this).next().next()[0].value,
+        matchs_flg = $(this).next().next().next()[0].value,
         match_good_btn = $(this);
     $.ajax({
         type: 'POST',
