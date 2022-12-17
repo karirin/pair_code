@@ -29,6 +29,7 @@
     <h3 class="page_title">お相手から</h3>
     <i class="fa-solid fa-circle-question help_btn" style="position: absolute;right: 3%;top: 8%;font-size: 2rem;"></i>
     <input type="hidden" class="match_sample_user">
+    <input type="hidden" class="m_flg" value="{{$current_user->match_flg}}">
     <i class="fa-solid fa-arrow-pointer pointer3" id="pointer3" style="display: none;"></i>
     <i class="fa-solid fa-arrow-pointer pointer4" id="pointer4" style="display: none;"></i>
     <i class="fa-regular fa-circle-xmark help_close" style="display: none;"></i>
@@ -99,6 +100,108 @@
     @section('footer')
     @parent
     <script>
+        if ($('.m_flg').val() == '') {
+            $.ajaxSetup({
+                headers: {
+                    "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+                },
+            });
+            $.ajax({
+                type: 'POST',
+                url: '/ajax_m_flg',
+                dataType: 'text'
+            }).done(function() {
+                setTimeout(function() {
+                    $('.modal_help').fadeIn();
+                    $('#pointer3').addClass('pointer3');
+                    $('#match_btn').attr('id', 'sample_match_btn');
+                    $('#unmatch_btn').attr('id', 'sample_unmatch_btn');
+                    $('#sample_unmatch_btn').prop("disabled", true);
+                    $('.help_close').fadeIn();
+                    $('.help_message3').fadeIn();
+                    $('.match_sample_user').replaceWith('<div id="match0" class="match_card card match_user" data-target="#matchuser_0" data-toggle="matchuser" style="display: flex;z-index:20;"><span class="match_card_color" style="display:none;"><i class="fa-regular fa-thumbs-up" style="margin:40% 0;font-size: 3rem;"><div style="font-size: 1.8rem;font-weight:900;margin-top: 0.5rem;">いいかもしました</div></i></span><span class="unmatch_card_color" style="display:none;"><i class="fa-solid fa-reply" style="margin:40% 0;font-size: 3rem;"><div style="font-size: 1.8rem;font-weight:900;margin-top: 0.5rem;">スキップしました</div></i></span><span class="back_card_color" style="background:linear-gradient(rgb(0 0 0 / 0%) 0, #000 2000px);"></span><div id="matchuser_0"><img src="../storage/user/sample_user.png" class="match_user_img" style="width: 100%;height: 100%;border-radius: 8px;"><label><i class="far fa-times-circle profile_clear"></i><input type="button" id="profile_clear"></label><h3 class="profile_name" style="color: #fff;">サンプルユーザー</h3></div></div>');
+                    $('.matching_btn').css({
+                        'z-index': '20'
+                    });
+                    $('.fa-image_range.fa').css({
+                        'background-color': '#fff'
+                    });
+                    setInterval(function() {
+                        $('.pointer3').animate({
+                            'left': '66%',
+                            'top': '81%'
+                        });
+                        $('.pointer3').fadeOut();
+                        $('.pointer3').animate({
+                            'left': '60%',
+                            'top': '88%'
+                        });
+                        $('.pointer3').fadeIn();
+                    }, 1000);
+                    $(document).on('click', '#sample_match_btn', function() {
+                        $('.profile_name').css({
+                            'z-index': '15'
+                        });
+                        $('.help_message3').fadeOut();
+                        $('#pointer3').removeClass('pointer3');
+                        $('#pointer3').fadeOut();
+                        $('#pointer4').addClass('pointer4');
+                        $('.help_message4').fadeIn();
+                        $('#match0 > .match_card_color').fadeIn();
+                        $('#sample_match_btn').prop("disabled", true);
+                        $('#sample_unmatch_btn').prop("disabled", false);
+                        $('#match0')[0].animate({
+                            "marginLeft": "100px",
+                            transform: 'rotate(50deg)'
+                        }, 1000);
+                        setInterval(function() {
+                            $('.pointer4').animate({
+                                'left': '51%',
+                                'top': '81%'
+                            });
+                            $('.pointer4').fadeOut();
+                            $('.pointer4').animate({
+                                'left': '44%',
+                                'top': '88%'
+                            });
+                            $('.pointer4').fadeIn();
+                        }, 1000);
+                        $(document).on('click', '#sample_unmatch_btn', function() {
+                            $('#pointer4').removeClass('pointer4');
+                            $('#pointer4').fadeOut();
+                            $('#match0 > .match_card_color').fadeOut();
+                            $('#match0 > .unmatch_card_color').fadeIn();
+                            $('#match0')[0].animate({
+                                "marginLeft": "-100px",
+                                transform: 'rotate(-50deg)'
+                            }, 1000);
+                            $('#sample_unmatch_btn').prop("disabled", true);
+                        });
+                    });
+                    $(document).on('click', ".help_close", function() {
+                        $('#sample_match_btn').prop("disabled", false);
+                        $('#sample_unmatch_btn').prop("disabled", false);
+                        $('#sample_match_btn').attr('id', 'match_btn'); //最後にこれを設定するとチュートリアル中に押した場合、イベントが発生してしまう
+                        $('#sample_unmatch_btn').attr('id', 'unmatch_btn'); //最後にこれを設定するとチュートリアル中に押した場合、イベントが発生してしまう
+                        $('#match0').replaceWith('<input type="hidden" class="match_sample_user">');
+                        $('.modal_help').fadeOut();
+                        $('.fa-image_range.fa').css({
+                            'background-color': 'unset'
+                        });
+                        $('.help_close').fadeOut();
+                        $('#pointer3').removeClass('pointer3');
+                        $('#pointer3').fadeOut();
+                        $('#pointer4').removeClass('pointer4');
+                        $('#pointer4').fadeOut();
+                        $('.help_message3').fadeOut();
+                        $('.help_message4').fadeOut();
+                        $('.profile_name').css({
+                            'z-index': '0'
+                        });
+                    });
+                }, 840);
+            }).fail(function() {});
+        }
         // ヘルプボタンクリック時
         $(document).on('click', '.help_btn', function() {
             $('.modal_help').fadeIn();

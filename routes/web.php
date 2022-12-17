@@ -54,6 +54,10 @@ Route::post('/ajax_message_process', 'MessageController@ajax_message_process');
 
 Route::post('/ajax_match_process', 'MatchController@ajax_match_process');
 
+Route::post('/ajax_flg', 'UserController@ajax_flg');
+
+Route::post('/ajax_m_flg', 'UserController@ajax_m_flg');
+
 Route::post('/ajax_unmatch_process', 'MatchController@ajax_unmatch_process');
 
 Route::get('person', 'PersonController@index');

@@ -315,4 +315,18 @@ class UserController extends Controller
     //     $current_user->save(); // https://yama-weblog.com/using-fill-method-to-be-a-simple-code/
     //     return redirect('/user/profile');
     // }
+
+    public function ajax_flg(Request $request)
+    {
+        $current_user = Auth::user();
+        $users = User::get();
+        DB::update('update `users` set top_flg = 1 where id = ' . $current_user->id . '');
+    }
+
+    public function ajax_m_flg(Request $request)
+    {
+        $current_user = Auth::user();
+        $users = User::get();
+        DB::update('update `users` set match_flg = 1 where id = ' . $current_user->id . '');
+    }
 }

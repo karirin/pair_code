@@ -241,7 +241,7 @@ $(document).on('click', ".match_good_btn", function() {
             "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
         },
     });
-    console.log($(this));
+
     var user_id = $(this).next().val(),
         user_name = $(this).parent().prev().prev().prev().prev().prev().text(),
         matchs_flg = $(this).next().next().next()[0].value,
