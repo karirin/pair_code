@@ -86,7 +86,7 @@
                     <h6 style="margin-top: 1rem;">資格</h6>
                     <span class="matchuser_licence"></span>
                     <h6 style="margin-top: 1rem;">職歴</h6>
-                    <span class=" matchuser_workhistory"></span>
+                    <span class="matchuser_workhistory"></span>
                 </div>
             </div>
             @if (Auth::check())

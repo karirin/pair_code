@@ -40,7 +40,7 @@
                             <span class="match_user_occupation">{{$user->occupation}}</span>
                             <span class="match_user_age">{{$user->age}}歳</span>
                         </div>
-                        <span class="match_user_prof">{{$user->profile}}</span>
+                        <input type="hidden" class="match_user_prof" value="{{$user->profile}}">
                     </div>
                     <input type="hidden" class="match_user_id" value="{{$user->id}}">
                     <input type="hidden" class="match_user_name" value="{{$user->name}}">

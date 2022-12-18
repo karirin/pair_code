@@ -26,7 +26,7 @@
                     <span class="match_user_occupation">{{$user->occupation}}</span>
                     <span class="match_user_age">{{$user->age}}歳</span>
                 </div>
-                <span class="match_user_prof">{{$user->profile}}</span>
+                <input type="hidden" class="match_user_prof" value="{{$user->profile}}">
             </div>
             <input type="hidden" class="match_flg" value="{{$user->check_match($user->id,$current_user->id)}}">
             <input type="hidden" class="matchs_flg" value="{{$user->check_matchs($user->id,$current_user->id)}}">

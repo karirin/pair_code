@@ -6,7 +6,8 @@ var user_age = $('.form .age').text(),
     user_address = $('.form .address').text(),
     user_address_narrow = $('.form .address_narrow').text(),
     user_workhistory = $('.form .workhistory').text(),
-    user_workhistory_narrow = $('.form .workhistory_narrow').text();
+    user_workhistory_narrow = $('.form .workhistory_narrow').text(),
+    user_profile = $('.form .profile').text();
 
 window.onload = function() {
     $("#splash").delay(100).fadeOut('slow'); //ローディング画面を1.5秒（1500ms）待機してからフェードアウト
@@ -132,6 +133,7 @@ $(document).on('click', '.profile_edit_btn', function() {
     $('.workhistory').replaceWith('<textarea class="edit_workhistory form-control" type="text" style="width: 60%;height: 25%;" name="user_workhistory" value="' + user_workhistory + '">' + user_workhistory);
     $('.workhistory_narrow').replaceWith('<textarea class="edit_workhistory form-control" type="text" name="user_workhistory_narrow" value="' + user_workhistory_narrow + '">' + user_workhistory_narrow);
     $('.workhistory_narrower').replaceWith('<textarea class="edit_workhistory form-control" type="text" name="user_workhistory_narrower" >' + user_workhistory_narrower);
+    $('.edit_profile').replaceWith('<textarea class="edit_profile form-control" type="text" style="width: 60%;height: 25%;" name="user_profile" value="' + user_profile + '">' + user_profile);
     $('.mypage').css('display', 'none');
     $('.edit_profile_img').css('display', 'inline-block');
     $('.btn_flex').css('display', 'flex');
@@ -205,7 +207,8 @@ $(document).on('click', ".match_user", function() {
     $('.matchuser_detaile .matchuser_name').replaceWith('<div class="matchuser_name">' + $($target_modal + ' > .match_user_name')[0].value + '</div>');
     $('.matchuser_detaile .matchuser_age').replaceWith('<span class="matchuser_age">' + $($target_modal + ' > .match_user_profile > div > .match_user_age').text() + '</span>');
     $('.matchuser_detaile .matchuser_address').replaceWith('<span class="matchuser_address">' + $($target_modal + ' > .match_user_address')[0].value + '</span>');
-    $('.matchuser_detaile .matchuser_profile').replaceWith('<div class="matchuser_profile">' + $($target_modal + ' > .match_user_profile > .match_user_prof').text() + '</div>');
+    console.log($($target_modal + ' > .match_user_profile > .match_user_prof').val());
+    $('.matchuser_detaile .matchuser_profile').replaceWith('<div class="matchuser_profile">' + $($target_modal + ' > .match_user_profile > .match_user_prof').val() + '</div>');
     $('.matchuser_detaile .matchuser_occupation').replaceWith('<span class="matchuser_occupation">' + $($target_modal + ' > .match_user_occupation')[0].value + '</span>');
     $('.matchuser_detaile_prof .matchuser_skill').replaceWith('<span id="child-span_myprofile" class="matchuser_skill" style="font-size: 1rem;">' + $($target_modal + ' > .match_user_skill')[0].value + '</span>');
     $('.matchuser_detaile_prof .matchuser_licence').replaceWith('<span id="child-span_myprofile" class="matchuser_licence" style="font-size: 1rem;">' + $($target_modal + '  > .match_user_licence')[0].value + '</span>');

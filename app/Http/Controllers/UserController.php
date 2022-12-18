@@ -243,6 +243,7 @@ class UserController extends Controller
         $current_user->skill = $request->myprofile_skills;
         $current_user->licence = $request->myprofile_licences;
         $current_user->workhistory = $request->user_workhistory;
+        $current_user->profile = $request->user_profile;
         $current_user->save(); // https://yama-weblog.com/using-fill-method-to-be-a-simple-code/
         return redirect('/user/profile');
     }
