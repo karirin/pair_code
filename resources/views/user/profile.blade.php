@@ -166,15 +166,15 @@
                     <input type="hidden" name="licence_count" id="licence_count">
                     <input type="hidden" name="mylicences" value="{{$current_user->licence}}">
                     <div class="background">
+                        <p class="tag_tittle">自己紹介</p>
+                        <p class="edit_profile">{{$current_user->workhistory}}</p>
+                    </div>
+                    <div class="background">
                         <p class="tag_tittle">職歴</p>
                         <p class="workhistory">{{$current_user->workhistory}}</p>
                         <div class="error_workhistory" style="display: none;">
                             <span style="color:rgb(220, 53, 69);">100文字以内で入力してください</span>
                         </div>
-                    </div>
-                    <div class="background">
-                        <p class="tag_tittle">自己紹介</p>
-                        <p class="edit_profile">{{$current_user->workhistory}}</p>
                     </div>
                     <div class="edit_btns">
                         <input type="submit" class="btn btn-outline-dark edit_done" value="編集完了">
