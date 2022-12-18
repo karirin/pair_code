@@ -12,7 +12,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @section('header')
     @if (Auth::check())
-    @if(request()->path()!='privacy_poricy' && request()->path()!='terms_of_service')
+    @if(request()->path()!='privacy_poricy' && request()->path()!='terms_of_service' && request()->path()!='user/edit_detail')
     <div style="position: fixed;">
         <ul>
             <li class="top_link">
@@ -72,7 +72,8 @@
                     <span class="matchuser_occupation"></span>
                     <div class="matchuser_profile"></div>
                     <div style="text-align:right;">
-                        <a href="#" class="match_good_btn"><i class="fas fa-thumbs-up"></i>いいね</a>
+                        <a href="#" class="match_good_btn" id="match_good_btn"><i class="fas fa-thumbs-up"></i>いいね</a>
+                        <a href="#" class="good_btn" id="good_btn" style="display: none;"><i class="fas fa-thumbs-up"></i>いいね</a>
                         <input type="hidden" class="user_id">
                         <input type="hidden" class="matchs_flg">
                     </div>
@@ -85,7 +86,7 @@
                     <h6 style="margin-top: 1rem;">資格</h6>
                     <span class="matchuser_licence"></span>
                     <h6 style="margin-top: 1rem;">職歴</h6>
-                    <span class=" matchuser_workhistory"></span>
+                    <span class="matchuser_workhistory"></span>
                 </div>
             </div>
             @if (Auth::check())
@@ -262,7 +263,7 @@
     </p>
     <div class="footer">
         <a href="https://forms.gle/eLx24ykodQaRKqiV9">お問い合わせ</a> / <a href="{{ asset('privacy_poricy') }}">プライバシーポリシー</a> / <a href="{{ asset('terms_of_service') }}">利用規約</a> /
-        <a href="https://twitter.com/karirin3948">Twitter</a> / <span style="color: white;">© 2022 Pair Code.</span>
+        <a href="https://twitter.com/ryoya3948">Twitter</a> / <span style="color: white;">© 2022 Pair Code.</span>
     </div>
     <script src=" https://code.jquery.com/jquery-3.4.1.min.js "></script>
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />

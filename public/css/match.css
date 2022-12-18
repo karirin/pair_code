@@ -83,6 +83,51 @@
     display: inline-block;
 }
 
+.welcome{
+    position: fixed;
+    width: 100%;
+    top: 37%;
+    margin: 0px 36%;
+    font-weight: 900;
+    letter-spacing: 0.3rem;
+    line-height: 3rem;
+    display: none;
+}
+
+.good_count{
+    position: fixed;
+    bottom: 8%;
+    font-size: 3rem;
+    right: 8%;
+}
+
+.match_box {
+    padding: 1rem 1rem 0.5rem 1rem;
+    border: solid 3px burlywood;
+    border-radius: 8px;
+    position: fixed;
+    bottom: 7%;
+    font-size: 3rem;
+    right: 5%;
+}
+
+.match_box .box-title {
+    position: absolute;
+    display: inline-block;
+    top: -13px;
+    left: 10px;
+    padding: 0 9px;
+    line-height: 1;
+    font-size: 19px;
+    background: #FFF;
+    color: #000;
+    font-weight: bold;
+}
+
+.match_box p {
+    margin: 0; 
+    padding: 0;
+}
 
 /* ///////////////////////// */
 
@@ -173,7 +218,8 @@
     font-size: 1.5rem;
 }
 
-.match_good_btn {
+.match_good_btn,
+.good_btn {
     display: inline-block;
     padding: 7px 20px;
     border-radius: 25px;
@@ -185,11 +231,13 @@
     width: 40%;
 }
 
-.match_good_btn:hover {
+.match_good_btn:hover,
+.good_btn:hover {
     background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
 }
 
-.match_good_btn .fas.fa-thumbs-up {
+.match_good_btn .fas.fa-thumbs-up,
+.good_btn .fas.fa-thumbs-up {
     margin-right: 0.5rem;
 }
 
@@ -294,7 +342,7 @@
     font-size: 40px;
 }
 
-.card .fas.fa-times-circle:hover {
+.fas.fa-times-circle:hover {
     opacity: 0.5;
 }
 

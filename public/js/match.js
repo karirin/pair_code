@@ -6,7 +6,8 @@ var user_age = $('.form .age').text(),
     user_address = $('.form .address').text(),
     user_address_narrow = $('.form .address_narrow').text(),
     user_workhistory = $('.form .workhistory').text(),
-    user_workhistory_narrow = $('.form .workhistory_narrow').text();
+    user_workhistory_narrow = $('.form .workhistory_narrow').text(),
+    user_profile = $('.form .profile').text();
 
 window.onload = function() {
     $("#splash").delay(100).fadeOut('slow'); //ローディング画面を1.5秒（1500ms）待機してからフェードアウト
@@ -132,6 +133,7 @@ $(document).on('click', '.profile_edit_btn', function() {
     $('.workhistory').replaceWith('<textarea class="edit_workhistory form-control" type="text" style="width: 60%;height: 25%;" name="user_workhistory" value="' + user_workhistory + '">' + user_workhistory);
     $('.workhistory_narrow').replaceWith('<textarea class="edit_workhistory form-control" type="text" name="user_workhistory_narrow" value="' + user_workhistory_narrow + '">' + user_workhistory_narrow);
     $('.workhistory_narrower').replaceWith('<textarea class="edit_workhistory form-control" type="text" name="user_workhistory_narrower" >' + user_workhistory_narrower);
+    $('.edit_profile').replaceWith('<textarea class="edit_profile form-control" type="text" style="width: 60%;height: 25%;" name="user_profile" value="' + user_profile + '">' + user_profile);
     $('.mypage').css('display', 'none');
     $('.edit_profile_img').css('display', 'inline-block');
     $('.btn_flex').css('display', 'flex');
@@ -163,8 +165,6 @@ $(document).on('click', ".profile_close", function() {
     $('.edit_profile_img').css('display', 'none');
     $('.btn_flex').css('display', 'none');
     $('.profile').removeClass('editing');
-    // $('.profile_edit_btn').fadeIn();
-    // $('.follow_user').fadeIn();
     $('.profile_edit_btn').show();
     $('.follow_user').show();
     $('.edit_btns').fadeOut();
@@ -199,6 +199,7 @@ $(document).on('click', ".profile_narrow_close", function() {
 // ユーザー詳細画面
 $(document).on('click', ".match_user", function() {
     var $target_modal = $(this).data("target");
+    $('.fa-times-circle').show();
     $('.modal_match').fadeIn();
     $('.matchuser_detaile').fadeIn();
     $('.matchuser_detaile_prof').fadeIn();
@@ -206,7 +207,8 @@ $(document).on('click', ".match_user", function() {
     $('.matchuser_detaile .matchuser_name').replaceWith('<div class="matchuser_name">' + $($target_modal + ' > .match_user_name')[0].value + '</div>');
     $('.matchuser_detaile .matchuser_age').replaceWith('<span class="matchuser_age">' + $($target_modal + ' > .match_user_profile > div > .match_user_age').text() + '</span>');
     $('.matchuser_detaile .matchuser_address').replaceWith('<span class="matchuser_address">' + $($target_modal + ' > .match_user_address')[0].value + '</span>');
-    $('.matchuser_detaile .matchuser_profile').replaceWith('<div class="matchuser_profile">' + $($target_modal + ' > .match_user_profile > .match_user_prof').text() + '</div>');
+    console.log($($target_modal + ' > .match_user_profile > .match_user_prof').val());
+    $('.matchuser_detaile .matchuser_profile').replaceWith('<div class="matchuser_profile">' + $($target_modal + ' > .match_user_profile > .match_user_prof').val() + '</div>');
     $('.matchuser_detaile .matchuser_occupation').replaceWith('<span class="matchuser_occupation">' + $($target_modal + ' > .match_user_occupation')[0].value + '</span>');
     $('.matchuser_detaile_prof .matchuser_skill').replaceWith('<span id="child-span_myprofile" class="matchuser_skill" style="font-size: 1rem;">' + $($target_modal + ' > .match_user_skill')[0].value + '</span>');
     $('.matchuser_detaile_prof .matchuser_licence').replaceWith('<span id="child-span_myprofile" class="matchuser_licence" style="font-size: 1rem;">' + $($target_modal + '  > .match_user_licence')[0].value + '</span>');
@@ -242,9 +244,10 @@ $(document).on('click', ".match_good_btn", function() {
             "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
         },
     });
+
     var user_id = $(this).next().val(),
         user_name = $(this).parent().prev().prev().prev().prev().prev().text(),
-        matchs_flg = $(this).next().next()[0].value,
+        matchs_flg = $(this).next().next().next()[0].value,
         match_good_btn = $(this);
     $.ajax({
         type: 'POST',
@@ -283,7 +286,6 @@ $(document).on('click', ".message_submit", function() {
     var current_user_id= $('.current_user_id').val(),
         user_id = $('.destination_user_id').val(),
         text = $('#message_counter').val(),
-        current_user_img = $('#my_image').val(),
         date=new Date(),
         h = date.getHours(),
         mi = date.getMinutes(),
@@ -292,12 +294,11 @@ $(document).on('click', ".message_submit", function() {
         day = hh + ':' + mmi;
 
         //アップロードするファイルのデータ取得
-        var fileData = document.getElementById("my_image").files[0];
+        var fiup_file = document.getElementById("my_image").files[0];
         //フォームデータを作成する
-        var form = new FormData();
+        let form = $('#upload-form').get()[0];//フォームデータを格納
         //フォームデータにアップロードファイルの情報追加
-        form.append("file", fileData);
-        console.log(form);
+        var formData = new FromData(form);//FormDataオブジェクト作成
         $.ajax({
         type: 'POST',
         url: '/ajax_message_process',
@@ -330,8 +331,9 @@ $(document).on('click', '#match_btn', function() {
         match_modal = $(this).data("match"),
         card = $('.match_card:last')[0],
         user_id = card.id.substr(5, 2),
-        user_name = $('#' + card.id + ' > .profile_name').text();
+        user_name = $('#' + card.id + ' > #matchuser_'+ user_id +' > .profile_name').text();
     $('#' + card.id + ' > .match_card_color').fadeIn();
+    $('#' + card.id + ' > #matchuser_'+ user_id +' > .profile_name').css({'z-index': '15'});
     $(function() {
         setInterval(function() {
             $(card)[0].animate({
@@ -372,6 +374,7 @@ $(document).on('click', '#unmatch_btn', function() {
         card = $('.match_card:last')[0],
         user_id = card.id.substr(5, 2);
     $('#' + card.id + ' > .unmatch_card_color').fadeIn();
+    $('#' + card.id + ' > #matchuser_'+ user_id +' > .profile_name').css({'z-index': '15'});
     $(function() {
         setInterval(function() {
             $(card)[0].animate({
