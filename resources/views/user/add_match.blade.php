@@ -4,7 +4,66 @@
 @parent
 @endsection
 @section('content')
-aaa
+<div id="splash_logo" style="top: 55%;left: 50%;">
+    <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+<div class="modal_help"></div>
+<div class="modal_unclick"></div>
+<h2 class="welcome">ありがとうございます</br>新規登録完了しました</h2>
+<div class="match_box">
+    <span class="box-title">いいねした人数</span>
+    <span class="match_count">0</span>人/3人
+</div>
+<i class="fa-regular fa-circle-xmark help_close" style="display: none;"></i>
+<div class="help_message" style="display:none;">
+    <span class="help-title">いいねの流れ</span>
+    気になるエンジニアをクリック
+</div>
+<div class="help_message2" style="display:none;">
+    <span class="help-title">いいねの流れ</span>
+    「いいね」ボタンをクリックします
+</div>
+<div class="row">
+    <div class="col-8 offset-2 center">
+        <h2 style="font-family: system-ui;">3人に「いいね」を送ってみましょう</h2>
+        <i class="fa-solid fa-circle-question help_btn"></i>
+        <div class="match_top" style="display: none;">
+            <input type="hidden" class="sample_user">
+            @foreach ($users as $user)
+            <div id="match_user" class="match_user" data-target="#matchuser_{{$user->id}}" data-toggle="matchuser">
+                <div id="matchuser_{{$user->id}}">
+                    <img class="match_user_img" src="{{asset($user->image)}}">
+                    <div class="match_user_profile">
+                        <div>
+                            <span class="match_user_occupation">{{$user->occupation}}</span>
+                            <span class="match_user_age">{{$user->age}}歳</span>
+                        </div>
+                        <input type="hidden" class="match_user_prof" value="{{$user->profile}}">
+                    </div>
+                    <input type="hidden" class="match_user_id" value="{{$user->id}}">
+                    <input type="hidden" class="match_user_name" value="{{$user->name}}">
+                    <input type="hidden" class="match_user_address" value="{{$user->address}}">
+                    <input type="hidden" class="match_user_occupation" value="{{$user->occupation}}">
+                    <input type="hidden" class="match_user_skill" value="{{$user->skill}}">
+                    <input type="hidden" class="match_user_licence" value="{{$user->licence}}">
+                    <input type="hidden" class="match_user_workhistory" value="{{$user->workhistory}}">
+                    <input type="hidden" class="click_flg" value>
+                    <input type="hidden" class="current_user" value="{{$current_user}}">
+                    <input type="hidden" class="users" value="{{$users}}">
+                    <input type="hidden" class="message_count" value="{{$message_count}}">
+                    <input type="hidden" class="message" value="{{$message}}">
+                    <input type="hidden" class="top_message" value="{{$top_message}}">
+                    <input type="hidden" class="match_flg" value="{{$match_flg}}">
+                    <input type="hidden" class="matchs_flg" value>
+                    <img src="{{$user->image}}" class="match_user_img" style="display:none;">
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</div>
 @endsection
 @section('footer')
 @parent
