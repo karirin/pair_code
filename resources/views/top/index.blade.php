@@ -5,7 +5,7 @@
 @parent
 @endsection
 @section('content')
-
+@if (Auth::check())
 <div id="splash_logo">
     <div class="spinner-border" role="status">
         <span class="sr-only">Loading...</span>
@@ -59,7 +59,7 @@
     「いいね」ボタンをクリックします
 </div>
 <p class="top_message">{{$top_message}}</p>
-
+@else
 
 <!-- ここから非ログインユーザーのトップ画面 -->
 
@@ -121,7 +121,7 @@
             </div>
         </div>
     </div>
-
+    @endif
     @endsection
     @section('footer')
     @parent
