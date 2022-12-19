@@ -1,4 +1,3 @@
-aaaa
 @extends('layouts.top')
 @section('title', 'pair code')
 @section('header')

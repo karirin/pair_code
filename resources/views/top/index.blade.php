@@ -5,7 +5,7 @@
 @parent
 @endsection
 @section('content')
-@if (Auth::check())
+<!-- @if (Auth::check()) -->
 <div id="splash_logo">
     <div class="spinner-border" role="status">
         <span class="sr-only">Loading...</span>
@@ -59,7 +59,10 @@
     「いいね」ボタンをクリックします
 </div>
 <p class="top_message">{{$top_message}}</p>
-@else
+<!-- @else -->
+
+<!-- ここから非ログインユーザーのトップ画面 -->
+
 <image src="storage/top/remote-team.png" style="width:50%;height: 90%;">
     <form method="post" action="{{ asset('user/test_login') }}">
         @csrf
@@ -118,7 +121,7 @@
             </div>
         </div>
     </div>
-    @endif
+    <!-- @endif -->
     @endsection
     @section('footer')
     @parent
