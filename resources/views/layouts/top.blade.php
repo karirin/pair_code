@@ -11,7 +11,8 @@
 <body style="height: auto;">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @section('header')
-    <!-- @if (Auth::check()) -->
+    @if (Auth::check())
+
     @if(request()->path()!='privacy_poricy' && request()->path()!='terms_of_service' && request()->path()!='user/edit_detail')
     <div style="position: fixed;">
         <ul>
@@ -32,7 +33,7 @@
                 </a></li>
             <li class="header_menu_wide" class="roguauto" style="vertical-align: middle;"><a href="{{ asset('user/logout') }}" style="vertical-align: middle;"><i class="fas fa-sign-out-alt" style="margin-right: 2rem;font-size: 1.5rem;"></i>ログアウト　</a>
             </li>
-            <!-- @else -->
+            @else
             <div>
                 <ul>
                     <li class="top_link">
@@ -40,9 +41,13 @@
                             Code</a>
                     </li>
                     @endif
+
+
                 </ul>
             </div>
-            <!-- @else -->
+            @else
+
+
             <nav class="navbar navbar-dark">
                 <ul class="main_ul">
                     <li class="top_link" style="margin: 0 auto 0 0;">
@@ -53,12 +58,14 @@
                     <li class="header" style="margin: 0;"><a href="{{ asset('user/add') }}" style="vertical-align: middle;"><i class="fas fa-user-plus" style="margin-right: 0.5rem;"></i>新規登録</a></li>
                 </ul>
             </nav>
-            <!-- @endif -->
+            @endif
             @show
             @yield('profile')
             <div class="content">
                 @yield('content')
             </div>
+
+
             @section('footer')
             <div class="modal_match"></div>
             <div class="modal_top"></div>
@@ -89,7 +96,9 @@
                     <span class="matchuser_workhistory"></span>
                 </div>
             </div>
-            <!-- @if (Auth::check()) -->
+
+
+            @if (Auth::check())
             <div class="modal_prof"></div>
             <div class="slide_prof">
                 <a class="prof_close" href="#">
@@ -258,7 +267,9 @@
             </div>
             </form>
     </div>
-    <!-- @endif -->
+    @endif
+
+
     <p class="match_message">
     </p>
     <div class="footer">
