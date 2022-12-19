@@ -59,6 +59,8 @@
                 </ul>
             </nav>
             @endif
+
+
             @show
             @yield('profile')
             <div class="content">
