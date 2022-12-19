@@ -88,7 +88,7 @@ class UserController extends Controller
         //     $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'message' => $message, 'top_message' => $top_message, 'match_flg' => $match_flg];
         //     return view('user.add_match', $param);
         // }
-        $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'message' => $message, 'top_message' => $top_message, 'match_flg' => $match_flg];
+        $param = ['current_user' => $current_user, 'users' => $users, 'skills' => '', 'licences' => '', 'message_count' => $message_count, 'message' => $message, 'top_message' => $top_message, 'match_flg' => $match_flg];
         return view('top.index', $param);
     }
 
