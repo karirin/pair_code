@@ -89,7 +89,7 @@ class UserController extends Controller
             return view('user.add_match', $param);
         } else {
             $current_user = Auth::user();
-            $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'message' => $message, 'top_message' => $top_message, 'match_flg' => $match_flg];
+            $param = ['current_user_id' => $current_user->id, 'current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'message' => $message, 'top_message' => $top_message, 'match_flg' => $match_flg];
             return view('user.add_match', $param);
         }
     }
