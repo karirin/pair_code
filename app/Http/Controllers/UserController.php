@@ -57,7 +57,7 @@ class UserController extends Controller
     {
         $form = [
             'name' => $request->name,
-            'password' => $request->password,
+            'password' => $request->hash_password,
             'image' => $request->image,
             'age' => $request->age,
             'address' => $request->address,
@@ -85,9 +85,6 @@ class UserController extends Controller
             }
             $top_message = $request->name . 'さんがログインしました';
             $match_flg = Match::where('matched_user_id', $current_user->id)->where('match_flg', '!=', 1)->where('unmatch_flg', '!=', 1)->first();
-            $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'message' => $message, 'top_message' => $top_message, 'match_flg' => $match_flg];
-            return view('user.add_match', $param);
-        } else {
             $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'message' => $message, 'top_message' => $top_message, 'match_flg' => $match_flg];
             return view('user.add_match', $param);
         }
