@@ -119,6 +119,10 @@ class UserController extends Controller
             $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'message' => $message, 'top_message' => $top_message, 'match_flg' => $match_flg];
             return view('top.index', $param);
         } else {
+            $current_user = Auth::user();
+            $users = User::get();
+            $skills = explode(" ", $current_user->skill);
+            $licences = explode(" ", $current_user->licence);
             $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'message' => $message, 'top_message' => $top_message, 'match_flg' => $match_flg];
             return view('top.index', $param);
         }
