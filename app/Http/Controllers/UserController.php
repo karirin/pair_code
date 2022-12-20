@@ -123,6 +123,16 @@ class UserController extends Controller
             $users = User::get();
             $skills = explode(" ", $current_user->skill);
             $licences = explode(" ", $current_user->licence);
+            $message = new Message_relation;
+            $message_cs = Message_relation::where('user_id', $current_user->id)->get();
+            $message_count = 0;
+            foreach ($message_cs as $message_c) {
+                if ($message_c->message_count != 0 || $message_c->message_count == 'match') {
+                    $message_count++;
+                }
+            }
+            $top_message = $request->name . 'さんがログインしました';
+            $match_flg = Match::where('matched_user_id', $current_user->id)->where('match_flg', '!=', 1)->where('unmatch_flg', '!=', 1)->first();
             $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'message' => $message, 'top_message' => $top_message, 'match_flg' => $match_flg];
             return view('top.index', $param);
         }
