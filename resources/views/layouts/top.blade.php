@@ -18,7 +18,7 @@
         <ul>
             <li class="top_link">
                 <a sytle="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('top') }}" class="top_link_header_login">Pair
-                    Code</a>
+                    Cod</a>
             </li>
             <li class="top_link prof_page"><a class="prof_modal" href="#"><img src="{{asset($current_user->image)}}" class="user_image"></a></li>
             <li class="header_menu_wide" style="margin-top: 4rem;"><a href="{{ asset('top') }}" class="sagasu" style="vertical-align: middle;"><i class="fa-solid fa-magnifying-glass" style="margin-right: 2rem;font-size: 1.5rem;"></i>さがす　　　</a>
