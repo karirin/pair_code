@@ -100,7 +100,7 @@ class UserController extends Controller
         DB::table('users')->insert($form);
         if (Auth::attempt([
             'name' => $request->name,
-            'password' => $request->password
+            'password' => $request->hash_password
         ])) {
             $current_user = Auth::user();
             $users = User::get();
