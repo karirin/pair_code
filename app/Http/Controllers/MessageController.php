@@ -76,6 +76,9 @@ class MessageController extends Controller
         $date = new DateTime();
         $date->modify('+9 hour');
         $created_at = $date->format('Y-m-d H:i:s');
+        log::debug("||||||||");
+        log::debug($request);
+        log::debug("||||||||");
         if ($request->file('image') != '') {
             $file_name = $request->file('image')->getClientOriginalName();
             $request->file('image')->storeAs('public/sample', $file_name);

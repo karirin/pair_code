@@ -293,26 +293,28 @@ $(document).on('click', ".message_submit", function() {
         mmi = ('0' + mi).slice(-2),
         day = hh + ':' + mmi;
 
-        //アップロードするファイルのデータ取得
-        var fiup_file = document.getElementById("my_image").files[0];
-        //フォームデータを作成する
-        let form = $('#upload-form').get()[0];//フォームデータを格納
-        //フォームデータにアップロードファイルの情報追加
-        var formData = new FromData(form);//FormDataオブジェクト作成
+        // //アップロードするファイルのデータ取得
+        // var fileData = document.getElementById("my_image").files[0];
+        // //フォームデータを作成する
+        // var form = new FormData();
+
+        // form.append("file", fileData);
+        let input = document.getElementById('my_image');
+        // console.log(input.files);
         $.ajax({
         type: 'POST',
         url: '/ajax_message_process',
         dataType: 'text',
+        processData: false,
+        contentType: false,
         data: {
             current_user_id: current_user_id,
             user_id: user_id,
             text: text,
-            image: form
+            image: input.files
         },
-        processData: false,
-        contentType: false,
     }).done(function() {
-        $('.message_add').replaceWith('<div class="my_message"><div class="mycomment right"><span class="message_created_at"> '+ day +' </span><p>'+text+'</p><img src='+current_user_img+'  class="message_user_img"></div></div><input type="hidden" class="message_add">');
+        $('.message_add').replaceWith('<div class="my_message"><div class="mycomment right"><span class="message_created_at"> '+ day +' </span><p>'+text+'</p><img class="message_user_img"></div></div><input type="hidden" class="message_add">');
         $('#message_counter').val('');
         $('html, body').scrollTop($(document).height());
     }).fail(function() {});
