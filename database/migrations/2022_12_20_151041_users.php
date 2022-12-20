@@ -16,7 +16,7 @@ class Users extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 100);
-            $table->bytea('image');
+            $table->binary('image');
             $table->integer('age');
             $table->text('occupation');
             $table->text('profile');
