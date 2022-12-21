@@ -31,7 +31,6 @@ class Users extends Migration
             $table->text('email');
             $table->integer('top_flg');
             $table->integer('match_flg');
-            $table->timestamps();
         });
     }
 
