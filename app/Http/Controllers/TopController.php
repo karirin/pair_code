@@ -39,7 +39,6 @@ class TopController extends Controller
             $param = ['users' => $users];
         }
         $user = new User;
-
         return view('top.index', $param);
     }
 

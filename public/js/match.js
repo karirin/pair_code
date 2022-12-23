@@ -244,10 +244,12 @@ $(document).on('click', ".match_good_btn", function() {
         },
     });
 
-    var user_id = $(this).next().val(),
+    var user_id = $(this).next().next().val(),
         user_name = $(this).parent().prev().prev().prev().prev().prev().text(),
         matchs_flg = $(this).next().next().next()[0].value,
         match_good_btn = $(this);
+        console.log($(this));
+        console.log(user_id);
     $.ajax({
         type: 'POST',
         url: '/ajax_match_process',
