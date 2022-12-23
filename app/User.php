@@ -92,31 +92,31 @@ class User extends Authenticatable
 
     public function check_match($user_id, $current_user_id)
     {
-        $match_flg = DB::select('select user_id from `matches` where user_id = ' . $current_user_id . ' and matched_user_id = ' . $user_id);
+        $match_flg = DB::select('select user_id from matches where user_id = ' . $current_user_id . ' and matched_user_id = ' . $user_id);
         return count($match_flg);
     }
 
     public function check_matchs($user_id, $current_user_id)
     {
-        $matchs_flg = DB::select('select * from `matches` where (user_id = ' . $current_user_id . ' and matched_user_id = ' . $user_id . ') or (user_id = ' . $user_id  . ' and matched_user_id = ' . $current_user_id . ')');
+        $matchs_flg = DB::select('select * from matches where (user_id = ' . $current_user_id . ' and matched_user_id = ' . $user_id . ') or (user_id = ' . $user_id  . ' and matched_user_id = ' . $current_user_id . ')');
         return count($matchs_flg);
     }
 
     public function check_unmatch($user_id, $current_user_id)
     {
-        $unmatchs_flg = DB::select('select * from `matches` where user_id = ' . $current_user_id . ' and matched_user_id = ' . $user_id . ' and unmatch_flg = 1');
+        $unmatchs_flg = DB::select('select * from matches where user_id = ' . $current_user_id . ' and matched_user_id = ' . $user_id . ' and unmatch_flg = 1');
         return count($unmatchs_flg);
     }
 
     public function check_match_current_user($current_user_id)
     {
-        $current_user_matchcount = DB::select('select * from `matches` where user_id = ' . $current_user_id . ' and unmatch_flg IS NULL');
+        $current_user_matchcount = DB::select('select * from matches where user_id = ' . $current_user_id . ' and unmatch_flg IS NULL');
         return count($current_user_matchcount);
     }
 
     public function check_match_user($current_user_id)
     {
-        $user_matchcount = DB::select('select * from `matches` where matched_user_id = ' . $current_user_id . ' and unmatch_flg IS NULL');
+        $user_matchcount = DB::select('select * from matches where matched_user_id = ' . $current_user_id . ' and unmatch_flg IS NULL');
         return count($user_matchcount);
     }
 }
