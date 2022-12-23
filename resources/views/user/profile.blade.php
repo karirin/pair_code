@@ -140,7 +140,7 @@
                     <div id="myprofile_skill" style="width: 60%;">@foreach($skills as $skill)@if($skill!='')@if(3 <= $k)<span id="child-span_myprofile" class="skill_tag extra" style="display: none;">
                             {{$skill}}<label><input type="button" style="display:none;"><i class="far  fa-times-circle skill_myprofile"></i></label></span>
                             @else<span id="child-span_myprofile" class="skill_tag">{{$skill}}<label><input type="button" style="display:none;"><i class="far  fa-times-circle skill_myprofile"></i></label></span>
-                            @endif@php$k++@endphp@endif
+                            @endif@php$k++;@endphp@endif
                             @endforeach
                     </div><i class="fas fa-plus myprofile_skill_btn"></i>
                     <input placeholder="skill Stack" name="skills" id="skill_myprofile_input" style="display:block;" />
