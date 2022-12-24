@@ -14,7 +14,7 @@ class Messages extends Migration
     public function up()
     {
         Schema::create('messages', function (Blueprint $table) {
-            $table->integer('id');
+            $table->bigIncrements('id');
             $table->text('text');
             $table->binary('image');
             $table->integer('user_id');
