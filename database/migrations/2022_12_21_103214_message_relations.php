@@ -14,9 +14,9 @@ class MessageRelations extends Migration
     public function up()
     {
         Schema::create('message_relations', function (Blueprint $table) {
-            $table->integer('user_id');
+            $table->integer('user_id')->primary();
             $table->integer('destination_user_id');
-            $table->integer('message_count')->nullable(true);
+            $table->text('message_count')->nullable(true);
         });
     }
 
