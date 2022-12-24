@@ -14,7 +14,7 @@ class Matches extends Migration
     public function up()
     {
         Schema::create('matches', function (Blueprint $table) {
-            $table->integer('id')->primary();
+            $table->bigIncrements('id');
             $table->integer('user_id');
             $table->integer('matched_user_id');
             $table->integer('unmatch_flg')->nullable(true)->default(0);
