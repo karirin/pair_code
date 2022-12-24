@@ -72,14 +72,14 @@
 <i class="fa-solid fa-arrow-pointer pointer" id="pointer" style="display: none;"></i>
 <i class="fa-solid fa-arrow-pointer pointer2" id="pointer2" style="display: none;"></i>
 <script>
-    // window.onload = function() {
-    //     $("#splash").delay(100).fadeOut('slow'); //ローディング画面を1.5秒（1500ms）待機してからフェードアウト
-    //     $("#splash_logo").delay(100).fadeOut('slow'); //ロゴを1.2秒（1200ms）待機してからフェードアウト
-    //     $("#splash-logo").delay(1200).fadeOut('slow'); //ロゴを1.2秒でフェードアウトする記述
-    //     setTimeout(function() {
-    //         $(".match_top").css("display", "inline-block");
-    //     }, 840);
-
+    window.onload = function() {
+        $("#splash").delay(100).fadeOut('slow'); //ローディング画面を1.5秒（1500ms）待機してからフェードアウト
+        $("#splash_logo").delay(100).fadeOut('slow'); //ロゴを1.2秒（1200ms）待機してからフェードアウト
+        $("#splash-logo").delay(1200).fadeOut('slow'); //ロゴを1.2秒でフェードアウトする記述
+        setTimeout(function() {
+            $(".match_top").css("display", "inline-block");
+        }, 840);
+    }
     //     $('.top_link_header_login').attr("href", "#");
     //     setTimeout(function() {
     //         $('.match_user:first').hide();
