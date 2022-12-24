@@ -329,13 +329,13 @@ class UserController extends Controller
     {
         $current_user = Auth::user();
         $users = User::get();
-        DB::update('update `users` set top_flg = 1 where id = ' . $current_user->id . '');
+        DB::update('update users set top_flg = 1 where id = ' . $current_user->id . '');
     }
 
     public function ajax_m_flg(Request $request)
     {
         $current_user = Auth::user();
         $users = User::get();
-        DB::update('update `users` set match_flg = 1 where id = ' . $current_user->id . '');
+        DB::update('update users set match_flg = 1 where id = ' . $current_user->id . '');
     }
 }
