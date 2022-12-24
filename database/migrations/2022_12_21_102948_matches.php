@@ -16,9 +16,9 @@ class Matches extends Migration
         Schema::create('matches', function (Blueprint $table) {
             $table->integer('user_id');
             $table->integer('matched_user_id');
-            $table->integer('unmatch_flg')->nullable(true)->default(0);
-            $table->integer('match_flg')->nullable(true)->default(0);
-            $table->timestamp('updated_at')->nullable(true);
+            $table->integer('unmatch_flg');
+            $table->integer('match_flg');
+            $table->timestamp('updated_at');
         });
     }
 
