@@ -199,7 +199,6 @@ $(document).on('click', ".profile_narrow_close", function() {
 // ユーザー詳細画面
 $(document).on('click', ".match_user", function() {
     var $target_modal = $(this).data("target");
-    $('.fa-times-circle').show();
     $('.modal_match').fadeIn();
     $('.matchuser_detaile').fadeIn();
     $('.matchuser_detaile_prof').fadeIn();
