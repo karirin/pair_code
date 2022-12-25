@@ -13,7 +13,7 @@
     <div class="message" style="margin-top: 5rem;">
         @foreach ($messages as $message)
         <div class="my_message">
-            @if ($message->user_id === "$current_user->id")
+            @if ($message->user_id == $current_user->id)
             <div class="mycomment right">
                 <span class="message_created_at">
                     {{@$message_class->convert_to_fuzzy_time($message->created_at)}}
