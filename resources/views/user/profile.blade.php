@@ -134,53 +134,49 @@
                 <div class="col-8">
                     <p class="tag_tittle">スキル</p>
 
-                    <div id="myprofile_skill" style="width: 60%;">@foreach($skills as $skill)@if($skill!='')@if(3 <= $k)<span id="child-span_myprofile" class="skill_tag extra" style="display: none;">
-                            {{$skill}}<label><input type="button" style="display:none;"><i class="far  fa-times-circle skill_myprofile"></i></label></span>
-                            @else<span id="child-span_myprofile" class="skill_tag">{{$skill}}<label><input type="button" style="display:none;"><i class="far  fa-times-circle skill_myprofile"></i></label></span>
-                            @endif@php$k++@endphp@endif
-                            @endforeach
-                    </div><i class="fas fa-plus myprofile_skill_btn"></i>
-                    <input placeholder="skill Stack" name="skills" id="skill_myprofile_input" style="display:block;" />
-                    <input type="hidden" name="myprofile_skills" id="myprofile_skills">
-                    <input type="hidden" name="skill_count" id="myprofile_skill_count">
-                    <input type="hidden" name="myskills" value="{{$current_user->skill}}">
-                    <p class="tag_tittle">取得資格</p>
-                    <div id="licence" style="width: 60%;">
+
+                </div><i class="fas fa-plus myprofile_skill_btn"></i>
+                <input placeholder="skill Stack" name="skills" id="skill_myprofile_input" style="display:block;" />
+                <input type="hidden" name="myprofile_skills" id="myprofile_skills">
+                <input type="hidden" name="skill_count" id="myprofile_skill_count">
+                <input type="hidden" name="myskills" value="{{$current_user->skill}}">
+                <p class="tag_tittle">取得資格</p>
+                <div id="licence" style="width: 60%;">
+                    @php
+                    $l = 0;
+                    @endphp
+                    @foreach ($licences as $licence)@if($licence!='')@if(3 <= $l)<span id="child-span" class="licence_tag extra" style="display: none;">{{$licence}}<label><input type="button" style="display:none;"><i class="far fa-times-circle licence"></i></label></span>@else
+                        <span id="child-span" class="licence_tag">{{$licence}}<label><input type="button" style="display:none;"><i class="far fa-times-circle licence"></i></label></span>
+                        @endif
+                        @endif
                         @php
-                        $l = 0;
+                        $l++
                         @endphp
-                        @foreach ($licences as $licence)@if($licence!='')@if(3 <= $l)<span id="child-span" class="licence_tag extra" style="display: none;">{{$licence}}<label><input type="button" style="display:none;"><i class="far fa-times-circle licence"></i></label></span>@else
-                            <span id="child-span" class="licence_tag">{{$licence}}<label><input type="button" style="display:none;"><i class="far fa-times-circle licence"></i></label></span>
-                            @endif
-                            @endif
-                            @php
-                            $l++
-                            @endphp
-                            @endforeach<i class="fas fa-plus myprofile_licence_btn"></i>
+                        @endforeach<i class="fas fa-plus myprofile_licence_btn"></i>
+                </div>
+                <input placeholder="licence Stack" name="name" id="licence_input" />
+                <input type="hidden" name="myprofile_licences" id="myprofile_licences">
+                <input type="hidden" name="licence_count" id="licence_count">
+                <input type="hidden" name="mylicences" value="{{$current_user->licence}}">
+                <div class="background">
+                    <p class="tag_tittle">自己紹介</p>
+                    <p class="edit_profile">{{$current_user->workhistory}}</p>
+                </div>
+                <div class="background">
+                    <p class="tag_tittle">職歴</p>
+                    <p class="workhistory">{{$current_user->workhistory}}</p>
+                    <div class="error_workhistory" style="display: none;">
+                        <span style="color:rgb(220, 53, 69);">100文字以内で入力してください</span>
                     </div>
-                    <input placeholder="licence Stack" name="name" id="licence_input" />
-                    <input type="hidden" name="myprofile_licences" id="myprofile_licences">
-                    <input type="hidden" name="licence_count" id="licence_count">
-                    <input type="hidden" name="mylicences" value="{{$current_user->licence}}">
-                    <div class="background">
-                        <p class="tag_tittle">自己紹介</p>
-                        <p class="edit_profile">{{$current_user->workhistory}}</p>
-                    </div>
-                    <div class="background">
-                        <p class="tag_tittle">職歴</p>
-                        <p class="workhistory">{{$current_user->workhistory}}</p>
-                        <div class="error_workhistory" style="display: none;">
-                            <span style="color:rgb(220, 53, 69);">100文字以内で入力してください</span>
-                        </div>
-                    </div>
-                    <div class="edit_btns">
-                        <input type="submit" class="btn btn-outline-dark edit_done" value="編集完了">
-                        <button class="btn btn-outline-dark profile_close" type="button">閉じる</button>
-                        <button class="btn btn-outline-dark profile_narrow_close" type="button">閉じる</button>
-                    </div>
+                </div>
+                <div class="edit_btns">
+                    <input type="submit" class="btn btn-outline-dark edit_done" value="編集完了">
+                    <button class="btn btn-outline-dark profile_close" type="button">閉じる</button>
+                    <button class="btn btn-outline-dark profile_narrow_close" type="button">閉じる</button>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </form>
 @endsection
