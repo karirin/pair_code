@@ -223,7 +223,7 @@
     font-size: 1.5rem;
 }
 
-.match_good_btn,
+#match_good_btn,
 .good_btn {
     display: inline-block;
     padding: 7px 20px;
@@ -236,12 +236,12 @@
     width: 40%;
 }
 
-.match_good_btn:hover,
+#match_good_btn:hover,
 .good_btn:hover {
     background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
 }
 
-.match_good_btn .fas.fa-thumbs-up,
+#match_good_btn .fas.fa-thumbs-up,
 .good_btn .fas.fa-thumbs-up {
     margin-right: 0.5rem;
 }

@@ -236,7 +236,7 @@ $(document).on('click', ".far.fa-times-circle", function() {
 });
 
 // いいねをクリックしたとき
-$(document).on('click', ".match_good_btn", function() {
+$(document).one('click', ".match_good_btn", function() {
     $.ajaxSetup({
         headers: {
             "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
@@ -247,8 +247,6 @@ $(document).on('click', ".match_good_btn", function() {
         user_name = $(this).parent().prev().prev().prev().prev().prev().text(),
         matchs_flg = $(this).next().next().next()[0].value,
         match_good_btn = $(this);
-        console.log($(this));
-        console.log(user_id);
     $.ajax({
         type: 'POST',
         url: '/ajax_match_process',
@@ -321,7 +319,7 @@ $(document).on('click', ".message_submit", function() {
 
 
 // マッチ機能処理
-$(document).on('click', '#match_btn', function() {
+$(document).one('click', '#match_btn', function() {
     $.ajaxSetup({
         headers: {
             "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),

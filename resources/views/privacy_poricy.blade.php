@@ -6,9 +6,10 @@
 @endsection
 @section('content')
 @if (Auth::check())
-
 <h1 class="privacy_policy_title">プライバシーポリシー(Privacy Policy)</h1>
-
+@else
+<h1 class="privacy_policy_title" style="margin-top: 3rem;">プライバシーポリシー(Privacy Policy)</h1>
+@endif
 <div style="padding: 4rem;">
     <h4>個人情報の利用目的</h4>
 
@@ -39,15 +40,14 @@
 
     <p class="privacy_policy">当サイトで掲載している文章や画像などにつきましては、無断転載することを禁止します。
         当サイトは著作権や肖像権の侵害を目的としたものではありません。著作権や肖像権に関して問題がございましたら、お問い合わせフォームよりご連絡ください。迅速に対応いたします。
-    <p>
+        <p>
 
-    <h4>リンクについて</h4>
+            <h4>リンクについて</h4>
 
-    <p class="privacy_policy">当サイトは基本的にリンクフリーです。リンクを行う場合の許可や連絡は不要です。
-        ただし、インラインフレームの使用や画像の直リンクはご遠慮ください。</p>
+            <p class="privacy_policy">当サイトは基本的にリンクフリーです。リンクを行う場合の許可や連絡は不要です。
+                ただし、インラインフレームの使用や画像の直リンクはご遠慮ください。</p>
 </div>
 
-@endif
 @endsection
 @section('footer')
 @parent

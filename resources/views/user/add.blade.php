@@ -27,7 +27,7 @@
                 <div class="post_btn" style="justify-content: unset;">
                     <label>
                         <i class="far fa-image"></i>
-                        <input type="file" name="image" style="display:none;">
+                        <input type="file" name="image" id="my_image" style="display:none;">
                     </label>
                 </div>
                 <div style="font-size:0.9rem;">※（縦横200px×200px以上推奨、5MB未満）</div>
