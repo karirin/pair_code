@@ -284,13 +284,14 @@ $(document).on('click', ".message_submit", function() {
     var current_user_id= $('.current_user_id').val(),
         user_id = $('.destination_user_id').val(),
         text = $('#message_counter').val(),
+        current_user_img = $('.image')[0].value,
         date=new Date(),
         h = date.getHours(),
         mi = date.getMinutes(),
         hh = ('0' + h).slice(-2),
         mmi = ('0' + mi).slice(-2),
         day = hh + ':' + mmi;
-
+console.log($('.image')[0]);
         // //アップロードするファイルのデータ取得
         // var fileData = document.getElementById("my_image").files[0];
         // //フォームデータを作成する
@@ -311,7 +312,7 @@ $(document).on('click', ".message_submit", function() {
             text: text
         },
     }).done(function() {
-        $('.message_add').replaceWith('<div class="my_message"><div class="mycomment right"><span class="message_created_at"> '+ day +' </span><p>'+text+'</p><img class="message_user_img"></div></div><input type="hidden" class="message_add">');
+        $('.message_add').replaceWith('<div class="my_message"><div class="mycomment right"><span class="message_created_at"> '+ day +' </span><p>'+text+'</p><img class="message_user_img" src="'+current_user_img+'"></div></div><input type="hidden" class="message_add">');
         $('#message_counter').val('');
         $('html, body').scrollTop($(document).height());
     }).fail(function() {});
