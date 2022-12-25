@@ -16,7 +16,7 @@ class Messages extends Migration
         Schema::create('messages', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('text');
-            $table->binary('image');
+            $table->binary('image')->nullable(true);
             $table->integer('user_id');
             $table->integer('destination_user_id');
             $table->timestamp('created_at');

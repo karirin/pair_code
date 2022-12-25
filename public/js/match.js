@@ -306,13 +306,12 @@ $(document).on('click', ".message_submit", function() {
         type: 'POST',
         url: '/ajax_message_process',
         dataType: 'text',
-        processData: false,
-        contentType: false,
+        //processData: false,
+        //contentType: false,
         data: {
             current_user_id: current_user_id,
             user_id: user_id,
-            text: text,
-            image: input.files
+            text: text
         },
     }).done(function() {
         $('.message_add').replaceWith('<div class="my_message"><div class="mycomment right"><span class="message_created_at"> '+ day +' </span><p>'+text+'</p><img class="message_user_img"></div></div><input type="hidden" class="message_add">');
