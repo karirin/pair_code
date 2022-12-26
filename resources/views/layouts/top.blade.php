@@ -47,6 +47,16 @@
 
                 </ul>
             </div>
+
+            <div class="smartphone_header">
+                <div style="width: 100%;height:100%;background-color: #fdff8b0a;">
+                    <i class="fa-solid fa-magnifying-glass" style="font-size: 1.5rem;"></i>
+                    <i class="fas fa-thumbs-up" style="font-size: 1.5rem;"></i>
+                    <i class="fas fa-comment" style="font-size: 1.5rem;"></i>
+                    <i class="fa-regular fa-circle-user" style="font-size: 1.5rem;"></i>
+                    <i class="fas fa-sign-out-alt" style="font-size: 1.5rem;"></i>
+                </div>
+            </div>
             @else
 
 
