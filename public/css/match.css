@@ -460,20 +460,21 @@
     .card{
         width: 54%;
         height: 35%;
-        left: 24%;
+        left: 19%;
+        top: 27%;
     }
     .fa-image_range.fa{
-        padding: 2.5rem;
+        padding: 2rem;
         border-radius: 6rem;
     }
     .fa-image_range.fa:first-child {
         margin-right: 13rem!important;
     }
     .fa-solid.fa-reply{
-        font-size: 6rem!important;
+        font-size: 5rem!important;
     }
     .matching_btn .fas.fa-thumbs-up{
-        font-size: 6rem!important;
+        font-size: 5rem!important;
     }
     .matching_btn{
         left: 20%;
