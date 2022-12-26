@@ -259,7 +259,6 @@ class UserController extends Controller
     {
         $current_user = Auth::user();
         $users = User::get();
-        log::debug($current_user);
         $param = ['users' => $users, 'current_user' => $current_user];
         return view('user.add_match', $param);
     }
