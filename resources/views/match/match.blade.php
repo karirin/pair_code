@@ -89,7 +89,7 @@
             <input type="button" id="unmatch_btn" style="display:none;">
         </label>
         <label>
-            <div class="fa-image_range fa">
+            <div class="fa-image_range fa" style="margin-right: 0;">
                 <i class="fas fa-thumbs-up" style="font-size: 25px;"></i>
             </div>
             <input type="button" id="match_btn" style="display:none">

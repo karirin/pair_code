@@ -462,4 +462,21 @@
         height: 52%;
         left: 12%;
     }
+    .fa-image_range.fa{
+        padding: 2.5rem;
+        border-radius: 6rem;
+    }
+    .fa-image_range.fa:first-child {
+        margin-right: 13rem!important;
+    }
+    .fa-solid.fa-reply{
+        font-size: 6rem!important;
+    }
+    .fas.fa-thumbs-up{
+        font-size: 6rem!important;
+    }
+    .matching_btn{
+        left: 20%;
+        top: 73%;
+    }
 }
