@@ -52,7 +52,7 @@
                 <div style="width: 100%;height:100%;background-color: #fdff8b0a;">
                     <span style="display:inline-block;">
                         <a href="{{ asset('top') }}" class="sagasu" style="color: #000;"><i class="fa-solid fa-magnifying-glass"></i>
-                            <div style="text-align: center;">さがす</div>
+                            <div style="text-align: center;font-size:1.5rem;">さがす</div>
                         </a>
                     </span><span style="display:inline-block;">
                         <a href="{{ asset('match/match') }}" class="oaitekara" style="color: #000;"><i class="fas fa-thumbs-up"></i></a>
