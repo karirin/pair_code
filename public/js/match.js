@@ -291,7 +291,6 @@ $(document).on('click', ".message_submit", function() {
         hh = ('0' + h).slice(-2),
         mmi = ('0' + mi).slice(-2),
         day = hh + ':' + mmi;
-console.log($('.image')[0]);
         // //アップロードするファイルのデータ取得
         // var fileData = document.getElementById("my_image").files[0];
         // //フォームデータを作成する

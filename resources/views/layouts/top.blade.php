@@ -20,19 +20,21 @@
                 <a sytle="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('top') }}" class="top_link_header_login">Pair
                     Code</a>
             </li>
-            <li class="top_link prof_page"><a class="prof_modal" href="#"><img src="{{asset($current_user->image)}}" class="user_image"></a></li>
-            <li class="header_menu_wide" style="margin-top: 4rem;"><a href="{{ asset('top') }}" class="sagasu" style="vertical-align: middle;"><i class="fa-solid fa-magnifying-glass" style="margin-right: 2rem;font-size: 1.5rem;"></i>さがす　　　</a>
-            </li>
-            <li class="header_menu"><a href="{{ asset('match/match') }}" class="oaitekara" style="vertical-align: middle;">
-                    @if($match_flg!='')<i class="fas fa-thumbs-up" style="font-size: 1.5rem;"></i><i class="fa-solid fa-circle new_match_mark" style="font-size: 1px;color: red;top: 43%;position: absolute;"></i><span style="margin-left: 2rem">お相手から　<span>@else<i class="fas fa-thumbs-up" style="margin-right: 2rem;font-size: 1.5rem;"></i></span>お相手から　@endif
-                </a></li>
-            <li class="header_menu"><a href="{{ asset('message/message_top') }}" class="messe-ji" style="vertical-align: middle;">
-                    @if($message_count!=0)<i class="fas fa-comment" style="font-size: 1.5rem;"></i><i class="fa-solid fa-circle new_mark" style="font-size: 1px;color: red;top: 57%;position: absolute;"></i><span style="margin-left: 2rem">メッセージ　</span>@else<i class="fas fa-comment" style="margin-right: 2rem;font-size: 1.5rem;"></i><i class="fa-solid fa-circle new_mark" style="display: none;font-size: 1px;color: red;top: 57%;position: absolute;"></i><span>メッセージ　</span>@endif
-                </a></li>
-            <li class="header_menu"><a href="{{ asset('user/profile') }}" class="profile" style="vertical-align: middle;"><i class="fa-regular fa-circle-user" style="font-size: 1.5rem;"></i><span style="margin-left: 2rem">プロフィール</spna>
-                </a></li>
-            <li class="header_menu_wide" class="roguauto" style="vertical-align: middle;"><a href="{{ asset('user/logout') }}" style="vertical-align: middle;"><i class="fas fa-sign-out-alt" style="margin-right: 2rem;font-size: 1.5rem;"></i>ログアウト　</a>
-            </li>
+            <div class="header_sub">
+                <li class="top_link prof_page"><a class="prof_modal" href="#"><img src="{{asset($current_user->image)}}" class="user_image"></a></li>
+                <li class="header_menu_wide" style="margin-top: 4rem;"><a href="{{ asset('top') }}" class="sagasu" style="vertical-align: middle;"><i class="fa-solid fa-magnifying-glass" style="margin-right: 2rem;font-size: 1.5rem;"></i>さがす　　　</a>
+                </li>
+                <li class="header_menu"><a href="{{ asset('match/match') }}" class="oaitekara" style="vertical-align: middle;">
+                        @if($match_flg!='')<i class="fas fa-thumbs-up" style="font-size: 1.5rem;"></i><i class="fa-solid fa-circle new_match_mark" style="font-size: 1px;color: red;top: 43%;position: absolute;"></i><span style="margin-left: 2rem">お相手から　<span>@else<i class="fas fa-thumbs-up" style="margin-right: 2rem;font-size: 1.5rem;"></i></span>お相手から　@endif
+                    </a></li>
+                <li class="header_menu"><a href="{{ asset('message/message_top') }}" class="messe-ji" style="vertical-align: middle;">
+                        @if($message_count!=0)<i class="fas fa-comment" style="font-size: 1.5rem;"></i><i class="fa-solid fa-circle new_mark" style="font-size: 1px;color: red;top: 57%;position: absolute;"></i><span style="margin-left: 2rem">メッセージ　</span>@else<i class="fas fa-comment" style="margin-right: 2rem;font-size: 1.5rem;"></i><i class="fa-solid fa-circle new_mark" style="display: none;font-size: 1px;color: red;top: 57%;position: absolute;"></i><span>メッセージ　</span>@endif
+                    </a></li>
+                <li class="header_menu"><a href="{{ asset('user/profile') }}" class="profile" style="vertical-align: middle;"><i class="fa-regular fa-circle-user" style="font-size: 1.5rem;"></i><span style="margin-left: 2rem">プロフィール</spna>
+                    </a></li>
+                <li class="header_menu_wide" class="roguauto" style="vertical-align: middle;"><a href="{{ asset('user/logout') }}" style="vertical-align: middle;"><i class="fas fa-sign-out-alt" style="margin-right: 2rem;font-size: 1.5rem;"></i>ログアウト　</a>
+                </li>
+            </div>
             @else
             <div>
                 <ul>

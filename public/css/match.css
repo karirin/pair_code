@@ -409,3 +409,20 @@
     padding: 1rem;
     border-radius: 4rem;
 }
+
+/* ///////////////////////// */
+
+
+/*       メディアクエリ       */
+
+
+/*       　スマホ対応　       */
+
+
+/* ///////////////////////// */
+
+@media screen and (max-width: 375px){
+    .header_sub {
+        display: none;
+    }
+}
