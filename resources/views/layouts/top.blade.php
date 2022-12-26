@@ -51,20 +51,20 @@
             <div class="smartphone_header">
                 <div style="width: 100%;height:100%;background-color: #fdff8b0a;">
                     <span style="display:inline-block;">
-                        <a href="{{ asset('top') }}" class="sagasu" style="color: #000;"><i class="fa-solid fa-magnifying-glass"></i>
+                        <a href="{{ asset('top') }}" class="sagasu" style="color: #9f9f9f;"><i class="fa-solid fa-magnifying-glass"></i>
                             <div style="text-align: center;font-size:1.5rem;">さがす</div>
                         </a>
                     </span><span style="display:inline-block;">
-                        <a href="{{ asset('match/match') }}" class="oaitekara" style="color: #000;"><i class="fas fa-thumbs-up"></i></a>
+                        <a href="{{ asset('match/match') }}" class="oaitekara" style="color: #9f9f9f;"><i class="fas fa-thumbs-up"></i></a>
                         <div style="text-align: center;font-size:1.5rem;">お相手から</div>
                     </span><span style="display:inline-block;">
-                        <a href="{{ asset('message/message_top') }}" class="messe-ji" style="color: #000;"><i class="fas fa-comment"></i></a>
+                        <a href="{{ asset('message/message_top') }}" class="messe-ji" style="color: #9f9f9f;"><i class="fas fa-comment"></i></a>
                         <div style="text-align: center;font-size:1.5rem;">メッセージ</div>
                     </span><span style="display:inline-block;">
-                        <a href="{{ asset('user/profile') }}" class="profile" style="color: #000;"><i class="fa-regular fa-circle-user"></i></a>
+                        <a href="{{ asset('user/profile') }}" class="profile" style="color: #9f9f9f;"><i class="fa-regular fa-circle-user"></i></a>
                         <div style="text-align: center;font-size:1.5rem;">プロフィール</div>
                     </span><span style="display:inline-block;">
-                        <a href="{{ asset('user/logout') }}" style="color: #000;"><i class="fas fa-sign-out-alt"></i></a>
+                        <a href="{{ asset('user/logout') }}" style="color: #9f9f9f;"><i class="fas fa-sign-out-alt"></i></a>
                         <div style="text-align: center;font-size:1.5rem;">ログアウト</div>
                     </span>
                 </div>

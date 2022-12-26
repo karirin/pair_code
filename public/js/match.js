@@ -31,22 +31,28 @@ window.onload = function() {
         case "/top":
         case "/user/test_login":
             $('.sagasu')[0].setAttribute("style", 'background-color: antiquewhite;');
+            $('.smartphone_header .sagasu')[0].setAttribute("style", 'color: #000;');
             break;
         case "/match/match":
             $('.oaitekara')[0].setAttribute("style", 'background-color: antiquewhite;');
+            $('.smartphone_header .oaitekara')[0].setAttribute("style", 'color: #000;');
             break;
         case "/message/message_top":
             $('.messe-ji')[0].setAttribute("style", 'background-color: antiquewhite;');
+            $('.smartphone_header .messe-ji')[0].setAttribute("style", 'color: #000;');
             break;
         case "/message/message":
         case "/message/add":
             $('.messe-ji')[0].setAttribute("style", 'background-color: antiquewhite;');
+            $('.smartphone_header .messe-ji')[0].setAttribute("style", 'color: #000;');
             break;
         case "/user/profile":
             $('.profile')[0].setAttribute("style", 'background-color: antiquewhite;');
+            $('.smartphone_header .profile')[0].setAttribute("style", 'color: #000;');
             break;
         case "/top":
             $('.sagasu')[0].setAttribute("style", 'background-color: antiquewhite;');
+            $('.smartphone_header .sagasu')[0].setAttribute("style", 'color: #000;');
             break;
     }
 
