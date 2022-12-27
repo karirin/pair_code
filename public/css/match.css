@@ -456,6 +456,9 @@
         top: 37%!important;
         left: 55%!important;
     }
+    .footer{
+        display: none;
+    }
 
 /* ///////////////////////// */
 
@@ -494,12 +497,41 @@
     }
     .page_title{
         font-size: 4rem;
-        margin-top: 20rem;
+        margin-top: 15rem;
     }
     .fa-solid.fa-circle-question.help_btn{
         font-size: 5rem!important;
     }
     .top_link{
         font-size: 4rem;
+    }
+    .match_top{
+        margin-bottom: 9rem;
+    }
+
+    /* ///////////////////////// */
+
+
+    /*     メッセージリスト画面    */
+
+
+    /* ///////////////////////// */
+    .destination_user_list {
+        border-radius: 7rem;
+        font-size: 2rem;
+    }
+    .message_top{
+        margin-left: 5%!important;
+        margin-bottom: 18%!important;
+    }
+    .message_user_img{
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+    .new_message_time{
+        font-size: 1.5rem;
+    }
+    .far.fa-trash-alt{
+        font-size: 2rem;
     }
 }
