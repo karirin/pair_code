@@ -460,7 +460,7 @@
     .card{
         width: 54%;
         height: 35%;
-        left: 22%;
+        left: 25%;
         top: 27%;
     }
     .fa-image_range.fa{
@@ -477,7 +477,7 @@
         font-size: 5rem!important;
     }
     .matching_btn{
-        left: 22%;
+        left: 25%;
         top: 73%;
     }
 }
