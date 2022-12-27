@@ -459,6 +459,16 @@
     .footer{
         display: none;
     }
+    .page_title.serach{
+        margin-top: 12rem;
+    }
+    .page_title.message_title{
+        margin-bottom: 3rem;
+    }
+    .top_title{
+        width: 100%;
+        z-index: 100;
+    }
 
 /* ///////////////////////// */
 
@@ -524,6 +534,9 @@
         margin-left: 5%!important;
         margin-bottom: 18%!important;
     }
+    .col-9.message_top{
+        max-width: 88%;
+    }
     .message_user_img{
         width: 4.5rem;
         height: 4.5rem;
@@ -533,5 +546,11 @@
     }
     .far.fa-trash-alt{
         font-size: 2rem;
+    }
+    #message_count{
+        font-size: 1rem;
+    }
+    .destination_user_list .destination_user_info .destination_user_info_detail .destination_user_name {
+        font-size: 1.5rem;
     }
 }

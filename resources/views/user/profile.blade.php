@@ -26,7 +26,7 @@
                 <!--/splash-->
             </div>
         </div>
-        <h3 class="page_title">プロフィール</h3>
+        <h3 class="page_title profile_title">プロフィール</h3>
         <div class="tag" style="display: block;">
             <div class="row">
                 <div class="col-3">

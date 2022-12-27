@@ -10,7 +10,7 @@
     </div>
 </div>
 <div class="col-9 message_top" style="margin-left: 22%;margin-bottom: 1.5rem;display: none;">
-    <h3 class="page_title">メッセージ</h3>
+    <h3 class="page_title message_title">メッセージ</h3>
     @foreach ($message_relations as $message_relation)
     <div class="message_list">
         <a href='message?user_id={{$message_relation->destination_user_id}}' id="message_link">

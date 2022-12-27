@@ -26,7 +26,7 @@
         「スキップ」ボタンをクリックすると</br>
         マッチングをキャンセルすることができます
     </div>
-    <h3 class="page_title">お相手から</h3>
+    <h3 class="page_title match_title">お相手から</h3>
     <i class="fa-solid fa-circle-question help_btn" style="position: absolute;right: 3%;top: 8%;font-size: 2rem;"></i>
     <input type="hidden" class="match_sample_user">
     <input type="hidden" class="m_flg" value="{{$current_user->match_flg}}">
