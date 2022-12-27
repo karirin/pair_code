@@ -296,7 +296,6 @@
     display: none;
 }
 
-
 /* ///////////////////////// */
 
 
@@ -457,9 +456,18 @@
         top: 37%!important;
         left: 55%!important;
     }
+
+/* ///////////////////////// */
+
+
+/*        マッチ画面        */
+
+
+/* ///////////////////////// */
+
     .card{
         width: 54%;
-        height: 35%;
+        height: 38%;
         left: 25%;
         top: 27%;
     }
@@ -479,5 +487,19 @@
     .matching_btn{
         left: 25%;
         top: 73%;
+    }
+    .card .profile_name {
+        font-size: 3rem;
+        margin-left: 2.5rem;
+    }
+    .page_title{
+        font-size: 4rem;
+        margin-top: 20rem;
+    }
+    .fa-solid.fa-circle-question.help_btn{
+        font-size: 5rem!important;
+    }
+    .top_link{
+        font-size: 4rem;
     }
 }

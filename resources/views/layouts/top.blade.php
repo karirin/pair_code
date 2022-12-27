@@ -56,7 +56,7 @@
                         </a>
                     </span><span style="display:inline-block;">
                         <a href="{{ asset('match/match') }}" class="oaitekara" style="color: #9f9f9f;"><i class="fas fa-thumbs-up"></i></a>
-                        <div style="text-align: center;font-size:1.5rem;">お相手か</div>
+                        <div style="text-align: center;font-size:1.5rem;">お相手から</div>
                     </span><span style="display:inline-block;">
                         <a href="{{ asset('message/message_top') }}" class="messe-ji" style="color: #9f9f9f;"><i class="fas fa-comment"></i></a>
                         <div style="text-align: center;font-size:1.5rem;">メッセージ</div>
