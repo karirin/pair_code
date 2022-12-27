@@ -468,6 +468,10 @@
     .top_title{
         width: 100%;
         z-index: 100;
+        background-color: #fff;
+    }
+    .top_title ul{
+        background-color: #fdff8b0a;
     }
     .matchuser_detaile{
         width: 440px;
