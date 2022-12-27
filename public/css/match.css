@@ -449,8 +449,8 @@
         top: 11%;
     }
     .matchuser_detaile_prof{
-        left: 70%!important;
-        top: 18.8%!important;
+        left: 75%!important;
+        top: 17.6%!important;
     }
     .help_message2{
         top: 37%!important;
@@ -468,6 +468,28 @@
     .top_title{
         width: 100%;
         z-index: 100;
+    }
+    .matchuser_detaile{
+        width: 440px;
+        left: 27%;
+    }
+    .matchuser_detaile_prof{
+        width: 430px;
+    }
+    .matchuser_detaile_prof h6{
+        font-size:2rem!important;
+    }
+    .match_good_btn{
+        font-size: 1.5rem!important;
+    }
+    .matchuser_name{
+        font-size: 2rem;
+    }
+    .matchuser_age{
+        font-size: 2rem!important;
+    }
+    .far.fa-times-circle{
+        font-size: 4rem!important;
     }
 
 /* ///////////////////////// */
