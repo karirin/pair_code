@@ -4,11 +4,7 @@
 @parent
 @endsection
 @section('content')
-<div id="splash_logo">
-    <div class="spinner-border" role="status">
-        <span class="sr-only">Loading...</span>
-    </div>
-</div>
+<div id="splash">Loading...</div>
 <div class="col-9 message_top" style="margin-left: 22%;margin-bottom: 1.5rem;display: none;">
     <h3 class="page_title message_title">メッセージ</h3>
     @foreach ($message_relations as $message_relation)

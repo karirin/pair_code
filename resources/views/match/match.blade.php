@@ -5,17 +5,9 @@
 @endsection
 @section('content')
 <div class="col-9.5 match_top" style="margin-left: 22%;display: inline-block;">
-    <div id="splash">
-        <div style="background-color: #fdff8b0a;width: 100%;height: 100%;">
-            <div id="splash_logo">
-                <div class="spinner-border" role="status">
-                    <span class="sr-only">Loading...</span>
-                </div>
-            </div>
-            <!--画像部分は適宜差し換えてください-->
-            <!--/splash-->
-        </div>
-    </div>
+    <div id="splash">Loading...</div>
+    <!--画像部分は適宜差し換えてください-->
+    <!--/splash-->
     <div class="help_message3" style="display:none;">
         <span class="help-title">マッチングの流れ</span>
         「いいね」ボタンをクリックすると</br>

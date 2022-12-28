@@ -5,11 +5,7 @@
 @endsection
 @section('content')
 @if (Auth::check())
-<div id="splash_logo">
-    <div class="spinner-border" role="status">
-        <span class="sr-only">Loading...</span>
-    </div>
-</div>
+<div id="splash">Loading...</div>
 <div class="col-9 match_top" style="margin-left: 22%;display:none;">
     <h3 class="page_title serach">さがす</h3>
     <i class="fa-solid fa-circle-question help_btn"></i>

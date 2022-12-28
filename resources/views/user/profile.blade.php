@@ -15,17 +15,7 @@
     <input type="hidden" name="current_licence" value="{{$current_user->licence}}">
     <input type="hidden" name="current_workhistory" value="{{$current_user->workhistory}}">
     <div style="margin-left: 20%;width:70%;display: inline-block;">
-        <div id="splash">
-            <div style="background-color: #fdff8b0a;width: 100%;height: 100%;">
-                <div id="splash_logo">
-                    <div class="spinner-border" role="status">
-                        <span class="sr-only">Loading...</span>
-                    </div>
-                </div>
-                <!--画像部分は適宜差し換えてください-->
-                <!--/splash-->
-            </div>
-        </div>
+        <div id="splash">Loading...</div>
         <h3 class="page_title profile_title">プロフィール</h3>
         <div class="tag" style="display: block;">
             <div class="row">

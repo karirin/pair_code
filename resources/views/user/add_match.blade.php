@@ -4,11 +4,7 @@
 @parent
 @endsection
 @section('content')
-<div id="splash_logo" style="top: 55%;left: 50%;">
-    <div class="spinner-border" role="status">
-        <span class="sr-only">Loading...</span>
-    </div>
-</div>
+<div id="splash">Loading...</div>
 <div class="modal_help"></div>
 <div class="modal_unclick"></div>
 <h2 class="welcome">ありがとうございます</br>新規登録完了しました</h2>

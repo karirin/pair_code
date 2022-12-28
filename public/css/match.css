@@ -467,7 +467,7 @@
     }
     .top_title{
         width: 100%;
-        z-index: 100;
+        z-index: 10;
         background-color: #fff;
     }
     .top_title ul{
@@ -537,6 +537,7 @@
     }
     .fa-solid.fa-circle-question.help_btn{
         font-size: 5rem!important;
+        top:9%!important;
     }
     .top_link{
         font-size: 4rem;
