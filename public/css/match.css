@@ -447,6 +447,7 @@
     }
     .help_message{
         top: 11%;
+        font-size: 2rem;
     }
     .matchuser_detaile_prof{
         left: 75%!important;
