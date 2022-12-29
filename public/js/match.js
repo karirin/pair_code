@@ -206,7 +206,7 @@ $(document).on('click', ".profile_narrow_close", function() {
 // ユーザー詳細画面
 $(document).on('click', ".match_user", function() {
     var $target_modal = $(this).data("target");
-    $height = $('body').scrollTop();
+    $height = $(window).scrollTop();
     $('.content').css('position', 'fixed');
     $('.modal_match').fadeIn();
     $('.matchuser_detaile').fadeIn();
@@ -223,7 +223,7 @@ $(document).on('click', ".match_user", function() {
     $('.matchuser_detaile .user_id').val($($target_modal + ' > .match_user_id')[0].value);
     $('.matchuser_detaile .matchs_flg').val($($target_modal + ' > .matchs_flg')[0].value);
     $('.matchuser_detaile_prof').fadeIn();
-
+    $(window).scrollTop(0);
     if ($($target_modal + ' > .click_flg')[0].value != 0) {
         $('.match_good_btn').hide();
     } else {
