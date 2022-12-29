@@ -472,14 +472,14 @@
         background-color: #fdff8b0a;
     }
     .matchuser_detaile{
-        width: 760px;
+        width: 650px;
         left: 50%;
-        top: 15%;
+        top: 12%;
     }
     .matchuser_detaile_prof{
         left: 50%!important;
-        top: 72.6%!important;
-        width: 760px;
+        top: 64.6%!important;
+        width:650px;
     }
     .matchuser_detaile_prof h6{
         font-size:3rem!important;
@@ -488,10 +488,10 @@
         font-size: 1.5rem!important;
     }
     .matchuser_name{
-        font-size: 4rem;
+        font-size: 3rem;
     }
     .matchuser_age{
-        font-size: 3rem!important;
+        font-size: 2.5rem!important;
     }
     .far.fa-times-circle{
         font-size: 4rem!important;
@@ -514,10 +514,10 @@
         font-size: 2.5rem!important; 
     }
     .matchuser_address{
-        font-size: 3rem!important;
+        font-size: 2.5rem!important;
     }
     .matchuser_occupation{
-        font-size: 3rem!important;
+        font-size: 2.5rem!important;
     }
     .help_close{
         font-size: 5rem;
