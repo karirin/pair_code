@@ -49,7 +49,7 @@
                 </ul>
             </div>
 
-            <div class="smartphone_header">
+            <div class="smartphone_header" style="display: none;">
                 <div style="width: 100%;height:100%;background-color: #fdff8b0a;">
                     <span style="display:inline-block;">
                         <a href="{{ asset('top') }}" class="sagasu" style="color: #9f9f9f;"><i class="fa-solid fa-magnifying-glass"></i>

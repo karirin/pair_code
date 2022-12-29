@@ -312,7 +312,7 @@
     width: 25%;
     height: 57%;
     position: absolute;
-    left: 45%;
+    left: 41%;
     right: 0;
     top: 15%;
     text-align: center;
@@ -406,7 +406,7 @@
 
 .matching_btn {
     position: absolute;
-    left: 48%;
+    left: 44.5%;
     top: 76%;
 }
 
@@ -494,6 +494,14 @@
     }
     .far.fa-times-circle{
         font-size: 4rem!important;
+    }
+    #splash {
+        font-size: 3rem;
+        bottom: 53%;
+        left: 38%;
+    }
+    .smartphone_header{
+        display: inline-block!important;
     }
 
 /* ///////////////////////// */

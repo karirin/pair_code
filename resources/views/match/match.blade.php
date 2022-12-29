@@ -4,10 +4,8 @@
 @parent
 @endsection
 @section('content')
-<div class="col-9.5 match_top" style="margin-left: 22%;display: inline-block;">
-    <div id="splash">Loading...</div>
-    <!--画像部分は適宜差し換えてください-->
-    <!--/splash-->
+<div id="splash">Loading...</div>
+<div class="col-9.5 match_top" style="margin-left: 22%;display: none;">
     <div class="help_message3" style="display:none;">
         <span class="help-title">マッチングの流れ</span>
         「いいね」ボタンをクリックすると</br>
@@ -92,6 +90,9 @@
     @section('footer')
     @parent
     <script>
+        setTimeout(function() {
+            $(".match_top").css("display", "inline-block");
+        }, 840);
         if ($('.m_flg').val() == '') {
             $.ajaxSetup({
                 headers: {

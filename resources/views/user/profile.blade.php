@@ -14,8 +14,8 @@
     <input type="hidden" name="current_skill" value="{{$current_user->skill}}">
     <input type="hidden" name="current_licence" value="{{$current_user->licence}}">
     <input type="hidden" name="current_workhistory" value="{{$current_user->workhistory}}">
-    <div style="margin-left: 20%;width:70%;display: inline-block;">
-        <div id="splash">Loading...</div>
+    <div id="splash">Loading...</div>
+    <div class="profile_top" style="margin-left: 20%;width:70%;display: none;">
         <h3 class="page_title profile_title">プロフィール</h3>
         <div class="tag" style="display: block;">
             <div class="row">
@@ -183,4 +183,9 @@
 @endsection
 @section('footer')
 @parent
+<script>
+    setTimeout(function() {
+        $(".profile_top").css("display", "inline-block");
+    }, 840);
+</script>
 @endsection
