@@ -1,1 +1,1 @@
-web: vendor/bin/heroku-php-nginx -C nginx_app.conf /public/top
+web: vendor/bin/heroku-php-nginx -C nginx_app.conf https://www.paircode.net/top
