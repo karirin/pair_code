@@ -449,10 +449,6 @@
         top: 20%;
         font-size: 1.5rem;
     }
-    .matchuser_detaile_prof{
-        left: 75%!important;
-        top: 17.6%!important;
-    }
     .help_message2{
         top: 45%!important;
         left: 52%!important;
@@ -476,23 +472,26 @@
         background-color: #fdff8b0a;
     }
     .matchuser_detaile{
-        width: 440px;
-        left: 27%;
+        width: 760px;
+        left: 50%;
+        top: 15%;
     }
     .matchuser_detaile_prof{
-        width: 430px;
+        left: 50%!important;
+        top: 72.6%!important;
+        width: 760px;
     }
     .matchuser_detaile_prof h6{
-        font-size:2rem!important;
+        font-size:3rem!important;
     }
     .match_good_btn{
         font-size: 1.5rem!important;
     }
     .matchuser_name{
-        font-size: 2rem;
+        font-size: 4rem;
     }
     .matchuser_age{
-        font-size: 1.5rem!important;
+        font-size: 3rem!important;
     }
     .far.fa-times-circle{
         font-size: 4rem!important;
@@ -506,19 +505,19 @@
         display: inline-block!important;
     }
     .matchuser_skill{
-        font-size: 1.5rem!important;
+        font-size: 2.5rem!important;
     }
     .matchuser_licence{
-        font-size: 1.5rem!important;
+        font-size: 2.5rem!important;
     }
     .matchuser_workhistory{
-        font-size: 1.5rem!important; 
+        font-size: 2.5rem!important; 
     }
     .matchuser_address{
-        font-size: 1rem!important;
+        font-size: 3rem!important;
     }
     .matchuser_occupation{
-        font-size: 1rem!important;
+        font-size: 3rem!important;
     }
     .help_close{
         font-size: 5rem;
