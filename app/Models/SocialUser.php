@@ -28,7 +28,7 @@ class SocialUser extends Model
         if ($socialUser) {
             // 既存のユーザーはログインしてトップページへ
             Auth::login($socialUser->user, true);
-            return redirect('/top');
+            return redirect('/');
         }
 
         // 新しいユーザーを作成
@@ -48,6 +48,6 @@ class SocialUser extends Model
         });
 
         Auth::login($user, true);
-        return redirect('/top');
+        return redirect('/');
     }
 }

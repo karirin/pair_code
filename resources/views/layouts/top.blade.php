@@ -19,12 +19,12 @@
     <div class="top_title" style="position: fixed;">
         <ul>
             <li class="top_link">
-                <a sytle="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('top') }}" class="top_link_header_login">Pair
+                <a sytle="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('/') }}" class="top_link_header_login">Pair
                     Code</a>
             </li>
             <div class="header_sub">
                 <li class="top_link prof_page"><a class="prof_modal" href="#"><img src="{{asset($current_user->image)}}" class="user_image"></a></li>
-                <li class="header_menu_wide" style="margin-top: 4rem;"><a href="{{ asset('top') }}" class="sagasu" style="vertical-align: middle;"><i class="fa-solid fa-magnifying-glass" style="margin-right: 2rem;font-size: 1.5rem;"></i>さがす　　　</a>
+                <li class="header_menu_wide" style="margin-top: 4rem;"><a href="{{ asset('/') }}" class="sagasu" style="vertical-align: middle;"><i class="fa-solid fa-magnifying-glass" style="margin-right: 2rem;font-size: 1.5rem;"></i>さがす　　　</a>
                 </li>
                 <li class="header_menu"><a href="{{ asset('match/match') }}" class="oaitekara" style="vertical-align: middle;">
                         @if($match_flg!='')<i class="fas fa-thumbs-up" style="font-size: 1.5rem;"></i><i class="fa-solid fa-circle new_match_mark" style="font-size: 1px;color: red;top: 43%;position: absolute;"></i><span style="margin-left: 2rem">お相手から　<span>@else<i class="fas fa-thumbs-up" style="margin-right: 2rem;font-size: 1.5rem;"></i></span>お相手から　@endif
@@ -41,7 +41,7 @@
             <div>
                 <ul>
                     <li class="top_link">
-                        <a sytle="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('top') }}" class="top_link_header_login">Pair
+                        <a sytle="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('/') }}" class="top_link_header_login">Pair
                             Code</a>
                     </li>
                     @endif
@@ -53,7 +53,7 @@
             <div class="smartphone_header" style="display: none;">
                 <div style="width: 100%;height:100%;background-color: #fdff8b0a;">
                     <span style="display:inline-block;">
-                        <a href="{{ asset('top') }}" class="sagasu" style="color: #9f9f9f;"><i class="fa-solid fa-magnifying-glass"></i>
+                        <a href="{{ asset('/') }}" class="sagasu" style="color: #9f9f9f;"><i class="fa-solid fa-magnifying-glass"></i>
                             <div style="text-align: center;font-size:1.5rem;">さがす</div>
                         </a>
                     </span><span style="display:inline-block;">
@@ -77,7 +77,7 @@
             <nav class="navbar navbar-dark">
                 <ul class="main_ul">
                     <li class="top_link" style="margin: 0 auto 0 0;">
-                        <a sytle="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('top') }}" class="top_link_header">Pair
+                        <a sytle="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('/') }}" class="top_link_header">Pair
                             Code</a>
                     </li>
                     <li class="header" style="margin: 0;"><a href="{{ asset('user/login') }}" style="vertical-align: middle;"><i class="fas fa-sign-in-alt" style="margin-right: 0.5rem;"></i>ログイン</a></li>

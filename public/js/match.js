@@ -28,7 +28,7 @@ window.onload = function() {
     });
 
     switch (location.pathname) {
-        case "/top":
+        case "/":
         case "/user/test_login":
             $('.sagasu')[0].setAttribute("style", 'background-color: antiquewhite;');
             $('.smartphone_header .sagasu')[0].setAttribute("style", 'color: #000;');
@@ -50,7 +50,7 @@ window.onload = function() {
             $('.profile')[0].setAttribute("style", 'background-color: antiquewhite;');
             $('.smartphone_header .profile')[0].setAttribute("style", 'color: #000;');
             break;
-        case "/top":
+        case "/":
             $('.sagasu')[0].setAttribute("style", 'background-color: antiquewhite;');
             $('.smartphone_header .sagasu')[0].setAttribute("style", 'color: #000;');
             break;

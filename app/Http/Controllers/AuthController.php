@@ -27,14 +27,14 @@ class AuthController extends Controller
         if ($socialUser) {
             // 既存のユーザーはログインしてトップページへ
             Auth::login($socialUser->user, true);
-            return redirect('/top');
+            return redirect('/');
         }
 
         // 新しいユーザーを作成
         $user = new User();
         $user->unique_id = $providerUser->nickname;
         $user->name = $providerUser->name;
-        $user->image = 'https://twitars.now.sh/'.$providerUser->id.'/original';
+        $user->image = 'https://twitars.now.sh/' . $providerUser->id . '/original';
         $user->workhistory = $providerUser->user['description'];
         $socialUser = new SocialUser();
         $socialUser->provider_user_id = $providerUser->id;
@@ -45,6 +45,6 @@ class AuthController extends Controller
         });
 
         Auth::login($user, true);
-        return redirect('/top');
+        return redirect('/');
     }
 }

@@ -140,7 +140,7 @@ class UserController extends Controller
         $this->guard()->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return $this->loggedOut($request) ?: redirect('/top');
+        return $this->loggedOut($request) ?: redirect('/');
     }
 
     public function auth(Request $request)

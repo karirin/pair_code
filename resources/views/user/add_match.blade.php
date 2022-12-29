@@ -286,7 +286,7 @@
             $('.welcome').fadeIn();
             $('.match_box').fadeOut();
             setTimeout(function() {
-                window.location.href = "/top";
+                window.location.href = "/";
             }, 2000);
         }
     });
