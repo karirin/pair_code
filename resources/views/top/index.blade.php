@@ -214,6 +214,7 @@
                         });
                     });
                     $(document).on('click', ".help_close", function() {
+                        $('.content').css('position', 'unset');
                         $('.matchuser_detaile').fadeOut();
                         $('.matchuser_detaile_prof').fadeOut();
                         $('.help_message').fadeOut();
@@ -327,6 +328,7 @@
                 $('#pointer').fadeOut();
                 $('#pointer2').removeClass('pointer2');
                 $('#pointer2').fadeOut();
+                $('.content').css('position', 'unset');
                 $('.help_close').fadeOut();
                 $('#sample_user').replaceWith('<input type="hidden" class="sample_user">');
                 $('.match_user:first').fadeIn();

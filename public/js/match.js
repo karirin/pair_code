@@ -183,6 +183,7 @@ $(document).on('click', ".profile_close", function() {
     $('.tag').show();
     // $('.profile_count').fadeIn();
     $('.profile_count').show();
+    $('.content').css('position','unset');
 });
 
 $(document).on('click', ".profile_narrow_close", function() {

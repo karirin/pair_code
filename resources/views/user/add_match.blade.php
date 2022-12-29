@@ -156,6 +156,7 @@
                 });
             });
             $(document).on('click', ".help_close", function() {
+                $('.content').css('position', 'unset');
                 $('.matchuser_detaile').fadeOut();
                 $('.matchuser_detaile_prof').fadeOut();
                 $('.help_message').fadeOut();
@@ -255,6 +256,7 @@
             });
         });
         $(document).on('click', ".help_close", function() {
+            $('.content').css('position', 'unset');
             $('.matchuser_detaile').fadeOut();
             $('.matchuser_detaile_prof').fadeOut();
             $('.help_message').fadeOut();

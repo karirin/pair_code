@@ -172,6 +172,7 @@
                         });
                     });
                     $(document).on('click', ".help_close", function() {
+                        $('.content').css('position', 'unset');
                         $('#sample_match_btn').prop("disabled", false);
                         $('#sample_unmatch_btn').prop("disabled", false);
                         $('#sample_match_btn').attr('id', 'match_btn'); //最後にこれを設定するとチュートリアル中に押した場合、イベントが発生してしまう
