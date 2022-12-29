@@ -220,6 +220,7 @@ $(document).on('click', ".match_user", function() {
     $('.matchuser_detaile .user_id').val($($target_modal + ' > .match_user_id')[0].value);
     $('.matchuser_detaile .matchs_flg').val($($target_modal + ' > .matchs_flg')[0].value);
     $('.matchuser_detaile_prof').fadeIn();
+    $('.content').css('position', 'fixed');
     if ($($target_modal + ' > .click_flg')[0].value != 0) {
         $('.match_good_btn').hide();
     } else {

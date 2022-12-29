@@ -161,7 +161,6 @@
 
 .modal_match {
     display: none;
-    position: fixed;
     top: 0;
     left: 0;
     background-color: rgba(152, 152, 152, 0.7);
@@ -172,7 +171,7 @@
 
 .matchuser_detaile {
     display: none;
-    position: fixed;
+    position: absolute;
     z-index: 15;
     left: 37%;
     border-radius: 8px;
@@ -188,7 +187,7 @@
 
 .matchuser_detaile_prof {
     display: none;
-    position: fixed;
+    position: absolute;
     z-index: 15;
     left: 65%;
     border-radius: 8px;
