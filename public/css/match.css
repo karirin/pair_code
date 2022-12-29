@@ -472,14 +472,14 @@
         background-color: #fdff8b0a;
     }
     .matchuser_detaile{
-        width: 650px;
+        width: 630px;
         left: 50%;
         top: 12%;
     }
     .matchuser_detaile_prof{
         left: 50%!important;
-        top: 72.6%!important;
-        width:650px;
+        top: 69%!important;
+        width:630px;
     }
     .matchuser_detaile_prof h6{
         font-size:3rem!important;
