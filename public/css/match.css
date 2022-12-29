@@ -446,16 +446,17 @@
         margin-left: 16%!important;
     }
     .help_message{
-        top: 11%;
-        font-size: 2rem;
+        top: 20%;
+        font-size: 1.5rem;
     }
     .matchuser_detaile_prof{
         left: 75%!important;
         top: 17.6%!important;
     }
     .help_message2{
-        top: 37%!important;
-        left: 55%!important;
+        top: 45%!important;
+        left: 52%!important;
+        font-size: 1.5rem;
     }
     .footer{
         display: none;
@@ -491,7 +492,7 @@
         font-size: 2rem;
     }
     .matchuser_age{
-        font-size: 2rem!important;
+        font-size: 1.5rem!important;
     }
     .far.fa-times-circle{
         font-size: 4rem!important;
@@ -503,6 +504,26 @@
     }
     .smartphone_header{
         display: inline-block!important;
+    }
+    .matchuser_skill{
+        font-size: 1.5rem!important;
+    }
+    .matchuser_licence{
+        font-size: 1.5rem!important;
+    }
+    .matchuser_workhistory{
+        font-size: 1.5rem!important; 
+    }
+    .matchuser_address{
+        font-size: 1rem!important;
+    }
+    .matchuser_occupation{
+        font-size: 1rem!important;
+    }
+    .help_close{
+        font-size: 5rem;
+        top: 10%;
+        left: 41%;
     }
 
 /* ///////////////////////// */
