@@ -118,7 +118,7 @@ window.onload = function() {
 
 // 編集ボタン押下時の処理
 $(document).on('click', '.profile_edit_btn', function() {
-    scroll_position = $(window).scrollTop();
+    scroll_position = $(this).scrollTop();
     // $('.profile_edit_btn').fadeOut();
     // $('.myprofile_count').fadeOut();
     // $('.follow_user').fadeOut();
@@ -206,6 +206,8 @@ $(document).on('click', ".profile_narrow_close", function() {
 // ユーザー詳細画面
 $(document).on('click', ".match_user", function() {
     var $target_modal = $(this).data("target");
+    $height = $('body').scrollTop();
+    $('.content').css('position', 'fixed');
     $('.modal_match').fadeIn();
     $('.matchuser_detaile').fadeIn();
     $('.matchuser_detaile_prof').fadeIn();
@@ -221,12 +223,18 @@ $(document).on('click', ".match_user", function() {
     $('.matchuser_detaile .user_id').val($($target_modal + ' > .match_user_id')[0].value);
     $('.matchuser_detaile .matchs_flg').val($($target_modal + ' > .matchs_flg')[0].value);
     $('.matchuser_detaile_prof').fadeIn();
-    $('.content').css('position', 'fixed');
+
     if ($($target_modal + ' > .click_flg')[0].value != 0) {
         $('.match_good_btn').hide();
     } else {
         $('.match_good_btn').show();
     }
+    $(document).on('click', ".profile_close", function() {
+        $('body').scrollTop($height);
+    });
+    $(document).on('click', ".modal_match", function() {
+        $('body').scrollTop($height);
+    });
 });
 
 // モーダル画面の灰色の背景をクリックしたら戻るように
@@ -234,6 +242,7 @@ $(document).on('click', ".modal_match", function() {
     $('.modal_match').fadeOut();
     $('.matchuser_detaile').fadeOut();
     $('.matchuser_detaile_prof').fadeOut();
+    $('.content').css('position', 'unset');
 });
 
 // モーダル画面の×印をクリック
