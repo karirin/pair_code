@@ -622,4 +622,48 @@
     .destination_user_list .destination_user_info .destination_user_info_detail .destination_user_name {
         font-size: 1.5rem;
     }
+
+    /* ///////////////////////// */
+
+
+    /*     プロフィール画面    */
+
+
+    /* ///////////////////////// */
+    .tag_tittle{
+        font-size: 3rem;
+    }
+    .profile_top{
+        width: 100%!important;
+        margin-left: 5%!important;
+    }
+    .profile_top .user_age,
+    .profile_top .user_address,
+    .profile_top .user_occupation,
+    .profile_top .skill_tag,
+    .profile_top .licence_tag,
+    .profile_top .user_profile,
+    .profile_top .user_workhistory
+    {
+        font-size: 2.5rem;
+    }
+    /* .profile_top .col-3{
+        flex:unset;
+        max-width: 0;
+    }
+    .profile_top .col-8{
+        flex:unset;
+        max-width: 0;
+    } */
+    .profile_top .user_address{
+        font-size: 2.5rem;
+    }
+    .profile_top .col-3{
+        flex: 100%;
+        max-width: 100%;
+    }
+    .profile_top .col-8{
+        margin-top: 0!important;
+        margin-left: 0!important;
+    }
 }

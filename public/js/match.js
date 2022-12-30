@@ -207,6 +207,7 @@ $(document).on('click', ".profile_narrow_close", function() {
 $(document).on('click', ".match_user", function() {
     var $target_modal = $(this).data("target");
     $height = $(window).scrollTop();
+    $('.footer').hide();
     $('.content').css('position', 'fixed');
     $('.modal_match').fadeIn();
     $('.matchuser_detaile').fadeIn();
@@ -231,9 +232,11 @@ $(document).on('click', ".match_user", function() {
     }
     $(document).on('click', ".profile_close", function() {
         $('body').scrollTop($height);
+        $('.footer').show();
     });
     $(document).on('click', ".modal_match", function() {
         $('body').scrollTop($height);
+        $('.footer').show();
     });
 });
 
