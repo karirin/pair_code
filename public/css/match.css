@@ -622,7 +622,24 @@
     .destination_user_list .destination_user_info .destination_user_info_detail .destination_user_name {
         font-size: 1.5rem;
     }
+    /* ///////////////////////// */
 
+
+    /*       メッセージ画面       */
+
+
+    /* ///////////////////////// */
+    .message_disp{
+        margin-left:0!important;
+        max-width: none;
+    }
+    .message_disp .message_disp_div{
+        margin-top: 8rem;
+        height: 3rem!important;
+    }
+    .message_disp .message{
+        margin-top: 11rem!important;
+    }
     /* ///////////////////////// */
 
 
@@ -668,5 +685,13 @@
     }
     .profile_top .profile_name_prof{
         font-size: 4rem;
+    }
+    .profile_top .row{
+        margin-bottom: 10rem;
+    }
+    .mypage{
+        margin-top: 2rem!important;
+        width: 15rem!important;
+        height: 15rem!important;
     }
 }
