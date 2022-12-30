@@ -637,8 +637,25 @@
         margin-top: 8rem;
         height: 3rem!important;
     }
+    .message_disp .message_disp_name{
+        font-size:4rem!important;
+        width:39%!important;
+    }
     .message_disp .message{
-        margin-top: 11rem!important;
+        margin-top: 15rem!important;
+    }
+    .message_disp .fa-solid.fa-angle-left{
+        font-size: 4rem!important;
+    }
+    .message_disp .message_created_at{
+        font-size: 4rem;
+    }
+    .message_disp .my_message p{
+        font-size: 4rem;
+    }
+    .message_disp .mycomment .message_user_img{
+        width: 6rem;
+        height: 6rem;
     }
     /* ///////////////////////// */
 
