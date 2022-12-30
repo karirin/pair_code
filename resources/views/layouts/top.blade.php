@@ -93,7 +93,6 @@
                 @yield('content')
             </div>
 
-
             @section('footer')
             <div class="modal_match"></div>
             <div class="modal_top"></div>

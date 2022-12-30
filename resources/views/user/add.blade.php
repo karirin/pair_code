@@ -4,6 +4,7 @@
 @parent
 @endsection
 @section('content')
+
 <div class="row">
     <div class="col-6 offset-3 center">
         <h2 style="margin-top: 2rem;">新規登録</h2>
