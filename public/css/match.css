@@ -573,6 +573,18 @@
     .match_top{
         margin-bottom: 9rem;
     }
+    .match_user .fa-regular.fa-thumbs-up{
+        font-size: 8rem!important;
+    }
+    .match_user .fa-regular.fa-thumbs-up div{
+        font-size: 3rem!important;
+    }
+    .match_user .fa-solid.fa-reply{
+        font-size: 8rem!important;
+    }
+    .match_user .fa-solid.fa-reply div{
+        font-size: 3rem!important;
+    }
 
     /* ///////////////////////// */
 
