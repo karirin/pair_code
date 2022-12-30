@@ -32,7 +32,6 @@ class SocialUser extends Model
         }
 
         // 新しいユーザーを作成
-        log::debug($providerUser);
         $user = new User();
         $user->unique_id = $providerUser->nickname;
         $user->name = $providerUser->name;

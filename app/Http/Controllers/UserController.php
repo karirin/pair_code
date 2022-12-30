@@ -69,8 +69,6 @@ class UserController extends Controller
         ];
         $action = session()->get($this->method_action_key);
         $is_reload = ($action == '');
-        log::debug($action);
-        log::debug($is_reload);
         if (is_null($action)) {
             DB::table('users')->insert($form);
         } else if ($is_reload) { }
