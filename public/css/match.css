@@ -666,4 +666,7 @@
         margin-top: 0!important;
         margin-left: 0!important;
     }
+    .profile_top .profile_name_prof{
+        font-size: 4rem;
+    }
 }
