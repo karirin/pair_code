@@ -72,6 +72,8 @@ class User extends Authenticatable
         });
 
         Auth::login($user, true);
+        log::debug($user);
+        log::debug("user");
         return redirect('user/add_match');
     }
 

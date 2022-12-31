@@ -45,6 +45,8 @@ class AuthController extends Controller
         });
 
         Auth::login($user, true);
+        log::debug($user);
+        log::debug("auth");
         return redirect('user/add_match');
     }
 }
