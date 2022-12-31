@@ -455,6 +455,17 @@
         font-size: 1.5rem;
         z-index: 40;
     }
+    .help_close1{
+        z-index: 15;
+        left: 34%;
+        top: 14%;
+        font-size: 3rem;
+    }
+    .help_close2{
+        font-size: 5rem;
+        left: 73%;
+        top: 5%;
+    }
     .footer{
         display: none;
     }
