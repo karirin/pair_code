@@ -453,6 +453,7 @@
         top: 45%!important;
         left: 52%!important;
         font-size: 1.5rem;
+        z-index: 40;
     }
     .footer{
         display: none;

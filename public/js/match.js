@@ -340,7 +340,7 @@ $(document).on('click', ".message_submit", function() {
 
 
 // マッチ機能処理
-$(document).one('click', '#match_btn', function() {
+$(document).on('click', '#match_btn', function() {
     $.ajaxSetup({
         headers: {
             "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
