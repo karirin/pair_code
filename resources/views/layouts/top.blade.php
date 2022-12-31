@@ -53,11 +53,11 @@
             <div class="smartphone_header" style="display: none;">
                 <div style="width: 100%;height:100%;background-color: #fdff8b0a;">
                     <span style="display:inline-block;">
-                        <a href="{{ asset('/') }}" class="sagasu" style="color: #9f9f9f;"><i class="fa-solid fa-magnifying-glass"></i><i class="fa-solid fa-circle new_match_mark" style="font-size: 1.5rem;color: red;top: 8%;left: 31%;position: absolute;margin: 0;"></i>
+                        <a href="{{ asset('/') }}" class="sagasu" style="color: #9f9f9f;"><i class="fa-solid fa-magnifying-glass"></i><i class="fa-solid fa-circle new_match_mark" style="font-size: 1.5rem;color: red;top: 8%;left: 35%;position: absolute;margin: 0;"></i>
                             <div style="text-align: center;font-size:1.5rem;">さがす</div>
                         </a>
                     </span><span style="display:inline-block;">
-                        <a href="{{ asset('match/match') }}" class="oaitekara" style="color: #9f9f9f;"><i class="fas fa-thumbs-up"></i><i class="fa-solid fa-circle new_mark" style="font-size: 1.5rem;color: red;top: 8%;left: 49%;position: absolute;margin: 0;"></i>
+                        <a href="{{ asset('match/match') }}" class="oaitekara" style="color: #9f9f9f;"><i class="fas fa-thumbs-up"></i><i class="fa-solid fa-circle new_mark" style="font-size: 1.5rem;color: red;top: 8%;left: 53%;position: absolute;margin: 0;"></i>
                             <div style="text-align: center;font-size:1.5rem;">お相手から</div>
                         </a>
                     </span><span style="display:inline-block;">
