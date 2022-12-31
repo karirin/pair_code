@@ -210,6 +210,7 @@ $(document).on('click', ".match_user", function() {
     $('.footer').hide();
     $('.content').css('position', 'fixed');
     $('.modal_match').fadeIn();
+    $('.profile_close').fadeIn();
     $('.matchuser_detaile').fadeIn();
     $('.matchuser_detaile_prof').fadeIn();
     $('.matchuser_detaile .matchuser_img').attr('src', $($target_modal + ' > .match_user_img')[0].getAttribute('src'));

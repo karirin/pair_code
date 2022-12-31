@@ -1882,12 +1882,28 @@ img.my_preview {
     z-index: 15;
     font-size: 2rem;
     position: absolute;
-    left: 45%;
-    top: 5%;
+    left: 63%;
+    top: 9%;
 }
 
+.help_close1{
+    z-index: 15;
+    font-size: 2rem;
+    position: absolute;
+    left: 36%;
+    top: 16%;
+}
 
-.help_close:hover{
+.help_close2{
+    z-index: 15;
+    font-size: 2rem;
+    position: absolute;
+    left: 46%;
+    top: 7%;
+}
+
+.help_close1:hover,
+.help_close2:hover{
     opacity: 0.8;
 }
 

@@ -41,6 +41,7 @@ class UserController extends Controller
                     'password' => $request->password,
                     'hash_password' => Hash::make($request->password),
                     'image' => 'storage/sample/' . $file_name,
+                    'profile' => '',
                 ];
             } else {
                 $param = [
@@ -48,6 +49,7 @@ class UserController extends Controller
                     'password' => $request->password,
                     'hash_password' => Hash::make($request->password),
                     'image' => '',
+                    'profile' => '',
                 ];
             }
             return view('user.edit_detail', $param);
@@ -62,6 +64,7 @@ class UserController extends Controller
             'image' => $request->image,
             'age' => $request->age,
             'address' => $request->address,
+            'profile' => $request->user_profile,
             'occupation' => $request->occupation,
             'skill' => $request->myprofile_skills,
             'licence' => $request->myprofile_licences,

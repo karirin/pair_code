@@ -82,6 +82,13 @@
                     <option value="その他">その他</option>
                 </select>
             </div>
+            <div class="my_profile">
+                <p class="tag_tittle">自己紹介</p>
+                <textarea class="edit_profile form-control" style="height: 30%;width: 126%;" type="text" name="user_profile">{{$profile}}</textarea>
+                <div class="error_workhistory" style="display: none;">
+                    <span style="color:rgb(220, 53, 69);">100文字以内で入力してください</span>
+                </div>
+            </div>
         </div>
         <div class="col-7" style="margin-left: 4rem;">
             <p class="tag_tittle">スキル</p>
@@ -107,9 +114,8 @@
             </div>
         </div>
     </div>
-    <div class="flex_btn margin_top" style="margin: 0 34%;width: 35%;">
+    <div class="flex_btn margin_top" style="margin: 0 34%;width: 35%;margin-top: 2rem;">
         <input style="width: 90px;" class="btn btn-outline-info" type="button" onclick="history.back()" value="戻る">
-        <a class="btn btn-outline-primary skip_btn" href="/user/skip?name={{$name}}&password={{$password}}&hash_password={{$hash_password}}&image={{$image}}">スキップ</a>
         <input style="width: 90px;" class="btn btn-outline-dark edit_done" type="submit" value="登録">
     </div>
     <input type="hidden" name="name" value="{{$name}}">

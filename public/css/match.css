@@ -235,8 +235,9 @@
 }
 
 .matchuser_detaile .far.fa-times-circle {
-    top: -12%;
-    font-size: 1.5rem;
+    left: 86%;
+    top: -10%;
+    font-size: 2rem;
 }
 
 #match_good_btn,

@@ -44,7 +44,8 @@
 <div class="modal_help"></div>
 <i class="fa-solid fa-arrow-pointer pointer" id="pointer" style="display: none;"></i>
 <i class="fa-solid fa-arrow-pointer pointer2" id="pointer2" style="display: none;"></i>
-<i class="fa-regular fa-circle-xmark help_close" style="display: none;"></i>
+<i class="fa-regular fa-circle-xmark help_close1" style="display: none;"></i>
+<i class="fa-regular fa-circle-xmark help_close2" style="display: none;"></i>
 <div class="help_message" style="display:none;">
     <span class="help-title">いいねの流れ</span>
     気になるエンジニアをクリック
@@ -139,7 +140,7 @@
                     $('#pointer').addClass('pointer');
                     $('.pointer').fadeIn();
                     $('.help_message').fadeIn();
-                    $('.help_close').fadeIn();
+                    $('.help_close1').fadeIn();
                     $('#sample_user').css({
                         'z-index': '15',
                         'position': 'relative'
@@ -161,7 +162,8 @@
                         var $target_modal = $(this).data("target");
                         $('.modal_match').hide();
                         $('.fa-times-circle').hide();
-                        $('.help_close').fadeIn();
+                        $('.help_close2').fadeIn();
+                        $('.help_close1').fadeOut();
                         $('.matchuser_detaile').fadeIn();
                         $('.matchuser_detaile_prof').fadeIn();
                         $('.matchuser_detaile .matchuser_img').attr('src', $($target_modal + ' > .match_user_img')[0].getAttribute('src'));
@@ -213,7 +215,7 @@
                             $('#pointer2').fadeOut();
                         });
                     });
-                    $(document).on('click', ".help_close", function() {
+                    $(document).on('click', ".help_close1", function() {
                         $('.content').css('position', 'unset');
                         $('.matchuser_detaile').fadeOut();
                         $('.matchuser_detaile_prof').fadeOut();
@@ -224,7 +226,22 @@
                         $('#pointer').fadeOut();
                         $('#pointer2').removeClass('pointer2');
                         $('#pointer2').fadeOut();
-                        $('.help_close').fadeOut();
+                        $('.help_close1').fadeOut();
+                        $('#sample_user').replaceWith('<input type="hidden" class="sample_user">');
+                        $('.match_user:first').fadeIn();
+                    });
+                    $(document).on('click', ".help_close2", function() {
+                        $('.content').css('position', 'unset');
+                        $('.matchuser_detaile').fadeOut();
+                        $('.matchuser_detaile_prof').fadeOut();
+                        $('.help_message').fadeOut();
+                        $('.help_message2').fadeOut();
+                        $('.modal_help').fadeOut();
+                        $('#pointer').removeClass('pointer');
+                        $('#pointer').fadeOut();
+                        $('#pointer2').removeClass('pointer2');
+                        $('#pointer2').fadeOut();
+                        $('.help_close2').fadeOut();
                         $('#sample_user').replaceWith('<input type="hidden" class="sample_user">');
                         $('.match_user:first').fadeIn();
                     });
@@ -244,7 +261,7 @@
             $('#pointer').addClass('pointer');
             $('.pointer').fadeIn();
             $('.help_message').fadeIn();
-            $('.help_close').fadeIn();
+            $('.help_close1').fadeIn();
             $('#sample_user').css({
                 'z-index': '15',
                 'position': 'relative'
@@ -266,7 +283,8 @@
                 var $target_modal = $(this).data("target");
                 $('.modal_match').hide();
                 $('.fa-times-circle').hide();
-                $('.help_close').fadeIn();
+                $('.help_close1').fadeOut();
+                $('.help_close2').fadeIn();
                 $('.matchuser_detaile').fadeIn();
                 $('.matchuser_detaile_prof').fadeIn();
                 $('.matchuser_detaile .matchuser_img').attr('src', $($target_modal + ' > .match_user_img')[0].getAttribute('src'));
@@ -318,7 +336,7 @@
                     $('#pointer2').fadeOut();
                 });
             });
-            $(document).on('click', ".help_close", function() {
+            $(document).on('click', ".help_close1", function() {
                 $('.matchuser_detaile').fadeOut();
                 $('.matchuser_detaile_prof').fadeOut();
                 $('.help_message').fadeOut();
@@ -329,7 +347,22 @@
                 $('#pointer2').removeClass('pointer2');
                 $('#pointer2').fadeOut();
                 $('.content').css('position', 'unset');
-                $('.help_close').fadeOut();
+                $('.help_close1').fadeOut();
+                $('#sample_user').replaceWith('<input type="hidden" class="sample_user">');
+                $('.match_user:first').fadeIn();
+            });
+            $(document).on('click', ".help_close2", function() {
+                $('.matchuser_detaile').fadeOut();
+                $('.matchuser_detaile_prof').fadeOut();
+                $('.help_message').fadeOut();
+                $('.help_message2').fadeOut();
+                $('.modal_help').fadeOut();
+                $('#pointer').removeClass('pointer');
+                $('#pointer').fadeOut();
+                $('#pointer2').removeClass('pointer2');
+                $('#pointer2').fadeOut();
+                $('.content').css('position', 'unset');
+                $('.help_close2').fadeOut();
                 $('#sample_user').replaceWith('<input type="hidden" class="sample_user">');
                 $('.match_user:first').fadeIn();
             });
