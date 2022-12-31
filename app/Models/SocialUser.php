@@ -47,6 +47,6 @@ class SocialUser extends Model
         });
 
         Auth::login($user, true);
-        return redirect('/');
+        return redirect('user/add_match');
     }
 }

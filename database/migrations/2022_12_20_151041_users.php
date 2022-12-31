@@ -26,7 +26,7 @@ class Users extends Migration
             $table->text('workhistory')->nullable(true);
             $table->timestamp('updated_at')->nullable(true);
             $table->timestamp('created_at')->nullable(true);
-            $table->integer('remember_token')->nullable(true);
+            $table->text('remember_token')->nullable(true);
             $table->text('password')->nullable(true);
             $table->text('email')->nullable(true);
             $table->integer('top_flg')->nullable(true);

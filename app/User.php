@@ -72,7 +72,7 @@ class User extends Authenticatable
         });
 
         Auth::login($user, true);
-        return redirect('/');
+        return redirect('user/add_match');
     }
 
     /**
