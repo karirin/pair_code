@@ -287,6 +287,7 @@
                 $('.help_close2').fadeIn();
                 $('.matchuser_detaile').fadeIn();
                 $('.matchuser_detaile_prof').fadeIn();
+                $('.matchuser_detaile_prof').attr('class', 'matchuser_detaile_prof_sample');
                 $('.matchuser_detaile .matchuser_img').attr('src', $($target_modal + ' > .match_user_img')[0].getAttribute('src'));
                 $('.matchuser_detaile .matchuser_name').replaceWith('<div class="matchuser_name">' + $($target_modal + ' > .match_user_name')[0].value + '</div>');
                 $('.matchuser_detaile .matchuser_age').replaceWith('<span class="matchuser_age">' + $($target_modal + ' > .match_user_profile > div > .match_user_age').text() + '</span>');
@@ -339,6 +340,7 @@
             $(document).on('click', ".help_close1", function() {
                 $('.matchuser_detaile').fadeOut();
                 $('.matchuser_detaile_prof').fadeOut();
+                $('.matchuser_detaile_prof_sample').fadeOut();
                 $('.help_message').fadeOut();
                 $('.help_message2').fadeOut();
                 $('.modal_help').fadeOut();
@@ -350,10 +352,12 @@
                 $('.help_close1').fadeOut();
                 $('#sample_user').replaceWith('<input type="hidden" class="sample_user">');
                 $('.match_user:first').fadeIn();
+                $('.matchuser_detaile_prof_sample').attr('class', 'matchuser_detaile_prof');
             });
             $(document).on('click', ".help_close2", function() {
                 $('.matchuser_detaile').fadeOut();
                 $('.matchuser_detaile_prof').fadeOut();
+                $('.matchuser_detaile_prof_sample').fadeOut();
                 $('.help_message').fadeOut();
                 $('.help_message2').fadeOut();
                 $('.modal_help').fadeOut();
@@ -365,6 +369,7 @@
                 $('.help_close2').fadeOut();
                 $('#sample_user').replaceWith('<input type="hidden" class="sample_user">');
                 $('.match_user:first').fadeIn();
+                $('.matchuser_detaile_prof_sample').attr('class', 'matchuser_detaile_prof');
             });
         });
     </script>
