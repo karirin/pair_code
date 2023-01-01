@@ -592,7 +592,8 @@
 
 .user_name_input,
 .user_pass_input{
-    height: 40%;
+    height: 20%;
+    padding: 3rem;
 }
 
 .user_name_input::placeholder {
