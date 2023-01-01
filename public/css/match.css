@@ -582,6 +582,14 @@
     margin-top: 4rem;
 }
 
+.user_add_top .btn.btn-outline-info{
+    font-size: 3rem;
+}
+
+.user_add_top .btn.btn-outline-dark{
+    font-size: 3rem;
+}
+
 .user_name_input,
 .user_pass_input{
     height: 20%;
