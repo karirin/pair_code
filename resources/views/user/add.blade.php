@@ -23,7 +23,7 @@
                 <span class="user_pass_error" style="display:none;color: #dc3545;">パスワードを入力してください</span>
             </div>
             <div class="prof_image" style="width:60%;display:inline-block;text-align:left;">
-                <div class="image_select">プロフィール画像を選んでください。</div>
+                <div class="image_select">プロフィール画像</div>
                 <div class="post_btn" style="justify-content: unset;">
                     <label>
                         <i class="far fa-image"></i>

@@ -609,7 +609,7 @@
 
 .user_name_input,
 .user_pass_input{
-    padding: 3rem;
+    padding: 3rem 2rem;
     width: 70%!important;
 }
 
