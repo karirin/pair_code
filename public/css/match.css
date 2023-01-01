@@ -631,6 +631,7 @@
 
 .main_ul .header{
     font-size: 2rem;
+    margin-top: 1rem!important;
 }
 
 ul li{
@@ -694,7 +695,7 @@ ul li{
 }
 
 .edit_detail_top_btn{
-    font-size: 2rem!important;
+    font-size: 3rem!important;
 }
 
 .edit_detail_top_btn span{
@@ -702,7 +703,7 @@ ul li{
 }
 
 .user_login_top .twitter_login{
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 .user_login_top .flex_btn{
@@ -711,6 +712,10 @@ ul li{
 
 .user_login_top form{
     margin-top: 4rem;
+}
+
+.user_login_top .btn-social-long-twitter{
+    margin-top: 3rem;
 }
 
 /* ///////////////////////// */
