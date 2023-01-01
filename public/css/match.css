@@ -574,6 +574,14 @@
     margin-left: 0;
 }
 
+.user_add_top .prof_image{
+    width: 70%!important;
+}
+
+.user_add_top .user_title{
+    width: 70%!important;
+}
+
 .user_add_top h2{
     font-size: 4rem;
     margin-top: 6rem!important;
@@ -591,9 +599,18 @@
     font-size: 3rem;
 }
 
+.user_add_top .password_sub{
+    width: 70%!important;
+}
+
+.user_add_top .far.fa-image{
+    font-size: 3rem;
+}
+
 .user_name_input,
 .user_pass_input{
     padding: 3rem;
+    width: 70%!important;
 }
 
 .user_name_input::placeholder {
