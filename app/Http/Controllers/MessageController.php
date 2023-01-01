@@ -88,8 +88,6 @@ class MessageController extends Controller
                 'created_at' => $created_at,
             ];
         } else {
-            log::debug('text');
-            log::debug($request->text);
             $param = [
                 'user_id' => $current_user->id,
                 'destination_user_id' => $request->user_id,

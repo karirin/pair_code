@@ -5,7 +5,7 @@
 @endsection
 @section('content')
 <div class="row">
-    <div class="col-6 offset-3 center">
+    <div class="col-6 offset-3 center user_add_top">
         <h2 style="margin-top: 2rem;">新規登録</h2>
         <form method="post" action="{{ asset('user/add') }}" enctype="multipart/form-data">
             @csrf
@@ -16,7 +16,7 @@
             </div>
             <div class="user_title">パスワード</div>
             <input type="password" name="password" class="user_pass_input form-control" style="margin-bottom:0;">
-            <div style="display:inline-block;width: 60%;text-align:left;font-size:0.9rem;">
+            <div class="password_sub" style="display:inline-block;width: 60%;text-align:left;font-size:0.9rem;">
                 ※英数字8文字以上
             </div>
             <div style="height: 27px;text-align:left;margin: 0 20%;">
@@ -30,7 +30,7 @@
                         <input type="file" name="image" id="my_image" style="display:none;">
                     </label>
                 </div>
-                <div style="font-size:0.9rem;">※（縦横200px×200px以上推奨、5MB未満）</div>
+                <div class="image_size" style="font-size:0.9rem;">※（縦横200px×200px以上推奨、5MB未満）</div>
             </div>
             <p class="preview_img"><img class="my_preview"></p>
             <input type="button" id="my_clear" value="ファイルをクリアする">

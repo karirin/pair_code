@@ -554,191 +554,240 @@
         top: -47px;
     }
 
-/* ///////////////////////// */
-
-
-/*        マッチ画面        */
-
 
 /* ///////////////////////// */
 
-    .card{
-        width: 54%;
-        height: 38%;
-        left: 25%;
-        top: 27%;
-    }
-    .fa-image_range.fa{
-        padding: 2rem;
-        border-radius: 6rem;
-    }
-    .fa-image_range.fa:first-child {
-        margin-right: 13rem!important;
-    }
-    .fa-solid.fa-reply{
-        font-size: 5rem!important;
-    }
-    .matching_btn .fas.fa-thumbs-up{
-        font-size: 5rem!important;
-    }
-    .matching_btn{
-        left: 25%;
-        top: 73%;
-    }
-    .card .profile_name {
-        font-size: 3rem;
-        margin-left: 2.5rem;
-    }
-    .page_title{
-        font-size: 4rem;
-        margin-top: 15rem;
-    }
-    .fa-solid.fa-circle-question.help_btn{
-        font-size: 5rem!important;
-        top:11%!important;
-    }
-    .top_link{
-        font-size: 4rem;
-    }
-    .match_top{
-        margin-bottom: 9rem;
-    }
-    .match_user .fa-regular.fa-thumbs-up{
-        font-size: 8rem!important;
-        margin: 30% 0!important;
-    }
-    .match_user .fa-regular.fa-thumbs-up div{
-        font-size: 3.8rem!important;
-    }
-    .match_user .fa-solid.fa-reply{
-        font-size: 8rem!important;
-        margin: 30% 0!important;
-    }
-    .match_user .fa-solid.fa-reply div{
-        font-size: 3.8rem!important;
-    }
 
-    /* ///////////////////////// */
+/*        新規登録画面        */
 
 
-    /*     メッセージリスト画面    */
+/* ///////////////////////// */
+
+.user_title{
+    font-size: 3rem;
+}
+
+.user_add_top{
+    flex: none;
+    max-width: none;
+    /* text-align: unset; */
+    margin-left: 0;
+}
+
+.user_add_top h2{
+    font-size: 4rem;
+}
+
+.user_add_top form{
+    margin-top: 4rem;
+}
+
+.user_name_input,
+.user_pass_input{
+    height: 20%;
+}
+
+.user_name_input::placeholder {
+    font-size: 2rem;
+}
+
+.password_sub{
+    font-size: 2rem!important;
+}
+
+.image_select{
+    font-size: 3rem;
+}
+
+.image_size{
+    font-size: 2rem!important;
+}
+
+/* ///////////////////////// */
 
 
-    /* ///////////////////////// */
-    .destination_user_list {
-        border-radius: 7rem;
-        font-size: 2rem;
-    }
-    .message_top{
-        margin-left: 5%!important;
-        margin-bottom: 18%!important;
-    }
-    .col-9.message_top{
-        max-width: 88%;
-    }
-    .message_user_img{
-        width: 4.5rem;
-        height: 4.5rem;
-    }
-    .new_message_time{
-        font-size: 1.5rem;
-    }
-    .far.fa-trash-alt{
-        font-size: 2rem;
-    }
-    #message_count{
-        font-size: 1rem;
-    }
-    .destination_user_list .destination_user_info .destination_user_info_detail .destination_user_name {
-        font-size: 1.5rem;
-    }
-    /* ///////////////////////// */
+/*         マッチ画面         */
 
 
-    /*       メッセージ画面       */
+/* ///////////////////////// */
+
+.card{
+    width: 54%;
+    height: 38%;
+    left: 25%;
+    top: 27%;
+}
+.fa-image_range.fa{
+    padding: 2rem;
+    border-radius: 6rem;
+}
+.fa-image_range.fa:first-child {
+    margin-right: 13rem!important;
+}
+.fa-solid.fa-reply{
+    font-size: 5rem!important;
+}
+.matching_btn .fas.fa-thumbs-up{
+    font-size: 5rem!important;
+}
+.matching_btn{
+    left: 25%;
+    top: 73%;
+}
+.card .profile_name {
+    font-size: 3rem;
+    margin-left: 2.5rem;
+}
+.page_title{
+    font-size: 4rem;
+    margin-top: 15rem;
+}
+.fa-solid.fa-circle-question.help_btn{
+    font-size: 5rem!important;
+    top:11%!important;
+}
+.top_link{
+    font-size: 4rem;
+}
+.match_top{
+    margin-bottom: 9rem;
+}
+.match_user .fa-regular.fa-thumbs-up{
+    font-size: 8rem!important;
+    margin: 30% 0!important;
+}
+.match_user .fa-regular.fa-thumbs-up div{
+    font-size: 3.8rem!important;
+}
+.match_user .fa-solid.fa-reply{
+    font-size: 8rem!important;
+    margin: 30% 0!important;
+}
+.match_user .fa-solid.fa-reply div{
+    font-size: 3.8rem!important;
+}
+
+/* ///////////////////////// */
 
 
-    /* ///////////////////////// */
-    .message_disp{
-        margin-left:0!important;
-        max-width: none;
-    }
-    .message_disp .message_disp_div{
-        margin-top: 8rem;
-        height: 3rem!important;
-    }
-    .message_disp .message_disp_name{
-        font-size:4rem!important;
-        width:39%!important;
-    }
-    .message_disp .message{
-        margin-top: 15rem!important;
-    }
-    .message_disp .fa-solid.fa-angle-left{
-        font-size: 4rem!important;
-    }
-    .message_disp .message_created_at{
-        font-size: 4rem;
-    }
-    .message_disp .my_message p{
-        font-size: 4rem;
-    }
-    .message_disp .mycomment .message_user_img{
-        width: 6rem;
-        height: 6rem;
-    }
-    /* ///////////////////////// */
+/*     メッセージリスト画面    */
 
 
-    /*     プロフィール画面    */
+/* ///////////////////////// */
+.destination_user_list {
+    border-radius: 7rem;
+    font-size: 2rem;
+}
+.message_top{
+    margin-left: 5%!important;
+    margin-bottom: 18%!important;
+}
+.col-9.message_top{
+    max-width: 88%;
+}
+.message_user_img{
+    width: 4.5rem;
+    height: 4.5rem;
+}
+.new_message_time{
+    font-size: 1.5rem;
+}
+.far.fa-trash-alt{
+    font-size: 2rem;
+}
+#message_count{
+    font-size: 1rem;
+}
+.destination_user_list .destination_user_info .destination_user_info_detail .destination_user_name {
+    font-size: 1.5rem;
+}
+/* ///////////////////////// */
 
 
-    /* ///////////////////////// */
-    .tag_tittle{
-        font-size: 3rem;
-    }
-    .profile_top{
-        width: 100%!important;
-        margin-left: 5%!important;
-    }
-    .profile_top .user_age,
-    .profile_top .user_address,
-    .profile_top .user_occupation,
-    .profile_top .skill_tag,
-    .profile_top .licence_tag,
-    .profile_top .user_profile,
-    .profile_top .user_workhistory
-    {
-        font-size: 2.5rem;
-    }
-    /* .profile_top .col-3{
-        flex:unset;
-        max-width: 0;
-    }
-    .profile_top .col-8{
-        flex:unset;
-        max-width: 0;
-    } */
-    .profile_top .user_address{
-        font-size: 2.5rem;
-    }
-    .profile_top .col-3{
-        flex: 100%;
-        max-width: 100%;
-    }
-    .profile_top .col-8{
-        margin-top: 0!important;
-        margin-left: 0!important;
-    }
-    .profile_top .profile_name_prof{
-        font-size: 4rem;
-    }
-    .profile_top .row{
-        margin-bottom: 10rem;
-    }
-    .mypage{
-        margin-top: 2rem!important;
-        width: 15rem!important;
-        height: 15rem!important;
-    }
+/*       メッセージ画面       */
+
+
+/* ///////////////////////// */
+.message_disp{
+    margin-left:0!important;
+    max-width: none;
+}
+.message_disp .message_disp_div{
+    margin-top: 8rem;
+    height: 3rem!important;
+}
+.message_disp .message_disp_name{
+    font-size:4rem!important;
+    width:39%!important;
+}
+.message_disp .message{
+    margin-top: 15rem!important;
+}
+.message_disp .fa-solid.fa-angle-left{
+    font-size: 4rem!important;
+}
+.message_disp .message_created_at{
+    font-size: 4rem;
+}
+.message_disp .my_message p{
+    font-size: 4rem;
+}
+.message_disp .mycomment .message_user_img{
+    width: 6rem;
+    height: 6rem;
+}
+/* ///////////////////////// */
+
+
+/*     プロフィール画面    */
+
+
+/* ///////////////////////// */
+.tag_tittle{
+    font-size: 3rem;
+}
+.profile_top{
+    width: 100%!important;
+    margin-left: 5%!important;
+}
+.profile_top .user_age,
+.profile_top .user_address,
+.profile_top .user_occupation,
+.profile_top .skill_tag,
+.profile_top .licence_tag,
+.profile_top .user_profile,
+.profile_top .user_workhistory
+{
+    font-size: 2.5rem;
+}
+/* .profile_top .col-3{
+    flex:unset;
+    max-width: 0;
+}
+.profile_top .col-8{
+    flex:unset;
+    max-width: 0;
+} */
+.profile_top .user_address{
+    font-size: 2.5rem;
+}
+.profile_top .col-3{
+    flex: 100%;
+    max-width: 100%;
+}
+.profile_top .col-8{
+    margin-top: 0!important;
+    margin-left: 0!important;
+}
+.profile_top .profile_name_prof{
+    font-size: 4rem;
+}
+.profile_top .row{
+    margin-bottom: 10rem;
+}
+.mypage{
+    margin-top: 2rem!important;
+    width: 15rem!important;
+    height: 15rem!important;
+}
 }

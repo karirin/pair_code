@@ -295,6 +295,33 @@ $(document).one('click', ".match_good_btn", function() {
     }).fail(function() {});
 });
 
+$('#my_image').on('change', function(e) {
+    $('.message_submit').attr('class','btn btn-outline-primary message_img_submit');
+});
+
+$(document).on('click', ".message_img_submit", function() {
+    $.ajaxSetup({
+        headers: {
+            "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+        },
+    });
+        // アップロードするファイルのデータ取得
+        var fileData = document.getElementById("my_image").files[0];
+        // フォームデータを作成する
+        var form = new FormData();
+
+        form.append("file", fileData);
+        $.ajax({
+        type: 'POST',
+        url: '/ajax_message_process',
+        dataType: 'text',
+        processData: false,
+        contentType: false,
+        data: form
+    }).done(function() {
+    }).fail(function() {});
+});
+
 // メッセージを送信したとき
 $(document).on('click', ".message_submit", function() {
     $.ajaxSetup({
@@ -313,24 +340,19 @@ $(document).on('click', ".message_submit", function() {
         mmi = ('0' + mi).slice(-2),
         day = hh + ':' + mmi;
         // //アップロードするファイルのデータ取得
-        // var fileData = document.getElementById("my_image").files[0];
+        var fileData = document.getElementById("my_image").files[0];
         // //フォームデータを作成する
-        // var form = new FormData();
+        var form = new FormData();
 
-        // form.append("file", fileData);
+        form.append("file", fileData);
         let input = document.getElementById('my_image');
-        // console.log(input.files);
         $.ajax({
         type: 'POST',
         url: '/ajax_message_process',
         dataType: 'text',
-        //processData: false,
-        //contentType: false,
-        data: {
-            current_user_id: current_user_id,
-            user_id: user_id,
-            text: text
-        },
+        processData: false,
+        contentType: false,
+        data: form
     }).done(function() {
         $('.message_add').replaceWith('<div class="my_message"><div class="mycomment right"><span class="message_created_at"> '+ day +' </span><p>'+text+'</p><img class="message_user_img" src="'+current_user_img+'"></div></div><input type="hidden" class="message_add">');
         $('#message_counter').val('');
