@@ -5,7 +5,7 @@
 @endsection
 @section('content')
 <div class="row">
-    <div class="col-6 offset-3 center">
+    <div class="col-6 offset-3 center user_login_top">
         <h2 style="margin-top: 2rem;">ログイン</h2>
         <form action="/user/login" method="post">
             @csrf
@@ -20,12 +20,12 @@
                 <span class="user_pass_error" style="display:none;color: #dc3545;">パスワードを入力してください</span>
             </div>
             <div class="flex_btn" style="margin-top: 0.5rem;">
-                <input class="btn btn-outline-info" type="button" onclick="history.back()" value="戻る">
-                <input class="btn btn-outline-dark submit_btn" type="submit" value="ログイン">
+                <input class="btn btn-outline-info edit_detail_top_btn" type="button" onclick="history.back()" value="戻る">
+                <input class="btn btn-outline-dark submit_btn edit_detail_top_btn" type="submit" value="ログイン">
             </div>
         </form>
         <a href="/auth/twitter" class="btn-social-long-twitter">
-            <i class="fa-brands fa-twitter" style="margin-right: 1rem;"></i> <span>Twitterでログイン</span>
+            <i class="fa-brands fa-twitter edit_detail_top_btn" style="margin-right: 1rem;"></i><span class="twitter_login">Twitterでログイン</span>
         </a>
     </div>
 

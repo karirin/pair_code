@@ -18,7 +18,7 @@
     <div class="profile_top" style="margin-left: 20%;width:70%;display: none;">
         <h3 class="page_title profile_title">プロフィール</h3>
         <div class="tag" style="display: block;">
-            <div class="row">
+            <div class="row profile_top">
                 <div class="col-3">
                     <img src="{{asset($current_user->image)}}" class="mypage" style="margin-top: 1rem;">
                     <h3 class="profile_name_prof">{{$current_user->name}}</h3>

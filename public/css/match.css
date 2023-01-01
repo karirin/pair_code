@@ -554,15 +554,6 @@
         top: -47px;
     }
 
-    .main_ul .header{
-        font-size: 2rem;
-    }
-
-    ul li{
-        padding: 0 1rem;
-    }
-
-
 /* ///////////////////////// */
 
 
@@ -573,12 +564,12 @@
 
 .user_title{
     font-size: 3rem;
+    width: 70%;
 }
 
 .user_add_top{
     flex: none;
     max-width: none;
-    /* text-align: unset; */
     margin-left: 0;
 }
 
@@ -618,6 +609,7 @@
 .user_name_input,
 .user_pass_input{
     padding: 3rem 2rem;
+    font-size: 3rem;
     width: 70%!important;
 }
 
@@ -635,6 +627,90 @@
 
 .image_size{
     font-size: 2rem!important;
+}
+
+.main_ul .header{
+    font-size: 2rem;
+}
+
+ul li{
+    padding: 0 1rem;
+}
+
+.flex_btn{
+    margin-top: 4rem;
+    width: 60%!important;
+    margin: 0 15%!important;
+}
+
+/* ///////////////////////// */
+
+
+/*        ログイン画面        */
+
+
+/* ///////////////////////// */
+
+.edit_detail_top_tittle{
+    font-size: 4rem;
+    margin-top: 5rem;
+}
+
+.login_title{
+    font-size: 2rem;
+}
+
+.edit_detail_top{
+    margin-left: 15%!important;
+    height: 40%!important;
+}
+
+.edit_detail_top .col-3{
+    flex: unset;
+    max-width: 35%;
+}
+
+.edit_detail_top .col-7{
+    max-width: 35%;
+}
+
+.edit_detail_top .edit_profile{
+    width: 100%!important;
+}
+
+.edit_detail_top .edit_workhistory{
+    width: 100%!important;
+}
+
+.user_login_top{
+    flex: none;
+    max-width: unset;
+    margin-left: 0;
+}
+
+.user_login_top h2{
+    font-size: 4rem!important;
+    margin-top: 6rem!important;
+}
+
+.edit_detail_top_btn{
+    font-size: 2rem!important;
+}
+
+.edit_detail_top_btn span{
+    font-size: 2rem!important;
+}
+
+.user_login_top .twitter_login{
+    font-size: 2rem;
+}
+
+.user_login_top .flex_btn{
+    margin: 0 20%!important;
+}
+
+.user_login_top form{
+    margin-top: 4rem;
 }
 
 /* ///////////////////////// */

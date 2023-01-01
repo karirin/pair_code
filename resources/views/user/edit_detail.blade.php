@@ -4,10 +4,10 @@
 @parent
 @endsection
 @section('content')
-<h2 style="text-align: center;">新規登録</h2>
+<h2 class="edit_detail_top_tittle" style="text-align: center;">新規登録</h2>
 <form method="post" action="{{ asset('user/edit_detail') }}" enctype="multipart/form-data">
     @csrf
-    <div class="row" style="margin-left: 30%;height: 60%;">
+    <div class="row edit_detail_top" style="margin-left: 30%;height: 60%;">
         <div class="col-3">
             <div class="user_age">
                 <p class="tag_tittle">年齢</p>
@@ -115,8 +115,8 @@
         </div>
     </div>
     <div class="flex_btn margin_top" style="margin: 0 34%;width: 35%;margin-top: 2rem;">
-        <input style="width: 90px;" class="btn btn-outline-info" type="button" onclick="history.back()" value="戻る">
-        <input style="width: 90px;" class="btn btn-outline-dark edit_done" type="submit" value="登録">
+        <input style="width: 90px;" class="btn btn-outline-info edit_detail_top_btn" type="button" onclick="history.back()" value="戻る">
+        <input style="width: 90px;" class="btn btn-outline-dark edit_done edit_detail_top_btn" type="submit" value="登録">
     </div>
     <input type="hidden" name="name" value="{{$name}}">
     <input type="hidden" name="password" value="{{$password}}">

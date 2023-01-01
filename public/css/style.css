@@ -410,7 +410,7 @@ nav.navbar.navbar-dark {
 /* Twitterログインボタン */
 
 .btn-social-long-twitter .fa-twitter {
-    font-size: 15px!important;
+    font-size: 15px;
 }
 
 .btn-social-long-twitter {
