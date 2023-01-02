@@ -5,22 +5,29 @@
 @parent
 @endsection
 @section('content')
-<div class="container">
-    <span class="choose">Choose Gender</span>
+<span class="choose">Choose Gender</span>
 
-    <div class="dropdown">
-        <div class="select">
-            <span>Select Gender</span>
-            <i class="fa fa-chevron-left"></i>
-        </div>
-        <input type="hidden" name="gender">
-        <ul class="dropdown-menu">
-            <li id="male">Male</li>
-            <li id="female">Female</li>
-        </ul>
+<div class="dropdown">
+    <div class="select">
+        <span>Select Gender</span>
+        <i class="fa fa-chevron-left"></i>
     </div>
+    <input type="hidden" name="gender">
+    <ul class="dropdown-menu">
+        <li id="male">ネットワークエンジニア</li>
+        <li id="female">Webエンジニア</li>
+        <li id="female">フロントエンドエンジニア</li>
+        <li id="female">インフラエンジニア</li>
+        <li id="female">サーバーエンジニア</li>
+        <li id="female">データベースエンジニア</li>
+        <li id="female">IoTエンジニア</li>
+        <li id="female">制御・組み込みエンジニア</li>
+        <li id="female">テストエンジニア</li>
+        <li id="female">その他</li>
+    </ul>
+</div>
 
-    <span class="msg"></span>
+<span class="msg"></span>
 </div>
 <style>
     * {
@@ -128,9 +135,6 @@
         background-color: #e2e2e2
     }
 </style>
-@endsection
-@section('footer')
-@parent
 <script>
     /*Dropdown Menu*/
     $('.dropdown').click(function() {
