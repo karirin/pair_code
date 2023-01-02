@@ -968,6 +968,14 @@ ul li{
     width: 70%!important;
 }
 
+.edit_age{
+    width: 20%!important;
+}
+
+.edit_address{
+    width: 30%!important;
+}
+
 .btn.btn-outline-dark.edit_done,
 .btn.btn-outline-dark.profile_close{
     font-size: 2rem;
@@ -1025,6 +1033,14 @@ ul li{
 
 .edit_btns{
     right: 8%;
+}
+
+.profile_top_form .profile_top .page_title{
+    margin-left: 2.2rem;
+}
+
+.edit_occupation::placeholder{
+    font-size: 2rem;
 }
 
 }
