@@ -574,6 +574,21 @@
         top: -47px;
     }
 
+    .flash_message,
+    .login_message,
+    .top_message,
+    .add_message,
+    .match_message{
+        font-size: 2.5rem;
+        bottom: 15%;
+    }
+
+    .col-8.offset-2.center{
+        flex: none;
+        max-width: unset;
+        margin-left: 0;
+    }
+
 /* ///////////////////////// */
 
 
@@ -689,6 +704,19 @@ ul li{
     margin-bottom: 0;
 }
 
+.match_box{
+    z-index: 5;
+    font-size: 5rem;
+}
+
+.match_box .box-title{
+    font-size: 2rem;
+}
+
+.three_good{
+    font-size: 3rem;
+}
+
 /* ///////////////////////// */
 
 
@@ -707,7 +735,7 @@ ul li{
 }
 
 .edit_detail_top{
-    margin-left: 15%!important;
+    margin-left: 10%!important;
     height: auto!important;
 }
 
@@ -722,7 +750,7 @@ ul li{
 }
 
 .edit_detail_top .edit_profile{
-    width: 100%!important;
+    width: 80%!important;
 }
 
 .edit_detail_top .edit_workhistory{
@@ -1024,14 +1052,13 @@ ul li{
 }
 
 .edit_address{
-    width: 30%!important;
+    width: 70%!important;
 }
 
 .btn.btn-outline-dark.edit_done,
 .btn.btn-outline-dark.profile_close{
     font-size: 2rem;
     display: block;
-    margin-bottom: 1rem;
 }
 
 .profile_top .btn.btn-outline-dark.profile_close{
@@ -1080,6 +1107,7 @@ ul li{
 .profile_top_form .profile_top .btn.btn-outline-dark.edit_done,
 .profile_top_form .profile_top .btn.btn-outline-dark.profile_close{
     font-size: 3rem;
+    margin-top: 1rem;
 }
 
 .edit_btns{

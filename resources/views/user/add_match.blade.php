@@ -24,7 +24,7 @@
 </div>
 <div class="row">
     <div class="col-8 offset-2 center">
-        <h2 style="font-family: system-ui;">3人に「いいね」を送ってみましょう</h2>
+        <h2 style="font-family: system-ui;" class="three_good">3人に「いいね」を送ってみましょう</h2>
         <i class="fa-solid fa-circle-question help_btn"></i>
         <div class="match_top" style="display: none;margin: 0 9%">
             <input type="hidden" class="sample_user">
