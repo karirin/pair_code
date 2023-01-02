@@ -639,9 +639,20 @@ ul li{
 }
 
 .flex_btn{
-    margin-top: 4rem;
     width: 60%!important;
-    margin: 0 15%!important;
+    margin: 4rem 12rem 0!important;
+}
+
+.edit_age,
+.edit_address,
+.edit_occupation,
+.edit_profile,
+#skill_myprofile_input,
+#licence_input,
+.edit_workhistory{
+    padding: 3rem 2rem;
+    font-size: 3rem;
+    width: 70%!important;
 }
 
 /* ///////////////////////// */
@@ -663,7 +674,7 @@ ul li{
 
 .edit_detail_top{
     margin-left: 15%!important;
-    height: 40%!important;
+    height: 50%!important;
 }
 
 .edit_detail_top .col-3{
@@ -710,9 +721,9 @@ ul li{
     font-size: 3rem;
 }
 
-.user_login_top .flex_btn{
+/* .user_login_top .flex_btn{
     margin: 0 20%!important;
-}
+} */
 
 .user_login_top form{
     margin-top: 4rem;
