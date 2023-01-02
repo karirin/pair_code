@@ -667,10 +667,15 @@ ul li{
 .edit_address,
 .edit_occupation,
 .edit_profile,
-#skill_myprofile_input,
-#licence_input,
 .edit_workhistory{
     padding: 3rem 2rem;
+    font-size: 3rem;
+    width: 70%!important;
+}
+
+#skill_myprofile_input,
+#licence_input{
+    padding: 1rem 2rem;
     font-size: 3rem;
     width: 70%!important;
 }
