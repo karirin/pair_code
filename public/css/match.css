@@ -660,7 +660,7 @@ ul li{
 
 .flex_btn{
     width: 60%!important;
-    margin: 4rem 12rem 0!important;
+    margin: 2rem 12rem 0!important;
 }
 
 .edit_age,
@@ -678,6 +678,15 @@ ul li{
     padding: 1rem 2rem;
     font-size: 3rem;
     width: 70%!important;
+}
+
+.sai{
+    font-size: 3rem;
+}
+
+.edit_detail_btn .edit_detail_top_btn{
+    width: auto!important;
+    margin-bottom: 0;
 }
 
 /* ///////////////////////// */
@@ -699,16 +708,17 @@ ul li{
 
 .edit_detail_top{
     margin-left: 15%!important;
-    height: 50%!important;
+    height: auto!important;
 }
 
 .edit_detail_top .col-3{
     flex: unset;
-    max-width: 35%;
+    max-width: none;
 }
 
 .edit_detail_top .col-7{
-    max-width: 35%;
+    max-width: none;
+    margin-left: 0!important;
 }
 
 .edit_detail_top .edit_profile{
@@ -872,7 +882,7 @@ ul li{
 }
 .message_disp .message_disp_div{
     margin-top: 8rem;
-    height: 3rem!important;
+    height: 7rem!important;
 }
 .message_disp .message_disp_name{
     font-size:4rem!important;
@@ -890,7 +900,15 @@ ul li{
 .message_disp .my_message p{
     font-size: 2rem;
 }
+.message_disp .my_message .says{
+    font-size: 2rem;
+}
 .message_disp .mycomment .message_user_img{
+    width: 5rem;
+    height: 5rem;
+}
+
+.message .my_message .left .message_user_img{
     width: 5rem;
     height: 5rem;
 }

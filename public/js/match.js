@@ -456,17 +456,6 @@ $(document).ready(function() {
     });
 });
 
-// テスト投稿の必須チェック
-// $(document).on('click', '.post_process_btn', function() {
-//     if ($('.url_form')[0].value == '' && $('.service')[0].value == '') {
-//         $('.url_form')[0].setAttribute("style", "border-color: #dc3545;");
-//         $('.service')[0].setAttribute("style", "border-color: #dc3545;");
-//         $('.post_url_error').fadeIn();
-//         $('.post_service_error').fadeIn();
-//         return false;
-//     }
-// });
-
 $(document).on('click', '.submit_btn', function() {
     if ($('.user_name_input')[0].value == '' && $('.user_pass_input')[0].value == '') {
         $('.user_name_input')[0].setAttribute("style", "border-color: #dc3545;");

@@ -11,7 +11,7 @@
         <div class="col-3">
             <div class="user_age">
                 <p class="tag_tittle">年齢</p>
-                <input class="edit_age form-control" type="number" name="age" style="width: 35%;display: inline-block;margin-right: 0.5rem;">歳
+                <input class="edit_age form-control" type="number" name="age" style="width: 35%;display: inline-block;margin-right: 0.5rem;"><span class="sai">歳</span>
             </div>
             <div class="user_address" style="margin-top: 0.5rem;">
                 <p class="tag_tittle" style="display: inline-block;">住所</p>
@@ -114,7 +114,7 @@
             </div>
         </div>
     </div>
-    <div class="flex_btn margin_top" style="margin: 0 34%;width: 35%;margin-top: 2rem;">
+    <div class="flex_btn margin_top edit_detail_btn" style="margin: 0 34%;width: 35%;margin-top: 2rem;">
         <input style="width: 90px;" class="btn btn-outline-info edit_detail_top_btn" type="button" onclick="history.back()" value="戻る">
         <input style="width: 90px;" class="btn btn-outline-dark edit_done edit_detail_top_btn" type="submit" value="登録">
     </div>
