@@ -142,7 +142,7 @@
     z-index: 10;
 }
 
-.smartphone_header div span:first-child{
+.smartphone_header div span{
     margin-left:1rem;
 }
 
@@ -952,8 +952,8 @@ ul li{
 }
 
 .profile_edit_btn{
-    font-size: 2rem;
-    right: 8%;
+    font-size: 2.5rem;
+    right: 3%;
 }
 
 .editing_profile_img{
@@ -976,7 +976,7 @@ ul li{
 }
 
 .profile_top .btn.btn-outline-dark.profile_close{
-    width: 154px;
+    width: 217px;
 }
 
 .slide_prof .edit_profile_img .fa-image_range {
@@ -1009,11 +1009,22 @@ ul li{
 .profile_top_form .fas.fa-plus.skill_btn,
 .profile_top_form .fas.fa-plus.licence_btn,
 .profile_top_form .fas.fa-plus.myprofile_skill_btn,
-.profile_top_form .fas.fa-plus.myprofile_licence_btn{
-    font-size: 3rem;
-}
-
+.profile_top_form .fas.fa-plus.myprofile_licence_btn,
 .profile_top_form .user_workhistory{
     font-size: 3rem;
 }
+
+.profile_top_form .profile_top{
+    word-wrap: break-word;
+}
+
+.profile_top_form .profile_top .btn.btn-outline-dark.edit_done,
+.profile_top_form .profile_top .btn.btn-outline-dark.profile_close{
+    font-size: 3rem;
+}
+
+.edit_btns{
+    right: 8%;
+}
+
 }
