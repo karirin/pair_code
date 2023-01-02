@@ -5,7 +5,7 @@
 @endsection
 @section('content')
 <div class="container">
-    <form method="post" action="{{ asset('user/edit') }}" enctype="multipart/form-data">
+    <form method="post" action="{{ asset('user/edit') }}" class="profile_top_form" enctype="multipart/form-data">
         @csrf
         <input type="hidden" name="current_name" value="{{$current_user->name}}">
         <input type="hidden" name="current_age" value="{{$current_user->age}}">

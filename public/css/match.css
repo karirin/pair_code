@@ -73,11 +73,6 @@
     right: 47%;
 }
 
-
-/* .edit_profile_img .fa-image_range {
-    right: 70%;
-} */
-
 .edit_btns {
     position: fixed;
     bottom: 15%;
@@ -912,27 +907,25 @@ ul li{
 .profile_top .licence_tag,
 .profile_top .user_profile,
 .profile_top .user_workhistory
+.profile_top .user_address
 {
     font-size: 2.5rem;
 }
-/* .profile_top .col-3{
-    flex:unset;
-    max-width: 0;
-}
-.profile_top .col-8{
-    flex:unset;
-    max-width: 0;
-} */
-.profile_top .user_address{
-    font-size: 2.5rem;
-}
+
 .profile_top .col-3{
     flex: 100%;
     max-width: 100%;
 }
+.profile_top .col-4{
+    flex: none;
+    max-width: none;
+}
+
 .profile_top .col-8{
     margin-top: 0!important;
     margin-left: 0!important;
+    flex: none;
+    max-width: unset;
 }
 .profile_top .profile_name_prof{
     font-size: 4rem;
@@ -942,7 +935,70 @@ ul li{
 }
 .mypage{
     margin-top: 2rem!important;
-    width: 15rem!important;
-    height: 15rem!important;
+    width: 20rem!important;
+    height: 20rem!important;
+}
+
+.profile_top_form{
+    margin-left: -7rem;
+}
+
+.profile_edit_btn{
+    font-size: 2rem;
+}
+
+.editing_profile_img{
+    margin-top: 2rem!important;
+    width: 20rem!important;
+    height: 20rem!important;
+}
+
+.edit_name{
+    padding: 3rem 2rem;
+    font-size: 3rem;
+    width: 70%!important;
+}
+
+.btn.btn-outline-dark.edit_done,
+.btn.btn-outline-dark.profile_close{
+    font-size: 2rem;
+}
+
+.profile_top .btn.btn-outline-dark.profile_close{
+    width: 154px;
+}
+
+.slide_prof .edit_profile_img .fa-image_range {
+    font-size: 3rem;
+}
+
+.edit_profile_img .fa-image_range{
+    width: 9rem;
+    height: 9rem;
+}
+
+.edit_profile_img .far.fa-image{
+    font-size: 3rem;    
+}
+
+.edit_profile_img label{
+    top: 13%!important;
+    left: 13%!important;
+}
+
+.edit_profile_img .editing_profile_img{
+    margin-bottom: 5rem;
+}
+
+.profile_top .far.fa-times-circle.skill_myprofile,
+.profile_top .far.fa-times-circle.licence{
+    font-size: 2.5rem!important;
+}
+
+.profile_top_form .fas.fa-plus.skill_btn,
+.profile_top_form .fas.fa-plus.licence_btn,
+.profile_top_form .fas.fa-plus.myprofile_skill_btn,
+.profile_top_form .fas.fa-plus.myprofile_licence_btn{
+    font-size: 3rem;
 }
 }
