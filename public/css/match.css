@@ -867,13 +867,16 @@ ul li{
     margin-left:0!important;
     max-width: none;
 }
+.message_disp .message{
+    margin-bottom: 13rem;
+}
 .message_disp .message_disp_div{
     margin-top: 8rem;
     height: 3rem!important;
 }
 .message_disp .message_disp_name{
     font-size:4rem!important;
-    width:39%!important;
+    width:50%!important;
 }
 .message_disp .message{
     margin-top: 15rem!important;
@@ -882,14 +885,44 @@ ul li{
     font-size: 4rem!important;
 }
 .message_disp .message_created_at{
-    font-size: 4rem;
+    font-size: 2rem;
 }
 .message_disp .my_message p{
-    font-size: 4rem;
+    font-size: 2rem;
 }
 .message_disp .mycomment .message_user_img{
-    width: 6rem;
-    height: 6rem;
+    width: 5rem;
+    height: 5rem;
+}
+
+.message_process .message_text{
+    text-align: center;
+}
+
+.message_process .message_text .counter{
+    font-size: 2rem;
+}
+
+.message_process #message_counter{
+    width: 80%;
+    height: 8%;
+    display: inline-block;
+}
+
+.message_process #message_counter::placeholder{
+    font-size: 2rem;
+}
+
+.btn.btn-outline-primary.message_submit{
+    font-size: 2rem;
+}
+
+.far.fa-image{
+    font-size: 3rem;
+}
+
+.fa-solid.fa-angle-left{
+    margin-top: 0.8rem!important;
 }
 /* ///////////////////////// */
 
