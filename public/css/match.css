@@ -903,7 +903,7 @@ ul li{
 }
 .profile_top{
     width: 100%!important;
-    margin-left: 5%!important;
+    margin-left: 0%!important;
 }
 .profile_top .user_age,
 .profile_top .user_address,
@@ -953,6 +953,7 @@ ul li{
 
 .profile_edit_btn{
     font-size: 2rem;
+    right: 8%;
 }
 
 .editing_profile_img{

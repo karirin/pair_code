@@ -57,11 +57,11 @@
                             <div style="text-align: center;font-size:1.5rem;">さがす</div>
                         </a>
                     </span><span style="display:inline-block;">
-                        <a href="{{ asset('match/match') }}" class="oaitekara" style="color: #9f9f9f;"><i class="fas fa-thumbs-up"></i>@if($match_flg!='')<i class="fa-solid fa-circle new_match_mark" style="font-size: 1.5rem;color: red;top: 8%;left: 35%;position: absolute;margin: 0;"></i>@endif
+                        <a href="{{ asset('match/match') }}" class="oaitekara" style="color: #9f9f9f;"><i class="fas fa-thumbs-up"></i>@if($match_flg!='')<i class="fa-solid fa-circle new_match_mark" style="font-size: 1.5rem;color: red;top: 8%;left: 31%;position: absolute;margin: 0;"></i>@endif
                             <div style="text-align: center;font-size:1.5rem;">お相手から</div>
                         </a>
                     </span><span style="display:inline-block;">
-                        <a href="{{ asset('message/message_top') }}" class="messe-ji" style="color: #9f9f9f;"><i class="fas fa-comment"></i>@if($message_count!=0)<i class="fa-solid fa-circle new_mark" style="font-size: 1.5rem;color: red;top: 8%;left: 54%;position: absolute;margin: 0;"></i>@endif
+                        <a href="{{ asset('message/message_top') }}" class="messe-ji" style="color: #9f9f9f;"><i class="fas fa-comment"></i>@if($message_count!=0)<i class="fa-solid fa-circle new_mark" style="font-size: 1.5rem;color: red;top: 8%;left: 49%;position: absolute;margin: 0;"></i>@endif
                             <div style="text-align: center;font-size:1.5rem;">メッセージ</div>
                         </a>
                     </span><span style="display:inline-block;">
