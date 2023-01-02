@@ -936,7 +936,10 @@ ul li{
     font-size: 4rem;
 }
 .profile_top .row{
-    margin-bottom: 10rem;
+    margin-bottom: 13rem;
+}
+.profile_top .form .row{
+    margin-bottom: 20rem;
 }
 .mypage{
     margin-top: 2rem!important;
@@ -967,6 +970,8 @@ ul li{
 .btn.btn-outline-dark.edit_done,
 .btn.btn-outline-dark.profile_close{
     font-size: 2rem;
+    display: block;
+    margin-bottom: 1rem;
 }
 
 .profile_top .btn.btn-outline-dark.profile_close{
@@ -1004,6 +1009,10 @@ ul li{
 .profile_top_form .fas.fa-plus.licence_btn,
 .profile_top_form .fas.fa-plus.myprofile_skill_btn,
 .profile_top_form .fas.fa-plus.myprofile_licence_btn{
+    font-size: 3rem;
+}
+
+.profile_top_form .user_workhistory{
     font-size: 3rem;
 }
 }
