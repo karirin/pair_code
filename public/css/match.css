@@ -298,6 +298,10 @@
     display: none;
 }
 
+.matchuser_workhistory{
+    word-wrap: break-word;
+}
+
 /* ///////////////////////// */
 
 
