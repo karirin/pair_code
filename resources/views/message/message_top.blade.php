@@ -24,14 +24,14 @@
                         </div>
                     </div>
 
-                    <div class="col-3">
-                        @if(@$message_class->convert_to_fuzzy_time($message_relation->getNewcreated_at($current_user->id,$message_relation->destination_user_id))!="1970年1月1日")
-                        <span class="new_message_time">{{@$message_class->convert_to_fuzzy_time($message_relation->getNewcreated_at($current_user->id,$message_relation->destination_user_id))}}</span>
-                        @endif
-                    </div>
+                    <!-- <div class="col-3"> -->
+                    @if(@$message_class->convert_to_fuzzy_time($message_relation->getNewcreated_at($current_user->id,$message_relation->destination_user_id))!="1970年1月1日")
+                    <span class="new_message_time">{{@$message_class->convert_to_fuzzy_time($message_relation->getNewcreated_at($current_user->id,$message_relation->destination_user_id))}}</span>
+                    @endif
+                    <!-- </div> -->
                 </div>
         </a>
-        <button class="btn modal_btn message_list_delete" data-target="#delete_modal{{$message_relation->id}}" type="button" data-toggle="delete" title="削除"><i class="far fa-trash-alt"></i></button>
+        <!-- <button class="btn modal_btn message_list_delete" data-target="#delete_modal{{$message_relation->id}}" type="button" data-toggle="delete" title="削除"><i class="far fa-trash-alt"></i></button> -->
         <div class="delete_confirmation" id="delete_modal{{$message_relation->id}}">
             <p class="modal_title">こちらのユーザーとのメッセージを削除しますか？</p>
             <p class="post_content">{{$message_relation->name}}</p>
