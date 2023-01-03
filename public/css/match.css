@@ -451,6 +451,11 @@
 
 .profile_top .col-8{
     display: inline-block;
+    vertical-align: top;
+}
+
+.user_workhistory{
+    word-wrap: break-word;
 }
 
 /* ///////////////////////// */
@@ -957,7 +962,7 @@ ul li{
     width: 80%;
     height: 8%;
     display: inline-block;
-    font-size: 16px;
+    font-size: 2rem;
 }
 
 .message_process #message_counter::placeholder{
