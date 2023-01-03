@@ -962,7 +962,7 @@ ul li{
     width: 80%;
     height: 8%;
     display: inline-block;
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 .message_process #message_counter::placeholder{
