@@ -1708,6 +1708,8 @@ img.my_preview {
 }
 
 .skill_tag {
+    display: inline-block;
+    margin-bottom: 0.5rem;
     font-size: 15px;
     padding: 1px;
     border: 1px solid #dadada;
@@ -1729,6 +1731,8 @@ img.my_preview {
 .licence_tag,
 .licence_tag_narrow,
 .licence_tag_narrower {
+    display: inline-block;
+    margin-bottom: 0.5rem;
     font-size: 15px;
     padding: 1px;
     border: 1px solid #dadada;

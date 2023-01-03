@@ -726,6 +726,12 @@ ul li{
     font-size: 3rem;
 }
 
+.welcome{
+    margin: 0px 15%;
+    line-height: 5rem;
+    font-size: 4rem;
+}
+
 /* ///////////////////////// */
 
 
@@ -960,13 +966,13 @@ ul li{
 
 .message_process #message_counter{
     width: 80%;
-    height: 8%;
+    height: 10%;
     display: inline-block;
     font-size: 2.5rem;
 }
 
 .message_process #message_counter::placeholder{
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 .btn.btn-outline-primary.message_submit{

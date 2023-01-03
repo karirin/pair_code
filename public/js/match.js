@@ -208,7 +208,7 @@ $(document).on('click', ".match_user", function() {
     var $target_modal = $(this).data("target");
     $height = $(window).scrollTop();
     $('.footer').hide();
-    $('.content').css('position', 'fixed');
+    //$('.content').css('position', 'fixed');
     $('.modal_match').fadeIn();
     $('.profile_close').fadeIn();
     $('.matchuser_detaile').fadeIn();
@@ -350,9 +350,10 @@ $(document).on('click', ".message_submit", function() {
         type: 'POST',
         url: '/ajax_message_process',
         dataType: 'text',
-        processData: false,
-        contentType: false,
-        data: form
+        data: {
+            text: text,
+            user_id: user_id
+        }
     }).done(function() {
         $('.message_add').replaceWith('<div class="my_message"><div class="mycomment right"><span class="message_created_at"> '+ day +' </span><p>'+text+'</p><img class="message_user_img" src="'+current_user_img+'"></div></div><input type="hidden" class="message_add">');
         $('#message_counter').val('');
