@@ -502,6 +502,7 @@
     }
     .page_title.serach{
         margin-top: 12rem;
+        margin-left: -5rem;
     }
     .page_title.message_title{
         margin-bottom: 3rem;
@@ -598,6 +599,16 @@
         margin-left: 0;
     }
 
+    .error_name_form,
+    .error_pass_form{
+        margin:0 0 5% 15%!important;
+    }
+
+    .user_name_error,
+    .user_pass_error{
+        font-size: 2.8rem;
+    }
+
 /* ///////////////////////// */
 
 
@@ -670,7 +681,7 @@
 }
 
 .image_size{
-    font-size: 2rem!important;
+    font-size: 1.9rem!important;
 }
 
 .main_ul .header{
@@ -685,6 +696,10 @@ ul li{
 .flex_btn{
     width: 60%!important;
     margin: 2rem 12rem 0!important;
+}
+
+.user_login_top .flex_btn{
+    margin: 5rem 12rem 0!important;
 }
 
 .edit_age,
@@ -711,6 +726,10 @@ ul li{
 .edit_detail_btn .edit_detail_top_btn{
     width: auto!important;
     margin-bottom: 0;
+}
+
+.edit_detail_btn.flex_btn{
+    margin: 2rem 12rem 4rem 12rem!important;
 }
 
 .match_box{
@@ -767,10 +786,15 @@ ul li{
 
 .edit_detail_top .edit_profile{
     width: 80%!important;
+    margin-bottom: 4rem!important;
 }
 
 .edit_detail_top .edit_workhistory{
     width: 100%!important;
+}
+
+.edit_detail_top .tag_tittle{
+    margin-top: 2rem;
 }
 
 .user_login_top{
@@ -812,6 +836,12 @@ ul li{
     margin-top: 3rem;
 }
 
+.user_name_error
+
+.error_name_form{
+    margin: 0 15%!important;
+}
+
 /* ///////////////////////// */
 
 
@@ -851,6 +881,9 @@ ul li{
     font-size: 4rem;
     margin-top: 15rem;
 }
+.match_top .page_title{
+    margin-left: -5rem;
+}
 .fa-solid.fa-circle-question.help_btn{
     font-size: 5rem!important;
     top:11%!important;
@@ -874,6 +907,10 @@ ul li{
 }
 .match_user .fa-solid.fa-reply div{
     font-size: 3.8rem!important;
+}
+.match_top .fa-regular.fa-circle-xmark.help_close{
+    top: 21%;
+    left: 69%;
 }
 
 /* ///////////////////////// */

@@ -11,7 +11,7 @@
             @csrf
             <div class="user_title">ユーザー名</div>
             <input type="text" name="name" class="user_name_input form-control" placeholder="ニックネーム">
-            <div style="height: 27px;text-align:left;margin: 0 20%;">
+            <div class="error_name_form" style="height: 27px;text-align:left;margin: 0 20%;">
                 <span class="user_name_error" style="display:none;color: #dc3545;">ユーザー名を入力してください</span>
             </div>
             <div class="user_title">パスワード</div>
@@ -19,7 +19,7 @@
             <div class="password_sub" style="display:inline-block;width: 60%;text-align:left;font-size:0.9rem;">
                 ※英数字8文字以上
             </div>
-            <div style="height: 27px;text-align:left;margin: 0 20%;">
+            <div class="error_pass_form" style="height: 27px;text-align:left;margin: 0 20%;">
                 <span class="user_pass_error" style="display:none;color: #dc3545;">パスワードを入力してください</span>
             </div>
             <div class="prof_image" style="width:60%;display:inline-block;text-align:left;">

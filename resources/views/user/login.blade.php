@@ -11,12 +11,12 @@
             @csrf
             <div class="user_title">ユーザー名</div>
             <input type="text" name="name" class="user_name_input form-control">
-            <div style="height: 27px;text-align:left;margin: 0 20%;">
+            <div class="error_name_form" style="height: 27px;text-align:left;margin: 0 20%;">
                 <span class="user_name_error" style="display:none;color: #dc3545;">ユーザー名を入力してください</span>
             </div>
             <div class="user_title">パスワード</div>
             <input type="password" name="password" class="user_pass_input form-control">
-            <div style="height: 27px;text-align:left;margin: 0 20%;">
+            <div class="error_pass_form" style="height: 27px;text-align:left;margin: 0 20%;">
                 <span class="user_pass_error" style="display:none;color: #dc3545;">パスワードを入力してください</span>
             </div>
             <div class="flex_btn" style="margin-top: 0.5rem;">
