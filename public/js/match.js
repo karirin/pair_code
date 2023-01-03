@@ -208,7 +208,7 @@ $(document).on('click', ".match_user", function() {
     var $target_modal = $(this).data("target");
     $height = $(window).scrollTop();
     $('.footer').hide();
-    //$('.content').css('position', 'fixed');
+    $('.match_top.sarch_top').css('position', 'fixed');
     $('.modal_match').fadeIn();
     $('.profile_close').fadeIn();
     $('.matchuser_detaile').fadeIn();
