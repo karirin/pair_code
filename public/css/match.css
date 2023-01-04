@@ -478,13 +478,13 @@
         margin-left: 16%!important;
     }
     .help_message{
-        top: 20%;
-        font-size: 1.5rem;
+        top: 23%;
+        font-size: 2.5rem;
     }
     .help_message2{
         top: 71%!important;
-        left: 52%!important;
-        font-size: 1.5rem;
+        left: 23%!important;
+        font-size: 2.5rem;
         z-index: 40;
     }
     .help_close1{
@@ -531,7 +531,7 @@
     }
     .matchuser_detaile_prof_sample{
         left: 50%!important;
-        top: 81%!important;
+        top: 85%!important;
         width:630px;
     }
     .matchuser_detaile_prof h6,
@@ -581,10 +581,11 @@
         left: 41%;
     }
     .help-title {
-        height: 45px;
+        height: auto;
         line-height: 50px;
-        font-size: 1.5rem;
-        top: -47px;
+        font-size: 2.5rem;
+        top: -62px;
+        padding: 5px 30px;
     }
 
     .flash_message,
@@ -918,6 +919,9 @@ ul li{
 .match_top .fa-regular.fa-circle-xmark.help_close{
     top: 21%;
     left: 69%;
+}
+.help_message{
+    left: 30%;
 }
 .help_message3{
     top: 82%;
