@@ -184,6 +184,8 @@ $(document).on('click', ".profile_close", function() {
     // $('.profile_count').fadeIn();
     $('.profile_count').show();
     $('.content').css('position','unset');
+    $('#match_btn').prop("disabled", false);
+    $('#unmatch_btn').prop("disabled", false);
 });
 
 $(document).on('click', ".profile_narrow_close", function() {
@@ -208,6 +210,8 @@ $(document).on('click', ".match_user", function() {
     var $target_modal = $(this).data("target");
     $height = $(window).scrollTop();
     $('.footer').hide();
+    $('#match_btn').prop("disabled", true);
+    $('#unmatch_btn').prop("disabled", true);
     $('.match_top.sarch_top').css('position', 'fixed');
     $('.modal_match').fadeIn();
     $('.profile_close').fadeIn();
@@ -247,6 +251,8 @@ $(document).on('click', ".modal_match", function() {
     $('.matchuser_detaile').fadeOut();
     $('.matchuser_detaile_prof').fadeOut();
     $('.content').css('position', 'unset');
+    $('#match_btn').prop("disabled", false);
+    $('#unmatch_btn').prop("disabled", false);
 });
 
 // モーダル画面の×印をクリック
@@ -380,7 +386,7 @@ $(document).on('click', '#match_btn', function() {
     $(function() {
         setInterval(function() {
             $(card)[0].animate({
-                "marginLeft": "200px",
+                "marginLeft": "50px",
                 transform: 'rotate(100deg)'
             }, 1000);
             $(card).fadeOut().removeClass('match_card');
@@ -421,7 +427,7 @@ $(document).on('click', '#unmatch_btn', function() {
     $(function() {
         setInterval(function() {
             $(card)[0].animate({
-                "marginLeft": "-200px",
+                "marginLeft": "-50px",
                 transform: 'rotate(-100deg)'
             }, 1000);
             $(card).fadeOut().removeClass('match_card');

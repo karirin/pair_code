@@ -5,7 +5,7 @@
 @endsection
 @section('content')
 <div id="splash">Loading...</div>
-<div class="col-9.5 match_top" style="margin-left: 22%;display: none;">
+<div class="col-9.5 match_top aite_top" style="margin-left: 22%;display: none;">
     <div class="help_message3" style="display:none;">
         <span class="help-title">マッチングの流れ</span>
         「いいね」ボタンをクリックすると</br>
@@ -54,6 +54,7 @@
                 <div>
                     <span class="match_user_age">{{$user->age}}歳</span>
                 </div>
+                <input type="hidden" class="match_user_prof" value="{{$user->profile}}">
             </div>
             <input type="hidden" class="click_flg" value="0">
             <img src="{{asset($user->image)}}" class="match_user_img" style="width: 100%;height: 100%;border-radius: 8px;">
@@ -144,7 +145,7 @@
                         $('#sample_match_btn').prop("disabled", true);
                         $('#sample_unmatch_btn').prop("disabled", false);
                         $('#match0')[0].animate({
-                            "marginLeft": "100px",
+                            "marginLeft": "50px",
                             transform: 'rotate(50deg)'
                         }, 1000);
                         setInterval(function() {
@@ -165,7 +166,7 @@
                             $('#match0 > .match_card_color').fadeOut();
                             $('#match0 > .unmatch_card_color').fadeIn();
                             $('#match0')[0].animate({
-                                "marginLeft": "-100px",
+                                "marginLeft": "-50px",
                                 transform: 'rotate(-50deg)'
                             }, 1000);
                             $('#sample_unmatch_btn').prop("disabled", true);
@@ -237,7 +238,7 @@
                 $('#sample_match_btn').prop("disabled", true);
                 $('#sample_unmatch_btn').prop("disabled", false);
                 $('#match0')[0].animate({
-                    "marginLeft": "100px",
+                    "marginLeft": "50px",
                     transform: 'rotate(50deg)'
                 }, 1000);
                 setInterval(function() {
@@ -258,7 +259,7 @@
                     $('#match0 > .match_card_color').fadeOut();
                     $('#match0 > .unmatch_card_color').fadeIn();
                     $('#match0')[0].animate({
-                        "marginLeft": "-100px",
+                        "marginLeft": "-50px",
                         transform: 'rotate(-50deg)'
                     }, 1000);
                     $('#sample_unmatch_btn').prop("disabled", true);

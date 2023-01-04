@@ -412,8 +412,9 @@
 
 .matching_btn {
     position: absolute;
-    left: 44.5%;
+    left: 43.5%;
     top: 76%;
+    z-index: 15!important;
 }
 
 .matching_img {
@@ -481,7 +482,7 @@
         font-size: 1.5rem;
     }
     .help_message2{
-        top: 70%!important;
+        top: 71%!important;
         left: 52%!important;
         font-size: 1.5rem;
         z-index: 40;
@@ -495,7 +496,7 @@
     .help_close2{
         font-size: 5rem;
         left: 73%;
-        top: 5%;
+        top: 3%;
     }
     .footer{
         display: none;
@@ -549,7 +550,7 @@
         font-size: 2.5rem!important;
     }
     .far.fa-times-circle{
-        font-size: 4rem!important;
+        font-size: 5rem!important;
     }
     #splash {
         font-size: 3rem;
@@ -609,6 +610,10 @@
     .user_name_error,
     .user_pass_error{
         font-size: 2.8rem;
+    }
+
+    .matchuser_detaile .far.fa-times-circle{
+        top: -14%;
     }
 
 /* ///////////////////////// */
@@ -914,6 +919,17 @@ ul li{
     top: 21%;
     left: 69%;
 }
+.help_message3{
+    top: 82%;
+    left: 35%;
+    font-size: 2rem;
+}
+
+.help_message4{
+    top: 82%;
+    left: 7%;
+    font-size: 2rem;
+}
 
 /* ///////////////////////// */
 
@@ -926,7 +942,7 @@ ul li{
     border-radius: 7rem;
     font-size: 2rem;
     padding: 1rem 0.5rem;
-    margin: 1.5rem 0;
+    margin: 1.5rem 0 1.5rem 1.5rem;
 }
 .message_top{
     margin-left: 5%!important;
