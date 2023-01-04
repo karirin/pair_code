@@ -990,10 +990,11 @@ ul li{
     width:50%!important;
 }
 .message_disp .message{
-    margin-top: 15rem!important;
+    margin-top: 17rem!important;
 }
 .message_disp .fa-solid.fa-angle-left{
     font-size: 4rem!important;
+    margin-left: 2rem;
 }
 .message_disp .message_created_at{
     font-size: 2rem;
