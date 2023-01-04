@@ -489,9 +489,9 @@
     }
     .help_close1{
         z-index: 15;
-        left: 34%;
-        top: 12%;
-        font-size: 5rem;
+        left: 32%;
+        top: 13%;
+        font-size: 4rem;
     }
     .help_close2{
         font-size: 5rem;
@@ -924,13 +924,13 @@ ul li{
     left: 30%;
 }
 .help_message3{
-    top: 82%;
+    top: 84%;
     left: 35%;
     font-size: 2rem;
 }
 
 .help_message4{
-    top: 82%;
+    top: 84%;
     left: 7%;
     font-size: 2rem;
 }
