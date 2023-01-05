@@ -640,6 +640,10 @@
     .howtouse_content{
         font-size: 2rem!important;
     }
+
+    .howtouse_firstimage{
+        height:35%!important;
+    }
     
     .description {
         font-size: 4rem!important;  
