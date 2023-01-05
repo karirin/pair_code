@@ -617,6 +617,30 @@
         top: -14%;
     }
 
+    .description_top img{
+        width: 80%!important;
+    }
+
+    .description_concept{
+        font-size: 2rem!important;
+    }
+
+    .howtouse{
+        width: 70%!important;
+    }
+
+    .howtouse div img{
+        width: 80%!important;
+    }
+
+    .howtouse h3{
+        font-size: 2.5rem;
+    }
+
+    .howtouse_content{
+        font-size: 2rem!important;
+    } 
+
 /* ///////////////////////// */
 
 

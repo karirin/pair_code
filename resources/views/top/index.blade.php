@@ -68,10 +68,10 @@
             <input class="test_login btn btn-outline-dark" type="submit" name="test_login" value="おためしログイン">
         </div>
     </form>
-    <div style="text-align: center;">
+    <div class="description_top" style="text-align: center;">
         <div class="description">CONCEPT</div>
         <image src="storage/top/undraw_Engineering_team_a7n2.png" style="width:40%;height: 40%;">
-            <div style="font-size: 1.3rem;line-height: 2;">
+            <div class="description_concept" style="font-size: 1.3rem;line-height: 2;">
                 エンジニア同士で交流することができる「Pair Code」</br>
 
                 職場以外でエンジニアの方と接する機会はありますでしょうか？</br>
@@ -89,7 +89,7 @@
                     <image src="storage/top/undraw_People_search_re_5rre.png" style="width:40%;height: 30%;">
                 </div>
                 <h3>1．エンジニアをさがす</h3>
-                <div style="font-size:1.1rem;">トップ画面から登録しているエンジニアを閲覧することができます</div>
+                <div class="howtouse_content" style="font-size:1.1rem;">トップ画面から登録しているエンジニアを閲覧することができます</div>
             </div>
 
             <div class="howtouse">
@@ -97,7 +97,7 @@
                     <image src="storage/top/undraw_Spread_love_re_v3cl.png" style="width:50%;height: 30%;">
                 </div>
                 <h3>2．気になるエンジニアにいいね</h3>
-                <div style="font-size:1.1rem;">ユーザー詳細画面から「いいね」をクリックすると、相手に「いいね」を送ることができます</div>
+                <div class="howtouse_content" style="font-size:1.1rem;">ユーザー詳細画面から「いいね」をクリックすると、相手に「いいね」を送ることができます</div>
             </div>
 
             <div class="howtouse">
@@ -105,7 +105,7 @@
                     <image src="storage/top/undraw_couple_love_re_3fw6.png" style="width:50%;height: 30%;">
                 </div>
                 <h3>3．マッチング</h3>
-                <div style="font-size:1.1rem;">お相手から画面から「いいね」を送りマッチングすることができます</div>
+                <div class="howtouse_content" style="font-size:1.1rem;">お相手から画面から「いいね」を送りマッチングすることができます</div>
             </div>
 
             <div class="howtouse">
@@ -113,7 +113,7 @@
                     <image src="storage/top/undraw_Chat_re_re1u.png" style="width:50%;height: 30%;">
                 </div>
                 <h3>4．メッセージ</h3>
-                <div style="font-size:1.1rem;">マッチングした相手とはメッセージのやり取りをすることができます</div>
+                <div class="howtouse_content" style="font-size:1.1rem;">マッチングした相手とはメッセージのやり取りをすることができます</div>
             </div>
         </div>
     </div>
