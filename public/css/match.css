@@ -622,7 +622,7 @@
     }
 
     .description_concept{
-        font-size: 2rem!important;
+        font-size: 1.9rem!important;
     }
 
     .howtouse{
@@ -639,7 +639,11 @@
 
     .howtouse_content{
         font-size: 2rem!important;
-    } 
+    }
+    
+    .description {
+        font-size: 4rem!important;  
+    }
 
 /* ///////////////////////// */
 
