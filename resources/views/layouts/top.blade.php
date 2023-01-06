@@ -18,8 +18,9 @@
     <div class="top_title" style="position: fixed;">
         <ul>
             <li class="top_link">
-                <a sytle="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('/') }}" class="top_link_header_login">Pair
-                    Code</a>
+                <a sytle="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('/') }}" class="top_link_header_login">
+                    <image src="../storage/top/Pair Code.png" style="width:40%;height: 90%;">
+                </a>
             </li>
             <div class="header_sub">
                 <li class="top_link prof_page"><a class="prof_modal" href="#"><img src="{{asset($current_user->image)}}" class="user_image"></a></li>
@@ -40,8 +41,9 @@
             <div>
                 <ul>
                     <li class="top_link">
-                        <a sytle="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('/') }}" class="top_link_header_login">Pair
-                            Code</a>
+                        <a sytle="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('/') }}" class="top_link_header_login">
+                            <image src="../storage/top/Pair Code.png" style="width:40%;height: 90%;">
+                        </a>
                     </li>
                     @endif
 
@@ -81,8 +83,9 @@
             <nav class="navbar navbar-dark">
                 <ul class="main_ul">
                     <li class="top_link" style="margin: 0 auto 0 0;">
-                        <a sytle="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('/') }}" class="top_link_header">Pair
-                            Code</a>
+                        <a sytle="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('/') }}" class="top_link_header">
+                            <image src="../storage/top/Pair Code.png" style="width:45%;height:90%;">
+                        </a>
                     </li>
                     <li class="header" style="margin: 0;"><a href="{{ asset('user/login') }}" style="vertical-align: middle;"><i class="fas fa-sign-in-alt" style="margin-right: 0.5rem;"></i>ログイン</a></li>
                     <li class="header" style="margin: 0;"><a href="{{ asset('user/add') }}" style="vertical-align: middle;"><i class="fas fa-user-plus" style="margin-right: 0.5rem;"></i>新規登録</a></li>
@@ -305,7 +308,7 @@
     </p>
     <div class="footer">
         <a href="https://forms.gle/eLx24ykodQaRKqiV9">お問い合わせ</a> / <a href="{{ asset('privacy_poricy') }}">プライバシーポリシー</a> / <a href="{{ asset('terms_of_service') }}">利用規約</a> /
-        <a href="https://twitter.com/ryoya3948">Twitter</a> / <span style="color: white;">© 2022 Pair Code.</span>
+        <a href="https://twitter.com/ryoya3948">Twitter</a> / <span style="color: white;">© 2023 Pair Code.</span>
     </div>
     <script src=" https://code.jquery.com/jquery-3.4.1.min.js "></script>
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />

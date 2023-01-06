@@ -750,6 +750,7 @@ ul li{
     padding: 3rem 2rem;
     font-size: 3rem;
     width: 70%!important;
+    height: auto!important;
 }
 
 #skill_myprofile_input,
