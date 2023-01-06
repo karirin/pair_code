@@ -730,7 +730,7 @@
 }
 
 ul li{
-    padding: 0 1rem;
+    padding: 0 0.8rem;
 }
 
 .flex_btn{
@@ -931,6 +931,12 @@ ul li{
 }
 .top_link{
     font-size: 4rem;
+}
+.top_link a img{
+    width: 85%!important;
+}
+a.top_link_header_login img{
+    width: 50%!important;
 }
 .match_top{
     margin-bottom: 9rem;
