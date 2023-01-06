@@ -937,6 +937,7 @@ ul li{
 }
 a.top_link_header_login img{
     width: 30%!important;
+    max-width: 20%!important;
 }
 .match_top{
     margin-bottom: 9rem;
