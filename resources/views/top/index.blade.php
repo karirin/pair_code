@@ -86,7 +86,7 @@
         <div style="font-size: 1.3rem;line-height: 2;">
             <div class="howtouse">
                 <div style="text-align: center;">
-                    <image class="howtouse_firstimage" src="storage/top/undraw_People_search_re_5rre.png" style="width:40%;height: 30%;">
+                    <image class="howtouse_firstimage" src="storage/top/undraw_People_search_re_5rre.png" style="width:55%;height: 35%;">
                 </div>
                 <h3>1．エンジニアをさがす</h3>
                 <div class="howtouse_content" style="font-size:1.1rem;">トップ画面から登録しているエンジニアを閲覧することができます</div>
