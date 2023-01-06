@@ -7,7 +7,7 @@
 @if (Auth::check())
 <div id="splash">Loading...</div>
 <div class="col-9 match_top sarch_top" style="margin-left: 22%;display:none;">
-    <h3 class="page_title serach">さがす</h3>
+    <h3 class="page_title serach">さが</h3>
     <i class="fa-solid fa-circle-question help_btn"></i>
     <input type="hidden" class="sample_user">
     @foreach ($users as $user)
