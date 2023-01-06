@@ -151,6 +151,14 @@
     margin: 1rem 3.4rem;
 }
 
+.top_logo{
+    width: 50%;
+    position: absolute;
+    top: 375%;
+    right: 4%;
+    height: auto;
+}
+
 /* ///////////////////////// */
 
 

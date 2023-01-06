@@ -27,10 +27,10 @@
                 <li class="header_menu_wide" style="margin-top: 4rem;"><a href="{{ asset('/') }}" class="sagasu" style="vertical-align: middle;"><i class="fa-solid fa-magnifying-glass" style="margin-right: 2rem;font-size: 1.5rem;"></i>さがす　　　</a>
                 </li>
                 <li class="header_menu"><a href="{{ asset('match/match') }}" class="oaitekara" style="vertical-align: middle;">
-                        @if($match_flg!='')<i class="fas fa-thumbs-up" style="font-size: 1.5rem;"></i><i class="fa-solid fa-circle new_match_mark" style="font-size: 1px;color: red;top: 43%;position: absolute;"></i><span style="margin-left: 2rem">お相手から　<span>@else<i class="fas fa-thumbs-up" style="margin-right: 2rem;font-size: 1.5rem;"></i></span>お相手から　@endif
+                        @if($match_flg!='')<i class="fas fa-thumbs-up" style="font-size: 1.5rem;"></i><i class="fa-solid fa-circle new_match_mark" style="font-size: 1px;color: red;top: 47%;position: absolute;"></i><span style="margin-left: 2rem">お相手から　<span>@else<i class="fas fa-thumbs-up" style="margin-right: 2rem;font-size: 1.5rem;"></i></span>お相手から　@endif
                     </a></li>
                 <li class="header_menu"><a href="{{ asset('message/message_top') }}" class="messe-ji" style="vertical-align: middle;">
-                        @if($message_count!=0)<i class="fas fa-comment" style="font-size: 1.5rem;"></i><i class="fa-solid fa-circle new_mark" style="font-size: 1px;color: red;top: 57%;position: absolute;"></i><span style="margin-left: 2rem">メッセージ　</span>@else<i class="fas fa-comment" style="margin-right: 2rem;font-size: 1.5rem;"></i><i class="fa-solid fa-circle new_mark" style="display: none;font-size: 1px;color: red;top: 57%;position: absolute;"></i><span>メッセージ　</span>@endif
+                        @if($message_count!=0)<i class="fas fa-comment" style="font-size: 1.5rem;"></i><i class="fa-solid fa-circle new_mark" style="font-size: 1px;color: red;top: 59%;position: absolute;"></i><span style="margin-left: 2rem">メッセージ　</span>@else<i class="fas fa-comment" style="margin-right: 2rem;font-size: 1.5rem;"></i><i class="fa-solid fa-circle new_mark" style="display: none;font-size: 1px;color: red;top: 57%;position: absolute;"></i><span>メッセージ　</span>@endif
                     </a></li>
                 <li class="header_menu"><a href="{{ asset('user/profile') }}" class="profile" style="vertical-align: middle;"><i class="fa-regular fa-circle-user" style="font-size: 1.5rem;"></i><span style="margin-left: 2rem">プロフィール</spna>
                     </a></li>
@@ -42,7 +42,7 @@
                 <ul>
                     <li class="top_link">
                         <a sytle="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('/') }}" class="top_link_header_login">
-
+                            <image src="../storage/top/Pair Code.png" style="width:40%;height: 90%;">
                         </a>
                     </li>
                     @endif
@@ -86,6 +86,7 @@
                         <a sytle="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('/') }}" class="top_link_header">
                             <image src="../storage/top/Pair Code.png" style="width:45%;height:90%;">
                         </a>
+                        <image src="../storage/top/top logo.png" class="top_logo" style="width:45%;">
                     </li>
                     <li class="header" style="margin: 0;"><a href="{{ asset('user/login') }}" style="vertical-align: middle;"><i class="fas fa-sign-in-alt" style="margin-right: 0.5rem;"></i>ログイン</a></li>
                     <li class="header" style="margin: 0;"><a href="{{ asset('user/add') }}" style="vertical-align: middle;"><i class="fas fa-user-plus" style="margin-right: 0.5rem;"></i>新規登録</a></li>

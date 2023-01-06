@@ -355,9 +355,9 @@ nav.navbar.navbar-dark {
 }
 
 .test_btn {
-    text-align: right;
-    margin-right: 20%;
-    margin-top: 6%;
+    position: absolute;
+    top: 80%;
+    right: 8%;
 }
 
 .footer {
@@ -402,7 +402,7 @@ nav.navbar.navbar-dark {
 }
 
 .content {
-    min-height: 93.8%;
+    min-height: 94.5%;
     margin-bottom: -16px;
 }
 
@@ -445,7 +445,7 @@ nav.navbar.navbar-dark {
 
 .howtouse{
     display: inline-block;
-    width: 35%;
+    width: 36%;
     border: solid 1px #ddd;
     padding: 1rem;
     text-align: left;

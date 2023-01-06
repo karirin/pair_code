@@ -7,7 +7,7 @@
 @if (Auth::check())
 <div id="splash">Loading...</div>
 <div class="col-9 match_top sarch_top" style="margin-left: 22%;display:none;">
-    <h3 class="page_title serach">さが</h3>
+    <h3 class="page_title serach">さがす</h3>
     <i class="fa-solid fa-circle-question help_btn"></i>
     <input type="hidden" class="sample_user">
     @foreach ($users as $user)
@@ -86,7 +86,7 @@
         <div style="font-size: 1.3rem;line-height: 2;">
             <div class="howtouse">
                 <div style="text-align: center;">
-                    <image class="howtouse_firstimage" src="storage/top/undraw_People_search_re_5rre.png" style="width:55%;height: 35%;">
+                    <image class="howtouse_firstimage" src="storage/top/undraw_People_search_re_5rre.png" style="width:55%;height: 30%;">
                 </div>
                 <h3>1．エンジニアをさがす</h3>
                 <div class="howtouse_content" style="font-size:1.1rem;">トップ画面から登録しているエンジニアを閲覧することができます</div>
