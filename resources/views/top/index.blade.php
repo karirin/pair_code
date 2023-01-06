@@ -59,7 +59,7 @@
 
 <!-- ここから非ログインユーザーのトップ画面 -->
 
-<image src="storage/top/remote-team.png" style="width:50%;height: 90%;">
+<image src="storage/top/remote-team.png" class="top_image" style="width:50%;height: 90%;">
     <form method="post" action="{{ asset('user/test_login') }}">
         @csrf
         <div class="test_btn">

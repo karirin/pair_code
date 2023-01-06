@@ -657,6 +657,31 @@
         font-size: 4rem!important;  
     }
 
+    .top_logo{
+        top: 296%;
+        right: 0%;
+        width: 70%!important;
+    }
+
+    .top_image{
+        width: 70%!important; 
+        height: 60%!important;
+        margin-top: 8rem;
+    }
+    
+    .test_btn{
+        top: 18%;
+        right: 8%;
+    }
+
+    .test_login{
+        padding: 1rem 2rem!important;
+        width: 20rem;
+        height: 5rem;
+        font-size: 2rem;
+        border-radius: 3rem;
+    }
+
 /* ///////////////////////// */
 
 
@@ -739,6 +764,10 @@
 
 ul li{
     padding: 0 0.8rem;
+}
+
+ul.main_ul li a{
+    padding: 0.7rem 0.4rem 0.7rem 0.4rem;
 }
 
 .flex_btn{
