@@ -19,7 +19,7 @@
         <ul>
             <li class="top_link">
                 <a sytle="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('/') }}" class="top_link_header_login">
-                    <image src="../storage/top/Pair Code.png" style="width:40%;height: 90%;">
+                    <image src="../storage/top/Pair Code.png" style="width:40%;">
                 </a>
             </li>
             <div class="header_sub">
@@ -42,7 +42,7 @@
                 <ul>
                     <li class="top_link">
                         <a sytle="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('/') }}" class="top_link_header_login">
-                            <image src="../storage/top/Pair Code.png" style="width:40%;height: 90%;">
+                            <image src="../storage/top/Pair Code.png" style="width:17.5%;">
                         </a>
                     </li>
                     @endif
@@ -84,7 +84,7 @@
                 <ul class="main_ul">
                     <li class="top_link" style="margin: 0 auto 0 0;">
                         <a sytle="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('/') }}" class="top_link_header">
-                            <image src="../storage/top/Pair Code.png" style="width:45%;height:90%;">
+                            <image src="../storage/top/Pair Code.png" style="width:40%;">
                         </a>
                     </li>
                     <li class="header" style="margin: 0;"><a href="{{ asset('user/login') }}" style="vertical-align: middle;"><i class="fas fa-sign-in-alt" style="margin-right: 0.5rem;"></i>ログイン</a></li>
