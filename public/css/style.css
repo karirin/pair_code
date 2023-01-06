@@ -76,6 +76,10 @@ ul li a:hover {
     background-color: antiquewhite;
 }
 
+ul .header_sub li a{
+    padding: 0.7rem 1.5rem 0.7rem 0.5rem;
+}
+
 ul li.top_link {
     margin-right: auto;
     margin-top: 1rem;
