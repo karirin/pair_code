@@ -186,6 +186,7 @@ $(document).on('click', ".profile_close", function() {
     $('.content').css('position','unset');
     $('#match_btn').prop("disabled", false);
     $('#unmatch_btn').prop("disabled", false);
+    $('.match_top').css('position', '');
 });
 
 $(document).on('click', ".profile_narrow_close", function() {
@@ -250,7 +251,7 @@ $(document).on('click', ".modal_match", function() {
     $('.modal_match').fadeOut();
     $('.matchuser_detaile').fadeOut();
     $('.matchuser_detaile_prof').fadeOut();
-    $('.content').css('position', 'unset');
+    $('.match_top').css('position', '');
     $('#match_btn').prop("disabled", false);
     $('#unmatch_btn').prop("disabled", false);
 });

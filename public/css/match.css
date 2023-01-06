@@ -154,7 +154,7 @@
 .top_logo{
     width: 50%;
     position: absolute;
-    top: 375%;
+    top: 30%;
     right: 4%;
     height: auto;
 }
@@ -658,7 +658,7 @@
     }
 
     .top_logo{
-        top: 296%;
+        top: 10%;
         right: 0%;
         width: 70%!important;
     }
