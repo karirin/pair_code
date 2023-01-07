@@ -217,13 +217,13 @@
                             if ($(window).width() <= 980) {
                                 setInterval(function() {
                                     $('.pointer2').animate({
-                                        'left': '72%',
-                                        'top': '57%'
+                                        'left': '74%',
+                                        'top': '59%'
                                     });
                                     $('.pointer2').fadeOut();
                                     $('.pointer2').animate({
-                                        'left': '63%',
-                                        'top': '61%'
+                                        'left': '65%',
+                                        'top': '63%'
                                     });
                                     $('.pointer2').fadeIn();
                                 }, 1000);
@@ -300,8 +300,8 @@
                 if ($(window).width() <= 980) {
                     setInterval(function() {
                         $('.pointer').animate({
-                            'left': '32%',
-                            'top': '22%'
+                            'left': '34%',
+                            'top': '24%'
                         });
                         $('.pointer').fadeOut();
                         $('.pointer').animate({
@@ -369,13 +369,13 @@
                     if ($(window).width() <= 980) {
                         setInterval(function() {
                             $('.pointer2').animate({
-                                'left': '72%',
-                                'top': '57%'
+                                'left': '74%',
+                                'top': '59%'
                             });
                             $('.pointer2').fadeOut();
                             $('.pointer2').animate({
-                                'left': '63%',
-                                'top': '61%'
+                                'left': '65%',
+                                'top': '63%'
                             });
                             $('.pointer2').fadeIn();
                         }, 1000);
