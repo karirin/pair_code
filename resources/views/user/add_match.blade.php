@@ -12,7 +12,7 @@
     <span class="box-title">いいねした人数</span>
     <span class="match_count">0</span>人/3人
 </div>
-<i class="fa-regular fa-circle-xmark help_close1" style="display: none;z-index: 15;"></i>
+<i class="fa-regular fa-circle-xmark help_close1" style="display: none;z-index: 20;"></i>
 <i class="fa-regular fa-circle-xmark help_close2" style="display: none;"></i>
 <div class="help_message" style="display:none;">
     <span class="help-title">いいねの流れ</span>

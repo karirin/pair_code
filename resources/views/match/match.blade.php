@@ -40,7 +40,7 @@
         </span>
         <span class="back_card_color" style="background:linear-gradient(rgb(0 0 0 / 0%) 0, #000 2000px);">
         </span>
-        <div id="matchuser_{{$user->id}}">
+        <div id="matchuser_{{$user->id}}" style="height: 100%;">
             <input type="hidden" class="match_flg" value="{{$user->check_match($user->id,$current_user->id)}}">
             <input type="hidden" class="matchs_flg" value="{{$user->check_matchs($user->id,$current_user->id)}}">
             <input type="hidden" class="match_user_id" value="{{$user->id}}">
