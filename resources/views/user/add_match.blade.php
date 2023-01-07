@@ -12,7 +12,7 @@
     <span class="box-title">いいねした人数</span>
     <span class="match_count">0</span>人/3人
 </div>
-<i class="fa-regular fa-circle-xmark help_close1" style="display: none;"></i>
+<i class="fa-regular fa-circle-xmark help_close1" style="display: none;z-index: 15;"></i>
 <i class="fa-regular fa-circle-xmark help_close2" style="display: none;"></i>
 <div class="help_message" style="display:none;">
     <span class="help-title">いいねの流れ</span>
@@ -66,7 +66,7 @@
 @endsection
 @section('footer')
 @parent
-<i class="fa-solid fa-arrow-pointer pointer" id="pointer" style="display: none;"></i>
+<i class="fa-solid fa-arrow-pointer pointer" id="pointer" style="display: none;top: 40%;left: 28%;"></i>
 <i class="fa-solid fa-arrow-pointer pointer2" id="pointer2" style="display: none;"></i>
 <script>
     window.onload = function() {
@@ -92,12 +92,12 @@
             });
             setInterval(function() {
                 $('.pointer').animate({
-                    'left': '34%',
-                    'top': '30%'
+                    'left': '33%',
+                    'top': '33%'
                 });
                 $('.pointer').fadeOut();
                 $('.pointer').animate({
-                    'left': '30%',
+                    'left': '28%',
                     'top': '40%'
                 });
                 $('.pointer').fadeIn();
@@ -143,7 +143,7 @@
                 setInterval(function() {
                     $('.pointer2').animate({
                         'left': '45%',
-                        'top': '73%'
+                        'top': '71%'
                     });
                     $('.pointer2').fadeOut();
                     $('.pointer2').animate({
@@ -212,12 +212,12 @@
         });
         setInterval(function() {
             $('.pointer').animate({
-                'left': '34%',
-                'top': '30%'
+                'left': '33%',
+                'top': '33%'
             });
             $('.pointer').fadeOut();
             $('.pointer').animate({
-                'left': '30%',
+                'left': '28%',
                 'top': '40%'
             });
             $('.pointer').fadeIn();
@@ -263,7 +263,7 @@
             setInterval(function() {
                 $('.pointer2').animate({
                     'left': '45%',
-                    'top': '73%'
+                    'top': '71%'
                 });
                 $('.pointer2').fadeOut();
                 $('.pointer2').animate({

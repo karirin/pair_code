@@ -1789,7 +1789,7 @@ img.my_preview {
     font-size:3rem;
     z-index: 25;
     top: 88%;
-    left: 60%;
+    left: 55%;
     position:absolute;
     color: #000!important;
 }
@@ -1798,7 +1798,7 @@ img.my_preview {
     font-size:3rem;
     z-index: 25;
     top: 88%;
-    left: 44%;
+    left: 40%;
     position:absolute;
     color: #000!important;
 }
@@ -1840,7 +1840,7 @@ img.my_preview {
 
 .help_message3{
     top: 70%;
-    left: 72%;
+    left: 68%;
     background-color: #fff;
     position: absolute;
     margin: 2em 0;

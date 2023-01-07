@@ -323,8 +323,8 @@
                     $('.pointer2').fadeIn();
                     setInterval(function() {
                         $('.pointer2').animate({
-                            'left': '45%',
-                            'top': '73%'
+                            'left': '44%',
+                            'top': '71%'
                         });
                         $('.pointer2').fadeOut();
                         $('.pointer2').animate({

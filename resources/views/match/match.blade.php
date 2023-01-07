@@ -122,12 +122,12 @@
                     });
                     setInterval(function() {
                         $('.pointer3').animate({
-                            'left': '66%',
-                            'top': '81%'
+                            'left': '61%',
+                            'top': '80%'
                         });
                         $('.pointer3').fadeOut();
                         $('.pointer3').animate({
-                            'left': '60%',
+                            'left': '55%',
                             'top': '88%'
                         });
                         $('.pointer3').fadeIn();
@@ -150,12 +150,12 @@
                         }, 1000);
                         setInterval(function() {
                             $('.pointer4').animate({
-                                'left': '51%',
-                                'top': '81%'
+                                'left': '46%',
+                                'top': '80%'
                             });
                             $('.pointer4').fadeOut();
                             $('.pointer4').animate({
-                                'left': '44%',
+                                'left': '40%',
                                 'top': '88%'
                             });
                             $('.pointer4').fadeIn();
@@ -215,12 +215,12 @@
             });
             setInterval(function() {
                 $('.pointer3').animate({
-                    'left': '66%',
-                    'top': '81%'
+                    'left': '61%',
+                    'top': '80%'
                 });
                 $('.pointer3').fadeOut();
                 $('.pointer3').animate({
-                    'left': '60%',
+                    'left': '55%',
                     'top': '88%'
                 });
                 $('.pointer3').fadeIn();
@@ -243,12 +243,12 @@
                 }, 1000);
                 setInterval(function() {
                     $('.pointer4').animate({
-                        'left': '51%',
-                        'top': '81%'
+                        'left': '46%',
+                        'top': '80%'
                     });
                     $('.pointer4').fadeOut();
                     $('.pointer4').animate({
-                        'left': '44%',
+                        'left': '40%',
                         'top': '88%'
                     });
                     $('.pointer4').fadeIn();
