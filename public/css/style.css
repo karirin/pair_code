@@ -1520,7 +1520,8 @@ img.mypage {
 
 .message_btn {
     justify-content: space-evenly;
-    display: flex;
+    text-align: right;
+    margin-right: 3rem;
 }
 
 .message_image {

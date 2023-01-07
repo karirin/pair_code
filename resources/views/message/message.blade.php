@@ -48,12 +48,12 @@
                 <input type="hidden" class="image" name="image" value="{{asset($current_user->image)}}">
             </div>
             <div class="message_btn">
-                <div class="message_image">
+                <!-- <div class="message_image">
                     <label>
                         <i class="far fa-image"></i>
                         <input type="file" name="image" id="my_image" accept="image/*" multiple>
                     </label>
-                </div>
+                </div> -->
                 <button class="btn btn-outline-primary message_submit" name="post" value="post" id="post">送信</button>
             </div>
             <div class="message_image_detail">
