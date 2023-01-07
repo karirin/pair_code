@@ -40,9 +40,9 @@
             @else
             <div>
                 <ul>
-                    <li class="top_link">
+                    <li class="top_link" style="margin: 0 auto 0 0;">
                         <a sytle="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('/') }}" class="top_link_header_login">
-                            <image src="../storage/top/Pair Code.png" style="width:17.5%;">
+                            <image src="/storage/top/Pair Code.png" style="width:17.5%;">
                         </a>
                     </li>
                     @endif
