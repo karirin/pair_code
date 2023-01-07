@@ -546,6 +546,7 @@
     .matchuser_detaile_prof_sample h6{
         font-size:3rem!important;
     }
+    .good_btn,
     .match_good_btn{
         font-size: 2.5rem!important;
         padding: 7px 35px!important;
@@ -680,6 +681,42 @@
         height: 5rem;
         font-size: 2rem;
         border-radius: 3rem;
+    }
+
+    .pointer{
+        font-size: 5rem;
+        left: 23%;
+        top: 24%;
+    }
+
+    .add_match.pointer{
+        font-size: 5rem;
+        top: 21%;
+        left: 22%;
+    }
+
+    .add_match.pointer2{
+        font-size: 5rem;
+        top: 61%;
+        left: 60%;
+    }
+
+    .pointer2{
+        font-size: 5rem;
+        left: 60%;
+        top: 83%;
+    }
+
+    .pointer3{
+        font-size: 5rem;
+        left: 61%;
+        top: 82%;
+    }
+
+    .pointer4{
+        font-size: 5rem;
+        left: 25%;
+        top: 82%;
     }
 
 /* ///////////////////////// */

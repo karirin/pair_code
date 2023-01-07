@@ -146,18 +146,33 @@
                             'z-index': '15',
                             'position': 'relative'
                         });
-                        setInterval(function() {
-                            $('.pointer').animate({
-                                'left': '34%',
-                                'top': '30%'
-                            });
-                            $('.pointer').fadeOut();
-                            $('.pointer').animate({
-                                'left': '30%',
-                                'top': '40%'
-                            });
-                            $('.pointer').fadeIn();
-                        }, 1000);
+                        if ($(window).width() <= 980) {
+                            setInterval(function() {
+                                $('.pointer').animate({
+                                    'left': '30%',
+                                    'top': '20%'
+                                });
+                                $('.pointer').fadeOut();
+                                $('.pointer').animate({
+                                    'left': '23%',
+                                    'top': '24%'
+                                });
+                                $('.pointer').fadeIn();
+                            }, 1000);
+                        } else {
+                            setInterval(function() {
+                                $('.pointer').animate({
+                                    'left': '34%',
+                                    'top': '30%'
+                                });
+                                $('.pointer').fadeOut();
+                                $('.pointer').animate({
+                                    'left': '30%',
+                                    'top': '40%'
+                                });
+                                $('.pointer').fadeIn();
+                            }, 1000);
+                        }
                         // ユーザー詳細画面
                         $(document).on('click', "#sample_user", function() {
                             var $target_modal = $(this).data("target");
@@ -199,18 +214,33 @@
                             $('.pointer').fadeOut();
                             $('#pointer2').addClass('pointer2');
                             $('.pointer2').fadeIn();
-                            setInterval(function() {
-                                $('.pointer2').animate({
-                                    'left': '45%',
-                                    'top': '73%'
-                                });
-                                $('.pointer2').fadeOut();
-                                $('.pointer2').animate({
-                                    'left': '38%',
-                                    'top': '80%'
-                                });
-                                $('.pointer2').fadeIn();
-                            }, 1000);
+                            if ($(window).width() <= 980) {
+                                setInterval(function() {
+                                    $('.pointer2').animate({
+                                        'left': '72%',
+                                        'top': '57%'
+                                    });
+                                    $('.pointer2').fadeOut();
+                                    $('.pointer2').animate({
+                                        'left': '63%',
+                                        'top': '61%'
+                                    });
+                                    $('.pointer2').fadeIn();
+                                }, 1000);
+                            } else {
+                                setInterval(function() {
+                                    $('.pointer2').animate({
+                                        'left': '44%',
+                                        'top': '71%'
+                                    });
+                                    $('.pointer2').fadeOut();
+                                    $('.pointer2').animate({
+                                        'left': '38%',
+                                        'top': '80%'
+                                    });
+                                    $('.pointer2').fadeIn();
+                                }, 1000);
+                            }
                             $(document).on('click', ".match_good_btn", function() {
                                 $('#pointer2').removeClass('pointer2');
                                 $('#pointer2').fadeOut();
@@ -267,18 +297,33 @@
                     'z-index': '15',
                     'position': 'relative'
                 });
-                setInterval(function() {
-                    $('.pointer').animate({
-                        'left': '34%',
-                        'top': '30%'
-                    });
-                    $('.pointer').fadeOut();
-                    $('.pointer').animate({
-                        'left': '30%',
-                        'top': '40%'
-                    });
-                    $('.pointer').fadeIn();
-                }, 1000);
+                if ($(window).width() <= 980) {
+                    setInterval(function() {
+                        $('.pointer').animate({
+                            'left': '30%',
+                            'top': '20%'
+                        });
+                        $('.pointer').fadeOut();
+                        $('.pointer').animate({
+                            'left': '23%',
+                            'top': '24%'
+                        });
+                        $('.pointer').fadeIn();
+                    }, 1000);
+                } else {
+                    setInterval(function() {
+                        $('.pointer').animate({
+                            'left': '34%',
+                            'top': '30%'
+                        });
+                        $('.pointer').fadeOut();
+                        $('.pointer').animate({
+                            'left': '30%',
+                            'top': '40%'
+                        });
+                        $('.pointer').fadeIn();
+                    }, 1000);
+                }
                 // ユーザー詳細画面
                 $(document).on('click', "#sample_user", function() {
                     var $target_modal = $(this).data("target");
@@ -321,18 +366,33 @@
                     $('.pointer').fadeOut();
                     $('#pointer2').addClass('pointer2');
                     $('.pointer2').fadeIn();
-                    setInterval(function() {
-                        $('.pointer2').animate({
-                            'left': '44%',
-                            'top': '71%'
-                        });
-                        $('.pointer2').fadeOut();
-                        $('.pointer2').animate({
-                            'left': '38%',
-                            'top': '80%'
-                        });
-                        $('.pointer2').fadeIn();
-                    }, 1000);
+                    if ($(window).width() <= 980) {
+                        setInterval(function() {
+                            $('.pointer2').animate({
+                                'left': '72%',
+                                'top': '57%'
+                            });
+                            $('.pointer2').fadeOut();
+                            $('.pointer2').animate({
+                                'left': '63%',
+                                'top': '61%'
+                            });
+                            $('.pointer2').fadeIn();
+                        }, 1000);
+                    } else {
+                        setInterval(function() {
+                            $('.pointer2').animate({
+                                'left': '44%',
+                                'top': '71%'
+                            });
+                            $('.pointer2').fadeOut();
+                            $('.pointer2').animate({
+                                'left': '38%',
+                                'top': '80%'
+                            });
+                            $('.pointer2').fadeIn();
+                        }, 1000);
+                    }
                     $(document).on('click', ".match_good_btn", function() {
                         $('#pointer2').removeClass('pointer2');
                         $('#pointer2').fadeOut();
