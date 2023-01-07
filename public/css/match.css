@@ -964,7 +964,7 @@ ul.main_ul li a{
 }
 .fa-solid.fa-circle-question.help_btn{
     font-size: 5rem!important;
-    top:11%!important;
+    top:12%!important;
 }
 .top_link{
     font-size: 4rem;
@@ -1042,7 +1042,8 @@ a.top_link_header_login img{
     font-size: 2rem;
 }
 #message_count{
-    font-size: 1rem;
+    font-size: 1.57rem;
+    margin-top: 0.4rem!important;
 }
 .destination_user_list .destination_user_info .destination_user_info_detail .destination_user_name {
     font-size: 2rem;
