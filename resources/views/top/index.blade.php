@@ -369,13 +369,13 @@
                     if ($(window).width() <= 980) {
                         setInterval(function() {
                             $('.pointer2').animate({
-                                'left': '74%',
-                                'top': '59%'
+                                'left': '76%',
+                                'top': '61%'
                             });
                             $('.pointer2').fadeOut();
                             $('.pointer2').animate({
-                                'left': '65%',
-                                'top': '63%'
+                                'left': '67%',
+                                'top': '65%'
                             });
                             $('.pointer2').fadeIn();
                         }, 1000);
