@@ -93,13 +93,13 @@
             if ($(window).width() <= 980) {
                 setInterval(function() {
                     $('.pointer').animate({
-                        'left': '30%',
-                        'top': '19%'
+                        'left': '32%',
+                        'top': '21%'
                     });
                     $('.pointer').fadeOut();
                     $('.pointer').animate({
-                        'left': '24%',
-                        'top': '23%'
+                        'left': '26%',
+                        'top': '25%'
                     });
                     $('.pointer').fadeIn();
                 }, 1000);
@@ -243,13 +243,13 @@
         if ($(window).width() <= 980) {
             setInterval(function() {
                 $('.pointer').animate({
-                    'left': '30%',
-                    'top': '19%'
+                    'left': '32%',
+                    'top': '21%'
                 });
                 $('.pointer').fadeOut();
                 $('.pointer').animate({
-                    'left': '24%',
-                    'top': '23%'
+                    'left': '26%',
+                    'top': '25%'
                 });
                 $('.pointer').fadeIn();
             }, 1000);
