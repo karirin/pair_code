@@ -490,7 +490,7 @@
         font-size: 2rem;
     }
     .help_message2{
-        top: 69%!important;
+        top: 71%!important;
         left: 21%!important;
         font-size: 2rem;
         z-index: 40;
@@ -710,7 +710,7 @@
     .pointer3{
         font-size: 5rem;
         left: 63%;
-        top: 81%;
+        top: 82%;
     }
 
     .pointer4{
@@ -1037,13 +1037,13 @@ a.top_link_header_login img{
     left: 30%;
 }
 .help_message3{
-    top: 88%;
+    top: 86%;
     left: 35%;
     font-size: 2rem;
 }
 
 .help_message4{
-    top: 88%;
+    top: 86%;
     left: 7%;
     font-size: 2rem;
 }
