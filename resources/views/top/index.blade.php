@@ -223,7 +223,7 @@
                                     $('.pointer2').fadeOut();
                                     $('.pointer2').animate({
                                         'left': '65%',
-                                        'top': '63%'
+                                        'top': '69%'
                                     });
                                     $('.pointer2').fadeIn();
                                 }, 1000);
