@@ -93,12 +93,12 @@
             if ($(window).width() <= 980) {
                 setInterval(function() {
                     $('.pointer').animate({
-                        'left': '32%',
+                        'left': '28%',
                         'top': '21%'
                     });
                     $('.pointer').fadeOut();
                     $('.pointer').animate({
-                        'left': '26%',
+                        'left': '22%',
                         'top': '25%'
                     });
                     $('.pointer').fadeIn();
@@ -159,12 +159,12 @@
                     setInterval(function() {
                         $('.pointer2').animate({
                             'left': '72%',
-                            'top': '57%'
+                            'top': '59%'
                         });
                         $('.pointer2').fadeOut();
                         $('.pointer2').animate({
                             'left': '60%',
-                            'top': '61%'
+                            'top': '63%'
                         });
                         $('.pointer2').fadeIn();
                     }, 1000);
@@ -243,12 +243,12 @@
         if ($(window).width() <= 980) {
             setInterval(function() {
                 $('.pointer').animate({
-                    'left': '30%',
+                    'left': '28%',
                     'top': '21%'
                 });
                 $('.pointer').fadeOut();
                 $('.pointer').animate({
-                    'left': '24%',
+                    'left': '22%',
                     'top': '25%'
                 });
                 $('.pointer').fadeIn();
@@ -309,12 +309,12 @@
                 setInterval(function() {
                     $('.pointer2').animate({
                         'left': '72%',
-                        'top': '57%'
+                        'top': '59%'
                     });
                     $('.pointer2').fadeOut();
                     $('.pointer2').animate({
                         'left': '60%',
-                        'top': '61%'
+                        'top': '63%'
                     });
                     $('.pointer2').fadeIn();
                 }, 1000);
