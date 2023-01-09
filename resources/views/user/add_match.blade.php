@@ -159,12 +159,12 @@
                     setInterval(function() {
                         $('.pointer2').animate({
                             'left': '72%',
-                            'top': '68%'
+                            'top': '66%'
                         });
                         $('.pointer2').fadeOut();
                         $('.pointer2').animate({
                             'left': '60%',
-                            'top': '72%'
+                            'top': '70%'
                         });
                         $('.pointer2').fadeIn();
                     }, 1000);
@@ -309,12 +309,12 @@
                 setInterval(function() {
                     $('.pointer2').animate({
                         'left': '72%',
-                        'top': '68%'
+                        'top': '66%'
                     });
                     $('.pointer2').fadeOut();
                     $('.pointer2').animate({
                         'left': '60%',
-                        'top': '72%'
+                        'top': '70%'
                     });
                     $('.pointer2').fadeIn();
                 }, 1000);
