@@ -246,13 +246,13 @@
             if ($(window).width() <= 980) {
                 setInterval(function() {
                     $('.pointer3').animate({
-                        'left': '72%',
-                        'top': '80%'
+                        'left': '71%',
+                        'top': '77%'
                     });
                     $('.pointer3').fadeOut();
                     $('.pointer3').animate({
                         'left': '63%',
-                        'top': '84%'
+                        'top': '81%'
                     });
                     $('.pointer3').fadeIn();
                 }, 1000);
