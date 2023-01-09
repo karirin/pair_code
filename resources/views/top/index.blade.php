@@ -369,12 +369,12 @@
                     if ($(window).width() <= 980) {
                         setInterval(function() {
                             $('.pointer2').animate({
-                                'left': '78%',
+                                'left': '74%',
                                 'top': '65%'
                             });
                             $('.pointer2').fadeOut();
                             $('.pointer2').animate({
-                                'left': '69%',
+                                'left': '65%',
                                 'top': '69%'
                             });
                             $('.pointer2').fadeIn();
