@@ -23,10 +23,10 @@
     <div class="top_title" style="position: fixed;">
         <ul>
             <li class="top_link">
-                <a sytle="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('/') }}" class="top_link_header_login">
+                <a style="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('/') }}" class="top_link_header_login">
                     <image src="../storage/top/Pair Code.png" style="width:26.5%;">
                 </a>
-                <ul style="display: inline-block;width: auto;margin-left: 20rem;font-size: ;">
+                <ul style="display: inline-block;width: auto;margin-left: 27rem;font-size: ;">
                     <li class="show_menu" style="margin: 0;"><i class="fas fa-bars" style="font-size: 4rem;"></i>
                         <div class="slide_menu">
                             <a class="modal_close" href="#">

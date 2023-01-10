@@ -116,7 +116,7 @@ nav.navbar.navbar-dark {
 .slide_menu {
     display: none;
     color: #000;
-    width: 500px;
+    width: 40%;
     height: 100%;
     padding: 20px;
     background-color: burlywood;
@@ -154,7 +154,7 @@ nav.navbar.navbar-dark {
 
 .slide_menu ul li,
 .slide_menu .modal_close {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
 }
 
 .slide_menu ul li:hover {
