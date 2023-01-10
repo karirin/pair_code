@@ -26,30 +26,28 @@
                 <a sytle="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('/') }}" class="top_link_header_login">
                     <image src="../storage/top/Pair Code.png" style="width:40%;">
                 </a>
-                <ul style="display: inline-block;width: auto;margin-left: 27rem;font-size: ;">
+                <ul style="display: inline-block;width: auto;margin-left: 20rem;font-size: ;">
                     <li class="show_menu" style="margin: 0;"><i class="fas fa-bars" style="font-size: 4rem;"></i>
                         <div class="slide_menu">
                             <a class="modal_close" href="#">
-                                <p><i class="fas fa-angle-left"></i></p>
+                                <p style="margin-bottom: -2rem;"><i class="fas fa-angle-left" style="font-size: 5rem;"></i></p>
                             </a>
                             <ul>
                                 <a href="../user/user_list.php?type=all">
-                                    <li>ユーザー一覧</li>
+                                    <li>お問い合わせ</li>
                                 </a>
                                 <a href="../message/message_top.php">
                                     <li class="slide_menu_message">
-                                        メッセージ
+                                        プライバシーポリシー
                                     </li>
                                 </a>
                                 <a href="#" class="slide_menu_message post_modal">
-                                    <li>投稿</li>
+                                    <li>利用規約</li>
                                 </a>
                                 <a href="#" class="test_helpbtn">
-                                    <li>ヘルプ</li>
+                                    <li>Twitter</li>
                                 </a>
-                                <a href="../user_login/user_logout.php">
-                                    <li>ログアウト</li>
-                                </a>
+                                <li>© 2023 Pair Code.</li>
                             </ul>
                         </div>
                     </li>

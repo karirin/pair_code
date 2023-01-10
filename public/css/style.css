@@ -115,12 +115,12 @@ nav.navbar.navbar-dark {
 
 .slide_menu {
     display: none;
-    color: #fff;
+    color: #000;
     width: 500px;
     height: 100%;
     padding: 20px;
-    background-color: #000;
-    border-left: 2px solid #fff;
+    background-color: burlywood;
+    border-left: 2px solid #572700;
     box-sizing: border-box;
     position: fixed;
     top: 0;
@@ -141,7 +141,7 @@ nav.navbar.navbar-dark {
 .slide_menu li {
     width: 100%;
     line-height: 6.5rem;
-    margin: 0 0 1rem;
+    margin: 0;
     border-radius: 0.5rem;
     box-sizing: border-box;
     border: solid;
@@ -154,8 +154,7 @@ nav.navbar.navbar-dark {
 
 .slide_menu ul li,
 .slide_menu .modal_close {
-    color: #fff;
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 .slide_menu ul li:hover {
