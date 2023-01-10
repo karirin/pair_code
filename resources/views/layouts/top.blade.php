@@ -26,7 +26,7 @@
                 <a style="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('/') }}" class="top_link_header_login">
                     <image src="../storage/top/Pair Code.png" style="width:26.5%;">
                 </a>
-                <ul style="display: inline-block;width: auto;margin-left: 27rem;vertical-align: middle;">
+                <ul style="display: inline-block;width: auto;margin-left: 27rem;vertical-align: middle;z-index: 30;">
                     <li class="show_menu" style="margin: 0;"><i class="fas fa-bars" style="font-size: 4rem;"></i>
                         <div class="slide_menu">
                             <a class="modal_close" href="#">
@@ -82,7 +82,7 @@
                 </ul>
             </div>
             @if(request()->path()!='privacy_poricy' && request()->path()!='terms_of_service' && request()->path()!='user/edit_detail' && request()->path()!='auth/twitter/callback')
-            <div class="smartphone_header" style="display: none;">
+            <div class="smartphone_header">
                 <div style="width: 100%;height:100%;background-color: #fdff8b0a;">
                     <span style="display:inline-block;">
                         <a href="{{ asset('/') }}" class="sagasu" style="color: #9f9f9f;"><i class="fa-solid fa-magnifying-glass"></i>
@@ -134,6 +134,7 @@
             @section('footer')
             <div class="modal_match"></div>
             <div class="modal_top"></div>
+            <div class="modal_footer"></div>
             <div class="matchuser_detaile">
                 <i class="far fa-times-circle profile_close" style="display:inline;top: -11.5%;"></i>
                 <img class="matchuser_img">

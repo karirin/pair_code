@@ -134,6 +134,7 @@
 }
 
 .smartphone_header{
+    display: none;
     width: 100%;
     height: 10%;
     background-color: #fff;
@@ -567,7 +568,7 @@
         left: 38%;
     }
     .smartphone_header{
-        display: inline-block!important;
+        display: inline-block;
     }
     .matchuser_skill{
         font-size: 2.5rem!important;

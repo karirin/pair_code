@@ -253,8 +253,11 @@ $('.slide_menu').show();
 $('.show_menu').on('click', function() {
     scroll_position = $(window).scrollTop();
     $('body').addClass('fixed').css({ 'top': -scroll_position });
-    $('.modal').fadeIn();
+    $('.modal_footer').fadeIn();
     $('.slide_menu').addClass('open');
+    $('.top_title').css({ 'position': 'unset' });
+    $('.smartphone_header').fadeOut();
+    $('.page_title').css({ 'margin-top': '1.5rem' });
 })
 
 $('.slide_prof').on('click', function() {
@@ -290,6 +293,11 @@ $(document).on('click', ".modal_close", function() {
     $('.edit_workhistory_narrower').replaceWith('<p class="workhistory_narrow">' + user_workhistory_narrower + '</p>');
     $('.edit_btn').fadeIn();
     $('.slide_menu').removeClass('open');
+    $('.modal_footer').fadeOut();
+    $('.top_title').css({ 'position': 'fixed' });
+    $('.smartphone_header').fadeIn();
+    $('.page_title').css({ 'margin-top': '12rem' });
+
 });
 
 // // 編集ボタン押下時の処理
