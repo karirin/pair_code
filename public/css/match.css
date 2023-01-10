@@ -719,6 +719,10 @@
         top: 84%;
     }
 
+    .show_menu{
+        display: inline-block;
+    }
+
 /* ///////////////////////// */
 
 
