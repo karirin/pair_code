@@ -26,25 +26,25 @@
                 <a style="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('/') }}" class="top_link_header_login">
                     <image src="../storage/top/Pair Code.png" style="width:26.5%;">
                 </a>
-                <ul style="display: inline-block;width: auto;margin-left: 27rem;font-size: ;">
+                <ul style="display: inline-block;width: auto;margin-left: 27rem;vertical-align: middle;">
                     <li class="show_menu" style="margin: 0;"><i class="fas fa-bars" style="font-size: 4rem;"></i>
                         <div class="slide_menu">
                             <a class="modal_close" href="#">
                                 <p style="margin-bottom: -2rem;"><i class="fas fa-angle-left" style="font-size: 5rem;"></i></p>
                             </a>
                             <ul>
-                                <a href="../user/user_list.php?type=all">
+                                <a href="https://forms.gle/eLx24ykodQaRKqiV9">
                                     <li>お問い合わせ</li>
                                 </a>
-                                <a href="../message/message_top.php">
+                                <a href="{{ asset('privacy_poricy') }}">
                                     <li class="slide_menu_message">
                                         プライバシーポリシー
                                     </li>
                                 </a>
-                                <a href="#" class="slide_menu_message post_modal">
+                                <a href="{{ asset('terms_of_service') }}" class="slide_menu_message post_modal">
                                     <li>利用規約</li>
                                 </a>
-                                <a href="#" class="test_helpbtn">
+                                <a href="https://twitter.com/ryoya3948" class="test_helpbtn">
                                     <li>Twitter</li>
                                 </a>
                                 <li>© 2023 Pair Code.</li>
