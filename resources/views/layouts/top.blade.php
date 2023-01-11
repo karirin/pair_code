@@ -26,8 +26,8 @@
                 <a style="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('/') }}" class="top_link_header_login">
                     <image src="../storage/top/Pair Code.png" style="width:26.5%;">
                 </a>
-                <ul style="display: inline-block;width: auto;margin-left: 27rem;vertical-align: middle;z-index: 30;">
-                    <li class="show_menu" style="margin: 0;"><i class="fas fa-bars" style="font-size: 4rem;"></i>
+                <ul style="display: inline-block;width: auto;margin-left: 24rem;vertical-align: middle;z-index: 30;">
+                    <li class="show_menu" style="margin: 0;"><i class="fas fa-bars" style="font-size: 4rem;margin-left: -1rem;"></i>
                         <div class="slide_menu">
                             <a class="modal_close" href="#">
                                 <p style="margin-bottom: -2rem;"><i class="fas fa-angle-left" style="font-size: 5rem;"></i></p>
