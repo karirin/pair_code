@@ -153,11 +153,18 @@
 }
 
 .top_logo{
-    width: 50%;
+    width: 54%;
     position: absolute;
-    top: 30%;
-    right: 4%;
+    top: 2%;
+    right: 1%;
     height: auto;
+}
+
+.worries{
+    display: inline-block;
+    width: 25%;
+    text-align: left;
+    margin:1rem;
 }
 
 /* ///////////////////////// */
@@ -478,6 +485,81 @@
 
 
 /* ///////////////////////// */
+/* @media screen and (max-width: 1400px){
+    .top_image{
+        width: 54%!important;
+    }
+}
+
+@media screen and (max-width: 1300px){
+    .top_image{
+        width: 56%!important;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .top_image{
+        width: 58%!important;
+    }
+}
+
+
+} */
+
+@media screen and (max-width: 1300px){
+    /* .howtouse.good_engineer h3{
+        font-size: 1.6rem;
+    } */
+
+    .howtouse_content.matching{
+        font-size: 0.9rem;
+    }
+
+    .howtouse.good_engineer .howtouse_content{
+        font-size: 1.2rem!important;
+    }
+
+    .howtouse.good_engineer h3{
+        font-size: 1.4rem;
+    }
+
+    /* .howtouse.good_engineer .howtouse_firstimage{
+        width: 85.5%!important;
+    } */
+}
+
+@media screen and (max-width: 1200px){
+    /* .howtouse.good_engineer h3{
+        font-size: 1.5rem;
+    } */
+
+    /* .howtouse.good_engineer .howtouse_firstimage{
+        width: 73%!important;
+    } */
+}
+
+@media screen and (max-width: 1100px){
+    /* .howtouse.good_engineer h3{
+        font-size: 1.4rem;
+    } */
+
+    /* .howtouse.good_engineer .howtouse_content{
+        font-size: 0.9rem!important;
+    } */
+    .howtouse.good_engineer{
+        width:43%;
+    }
+
+    /* .howtouse.good_engineer .howtouse_firstimage{
+        width: 84%!important;
+    } */
+}
+
+@media screen and (max-width: 1100px){
+    .howtouse.good_engineer h3{
+        font-size: 1.3rem;
+    }
+}
 
 @media screen and (max-width: 980px){
     .header_sub {
@@ -667,7 +749,7 @@
 
     .top_image{
         width: 70%!important; 
-        height: 60%!important;
+        height: auto!important;
         margin-top: 8rem;
     }
     

@@ -23,6 +23,7 @@ Route::get('image', 'ImageController@index');
 Route::get('/', 'TopController@index');
 Route::get('privacy_poricy', 'TopController@privacy_poricy');
 Route::get('terms_of_service', 'TopController@terms_of_service');
+Route::get('join', 'JoinController@index');
 
 Route::get('user/login', 'UserController@login');
 

@@ -59,62 +59,92 @@
 
 <!-- ここから非ログインユーザーのトップ画面 -->
 
-<image src="storage/top/remote-team.png" class="top_image" style="width:50%;height: 90%;">
-    <image src="../storage/top/top logo.png" class="top_logo" style="width:45%;">
+<image src="storage/top/remote-team.png" class="top_image" style="width:50%;height: auto;">
+    <image src="../storage/top/top logo.png" class="top_logo">
+        <a href="{{ asset('user/add') }}" class="user_login_btn btn btn-secondary" style="vertical-align: middle;">新規登録</a>
+        <a href="{{ asset('user/login') }}" class="user_add_btn btn btn-outline-dark" style="vertical-align: middle;">ログイン</a>
         <form method="post" action="{{ asset('user/test_login') }}">
             @csrf
             <div class="test_btn">
                 <input type="hidden" name="name" class="user_name_input" value="test_user">
                 <input type="hidden" name="password" class="user_pass_input" value="karirin3948">
-                <input class="test_login btn btn-outline-dark" type="submit" name="test_login" value="おためしログイン">
+                <input style="display: none;" class="test_login btn btn-outline-dark" type="submit" name="test_login" value="おためしログイン">
             </div>
         </form>
+        <div style="text-align: center;">
+            <div class="description">こんなお悩みありませんか。。？</div>
+            <div class="worries" style="vertical-align: top;">
+                <div style="text-align: center;">
+                    <image class="howtouse_firstimage" src="storage/top/undraw_feeling_proud_qne1.png" style="width:55%;height: auto;">
+                </div>
+                <h4 style="font-weight: 900;">職場以外のエンジニアと接する機会が無い</h4>
+                <div class="howtouse_content engineer_sarch" style="font-size:1.2rem;">勉強会やセミナーに参加してエンジニアとつながりたい<br>でもそこまで労力をかけたくない。。</div>
+            </div>
+            <div class="worries">
+                <div style="text-align: center;">
+                    <image class="howtouse_firstimage" src="storage/top/undraw_Interview_re_e5jn.png" style="width:67%;height: auto;">
+                </div>
+                <h4 style="font-weight: 900;">独学でしているプログラミングの相談がしたい</h4>
+                <div class="howtouse_content engineer_sarch" style="font-size:1.2rem;">勉強しているプログラミングの質問をしたい<br>周りに知り合いのエンジニアがいればできるのに。。</div>
+            </div>
+            <div class="worries" style="width: 26%;">
+                <div style="text-align: center;">
+                    <image class="howtouse_firstimage" src="storage/top/undraw_Programming_re_kg9v.png" style="width:92%;height: auto;">
+                </div>
+                <h4 style="font-weight: 900;">同じスキルを持っているエンジニアとつながりたい</h4>
+                <div class="howtouse_content engineer_sarch" style="font-size:1.2rem;">同じスキルを持っている人はどういう活躍をしているのか知りたい<br>職場以外でどうすれば見つけられるだろう。。</div>
+            </div>
+            <image class="howtouse_firstimage" src="storage/top/bottom.png" style="width:33%;height: auto;margin-top: 2rem;">
+                <div>
+                    <image src="storage/top/Explanation.png" style="height: auto;width: 81%;margin-left: 2rem;">
+                </div>
+        </div>
         <div class="description_top" style="text-align: center;">
-            <div class="description">CONCEPT</div>
-            <image src="storage/top/undraw_Engineering_team_a7n2.png" style="width:40%;height: 40%;">
-                <div class="description_concept" style="font-size: 1.3rem;line-height: 2;">
+            <div class="description">サービス概要</div>
+            <image src="storage/top/undraw_Engineering_team_a7n2.png" style="width:40%;height: auto;">
+                <div class="description_concept" style="font-size: 1.4rem;line-height: 2;">
                     エンジニア同士で交流することができる「Pair Code」</br>
 
-                    職場以外でエンジニアの方と接する機会はありますでしょうか？</br>
+                    スキルや経歴が気になるエンジニアとつながりにいきましょう</br>
 
-                    成長速度が速いIT業界において、同業種の人と交流することは大切です</br>
+                    マッチングすればメッセージなどでやりとりすることができます</br>
 
                     「Pair Code」はマッチしたエンジニア同士でコミュニケーション、情報共有することができるサービスです
                 </div>
         </div>
         <div style="text-align: center;margin: 3rem 0;">
-            <div class="description">HOW TO USE</div>
+            <div class="description">簡単な４つのステップでマッチング</div>
             <div style="font-size: 1.3rem;line-height: 2;">
                 <div class="howtouse">
                     <div style="text-align: center;">
-                        <image class="howtouse_firstimage" src="storage/top/undraw_People_search_re_5rre.png" style="width:55%;height: 30%;">
+                        <image class="howtouse_firstimage" src="storage/top/undraw_People_search_re_5rre.png" style="width:55%;height: auto;">
                     </div>
                     <h3>1．エンジニアをさがす</h3>
-                    <div class="howtouse_content" style="font-size:1.1rem;">トップ画面から登録しているエンジニアを閲覧することができます</div>
+                    <div class="howtouse_content engineer_sarch" style="font-size:1.2rem;">トップ画面から登録しているエンジニアを閲覧することができます</div>
                 </div>
 
-                <div class="howtouse">
+                <div class="howtouse good_engineer">
                     <div style="text-align: center;">
-                        <image src="storage/top/undraw_Spread_love_re_v3cl.png" style="width:50%;height: 30%;">
+                        <image class="howtouse_firstimage" src="storage/top/undraw_Spread_love_re_v3cl.png" style="width:83%;height: auto;">
                     </div>
                     <h3>2．気になるエンジニアにいいね</h3>
-                    <div class="howtouse_content" style="font-size:1.1rem;">ユーザー詳細画面から「いいね」をクリックすると、相手に「いいね」を送ることができます</div>
+                    <div class="howtouse_content" style="font-size:1.2rem;">ユーザー詳細画面から「いいね」をクリックすると、相手に「いいね」を送ることができます</div>
                 </div>
 
                 <div class="howtouse">
                     <div style="text-align: center;">
-                        <image src="storage/top/undraw_couple_love_re_3fw6.png" style="width:50%;height: 30%;">
+                        <image class="howtouse_firstimage" src="storage/top/undraw_couple_love_re_3fw6.png" style="width:58.5%;height: auto;">
                     </div>
                     <h3>3．マッチング</h3>
-                    <div class="howtouse_content" style="font-size:1.1rem;">お相手から画面から「いいね」を送りマッチングすることができます</div>
+                    <div class="howtouse_content matching" style="font-size:1.2rem;">「いいね」が送られた方は、お相手から画面から「いいね」を送りマッチングすることができます</div>
                 </div>
 
                 <div class="howtouse">
                     <div style="text-align: center;">
-                        <image src="storage/top/undraw_Chat_re_re1u.png" style="width:50%;height: 30%;">
+                        <image class="howtouse_firstimage" src="storage/top/undraw_Chat_re_re1u.png" style="width:50%;height: auto;">
                     </div>
                     <h3>4．メッセージ</h3>
-                    <div class="howtouse_content" style="font-size:1.1rem;">マッチングした相手とはメッセージのやり取りをすることができます</div>
+                    <div class="howtouse_content" style="font-size:1.2rem;">マッチングした相手とはメッセージのやり取りで交流することができます</div>
                 </div>
             </div>
         </div>

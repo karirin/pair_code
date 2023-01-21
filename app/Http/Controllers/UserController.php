@@ -9,11 +9,14 @@ use Validator;
 use Illuminate\Support\Facades\DB;
 use App\Person;
 use App\User;
+use App\AuthMail;
+use App\TokenService;
 use App\Match;
 use App\Models\Message_relation;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Hash;
+use DateTime;
 
 class UserController extends Controller
 {
@@ -39,6 +42,7 @@ class UserController extends Controller
                 $param = [
                     'name' => $request->name,
                     'password' => $request->password,
+                    'email' => $request->email,
                     'hash_password' => Hash::make($request->password),
                     'image' => 'storage/sample/' . $file_name,
                     'profile' => '',
@@ -47,6 +51,7 @@ class UserController extends Controller
                 $param = [
                     'name' => $request->name,
                     'password' => $request->password,
+                    'email' => $request->email,
                     'hash_password' => Hash::make($request->password),
                     'image' => '',
                     'profile' => '',
@@ -61,6 +66,7 @@ class UserController extends Controller
         $form = [
             'name' => $request->name,
             'password' => $request->hash_password,
+            'email' => $request->email,
             'image' => $request->image,
             'age' => $request->age,
             'address' => $request->address,
@@ -70,6 +76,23 @@ class UserController extends Controller
             'licence' => $request->myprofile_licences,
             'workhistory' => $request->user_workhistory,
         ];
+        // //3. ユーザデータを保存
+        // DB::table('users')->insert($form);
+
+        // //2. トークンを発行
+        // $tokenService = new TokenService();
+        // $tokenService->create($request->email);
+
+        // //4. メールを送信
+        // $email = $request->email;
+        // //メールに記載する認証用URlを組み立てている(認証用ページURL+トークン)。
+        // $url = request()->getSchemeAndHttpHost() . "/user/register?token=" . $tokenService->token;
+
+        // Mail::to($email)->send(new AuthMail($url));
+
+        // //メール送信完了画面へリダイレクト
+        // return redirect('/join')->with('email', $email);
+
         $action = session()->get($this->method_action_key);
         $is_reload = ($action == '');
         if (is_null($action)) {
@@ -95,6 +118,39 @@ class UserController extends Controller
             $match_flg = Match::where('matched_user_id', $current_user->id)->where('match_flg', '!=', 1)->where('unmatch_flg', '!=', 1)->first();
             $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'message' => $message, 'top_message' => $top_message, 'match_flg' => $match_flg];
             return view('user.add_match', $param);
+        }
+    }
+
+    public function register(Request $request)
+    {
+        $token = $request->token;
+
+        //6~8. トークン検索からチェックまでを行う
+        $authResult = $tokenService->matchToken($token);
+
+        if ($authResult == "OK") {
+            //9. 認証処理(ユーザテーブルのメールアドレス認証フラグ立てる)
+            $userService->changeEmailFlag($email);
+
+            $email = $tokenService->getEmailByToken($token);
+            $id = $userService->getIdByEmail($email);
+
+            //10. ログイン状態にしてユーザトップページへリダイレクト
+            $request->session()->put('logind', 'true');
+            $request->session()->put('id', $id);
+            return redirect('/');
+        } else if ($authResult == "ALREADY") {
+            //10. エラーメッセージとともにトップページへリダイレクト
+            return redirect('/')->with('message', 'このメールアドレスはすでに認証されています。');
+        } else if ($authResult == "WRONG") {
+            //10. エラーメッセージとともにトップページへリダイレクト
+            return redirect('/')->with('message', 'メールアドレス認証に失敗しました。URLを確認してもう一度やり直してください。');
+        } else if ($authResult == "EXPIRE") {
+            //10. エラーメッセージとともにトップページへリダイレクト
+            return redirect('/')->with('message', '認証URLの有効期限が切れています。最初からもう一度やり直してください。');
+        } else {
+            //一応
+            return redirect('/');
         }
     }
 

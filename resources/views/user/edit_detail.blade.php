@@ -84,7 +84,7 @@
             </div>
             <div class="my_profile">
                 <p class="tag_tittle">自己紹介</p>
-                <textarea class="edit_profile form-control" style="height: 30%;width: 126%;" type="text" name="user_profile">{{$profile}}</textarea>
+                <textarea placeholder="100文字以内" class="edit_profile form-control" style="height: 30%;width: 126%;" type="text" name="user_profile">{{$profile}}</textarea>
                 <div class="error_workhistory" style="display: none;">
                     <span style="color:rgb(220, 53, 69);">100文字以内で入力してください</span>
                 </div>
@@ -97,17 +97,20 @@
                 <input type="hidden" name="skill_count" id="myprofile_skill_count">
                 <input type="hidden" name="myskills">
             </div>
-            <input placeholder="skill Stack" name="skills" id="skill_myprofile_input" style="display:block;" class="ui-autocomplete-input" autocomplete="off">
+            <input placeholder="PHP　JavaScript" name="skills" id="skill_myprofile_input" style="display:block;width: 50%;" class="ui-autocomplete-input" autocomplete="off">
             <p class="tag_tittle">取得資格</p>
             <div id="licence">
                 <input type="hidden" name="myprofile_licences" id="myprofile_licences">
                 <input type="hidden" name="licence_count" id="licence_count">
                 <input type="hidden" name="mylicences">
             </div>
-            <input placeholder="licence Stack" name="name" id="licence_input" style="display: block;" />
+            <input placeholder="ITパスポート　基本情報技術者" name="name" id="licence_input" style="display: block;width: 50%;" />
             <div class="background">
                 <p class="tag_tittle">職歴</p>
-                <textarea class="edit_workhistory form-control" style="height: 30%;width: 70%;" type="text" name="user_workhistory"></textarea>
+                <textarea placeholder="2018年～2022年　
+株式会社XXX 
+・SEとして自社サービスの運用・保守を担当 
+・チームリーダーの経験も有り" class="edit_workhistory form-control" style="height: 40%;width: 75%;" type="text" name="user_workhistory"></textarea>
                 <div class="error_workhistory" style="display: none;">
                     <span style="color:rgb(220, 53, 69);">100文字以内で入力してください</span>
                 </div>
@@ -119,6 +122,7 @@
         <input style="width: 90px;" class="btn btn-outline-dark edit_done edit_detail_top_btn" type="submit" value="登録">
     </div>
     <input type="hidden" name="name" value="{{$name}}">
+    <input type="hidden" name="email" value="{{$email}}">
     <input type="hidden" name="password" value="{{$password}}">
     <input type="hidden" name="hash_password" value="{{$hash_password}}">
     <input type="hidden" name="image" value="{{$image}}">
