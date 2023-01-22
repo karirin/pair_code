@@ -806,6 +806,14 @@
         display: inline-block;
     }
 
+    .match_top.sarch_top,
+    .match_top.aite_top,
+    .message_top,
+    .profile_top,
+    .message_disp{
+        border-left: unset!important;
+    }
+
 /* ///////////////////////// */
 
 
@@ -970,6 +978,11 @@ ul.main_ul li a{
 .edit_detail_top .background textarea::placeholder
 {
 font-size: 2.5rem;
+}
+
+img.my_preview {
+    width: 20rem;
+    height: 20rem;
 }
 
 /* ///////////////////////// */
@@ -1221,7 +1234,7 @@ a.top_link_header_login img{
 }
 .message_disp .message_disp_name{
     font-size:4rem!important;
-    width:50%!important;
+    width:100%!important;
 }
 .message_disp .message{
     margin-top: 17rem!important;
