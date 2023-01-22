@@ -347,11 +347,11 @@ $(document).on('click', ".message_submit", function() {
         mmi = ('0' + mi).slice(-2),
         day = hh + ':' + mmi;
         // //アップロードするファイルのデータ取得
-        var fileData = document.getElementById("my_image").files[0];
+        //var fileData = document.getElementById("my_image").files[0];
         // //フォームデータを作成する
-        var form = new FormData();
+        // var form = new FormData();
 
-        form.append("file", fileData);
+        // form.append("file", fileData);
         let input = document.getElementById('my_image');
         $.ajax({
         type: 'POST',
@@ -380,7 +380,7 @@ $(document).on('click', '#match_btn', function() {
         target_modal = $(this).data("target"),
         match_modal = $(this).data("match"),
         card = $('.match_card:last')[0],
-        user_id = card.id.substr(5, 2),
+        user_id = card.id.substr(5),
         user_name = $('#' + card.id + ' > #matchuser_'+ user_id +' > .profile_name').text();
     $('#' + card.id + ' > .match_card_color').fadeIn();
     $('#' + card.id + ' > #matchuser_'+ user_id +' > .profile_name').css({'z-index': '15'});

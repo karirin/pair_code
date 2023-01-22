@@ -424,7 +424,7 @@ nav.navbar.navbar-dark {
 }
 
 .content {
-    min-height: 94.5%;
+    min-height: 94%;
     margin-bottom: -16px;
 }
 
@@ -1574,6 +1574,11 @@ img.mypage {
     font-size: 0.9rem;
 }
 
+.message_submit{
+    padding: 0.2rem 2rem;
+    font-size: 1.2rem;
+}
+
 .direct_message {
     display: inline;
     border-radius: 10rem;
@@ -1692,7 +1697,7 @@ img.mypage {
     position: relative;
     margin: 0 0.8rem 0 1rem;
     padding: 8px;
-    max-width: 250px;
+    max-width: 500px;
     border-radius: 12px;
     background: rgb(240, 240, 240);
     font-size: 15px;

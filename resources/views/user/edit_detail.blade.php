@@ -118,8 +118,8 @@
         </div>
     </div>
     <div class="flex_btn margin_top edit_detail_btn" style="margin: 0 34%;width: 35%;margin-top: 2rem;">
-        <input style="width: 90px;" class="btn btn-outline-info edit_detail_top_btn" type="button" onclick="history.back()" value="戻る">
-        <input style="width: 90px;" class="btn btn-outline-dark edit_done edit_detail_top_btn" type="submit" value="登録">
+        <input style="width: 90px;" class="btn btn-outline-dark edit_detail_top_btn" type="button" onclick="history.back()" value="戻る">
+        <input style="width: 90px;" class="btn btn-outline-info edit_done edit_detail_top_btn" type="submit" value="登録">
     </div>
     <input type="hidden" name="name" value="{{$name}}">
     <input type="hidden" name="email" value="{{$email}}">

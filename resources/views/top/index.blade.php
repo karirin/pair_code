@@ -6,7 +6,7 @@
 @section('content')
 @if (Auth::check())
 <div id="splash">Loading...</div>
-<div class="col-9 match_top sarch_top" style="margin-left: 22%;display:none;">
+<div class="col-9 match_top sarch_top" style="margin-left: 23%;border-left: 1px solid #deb88759;padding-left: 3rem;display:none;">
     <h3 class="page_title serach">さがす</h3>
     <i class="fa-solid fa-circle-question help_btn"></i>
     <input type="hidden" class="sample_user">
@@ -68,7 +68,7 @@
             <div class="test_btn">
                 <input type="hidden" name="name" class="user_name_input" value="test_user">
                 <input type="hidden" name="password" class="user_pass_input" value="karirin3948">
-                <input style="display: none;" class="test_login btn btn-outline-dark" type="submit" name="test_login" value="おためしログイン">
+                <input style="" class="test_login btn btn-outline-dark" type="submit" name="test_login" value="おためしログイン">
             </div>
         </form>
         <div style="text-align: center;">
@@ -136,7 +136,7 @@
                         <image class="howtouse_firstimage" src="storage/top/undraw_couple_love_re_3fw6.png" style="width:58.5%;height: auto;">
                     </div>
                     <h3>3．マッチング</h3>
-                    <div class="howtouse_content matching" style="font-size:1.2rem;">「いいね」が送られた方は、お相手から画面から「いいね」を送りマッチングすることができます</div>
+                    <div class="howtouse_content matching" style="font-size:1.2rem;">「いいね」が送られた方は、もらったいいね画面から「いいね」を送りマッチングすることができます</div>
                 </div>
 
                 <div class="howtouse">

@@ -20,8 +20,8 @@
                 <span class="user_pass_error" style="display:none;color: #dc3545;">パスワードを入力してください</span>
             </div>
             <div class="flex_btn" style="margin-top: 0.5rem;">
-                <input class="btn btn-outline-info edit_detail_top_btn" type="button" onclick="history.back()" value="戻る">
-                <input class="btn btn-outline-dark submit_btn edit_detail_top_btn" type="submit" value="ログイン">
+                <input class="btn btn-outline-dark edit_detail_top_btn" type="button" onclick="history.back()" value="戻る">
+                <input class="btn btn-outline-info submit_btn edit_detail_top_btn" type="submit" value="ログイン">
             </div>
         </form>
         <a href="/auth/twitter" class="btn-social-long-twitter">

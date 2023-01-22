@@ -15,7 +15,7 @@
         <input type="hidden" name="current_licence" value="{{$current_user->licence}}">
         <input type="hidden" name="current_workhistory" value="{{$current_user->workhistory}}">
         <div id="splash">Loading...</div>
-        <div class="profile_top" style="margin-left: 20%;width:70%;display: none;">
+        <div class="profile_top" style="height: 93%;margin-left: 19%;border-left: 1px solid #deb88759;padding-left: 3rem;width:70%;display: none;">
             <h3 class="page_title profile_title">プロフィール</h3>
             <div class="tag" style="display: block;">
                 <div class="row profile_top">
@@ -171,8 +171,8 @@
                             </div>
                         </div>
                         <div class="edit_btns">
-                            <input type="submit" class="btn btn-outline-dark edit_done" value="編集完了">
                             <button class="btn btn-outline-dark profile_close" type="button">閉じる</button>
+                            <input type="submit" class="btn btn-outline-dark edit_done" value="編集完了">
                             <button class="btn btn-outline-dark profile_narrow_close" type="button">閉じる</button>
                         </div>
                     </div>

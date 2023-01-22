@@ -28,7 +28,6 @@ class MatchController extends Controller
             }
         }
         $match_flg = Match::where('matched_user_id', $current_user->id)->where('match_flg', '!=', 1)->where('unmatch_flg', '!=', 1)->first();
-        log::debug($match_flg);
         $param = ['current_user' => $current_user, 'users' => $users, 'user_class' => $user_class, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'match_flg' => $match_flg];
         return view('match.match', $param);
     }

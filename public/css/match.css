@@ -120,10 +120,9 @@
     display: inline-block;
     top: -13px;
     left: 10px;
-    padding: 0 9px;
     line-height: 1;
     font-size: 19px;
-    background: #FFF;
+    background: #fff;
     color: #000;
     font-weight: bold;
 }
@@ -141,6 +140,7 @@
     position: fixed;
     bottom: 0%;
     z-index: 10;
+    border-top:1px solid rgba(222, 184, 135, 0.35);
 }
 
 .smartphone_header div span{
@@ -605,7 +605,7 @@
         background-color: #fff;
     }
     .top_title ul{
-        background-color: #fdff8b0a;
+        background-color: #ffe1ae24;
     }
     .matchuser_detaile{
         width: 630px;
@@ -734,7 +734,7 @@
     }
 
     .howtouse_firstimage{
-        height:35%!important;
+        height:auto!important;
     }
     
     .description {
@@ -842,12 +842,15 @@
     margin-top: 4rem;
 }
 
-.user_add_top .btn.btn-outline-info{
-    font-size: 3rem;
+.user_add_top .btn.btn-outline-info,
+.user_add_top .btn.btn-outline-dark{
+    padding: 1.375rem 1.75rem;
+    width: 15rem!important;
+    font-size: 3rem!important;
 }
 
 .user_add_top .btn.btn-outline-dark{
-    font-size: 3rem;
+    margin-right: 5rem;
 }
 
 .user_add_top .password_sub{
@@ -859,14 +862,16 @@
 }
 
 .user_name_input,
-.user_pass_input{
+.user_pass_input,
+.user_mail_input{
     padding: 3rem 2rem;
     font-size: 3rem;
     width: 70%!important;
 }
 
-.user_name_input::placeholder {
-    font-size: 2rem;
+.user_name_input::placeholder,
+.user_mail_input::placeholder {
+    font-size: 2.5rem;
 }
 
 .password_sub{
@@ -918,7 +923,7 @@ ul.main_ul li a{
 #licence_input{
     padding: 1rem 2rem;
     font-size: 3rem;
-    width: 70%!important;
+    width: 80%!important;
 }
 
 .sai{
@@ -927,7 +932,10 @@ ul.main_ul li a{
 
 .edit_detail_btn .edit_detail_top_btn{
     width: auto!important;
-    margin-bottom: 0;
+    margin-right: 5rem;
+    padding: 1.375rem 1.75rem;
+    width: 15rem!important;
+    font-size: 3rem!important;
 }
 
 .edit_detail_btn.flex_btn{
@@ -952,6 +960,16 @@ ul.main_ul li a{
     line-height: 5rem;
     font-size: 4rem;
     top: 43%;
+}
+
+.edit_address,
+.edit_occupation,
+.edit_profile,
+#skill_myprofile_input,
+#licence_input,
+.edit_detail_top .background textarea::placeholder
+{
+font-size: 2.5rem;
 }
 
 /* ///////////////////////// */
@@ -984,15 +1002,15 @@ ul.main_ul li a{
 .edit_detail_top .col-7{
     max-width: none;
     margin-left: 0!important;
+    flex: unset;
 }
 
 .edit_detail_top .edit_profile{
     width: 80%!important;
-    margin-bottom: 4rem!important;
 }
 
 .edit_detail_top .edit_workhistory{
-    width: 100%!important;
+    width: 80%!important;
 }
 
 .edit_detail_top .tag_tittle{
@@ -1012,6 +1030,16 @@ ul.main_ul li a{
 
 .edit_detail_top_btn{
     font-size: 2.5rem!important;
+}
+
+.user_login_top .flex_btn .edit_detail_top_btn{
+    padding: 1.375rem 1.75rem;
+    width: 18rem!important;
+    font-size: 3rem!important;
+}
+
+.user_login_top .flex_btn .submit_btn.edit_detail_top_btn{
+    margin-left: 5rem;
 }
 
 .btn.btn-outline-info.edit_detail_top_btn{
@@ -1094,7 +1122,7 @@ ul.main_ul li a{
     font-size: 4rem;
 }
 .top_link a img{
-    width: 85%!important;
+    width: 40%!important;
 }
 a.top_link_header_login img{
     width: 40%!important;
@@ -1338,8 +1366,10 @@ a.top_link_header_login img{
 
 .btn.btn-outline-dark.edit_done,
 .btn.btn-outline-dark.profile_close{
-    font-size: 2rem;
     display: block;
+    padding: 1.375rem 1.75rem;
+    width: 15rem!important;
+    font-size: 3rem!important;
 }
 
 .profile_top .btn.btn-outline-dark.profile_close{

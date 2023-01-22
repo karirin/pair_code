@@ -5,7 +5,7 @@
 @endsection
 @section('content')
 <div id="splash">Loading...</div>
-<div class="col-9.5 match_top aite_top" style="margin-left: 22%;display: none;">
+<div class="col-9.5 match_top aite_top" style="margin-left: 22%;height: 94%;margin-left: 23%;border-left: 1px solid #deb88759;padding-left: 3rem;display: none;">
     <div class="help_message3" style="display:none;">
         <span class="help-title">マッチングの流れ</span>
         「いいね」ボタンをクリックすると</br>
@@ -16,7 +16,7 @@
         「スキップ」ボタンをクリックすると</br>
         マッチングをキャンセルすることができます
     </div>
-    <h3 class="page_title match_title">お相手から</h3>
+    <h3 class="page_title match_title">もらったいいね</h3>
     <i class="fa-solid fa-circle-question help_btn" style="position: absolute;right: 3%;top: 8%;font-size: 2rem;"></i>
     <input type="hidden" class="match_sample_user">
     <input type="hidden" class="m_flg" value="{{$current_user->match_flg}}">

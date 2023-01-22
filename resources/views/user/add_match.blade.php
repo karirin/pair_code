@@ -9,7 +9,7 @@
 <div class="modal_unclick"></div>
 <h2 class="welcome">ありがとうございます</br>新規登録完了しました</h2>
 <div class="match_box">
-    <span class="box-title">いいねした人数</span>
+    <span class="box-title"><span style="background-color:#ffe1ae24;display: inline-block;">いいねした人数</span></span>
     <span class="match_count">0</span>人/3人
 </div>
 <i class="fa-regular fa-circle-xmark help_close1" style="display: none;z-index: 20;"></i>
@@ -20,7 +20,7 @@
 </div>
 <div class="help_message2" style="display:none;">
     <span class="help-title">いいねの流れ</span>
-    「いいね」ボタンをクリックします
+    「いいね」ボタンをクリックします<br>３人にいいねを送ると新規登録が完了します
 </div>
 <div class="row">
     <div class="col-8 offset-2 center">

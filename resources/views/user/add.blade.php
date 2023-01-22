@@ -15,7 +15,7 @@
                 <span class="user_name_error" style="display:none;color: #dc3545;">ユーザー名を入力してください</span>
             </div>
             <div class="user_title">メールアドレス</div>
-            <input type="text" name="email" class="user_mail_input form-control" style="margin-bottom:0;">
+            <input type="text" name="email" class="user_mail_input form-control" style="margin-bottom:0;" placeholder="info@paircode.work">
             <div class="error_mail_form" style="height: 27px;text-align:left;margin: 0 20%;">
                 <span class="user_mail_error" style="display:none;color: #dc3545;">メールを入力してください</span>
             </div>
@@ -40,9 +40,9 @@
             <p class="preview_img"><img class="my_preview"></p>
             <input type="button" id="my_clear" value="ファイルをクリアする">
 
-            <div class="flex_btn margin_top">
-                <input class="btn btn-outline-info" type="button" onclick="history.back()" value="戻る">
-                <input class="btn btn-outline-dark submit_btn" type="submit" value="次へ">
+            <div class="flex_btn margin_top" style="margin-bottom: 2rem;">
+                <input class="btn btn-outline-dark" type="button" onclick="history.back()" value="戻る">
+                <input class="btn btn-outline-info submit_btn" type="submit" value="次へ">
             </div>
         </form>
     </div>

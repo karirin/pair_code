@@ -55,17 +55,17 @@
             </li>
             <div class="header_sub">
                 <li class="top_link prof_page"><a class="prof_modal" href="#"><img src="{{asset($current_user->image)}}" class="user_image"></a></li>
-                <li class="header_menu_wide" style="margin-top: 4rem;"><a href="{{ asset('/') }}" class="sagasu" style="vertical-align: middle;"><i class="fa-solid fa-magnifying-glass" style="margin-right: 2rem;font-size: 1.5rem;"></i>さがす　　　</a>
+                <li class="header_menu_wide" style="margin-top: 4rem;"><a href="{{ asset('/') }}" class="sagasu" style="vertical-align: middle;"><i class="fa-solid fa-magnifying-glass" style="margin-right: 2rem;font-size: 1.5rem;"></i>さがす　　　　</a>
                 </li>
                 <li class="header_menu"><a href="{{ asset('match/match') }}" class="oaitekara" style="vertical-align: middle;">
-                        @if($match_flg!='')<i class="fas fa-thumbs-up" style="font-size: 1.5rem;"></i><i class="fa-solid fa-circle new_match_mark" style="font-size: 1px;color: red;top: 47%;position: absolute;"></i><span style="margin-left: 2rem">お相手から　<span>@else<i class="fas fa-thumbs-up" style="margin-right: 2rem;font-size: 1.5rem;"></i></span>お相手から　@endif
+                        @if($match_flg!='')<i class="fas fa-thumbs-up" style="font-size: 1.5rem;"></i><i class="fa-solid fa-circle new_match_mark" style="font-size: 1px;color: red;top: 47%;position: absolute;"></i><span style="margin-left: 2rem">もらったいいね<span>@else<i class="fas fa-thumbs-up" style="margin-right: 2rem;font-size: 1.5rem;"></i></span>もらったいいね@endif
                     </a></li>
                 <li class="header_menu"><a href="{{ asset('message/message_top') }}" class="messe-ji" style="vertical-align: middle;">
-                        @if($message_count!=0)<i class="fas fa-comment" style="font-size: 1.5rem;"></i><i class="fa-solid fa-circle new_mark" style="font-size: 1px;color: red;top: 59%;position: absolute;"></i><span style="margin-left: 2rem">メッセージ　</span>@else<i class="fas fa-comment" style="margin-right: 2rem;font-size: 1.5rem;"></i><i class="fa-solid fa-circle new_mark" style="display: none;font-size: 1px;color: red;top: 57%;position: absolute;"></i><span>メッセージ　</span>@endif
+                        @if($message_count!=0)<i class="fas fa-comment" style="font-size: 1.5rem;"></i><i class="fa-solid fa-circle new_mark" style="font-size: 1px;color: red;top: 59%;position: absolute;"></i><span style="margin-left: 2rem">メッセージ　　</span>@else<i class="fas fa-comment" style="margin-right: 2rem;font-size: 1.5rem;"></i><i class="fa-solid fa-circle new_mark" style="display: none;font-size: 1px;color: red;top: 60%;position: absolute;"></i><span>メッセージ　　</span>@endif
                     </a></li>
-                <li class="header_menu"><a href="{{ asset('user/profile') }}" class="profile" style="vertical-align: middle;"><i class="fa-regular fa-circle-user" style="font-size: 1.5rem;"></i><span style="margin-left: 2rem">プロフィール</spna>
+                <li class="header_menu"><a href="{{ asset('user/profile') }}" class="profile" style="vertical-align: middle;"><i class="fa-regular fa-circle-user" style="font-size: 1.5rem;"></i><span style="margin-left: 2rem">プロフィール　</spna>
                     </a></li>
-                <li class="header_menu_wide" class="roguauto" style="vertical-align: middle;"><a href="{{ asset('user/logout') }}" style="vertical-align: middle;"><i class="fas fa-sign-out-alt" style="margin-right: 2rem;font-size: 1.5rem;"></i>ログアウト　</a>
+                <li class="header_menu_wide" class="roguauto" style="vertical-align: middle;"><a href="{{ asset('user/logout') }}" style="vertical-align: middle;"><i class="fas fa-sign-out-alt" style="margin-right: 2rem;font-size: 1.5rem;"></i>ログアウト　　</a>
                 </li>
             </div>
             @else
@@ -83,14 +83,14 @@
             </div>
             @if(request()->path()!='privacy_poricy' && request()->path()!='terms_of_service' && request()->path()!='user/edit_detail' && request()->path()!='auth/twitter/callback')
             <div class="smartphone_header">
-                <div style="width: 100%;height:100%;background-color: #fdff8b0a;">
+                <div style="width: 100%;height:100%;background-color: #ffe1ae24;padding-top: 1rem;">
                     <span style="display:inline-block;">
                         <a href="{{ asset('/') }}" class="sagasu" style="color: #9f9f9f;"><i class="fa-solid fa-magnifying-glass"></i>
                             <div style="text-align: center;font-size:1.5rem;">さがす</div>
                         </a>
                     </span><span style="display:inline-block;">
                         <a href="{{ asset('match/match') }}" class="oaitekara" style="color: #9f9f9f;"><i class="fas fa-thumbs-up"></i>@if($match_flg!='')<i class="fa-solid fa-circle new_match_mark" style="font-size: 1.5rem;color: red;top: 8%;left: 33%;position: absolute;margin: 0;"></i>@endif
-                            <div style="text-align: center;font-size:1.5rem;">お相手から</div>
+                            <div style="text-align: center;font-size:1.5rem;">もらったいいね</div>
                         </a>
                     </span><span style="display:inline-block;">
                         <a href="{{ asset('message/message_top') }}" class="messe-ji" style="color: #9f9f9f;"><i class="fas fa-comment"></i>@if($message_count!=0)<i class="fa-solid fa-circle new_mark" style="font-size: 1.5rem;color: red;top: 8%;left: 52%;position: absolute;margin: 0;"></i>@endif
@@ -113,18 +113,40 @@
 
             <nav class="navbar navbar-dark">
                 <ul class="main_ul">
-                    <li class="top_link" style="margin: 0 auto 0 0;">
+                    <li class="top_link">
                         <a sytle="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('/') }}" class="top_link_header">
-                            <image src="../storage/top/Pair Code.png" style="width:40%;">
+                            <image src="../storage/top/Pair Code.png" style="width:26.5%;">
                         </a>
+                        <ul style="display: inline-block;width: auto;margin-left: 24rem;vertical-align: middle;z-index: 30;">
+                            <li class="show_menu" style="margin: 0;"><i class="fas fa-bars" style="font-size: 4rem;margin-left: -1rem;"></i>
+                                <div class="slide_menu">
+                                    <a class="modal_close" href="#">
+                                        <p style="margin-bottom: -2rem;"><i class="fas fa-angle-left" style="font-size: 5rem;"></i></p>
+                                    </a>
+                                    <ul>
+                                        <a href="https://forms.gle/eLx24ykodQaRKqiV9">
+                                            <li>お問い合わせ</li>
+                                        </a>
+                                        <a href="{{ asset('privacy_poricy') }}">
+                                            <li class="slide_menu_message">
+                                                プライバシーポリシー
+                                            </li>
+                                        </a>
+                                        <a href="{{ asset('terms_of_service') }}" class="slide_menu_message post_modal">
+                                            <li>利用規約</li>
+                                        </a>
+                                        <a href="https://twitter.com/ryoya3948" class="test_helpbtn">
+                                            <li>Twitter</li>
+                                        </a>
+                                        <li>© 2023 Pair Code.</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
                     </li>
-                    <!-- <li class="header" style="margin: 0;"><a href="{{ asset('user/login') }}" style="vertical-align: middle;"><i class="fas fa-sign-in-alt" style="margin-right: 0.5rem;"></i>ログイン</a></li>
-                    <li class="header" style="margin: 0;"><a href="{{ asset('user/add') }}" style="vertical-align: middle;"><i class="fas fa-user-plus" style="margin-right: 0.5rem;"></i>新規登録</a></li> -->
                 </ul>
             </nav>
             @endif
-
-
             @show
             @yield('profile')
             <div class="content">
