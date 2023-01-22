@@ -10,7 +10,7 @@
             <span style="background-color:#ffe1ae24;width: 100%;height: 100%;display: inline-block;line-height: 2;"><a href="{{ asset('message/message_top') }}" style="color: #000;"><i class="fa-solid fa-angle-left" style="margin-right: 1rem;margin-top: 0.4rem;vertical-align: text-top;font-size:2.2rem;"></i></a>{{$destination_user->name}}</span>
         </div>
     </div>
-    <div class="message" style="margin-top: 5rem;">
+    <div class="message">
         @foreach ($messages as $message)
         <div class="my_message">
             @if ($message->user_id == $current_user->id)

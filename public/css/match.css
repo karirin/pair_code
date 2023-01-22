@@ -475,6 +475,10 @@
     word-wrap: break-word;
 }
 
+.message_disp .message{
+    margin-top: 17rem;
+}
+
 /* ///////////////////////// */
 
 
@@ -1251,7 +1255,7 @@ a.top_link_header_login img{
     width:100%!important;
 }
 .message_disp .message{
-    margin-top: 17rem!important;
+    margin-top: 17rem;
 }
 .message_disp .fa-solid.fa-angle-left{
     font-size: 4rem!important;
@@ -1286,7 +1290,7 @@ a.top_link_header_login img{
 
 .message_process #message_counter{
     width: 80%;
-    height: 10%;
+    height: auto;
     display: inline-block;
     font-size: 2.5rem;
 }
