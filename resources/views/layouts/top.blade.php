@@ -117,7 +117,7 @@
                         <a sytle="margin: -0.5rem 0 0 -1.2rem;" href="{{ asset('/') }}" class="top_link_header">
                             <image src="../storage/top/Pair Code.png" style="width:26.5%;">
                         </a>
-                        <ul style="display: inline-block;width: auto;margin-left: 24rem;vertical-align: middle;z-index: 30;">
+                        <ul style="display: inline-block;width: auto;margin-left: 24rem;vertical-align: middle;z-index: 10;position: relative;z-index: 10;">
                             <li class="show_menu" style="margin: 0;"><i class="fas fa-bars" style="font-size: 4rem;margin-left: -1rem;"></i>
                                 <div class="slide_menu">
                                     <a class="modal_close" href="#">
