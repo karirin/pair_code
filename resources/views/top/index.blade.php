@@ -96,7 +96,7 @@
             </div>
             <image class="howtouse_firstimage" src="storage/top/bottom.png" style="width:33%;height: auto;margin-top: 2rem;">
                 <div>
-                    <image src="storage/top/Explanation.png" style="height: auto;width: 81%;margin-left: 2rem;">
+                    <image src="storage/top/Explanation.png" class="explanation" style="height: auto;width: 81%;margin-left: 2rem;">
                 </div>
         </div>
         <div class="description_top" style="text-align: center;">

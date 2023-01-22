@@ -155,7 +155,7 @@
 .top_logo{
     width: 54%;
     position: absolute;
-    top: 2%;
+    top: 8%;
     right: 1%;
     height: auto;
 }
@@ -747,8 +747,8 @@
 
     .top_logo{
         top: 10%;
-        right: 0%;
-        width: 46%!important;
+        right: 2%;
+        width: 95%!important;
     }
 
     .worries{
@@ -756,9 +756,9 @@
     }
 
     .top_image{
-        width: 70%!important; 
+        width: 62%!important; 
         height: auto!important;
-        margin-top: 8rem;
+        margin-top: 34rem;
     }
     
     .test_btn{
@@ -823,14 +823,40 @@
     }
 
     .user_login_btn{
-        bottom: 65%;
-        right: 5%;
+        bottom: 55%;
+        right: -5%;
+        width: auto!important;
+        margin-right: 5rem;
+        padding: 1.375rem 1.75rem;
+        width: 22rem!important;
+        height: 7rem;
+        font-size: 3rem!important;
     }
 
+    /* .edit_detail_btn .edit_detail_top_btn{
+        width: auto!important;
+        margin-right: 5rem;
+        padding: 1.375rem 1.75rem;
+        width: 15rem!important;
+        font-size: 3rem!important;
+    } */
+
     .user_add_btn{
-        bottom: 60%;
-        right: 5%;
+        bottom: 47%;
+        right: -5%;
+        width: auto!important;
+        margin-right: 5rem;
+        padding: 1.375rem 1.75rem;
+        width: 22rem!important;
+        height: 7rem;
+        font-size: 3rem!important;
     }
+
+    
+        .explanation{
+            width: 97%!important;
+            margin-left: 0!important;;   
+        }
 
 /* ///////////////////////// */
 
