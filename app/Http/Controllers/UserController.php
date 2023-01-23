@@ -53,7 +53,7 @@ class UserController extends Controller
                     'password' => $request->password,
                     'email' => $request->email,
                     'hash_password' => Hash::make($request->password),
-                    'image' => '',
+                    'image' => 'storage/sample/noimage.jpg',
                     'profile' => '',
                 ];
             }

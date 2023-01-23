@@ -4,7 +4,7 @@
 @parent
 @endsection
 @section('content')
-<div id="splash">Loading...</div>
+<div id="splash"></div>
 <div class="col-9.5 match_top aite_top" style="margin-left: 22%;height: 94%;margin-left: 23%;padding-left: 3rem;display: none;">
     <div class="help_message3" style="display:none;">
         <span class="help-title">マッチングの流れ</span>

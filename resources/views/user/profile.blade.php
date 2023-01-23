@@ -14,7 +14,7 @@
         <input type="hidden" name="current_skill" value="{{$current_user->skill}}">
         <input type="hidden" name="current_licence" value="{{$current_user->licence}}">
         <input type="hidden" name="current_workhistory" value="{{$current_user->workhistory}}">
-        <div id="splash">Loading...</div>
+        <div id="splash"></div>
         <div class="profile_top" style="height: 93%;margin-left: 19%;padding-left: 3rem;width:70%;display: none;">
             <h3 class="page_title profile_title">プロフィール</h3>
             <div class="tag" style="display: block;">
