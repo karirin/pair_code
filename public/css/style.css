@@ -303,7 +303,7 @@ nav.navbar.navbar-dark {
 
 .test_login {
     bottom: 30%;
-    right: 437%;
+    right: 10%;
     position: relative;
     width: 13rem;
     height: 3rem;
@@ -321,13 +321,13 @@ nav.navbar.navbar-dark {
 }
 
 .user_add_btn{
-    bottom: 14%;
+    bottom: 9%;
     right: 10%;
     padding: 0.5rem;
 }
 
 .user_login_btn{
-    bottom: 26%;
+    bottom: 22%;
     right: 10%;
     padding: 0.5rem;
 }
@@ -631,6 +631,13 @@ nav.navbar.navbar-dark {
     }
 }
 
+.line{
+    height: 100%;
+    position: fixed;
+    width: 0;
+    border-left: solid 1px rgba(222, 184, 135, 0.35);
+    right: 77%;
+}
 
 /* ///////////////////////// */
 
@@ -893,7 +900,7 @@ img.mypage {
 }
 
 .edit_workhistory.form-control {
-    width: auto;
+    width: 60%;
 }
 
 .educational {
@@ -1911,30 +1918,25 @@ img.my_preview {
     padding: 0;
 }
 
-.help_close{
-    z-index: 15;
-    font-size: 2rem;
-    position: absolute;
-    left: 63%;
-    top: 9%;
-}
-
-.help_close1{
-    z-index: 15;
-    font-size: 2rem;
-    position: absolute;
-    left: 36%;
-    top: 16%;
-}
-
+.help_close,
+.help_close1,
 .help_close2{
     z-index: 15;
-    font-size: 2rem;
+    font-size: 6rem;
     position: absolute;
-    left: 46%;
-    top: 7%;
+    left: 90%;
+    top: 3%;
 }
 
+.profile_close{
+    z-index: 15;
+    font-size: 6rem!important;
+    position: absolute;
+    left: 272%!important;
+    top: -35%!important;
+}
+
+.help_close,
 .help_close1:hover,
 .help_close2:hover{
     opacity: 0.8;
@@ -1976,7 +1978,7 @@ img.my_preview {
     background-color: rgba(152, 152, 152, 0.7);
     width: 100%;
     height: 100%;
-    z-index: 20;
+    z-index: 9;
 }
 
 #comment_image,

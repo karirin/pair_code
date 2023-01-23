@@ -7,7 +7,7 @@ var user_age = $('.form .age').text(),
     user_address_narrow = $('.form .address_narrow').text(),
     user_workhistory = $('.form .workhistory').text(),
     user_workhistory_narrow = $('.form .workhistory_narrow').text(),
-    user_profile = $('.form .profile').text();
+    user_profile = $('.user_profile').text();
 
 window.onload = function() {
     $("#splash").delay(100).fadeOut('slow'); //ローディング画面を1.5秒（1500ms）待機してからフェードアウト
@@ -119,9 +119,6 @@ window.onload = function() {
 // 編集ボタン押下時の処理
 $(document).on('click', '.profile_edit_btn', function() {
     scroll_position = $(this).scrollTop();
-    // $('.profile_edit_btn').fadeOut();
-    // $('.myprofile_count').fadeOut();
-    // $('.follow_user').fadeOut();
     $('.profile_edit_btn').hide();
     $('.myprofile_count').hide();
     $('.follow_user').hide();
@@ -231,6 +228,7 @@ $(document).on('click', ".match_user", function() {
     $('.matchuser_detaile .matchs_flg').val($($target_modal + ' > .matchs_flg')[0].value);
     $('.matchuser_detaile_prof').fadeIn();
     $(window).scrollTop(0);
+    console.log($($target_modal + ' > .click_flg')[0].value);
     if ($($target_modal + ' > .click_flg')[0].value != 0) {
         $('.match_good_btn').hide();
     } else {

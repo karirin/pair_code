@@ -153,7 +153,7 @@
 }
 
 .top_logo{
-    width: 54%;
+    width: 53%;
     position: absolute;
     top: 8%;
     right: 1%;
@@ -582,16 +582,19 @@
         font-size: 2rem;
         z-index: 40;
     }
-    .help_close1{
-        z-index: 15;
-        left: 32%;
-        top: 13%;
-        font-size: 4rem;
-    }
+    .help_close,
+    .help_close1,
     .help_close2{
-        font-size: 5rem;
-        left: 73%;
-        top: 3%;
+        z-index: 15;
+        left: 82%;
+        top: 2%;
+        font-size: 9rem;
+    }
+    .profile_close{
+        z-index: 15;
+        left: 99%!important;
+        top: -25.5%!important;
+        font-size: 9rem!important;
     }
     .footer{
         display: none;
@@ -621,7 +624,7 @@
     }
     .matchuser_detaile_prof{
         left: 50%!important;
-        top: 85%!important;
+        top: 90%!important;
         width:630px;
     }
     .matchuser_detaile_prof_sample{
@@ -645,9 +648,9 @@
     .matchuser_age{
         font-size: 2.5rem!important;
     }
-    .far.fa-times-circle{
+    /* .far.fa-times-circle{
         font-size: 5rem!important;
-    }
+    } */
     #splash {
         font-size: 3rem;
         bottom: 53%;
@@ -670,11 +673,6 @@
     }
     .matchuser_occupation{
         font-size: 2.5rem!important;
-    }
-    .help_close{
-        font-size: 5rem;
-        top: 10%;
-        left: 41%;
     }
     .help-title {
         height: auto;
@@ -842,7 +840,7 @@
     } */
 
     .user_add_btn{
-        bottom: 35%;
+        bottom: 33%;
         right: -5%;
         width: auto!important;
         margin-right: 5rem;
@@ -1172,8 +1170,8 @@ img.my_preview {
     margin-left: -5rem;
 }
 .fa-solid.fa-circle-question.help_btn{
-    font-size: 5rem!important;
-    top:12%!important;
+    font-size: 6rem!important;
+    top:10%!important;
 }
 .top_link{
     font-size: 4rem;
@@ -1201,10 +1199,6 @@ a.top_link_header_login img{
 }
 .match_user .fa-solid.fa-reply div{
     font-size: 3.8rem!important;
-}
-.match_top .fa-regular.fa-circle-xmark.help_close{
-    top: 21%;
-    left: 69%;
 }
 .help_message{
     left: 30%;
@@ -1326,7 +1320,7 @@ a.top_link_header_login img{
 }
 
 .btn.btn-outline-primary.message_submit{
-    font-size: 2rem;
+    font-size: 4rem;
 }
 
 .far.fa-image{

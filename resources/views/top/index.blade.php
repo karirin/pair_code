@@ -6,7 +6,7 @@
 @section('content')
 @if (Auth::check())
 <div id="splash">Loading...</div>
-<div class="col-9 match_top sarch_top" style="margin-left: 23%;border-left: 1px solid #deb88759;padding-left: 3rem;display:none;">
+<div class="col-9 match_top sarch_top" style="margin-left: 23%;padding-left: 3rem;display:none;">
     <h3 class="page_title serach">さがす</h3>
     <i class="fa-solid fa-circle-question help_btn"></i>
     <input type="hidden" class="sample_user">

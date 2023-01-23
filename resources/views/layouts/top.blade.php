@@ -18,8 +18,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @section('header')
     @if (Auth::check())
-
     @if(request()->path()!='privacy_poricy' && request()->path()!='terms_of_service' && request()->path()!='user/edit_detail' && request()->path()!='auth/twitter/callback')
+    <span class="line"></span>
     <div class="top_title" style="position: fixed;">
         <ul>
             <li class="top_link">
@@ -27,7 +27,7 @@
                     <image src="../storage/top/Pair Code.png" style="width:26.5%;">
                 </a>
                 <ul style="display: inline-block;width: auto;margin-left: 24rem;vertical-align: middle;z-index: 30;">
-                    <li class="show_menu" style="margin: 0;"><i class="fas fa-bars" style="font-size: 4rem;margin-left: -1rem;"></i>
+                    <li class="show_menu" style="margin: 0;"><i class="fas fa-bars" style="font-size: 6rem;margin-left: -1rem;"></i>
                         <div class="slide_menu">
                             <a class="modal_close" href="#">
                                 <p style="margin-bottom: -2rem;"><i class="fas fa-angle-left" style="font-size: 5rem;"></i></p>

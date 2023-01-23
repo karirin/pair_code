@@ -5,7 +5,7 @@
 @endsection
 @section('content')
 <div id="splash">Loading...</div>
-<div class="col-9.5 match_top aite_top" style="margin-left: 22%;height: 94%;margin-left: 23%;border-left: 1px solid #deb88759;padding-left: 3rem;display: none;">
+<div class="col-9.5 match_top aite_top" style="margin-left: 22%;height: 94%;margin-left: 23%;padding-left: 3rem;display: none;">
     <div class="help_message3" style="display:none;">
         <span class="help-title">マッチングの流れ</span>
         「いいね」ボタンをクリックすると</br>
@@ -56,7 +56,7 @@
                 </div>
                 <input type="hidden" class="match_user_prof" value="{{$user->profile}}">
             </div>
-            <input type="hidden" class="click_flg" value="0">
+            <input type="hidden" class="click_flg" value="1">
             <img src="{{asset($user->image)}}" class="match_user_img" style="width: 100%;height: 100%;border-radius: 8px;">
             <label>
                 <i class="far fa-times-circle profile_clear"></i>
