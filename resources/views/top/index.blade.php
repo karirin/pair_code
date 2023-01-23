@@ -246,7 +246,7 @@
                                 setInterval(function() {
                                     $('.pointer2').animate({
                                         'left': '74%',
-                                        'top': '59%'
+                                        'top': '65%'
                                     });
                                     $('.pointer2').fadeOut();
                                     $('.pointer2').animate({

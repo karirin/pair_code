@@ -1930,10 +1930,10 @@ img.my_preview {
 
 .profile_close{
     z-index: 15;
-    font-size: 6rem!important;
+    font-size: 6rem;
     position: absolute;
-    left: 272%!important;
-    top: -24%!important;
+    left: 272%;
+    top: -24%;
 }
 
 .help_close,

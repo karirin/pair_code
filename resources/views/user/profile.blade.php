@@ -171,7 +171,7 @@
                             </div>
                         </div>
                         <div class="edit_btns">
-                            <button class="btn btn-outline-dark profile_close" type="button">閉じる</button>
+                            <button class="btn btn-outline-dark profile_close profile" type="button">閉じる</button>
                             <input type="submit" class="btn btn-outline-dark edit_done" value="編集完了">
                             <button class="btn btn-outline-dark profile_narrow_close" type="button">閉じる</button>
                         </div>

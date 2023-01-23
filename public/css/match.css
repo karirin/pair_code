@@ -83,6 +83,14 @@
     width: 92px;
 }
 
+.edit_btns .profile_close.profile {
+    z-index: 15;
+    font-size: 1rem;
+    position: absolute;
+    left: -124%;
+    top: 53%;
+}
+
 .tag .user_age {
     display: inline-block;
 }
@@ -250,12 +258,6 @@
 
 .matchuser_detaile .matchuser_occupation {
     font-size: x-small;
-}
-
-.matchuser_detaile .far.fa-times-circle {
-    left: 86%;
-    top: -10%;
-    font-size: 2rem;
 }
 
 #match_good_btn,
@@ -566,6 +568,9 @@
 }
 
 @media screen and (max-width: 980px){
+    .line{
+        display: none;
+    }
     .header_sub {
         display: none;
     }
@@ -654,7 +659,7 @@
     #splash {
         font-size: 3rem;
         bottom: 53%;
-        left: 38%;
+        left: 52%;
     }
     .smartphone_header{
         display: inline-block;
@@ -1127,6 +1132,11 @@ img.my_preview {
     margin: 0 15%!important;
 }
 
+.edit_btns .profile_close.profile {
+    left: 0%!important;
+    top: -116.5%!important;
+}
+
 /* ///////////////////////// */
 
 
@@ -1171,7 +1181,7 @@ img.my_preview {
 }
 .fa-solid.fa-circle-question.help_btn{
     font-size: 6rem!important;
-    top:10%!important;
+    top:12%!important;
 }
 .top_link{
     font-size: 4rem;

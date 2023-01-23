@@ -158,7 +158,7 @@
             <div class="modal_top"></div>
             <div class="modal_footer"></div>
             <div class="matchuser_detaile">
-                <i class="far fa-times-circle profile_close" style="display:inline;top: -11.5%;"></i>
+                <i class="far fa-times-circle profile_close" style="display:inline;"></i>
                 <img class="matchuser_img">
                 <div style="padding: 1rem;">
                     <div class="matchuser_name"></div>
