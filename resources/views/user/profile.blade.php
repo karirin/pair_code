@@ -107,7 +107,14 @@
                                 <input type="button" id="profile_clear">
                             </label>
                         </div>
-                        <h3 class="profile_name">{{$current_user->name}}</h3>
+                        <div class="user_name">
+                            <p class="tag_tittle">名前</p>
+                            <h3 class="profile_name">{{$current_user->name}}</h3>
+                        </div>
+                        <div class="user_name_narrow" style="display: none;">
+                            <span class="tag_tittle" style="margin-right: 7rem;">名前</span>
+                            <h3 class="profile_name_narrow">{{$current_user->name}}</h3>
+                        </div>
                         <div class="user_age">
                             <p class="tag_tittle" style="margin-top: 0.5rem;">年齢</p>
                             <div class="age">{{$current_user->age}}</div>歳
@@ -137,7 +144,7 @@
                                 @endphp
                                 @endforeach<i class="fas fa-plus myprofile_skill_btn"></i>
                         </div>
-                        <input placeholder="skill Stack" name="skills" id="skill_myprofile_input" style="display:block;" />
+                        <input placeholder="PHP　JavaScript" name="skills" id="skill_myprofile_input" style="display:block;" />
                         <input type="hidden" name="myprofile_skills" id="myprofile_skills">
                         <input type="hidden" name="skill_count" id="myprofile_skill_count">
                         <input type="hidden" name="myskills" value="{{$current_user->skill}}">
@@ -155,7 +162,7 @@
                                 @endphp
                                 @endforeach<i class="fas fa-plus myprofile_licence_btn"></i>
                         </div>
-                        <input placeholder="licence Stack" name="name" id="licence_input" />
+                        <input placeholder="ITパスポート　基本情報技術者" name="name" id="licence_input" />
                         <input type="hidden" name="myprofile_licences" id="myprofile_licences">
                         <input type="hidden" name="licence_count" id="licence_count">
                         <input type="hidden" name="mylicences" value="{{$current_user->licence}}">

@@ -598,7 +598,7 @@
     .profile_close{
         z-index: 15;
         left: 99%!important;
-        top: -25.5%!important;
+        top: -20.5%!important;
         font-size: 9rem!important;
     }
     .footer{
@@ -968,7 +968,6 @@ ul.main_ul li a{
 .edit_occupation,
 .edit_profile,
 .edit_workhistory{
-    padding: 3rem 2rem;
     font-size: 3rem;
     width: 70%!important;
     height: auto!important;
@@ -1366,6 +1365,20 @@ a.top_link_header_login img{
     font-size: 2.5rem;
 }
 
+.profile_top .user_address,
+.profile_top .user_occupation{
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile_top .user_age .tag_tittle,
+.profile_top .user_address .tag_tittle,
+.profile_top .user_address .edit_address,
+.profile_top .user_occupation .tag_tittle,
+.profile_top .user_occupation .edit_occupation{
+    display: inline!important;
+}
+
 .profile_top .col-3{
     flex: 100%;
     max-width: 100%;
@@ -1390,6 +1403,41 @@ a.top_link_header_login img{
 .profile_top .form .row{
     margin-bottom: 20rem;
 }
+.profile_top .user_name_narrow{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16rem;
+}
+.profile_top .user_name{
+    display: none;
+}
+.profile_top .user_name_narrow{
+    display: block!important;
+}
+.profile_top .form .user_name_narrow{
+    margin-bottom: 2rem;
+}
+
+.profile_top .form .user_age,
+.profile_top .form .user_address,
+.profile_top .form .user_occupation{
+    margin-bottom: 2rem;
+    margin-top: 1rem!important;
+}
+
+.profile_top .user_age,
+.profile_top .user_address,
+.profile_top .user_occupation{
+    margin-top: 1rem!important;
+}
+.profile_top .age,
+.profile_top .address,
+.profile_top .occupation
+{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0!important;
+}
 .mypage{
     margin-top: 2rem!important;
     width: 20rem!important;
@@ -1412,13 +1460,14 @@ a.top_link_header_login img{
 }
 
 .edit_name{
-    padding: 3rem 2rem;
     font-size: 3rem;
     width: 70%!important;
+    margin-top: 0.1rem;
 }
 
 .edit_age{
     width: 20%!important;
+    margin-left: 26rem;
 }
 
 .edit_address{

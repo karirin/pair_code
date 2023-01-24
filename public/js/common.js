@@ -265,7 +265,7 @@ $('.show_menu').on('click', function() {
     $('.page_title').css({ 'margin-top': '4.5rem' });
     $('.top_logo').css({ 'top': '3%' });
     $('.message_disp .message').css({ 'margin-top': '8rem' });
-    $('.message_disp .message_disp_div').css({ 'margin-top': '0rem' });
+    $('.message_disp .message_disp_div').css({ 'margin-top': '0rem','position': 'unset' });
 })
 
 $('.slide_prof').on('click', function() {
@@ -306,9 +306,8 @@ $(document).on('click', ".modal_close", function() {
     $('.smartphone_header').fadeIn();
     $('.page_title').css({ 'margin-top': '15rem' });
     $('.message_disp .message').css({ 'margin-top': '17rem','height':'7rem' });
-    $('.message_disp .message_disp_div').css({ 'margin-top': '8rem' });
+    $('.message_disp .message_disp_div').css({ 'margin-top': '8rem','position':'fixed' });
     $('.top_logo').css({ 'top': '10%' });
-
 });
 
 // // 編集ボタン押下時の処理

@@ -7,7 +7,7 @@
 <div class="col-9 message_disp" style="height:auto;padding-left: 3rem;margin-left: 23%;display: inline-block;">
     <div class="message_disp_div" style="background-color:#ffffffb5;width: 100%;height: 10%;position: fixed;z-index: 10;font-size: 2rem;">
         <div class="message_disp_name" style="background-color: #ffe1ae00;">
-            <span style="background-color:#ffe1ae24;width: 100%;height: 100%;display: inline-block;line-height: 2;"><a href="{{ asset('message/message_top') }}" style="color: #000;"><i class="fa-solid fa-angle-left" style="margin-right: 1rem;margin-top: 0.4rem;vertical-align: text-top;font-size:2.2rem;"></i></a>{{$destination_user->name}}</span>
+            <span class="message_disp_name_span" style="background-color:#ffe1ae24;width: 100%;height: 100%;display: inline-block;line-height: 2;"><a href="{{ asset('message/message_top') }}" style="color: #000;"><i class="fa-solid fa-angle-left" style="margin-right: 1rem;margin-top: 0.4rem;vertical-align: text-top;font-size:2.2rem;"></i></a>{{$destination_user->name}}</span>
         </div>
     </div>
     <div class="message">
