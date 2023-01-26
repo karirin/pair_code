@@ -480,3 +480,24 @@ $(document).on('click', '.submit_btn', function() {
         return false;
     }
 });
+
+$(document).on('click', '.edit_done', function() {
+    console.log("teste");
+    //console.log($('.edit_age')[0].value);
+    // if ($('.edit_age')[0].value == '' && $('.edit_profile')[0].value == '') {
+    //     $('.user_name_input')[0].setAttribute("style", "border-color: #dc3545;");
+    //     $('.user_pass_input')[0].setAttribute("style", "border-color: #dc3545;");
+    //     $('.user_name_error').fadeIn();
+    //     $('.user_pass_error').fadeIn();
+    // }
+    // if ($('.user_name_input')[0].value == '') {
+    //     $('.user_name_input')[0].setAttribute("style", "border-color: #dc3545;");
+    //     $('.user_name_error').fadeIn();
+    //     return false;
+    // }
+    // if ($('.user_pass_input')[0].value == '') {
+    //     $('.user_pass_input')[0].setAttribute("style", "border-color: #dc3545;");
+    //     $('.user_pass_error').fadeIn();
+    //     return false;
+    // }
+});

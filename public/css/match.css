@@ -598,7 +598,7 @@
     .profile_close{
         z-index: 15;
         left: 99%!important;
-        top: -20.5%!important;
+        top: -13.5%!important;
         font-size: 9rem!important;
     }
     .footer{
@@ -659,7 +659,7 @@
     #splash {
         font-size: 3rem;
         bottom: 53%;
-        left: 52%;
+        left: 50%;
     }
     .smartphone_header{
         display: inline-block;
@@ -1053,6 +1053,13 @@ img.my_preview {
     height: auto!important;
 }
 
+.edit_detail_top .user_age,
+.edit_detail_top .user_address,
+.edit_detail_top .user_occupation{
+    display: flex;
+    justify-content: space-between;
+}
+
 .edit_detail_top .col-3{
     flex: unset;
     max-width: none;
@@ -1073,6 +1080,22 @@ img.my_preview {
 }
 
 .edit_detail_top .tag_tittle{
+    margin-top: 2rem;
+}
+
+.edit_detail_top .edit_age{
+    margin-top: 1rem;
+}
+
+.edit_detail_top .edit_address,
+.edit_detail_top .edit_occupation{
+    margin-top: 2rem;
+    width: 52%!important;
+    margin-right: 10.5rem;
+}
+
+.edit_detail_top .user_age .sai{
+    margin-right: 7rem;
     margin-top: 2rem;
 }
 
@@ -1378,6 +1401,8 @@ a.top_link_header_login img{
 .profile_top .user_occupation .edit_occupation{
     display: inline!important;
 }
+
+
 
 .profile_top .col-3{
     flex: 100%;

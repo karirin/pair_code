@@ -12,6 +12,9 @@
             <div class="user_age">
                 <p class="tag_tittle">年齢</p>
                 <input class="edit_age form-control" type="number" name="age" style="width: 35%;display: inline-block;margin-right: 0.5rem;"><span class="sai">歳</span>
+                <div class="error_age_form" style="height: 8px;text-align:left;">
+                    <span class="user_age_error" style="display:none;color: #dc3545;">年齢を入力してください</span>
+                </div>
             </div>
             <div class="user_address" style="margin-top: 0.5rem;">
                 <p class="tag_tittle" style="display: inline-block;">住所</p>
@@ -65,6 +68,9 @@
                     <option value="鹿児島県">鹿児島県</option>
                     <option value="沖縄県">沖縄県</option>
                 </select>
+                <div class="error_address_form" style="height: 8px;text-align:left;">
+                    <span class="user_address_error" style="display:none;color: #dc3545;">住所を入力してください</span>
+                </div>
             </div>
             <div class="user_occupation" style="margin-top: 0.5rem;">
                 <p class="tag_tittle" style="display: inline-block;">職種</p>
@@ -81,12 +87,15 @@
                     <option value="テストエンジニア">テストエンジニア</option>
                     <option value="その他">その他</option>
                 </select>
+                <div class="error_occupation_form" style="height: 14px;text-align:left;">
+                    <span class="user_occupation_error" style="display:none;color: #dc3545;">職種を入力してください</span>
+                </div>
             </div>
             <div class="my_profile">
                 <p class="tag_tittle">自己紹介</p>
                 <textarea placeholder="100文字以内" class="edit_profile form-control" style="height: 30%;width: 126%;" type="text" name="user_profile">{{$profile}}</textarea>
-                <div class="error_workhistory" style="display: none;">
-                    <span style="color:rgb(220, 53, 69);">100文字以内で入力してください</span>
+                <div class="error_profile_form" style="height: 8px;text-align:left;width: 13rem;">
+                    <span class="user_profile_error" style="display:none;color: #dc3545;">自己紹介を入力してください</span>
                 </div>
             </div>
         </div>
@@ -111,13 +120,13 @@
 株式会社XXX 
 ・SEとして自社サービスの運用・保守を担当 
 ・チームリーダーの経験も有り" class="edit_workhistory form-control" style="height: 40%;width: 75%;" type="text" name="user_workhistory"></textarea>
-                <div class="error_workhistory" style="display: none;">
-                    <span style="color:rgb(220, 53, 69);">100文字以内で入力してください</span>
+                <div class="error_workhistory">
+                    <span class="user_workhistory_error" style="color:rgb(220, 53, 69);display: none;">100文字以内で入力してください</span>
                 </div>
             </div>
         </div>
     </div>
-    <div class="flex_btn margin_top edit_detail_btn" style="margin: 0 34%;width: 35%;margin-top: 2rem;">
+    <div class="flex_btn margin_top edit_detail_btn" style="margin: 0 34%;width: 35%;margin-top: 7rem;margin-bottom: 2rem;">
         <input style="width: 90px;" class="btn btn-outline-dark edit_detail_top_btn" type="button" onclick="history.back()" value="戻る">
         <input style="width: 90px;" class="btn btn-outline-info edit_done edit_detail_top_btn" type="submit" value="登録">
     </div>
@@ -139,4 +148,7 @@
 @endsection
 @section('footer')
 @parent
+<script>
+
+</script>
 @endsection
