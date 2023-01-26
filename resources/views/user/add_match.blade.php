@@ -4,7 +4,7 @@
 @parent
 @endsection
 @section('content')
-<div id="splash"></div>
+<div id="splash" style="left: 48%;bottom: 53%;"></div>
 <div class="modal_help"></div>
 <div class="modal_unclick"></div>
 <h2 class="welcome">ありがとうございます</br>新規登録完了しました</h2>

@@ -95,7 +95,7 @@
                 <div class="row">
                     <div class="col-4">
                         <div class="edit_profile_img">
-                            <label style="position: absolute;z-index: 10;top: 10%;left: 19%;">
+                            <label style="position: absolute;z-index: 10;top: 10%;left: 23%;">
                                 <div class="fa-image_range">
                                     <i class="far fa-image"></i>
                                 </div>

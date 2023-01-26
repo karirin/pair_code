@@ -479,8 +479,8 @@ nav.navbar.navbar-dark {
 
 #splash {
     /*fixedで全面に固定*/
-    bottom: 55%;
-    left: 49%;
+    bottom: 57%;
+    left: 60%;
     position: absolute;
     z-index: 999;
     background-color: #fff;
@@ -1936,7 +1936,7 @@ img.my_preview {
     top: -14%;
 }
 
-.help_close,
+.help_close:hover,
 .help_close1:hover,
 .help_close2:hover{
     opacity: 0.8;

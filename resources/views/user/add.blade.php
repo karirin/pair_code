@@ -14,11 +14,11 @@
             <div class="error_name_form" style="height: 27px;text-align:left;margin: 0 20%;">
                 <span class="user_name_error" style="display:none;color: #dc3545;">ユーザー名を入力してください</span>
             </div>
-            <div class="user_title">メールアドレス</div>
+            <!-- <div class="user_title">メールアドレス</div>
             <input type="text" name="email" class="user_mail_input form-control" style="margin-bottom:0;" placeholder="info@paircode.work">
             <div class="error_mail_form" style="height: 27px;text-align:left;margin: 0 20%;">
                 <span class="user_mail_error" style="display:none;color: #dc3545;">メールを入力してください</span>
-            </div>
+            </div> -->
             <div class="user_title">パスワード</div>
             <input type="password" name="password" class="user_pass_input form-control" style="margin-bottom:0;">
             <div class="password_sub" style="display:inline-block;width: 60%;text-align:left;font-size:0.9rem;">
