@@ -14,7 +14,7 @@ use Socialite;
 class Token extends Authenticatable
 {
     use Notifiable;
-
+    protected $table = 'tokens';
     /**
      * The attributes that are mass assignable.
      *

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Notifications\Notifiable;
 use App\Models\SocialUser;
+use App\Token;
 use DateTime;
 use Socialite;
 
@@ -21,7 +22,7 @@ class TokenService extends Model
         //有効期限を計算(30分とした)
         $expire_at = $now->modify('+30 minutes');
 
-        $token = new Token();
+        $token = new TokenService();
         //トークンを生成
         $token = uniqid('', true);
         //3. トークンをDBに保存

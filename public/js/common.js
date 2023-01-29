@@ -1681,35 +1681,35 @@ $(document).on('click', '.edit_done', function() {
 
     //$('.workhistory').val() = $('.edit_workhistory').val;
 
-    var error=0;
-    if ($('.edit_age')[0].value == '') {
-        $('.edit_age')[0].setAttribute("style", "border-color: #dc3545;width: 35%;display: inline-block;margin-right: 0.5rem;");
-        $('.user_age_error').fadeIn();
-        error++;
-    }
-    if($('.edit_profile')[0].value == ''){
-        $('.edit_profile')[0].setAttribute("style", "border-color: #dc3545;height: 30%;width: 126%;");
-        $('.user_profile_error').fadeIn();
-        error++;
-    }
-    if ($('.edit_address')[0].value == '') {
-        $('.edit_address')[0].setAttribute("style", "border-color: #dc3545;");
-        $('.user_address_error').fadeIn();
-        error++;
-    }
-    if ($('.edit_occupation')[0].value == '') {
-        $('.edit_occupation')[0].setAttribute("style", "border-color: #dc3545;width:auto;");
-        $('.user_occupation_error').fadeIn();
-        error++;
-    }
-    if ($('.edit_workhistory')[0].value == '') {
-        $('.edit_workhistory')[0].setAttribute("style", "border-color: #dc3545;height: 40%;width: 75%;");
-        $('.user_workhistory_error').fadeIn();
-        error++;
-    }
-    if(0 < error){
-        return false;
-    }
+    // var error=0;
+    // if ($('.edit_age')[0].value == '') {
+    //     $('.edit_age')[0].setAttribute("style", "border-color: #dc3545;width: 35%;display: inline-block;margin-right: 0.5rem;");
+    //     $('.user_age_error').fadeIn();
+    //     error++;
+    // }
+    // if($('.edit_profile')[0].value == ''){
+    //     $('.edit_profile')[0].setAttribute("style", "border-color: #dc3545;height: 30%;width: 126%;");
+    //     $('.user_profile_error').fadeIn();
+    //     error++;
+    // }
+    // if ($('.edit_address')[0].value == '') {
+    //     $('.edit_address')[0].setAttribute("style", "border-color: #dc3545;");
+    //     $('.user_address_error').fadeIn();
+    //     error++;
+    // }
+    // if ($('.edit_occupation')[0].value == '') {
+    //     $('.edit_occupation')[0].setAttribute("style", "border-color: #dc3545;width:auto;");
+    //     $('.user_occupation_error').fadeIn();
+    //     error++;
+    // }
+    // if ($('.edit_workhistory')[0].value == '') {
+    //     $('.edit_workhistory')[0].setAttribute("style", "border-color: #dc3545;height: 40%;width: 75%;");
+    //     $('.user_workhistory_error').fadeIn();
+    //     error++;
+    // }
+    // if(0 < error){
+    //     return false;
+    // }
 });
 
 // 必須チェック解除

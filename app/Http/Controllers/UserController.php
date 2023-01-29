@@ -9,10 +9,12 @@ use Validator;
 use Illuminate\Support\Facades\DB;
 use App\Person;
 use App\User;
+use Illuminate\Support\Facades\Mail;
 use App\AuthMail;
 use App\TokenService;
 use App\Match;
 use App\Models\Message_relation;
+//use Config\Mail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Hash;
@@ -32,6 +34,25 @@ class UserController extends Controller
     {
         $this->validate($request, User::$rules);
         $user_flg = User::where('name', $request->name)->first();
+
+        // //3. ユーザデータを保存
+        // $userService = new User();
+        // $userService->create($request);
+
+        // //2. トークンを発行
+        // $tokenService = new TokenService();
+        // $tokenService->create($request);
+
+        // //4. メールを送信
+        // $email = $request->email;
+        // //メールに記載する認証用URlを組み立てている(認証用ページURL+トークン)。
+        // $url = request()->getSchemeAndHttpHost(). "/user/register?token=". $tokenService->getToken();
+
+        // Mail::to($email)
+        //         ->send(new AuthMail($url));
+
+        //メール送信完了画面へリダイレクト
+        // return redirect('/join')->with('email',$email);
         if ($user_flg != '') {
             $add_message = 'すでに存在するユーザー名です';
             return view('user.add', ['add_message' => $add_message]);
@@ -76,22 +97,37 @@ class UserController extends Controller
             'licence' => $request->myprofile_licences,
             'workhistory' => $request->user_workhistory,
         ];
-        // //3. ユーザデータを保存
-        // DB::table('users')->insert($form);
+        //3. ユーザデータを保存
+        DB::table('users')->insert($form);
 
-        // //2. トークンを発行
-        // $tokenService = new TokenService();
-        // $tokenService->create($request->email);
+        $now = new DateTime();
+        $now->format("Y-m-d H:i:s");
+        //有効期限を計算(30分とした)
+        $expire_at = $now->modify('+30 minutes');
 
-        // //4. メールを送信
-        // $email = $request->email;
-        // //メールに記載する認証用URlを組み立てている(認証用ページURL+トークン)。
-        // $url = request()->getSchemeAndHttpHost() . "/user/register?token=" . $tokenService->token;
+        $token = new TokenService();
+        //トークンを生成
+        $token = uniqid('', true);
 
-        // Mail::to($email)->send(new AuthMail($url));
+        $form = [
+            'token' => $token,
+            'email' => $request->email,
+            'expire_at' => $expire_at,
+        ];
 
-        // //メール送信完了画面へリダイレクト
-        // return redirect('/join')->with('email', $email);
+        DB::table('tokens')->insert($form);
+
+        //4. メールを送信
+        $email = $request->email;
+
+        //メールに記載する認証用URlを組み立てている(認証用ページURL+トークン)。
+        $url = request()->getSchemeAndHttpHost() . "/user/register?token=" . $token;
+        log::debug($email); //追記
+        log::debug($url); //追記
+        Mail::to($email)->send(new AuthMail($url));
+
+        //メール送信完了画面へリダイレクト
+        return redirect('/join')->with('email', $email);
 
         $action = session()->get($this->method_action_key);
         $is_reload = ($action == '');
