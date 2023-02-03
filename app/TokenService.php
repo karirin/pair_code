@@ -46,7 +46,7 @@ class TokenService extends Model
         if (is_null($data)) {
             //DBから値が返ってこないのでトークンが間違っている、チェックNG
             return "WRONG";
-        } else if ($data->auth_flag) {
+        } else if ($data->auth_flg) {
             //検索して見つかったトークンデータの認証フラグが既に立っている(=認証済み)、チェックNG
             return "ALREADY";
         }
@@ -55,7 +55,7 @@ class TokenService extends Model
 
         //9. 認証処理(有効なトークンだった場合はフラグを認証済み(true)に更新)
         if ($now < $expire_date) {
-            $data->auth_flag = true;
+            $data->auth_flg = true;
             $data->update();
             return "OK";
         } else {
@@ -65,8 +65,8 @@ class TokenService extends Model
             Token::where([
                 'token' => $token
             ])->delete();
-            $userService = new UserService();
-            $userService->deleteByEmail($email);
+            //$userService = new UserService();
+            //$userService->deleteByEmail($email);
             return "EXPIRE";
         }
     }

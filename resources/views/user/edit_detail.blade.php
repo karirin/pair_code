@@ -4,10 +4,12 @@
 @parent
 @endsection
 @section('content')
-<h2 class="edit_detail_top_tittle" style="text-align: center;">新規登録</h2>
+<h2 class="user_detail_message1">メール認証が完了しました</h2>
+<h2 class="user_detail_message2" style="display: none;">ユーザー詳細情報の登録をお願いします</h2>
+<h2 class="edit_detail_top_tittle" style="text-align: center;display:none;">新規登録</h2>
 <form method="post" action="{{ asset('user/edit_detail') }}" enctype="multipart/form-data">
     @csrf
-    <div class="row edit_detail_top" style="margin-left: 30%;height: 66%;">
+    <div class="row edit_detail_top" style="margin-left: 30%;height: 66%;display:none;">
         <div class="col-3">
             <div class="user_age">
                 <p class="tag_tittle">年齢</p>
@@ -126,7 +128,7 @@
             </div>
         </div>
     </div>
-    <div class="flex_btn margin_top edit_detail_btn" style="margin: 0 34%;width: 35%;margin-top: 4.5rem;margin-bottom: 2rem;">
+    <div class="flex_btn margin_top edit_detail_btn" style="margin: 0 34%;width: 35%;margin-top: 4.5rem;margin-bottom: 2rem;display:none;">
         <input style="width: 90px;" class="btn btn-outline-dark edit_detail_top_btn" type="button" onclick="history.back()" value="戻る">
         <input style="width: 90px;" class="btn btn-outline-info edit_done edit_detail_top_btn" type="submit" value="登録">
     </div>
@@ -149,6 +151,15 @@
 @section('footer')
 @parent
 <script>
-
+        setTimeout(function() {
+            $(".user_detail_message1").css("display", "none");
+            $(".user_detail_message2").fadeIn();
+        }, 3000);
+        setTimeout(function() {
+            $(".edit_detail_top").fadeIn().css("display", "flex");
+            $(".edit_detail_top_tittle").fadeIn();
+            $(".edit_detail_btn").fadeIn().css("display", "flex");
+            $(".user_detail_message2").css("display", "none");
+        }, 5000);
 </script>
 @endsection

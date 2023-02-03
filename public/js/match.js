@@ -114,6 +114,13 @@ window.onload = function() {
             $('.add_message').fadeOut(3000);
         }
     }
+
+    if ($('.mail_message').length) {
+        if ($('.mail_message')[0].textContent !== "") {
+            $('.mail_message').fadeIn();
+            $('.mail_message').fadeOut(3000);
+        }
+    }
 }
 
 // 編集ボタン押下時の処理
@@ -460,9 +467,17 @@ $(document).ready(function() {
             $('.user_pass_error').fadeOut();
         }
     });
+    $('.user_mail_input').change(function() {
+        var str = $(this).value;
+        if (str != '') {
+            $('.user_mail_input')[0].setAttribute("style", "border-color: #ced4da;");
+            $('.user_mail_error').fadeOut();
+        }
+    });
 });
 
 $(document).on('click', '.submit_btn', function() {
+    var error=0;
     if ($('.user_name_input')[0].value == '' && $('.user_pass_input')[0].value == '') {
         $('.user_name_input')[0].setAttribute("style", "border-color: #dc3545;");
         $('.user_pass_input')[0].setAttribute("style", "border-color: #dc3545;");
@@ -472,11 +487,19 @@ $(document).on('click', '.submit_btn', function() {
     if ($('.user_name_input')[0].value == '') {
         $('.user_name_input')[0].setAttribute("style", "border-color: #dc3545;");
         $('.user_name_error').fadeIn();
-        return false;
+        error++;
     }
     if ($('.user_pass_input')[0].value == '') {
         $('.user_pass_input')[0].setAttribute("style", "border-color: #dc3545;");
         $('.user_pass_error').fadeIn();
+        error++;
+    }
+    if ($('.user_mail_input')[0].value == '') {
+        $('.user_mail_input')[0].setAttribute("style", "border-color: #dc3545;");
+        $('.user_mail_error').fadeIn();
+        error++;
+    }
+    if(0 < error){
         return false;
     }
 });

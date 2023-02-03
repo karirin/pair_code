@@ -106,6 +106,27 @@
     display: none;
 }
 
+.user_detail_message1{
+    position: fixed;
+    width: 100%;
+    top: 44%;
+    margin: 0px 33%;
+    font-weight: 900;
+    letter-spacing: 0.3rem;
+    line-height: 3rem;
+}
+
+.user_detail_message2{
+    position: fixed;
+    width: 100%;
+    top: 44%;
+    margin: 0px 24%;
+    font-weight: 900;
+    letter-spacing: 0.3rem;
+    line-height: 3rem;
+    display:none;
+}
+
 .good_count{
     position: fixed;
     bottom: 8%;
@@ -174,6 +195,22 @@
     text-align: left;
     margin:1rem;
 }
+
+.btn-square {
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+  }
+  .btn-square:active {
+    /*ボタンを押したとき*/
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+  }
 
 /* ///////////////////////// */
 
@@ -300,7 +337,8 @@
 .login_message,
 .match_message,
 .top_message,
-.add_message {
+.add_message,
+.mail_message {
     padding: 0.5em 1em;
     background: -moz-linear-gradient(#FFC107, #ff8b5f);
     background: -webkit-linear-gradient(#FFC107, #ff8b5f);
@@ -481,6 +519,10 @@
     margin-top: 5rem;
 }
 
+.message_list:nth-last-child(){
+    margin-bottom: 2rem;
+}
+
 /* ///////////////////////// */
 
 
@@ -542,6 +584,9 @@
     /* .howtouse.good_engineer .howtouse_firstimage{
         width: 73%!important;
     } */
+    .worries h4{
+        height:6rem!important;
+    }
 }
 
 @media screen and (max-width: 1100px){
@@ -552,13 +597,14 @@
     /* .howtouse.good_engineer .howtouse_content{
         font-size: 0.9rem!important;
     } */
-    .howtouse.good_engineer{
+    /* .howtouse.good_engineer{
         width:43%;
-    }
+    } */
 
     /* .howtouse.good_engineer .howtouse_firstimage{
         width: 84%!important;
     } */
+
 }
 
 @media screen and (max-width: 1100px){
@@ -571,11 +617,26 @@
     .line{
         display: none;
     }
+    .mail_detail{
+        font-size: 2.8rem!important;
+    }
+    .mail_detail_email{
+        padding: 3rem!important;
+    }
+    .mail_detail_email_disp{
+        font-size: 4rem;
+    }
+    .mail_detail_session{
+        font-size: 2rem;
+    }
+    .mail_detail_btn{
+        font-size: 4rem;
+    }
     .header_sub {
         display: none;
     }
     .match_top{
-        margin-left: 16%!important;
+        margin-left: 7%!important;
     }
     .help_message{
         top: 29%;
@@ -856,10 +917,40 @@
     }
 
     
-        .explanation{
-            width: 97%!important;
-            margin-left: 0!important;;   
-        }
+    .explanation{
+        width: 97%!important;
+        margin-left: 0!important;;   
+    }
+
+    .user_detail_message1{
+        font-size: 4rem;
+        margin: 0 9%;
+    }
+
+    .user_detail_message2{
+        font-size: 4rem;
+        margin: 0 6%;
+        text-align: center;
+        line-height: 5rem;
+        top: 41%;
+        width: 90%;
+    }
+
+    .col-9.match_top.sarch_top{
+        max-width: 85%;
+    }
+
+    .match_top .match_user_occupation{
+        font-size: 1rem!important;
+    }
+
+    .match_top .match_user_age{
+        font-size: 1rem;
+    }
+
+    .profile_top .edit_address{
+        width: 70%!important;
+    }
 
 /* ///////////////////////// */
 
@@ -1031,6 +1122,14 @@ img.my_preview {
     height: 20rem;
 }
 
+.mail_finish{
+    margin: 35% 6%!important;
+}
+
+.mail_finish h2{
+    font-size:4rem;
+}
+
 /* ///////////////////////// */
 
 
@@ -1091,7 +1190,7 @@ img.my_preview {
 .edit_detail_top .edit_occupation{
     margin-top: 2rem;
     width: 52%!important;
-    margin-right: 10.5rem;
+    /* margin-right: 10.5rem; */
 }
 
 .edit_detail_top .user_age .sai{

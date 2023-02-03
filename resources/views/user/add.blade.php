@@ -51,4 +51,7 @@
 @endsection
 @section('footer')
 @parent
+<script>
+    
+</script>
 @endsection

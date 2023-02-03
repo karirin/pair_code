@@ -6,7 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class AuthMail extends Mailable
+class AuthMail2 extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -20,8 +20,8 @@ class AuthMail extends Mailable
     //メール送信で使うビュー、タイトル、ビューに渡す認証用URLを設定
     public function build()
     {
-        return $this->view('mail.tmpRegist')
-            ->subject('【Pair Code】仮登録が完了しました！')
+        return $this->view('mail.match')
+            ->subject('【Pair Code】マッチングしました！')
             ->with(['url' => $this->url]);
     }
 }

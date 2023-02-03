@@ -24,10 +24,12 @@ Route::get('/', 'TopController@index');
 Route::get('privacy_poricy', 'TopController@privacy_poricy');
 Route::get('terms_of_service', 'TopController@terms_of_service');
 Route::get('join', 'JoinController@index');
+Route::get('tmpRegist', 'TmpRegistController@index');
 
 Route::get('user/login', 'UserController@login');
 
 Route::post('user/login', 'UserController@auth');
+Route::get('user/auth2', 'UserController@auth2');
 Route::post('user/test_login', 'UserController@test_login');
 Route::get('user/add', 'UserController@add');
 Route::post('user/edit', 'UserController@edit');
@@ -40,6 +42,8 @@ Route::post('user/edit_detail', 'UserController@edit_detail');
 Route::get('user/logout', 'UserController@logout')->name('logout');
 
 Route::get('user/skip', 'UserController@skip');
+
+Route::get('user/register', 'UserController@register');
 
 Route::get('user/add_match', 'UserController@add_match');
 

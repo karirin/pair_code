@@ -77,21 +77,21 @@
                     <div style="text-align: center;">
                         <image class="howtouse_firstimage" src="storage/top/undraw_feeling_proud_qne1.png" style="width:55%;height: auto;">
                     </div>
-                    <h4 style="font-weight: 900;">職場以外のエンジニアと接する機会が無い</h4>
+                    <h4 style="font-weight: 900;height:4rem;">職場以外のエンジニアと接する機会が無い</h4>
                     <div class="howtouse_content engineer_sarch" style="font-size:1.2rem;">勉強会やセミナーに参加してエンジニアとつながりたい<br>でもそこまで労力をかけたくない。。</div>
                 </div>
-                <div class="worries">
+                <div class="worries" style="vertical-align: top;">
                     <div style="text-align: center;">
                         <image class="howtouse_firstimage" src="storage/top/undraw_Interview_re_e5jn.png" style="width:67%;height: auto;">
                     </div>
-                    <h4 style="font-weight: 900;">独学でしているプログラミングの相談がしたい</h4>
+                    <h4 style="font-weight: 900;height:4rem;">独学でしているプログラミングの相談がしたい</h4>
                     <div class="howtouse_content engineer_sarch" style="font-size:1.2rem;">勉強しているプログラミングの質問をしたい<br>周りに知り合いのエンジニアがいればできるのに。。</div>
                 </div>
-                <div class="worries" style="width: 26%;">
+                <div class="worries">
                     <div style="text-align: center;">
                         <image class="howtouse_firstimage" src="storage/top/undraw_Programming_re_kg9v.png" style="width:92%;height: auto;">
                     </div>
-                    <h4 style="font-weight: 900;">同じスキルを持っているエンジニアとつながりたい</h4>
+                    <h4 style="font-weight: 900;height:4rem;">同じスキルを持っているエンジニアとつながりたい</h4>
                     <div class="howtouse_content engineer_sarch" style="font-size:1.2rem;">同じスキルを持っている人はどういう活躍をしているのか知りたい<br>職場以外でどうすれば見つけられるだろう。。</div>
                 </div>
                 <image class="howtouse_firstimage" src="storage/top/bottom.png" style="width:33%;height: auto;margin-top: 2rem;">
@@ -112,7 +112,7 @@
             </div>
             <div style="text-align: center;margin: 3rem 0;">
                 <div class="description">簡単な４つのステップでマッチング</div>
-                <div style="font-size: 1.3rem;line-height: 2;">
+                <div style="font-size: 1.3rem;line-height: 2;display: flex;flex-wrap: wrap;justify-content: center;">
                     <div class="howtouse">
                         <div style="text-align: center;">
                             <image class="howtouse_firstimage" src="storage/top/undraw_People_search_re_5rre.png" style="width:55%;height: auto;">
