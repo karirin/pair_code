@@ -614,6 +614,9 @@
 }
 
 @media screen and (max-width: 980px){
+    .saling_mail{
+        margin: 0 16%!important;
+    }
     .line{
         display: none;
     }
