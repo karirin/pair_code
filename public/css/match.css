@@ -1327,7 +1327,7 @@ img.my_preview {
     margin-top: 15rem;
 }
 .match_top .page_title{
-    margin-left: -5rem;
+    margin-left: -2rem;
 }
 .fa-solid.fa-circle-question.help_btn{
     font-size: 6rem!important;
@@ -1406,7 +1406,7 @@ a.top_link_header_login img{
     font-size: 2rem;
 }
 #message_count{
-    font-size: 1.57rem;
+    font-size: 1.5rem;
     margin-top: 0.4rem!important;
 }
 .destination_user_list .destination_user_info .destination_user_info_detail .destination_user_name {
