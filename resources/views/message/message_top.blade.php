@@ -9,7 +9,7 @@
     <h3 class="page_title message_title">メッセージ</h3>
     @foreach ($message_relations as $message_relation)
     <div class="message_list">
-        <a href='\message?user_id={{$message_relation->destination_user_id}}' id="message_link">
+        <a href='/message/message?user_id={{$message_relation->destination_user_id}}' id="message_link">
             <div class="destination_user_list">
                 <div class='col-11 destination_user_info'>
 
