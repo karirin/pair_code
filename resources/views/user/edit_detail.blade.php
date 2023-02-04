@@ -101,13 +101,13 @@
                 <input type="hidden" name="skill_count" id="myprofile_skill_count">
                 <input type="hidden" name="myskills">
             </div>
-            <div class="skill_smartphone">
+            <div class="skill_smartphone" style="display:none;">
                 <input type="text" class="skill_select" name="skills" placeholder="PHP JavaScript">
                 <div class="image_size" style="font-size:0.9rem;">※スキル単位で半角スペースを空けてください</div>
             </div>
             <input placeholder="PHP　JavaScript" name="skills" id="skill_myprofile_input" style="display:block;width: 50%;" class="ui-autocomplete-input" autocomplete="off">
             <p class="tag_tittle">取得資格</p>
-            <div class="licence_smartphone">
+            <div class="licence_smartphone" style="display:none;">
                 <input type="text" class="licence_select" name="licences" placeholder="ITパスポート 基本情報技術者試験">
                 <div class="image_size" style="font-size:0.9rem;">※資格単位で半角スペースを空けてください</div>
             </div>
@@ -119,7 +119,7 @@
             <input placeholder="ITパスポート　基本情報技術者" name="name" id="licence_input" style="display: block;width: 50%;" />
             <div class="my_profile">
                 <p class="tag_tittle">自己紹介</p>
-                <textarea placeholder="100文字以内" class="edit_profile form-control" style="height: 30%;width: 126%;" type="text" name="user_profile">{{$profile}}</textarea>
+                <textarea placeholder="100文字以内" class="edit_profile form-control" style="width: auto;" type="text" name="user_profile">{{$profile}}</textarea>
                 <div class="error_profile_form" style="height: 8px;text-align:left;width: 13rem;">
                     <span class="user_profile_error" style="display:none;color: #dc3545;">自己紹介を入力してください</span>
                 </div>
@@ -129,7 +129,7 @@
                 <textarea placeholder="2018年～2022年　
 株式会社XXX 
 ・SEとして自社サービスの運用・保守を担当 
-・チームリーダーの経験も有り" class="edit_workhistory form-control" style="height: 40%;width: 75%;" type="text" name="user_workhistory"></textarea>
+・チームリーダーの経験も有り" class="edit_workhistory form-control" style="height: 40%;" type="text" name="user_workhistory"></textarea>
                 <div class="error_workhistory">
                     <span class="user_workhistory_error" style="color:rgb(220, 53, 69);display: none;">100文字以内で入力してください</span>
                 </div>
