@@ -93,13 +93,6 @@
                     <span class="user_occupation_error" style="display:none;color: #dc3545;">職種を入力してください</span>
                 </div>
             </div>
-            <div class="my_profile">
-                <p class="tag_tittle">自己紹介</p>
-                <textarea placeholder="100文字以内" class="edit_profile form-control" style="height: 30%;width: 126%;" type="text" name="user_profile">{{$profile}}</textarea>
-                <div class="error_profile_form" style="height: 8px;text-align:left;width: 13rem;">
-                    <span class="user_profile_error" style="display:none;color: #dc3545;">自己紹介を入力してください</span>
-                </div>
-            </div>
         </div>
         <div class="col-7" style="margin-left: 4rem;">
             <p class="tag_tittle">スキル</p>
@@ -108,14 +101,29 @@
                 <input type="hidden" name="skill_count" id="myprofile_skill_count">
                 <input type="hidden" name="myskills">
             </div>
+            <div class="skill_smartphone">
+                <input type="text" class="skill_select" name="skills" placeholder="PHP JavaScript">
+                <div class="image_size" style="font-size:0.9rem;">※スキル単位で半角スペースを空けてください</div>
+            </div>
             <input placeholder="PHP　JavaScript" name="skills" id="skill_myprofile_input" style="display:block;width: 50%;" class="ui-autocomplete-input" autocomplete="off">
             <p class="tag_tittle">取得資格</p>
+            <div class="licence_smartphone">
+                <input type="text" class="licence_select" name="licences" placeholder="ITパスポート 基本情報技術者試験">
+                <div class="image_size" style="font-size:0.9rem;">※資格単位で半角スペースを空けてください</div>
+            </div>
             <div id="licence">
                 <input type="hidden" name="myprofile_licences" id="myprofile_licences">
                 <input type="hidden" name="licence_count" id="licence_count">
                 <input type="hidden" name="mylicences">
             </div>
             <input placeholder="ITパスポート　基本情報技術者" name="name" id="licence_input" style="display: block;width: 50%;" />
+            <div class="my_profile">
+                <p class="tag_tittle">自己紹介</p>
+                <textarea placeholder="100文字以内" class="edit_profile form-control" style="height: 30%;width: 126%;" type="text" name="user_profile">{{$profile}}</textarea>
+                <div class="error_profile_form" style="height: 8px;text-align:left;width: 13rem;">
+                    <span class="user_profile_error" style="display:none;color: #dc3545;">自己紹介を入力してください</span>
+                </div>
+            </div>
             <div class="background">
                 <p class="tag_tittle">職歴</p>
                 <textarea placeholder="2018年～2022年　
@@ -151,15 +159,15 @@
 @section('footer')
 @parent
 <script>
-        setTimeout(function() {
-            $(".user_detail_message1").css("display", "none");
-            $(".user_detail_message2").fadeIn();
-        }, 3000);
-        setTimeout(function() {
-            $(".edit_detail_top").fadeIn().css("display", "flex");
-            $(".edit_detail_top_tittle").fadeIn();
-            $(".edit_detail_btn").fadeIn().css("display", "flex");
-            $(".user_detail_message2").css("display", "none");
-        }, 5000);
+    setTimeout(function() {
+        $(".user_detail_message1").css("display", "none");
+        $(".user_detail_message2").fadeIn();
+    }, 3000);
+    setTimeout(function() {
+        $(".edit_detail_top").fadeIn().css("display", "flex");
+        $(".edit_detail_top_tittle").fadeIn();
+        $(".edit_detail_btn").fadeIn().css("display", "flex");
+        $(".user_detail_message2").css("display", "none");
+    }, 5000);
 </script>
 @endsection

@@ -23,7 +23,7 @@
     「いいね」ボタンをクリックします<br>３人にいいねを送ると新規登録が完了します
 </div>
 <div class="row">
-    <div class="col-8 offset-2 center">
+    <div class="col-8 offset-2 center add_match_top">
         <h2 style="font-family: system-ui;" class="three_good">3人に「いいね」を送ってみましょう</h2>
         <i class="fa-solid fa-circle-question help_btn"></i>
         <div class="match_top" style="display: none;margin: 0 9%">

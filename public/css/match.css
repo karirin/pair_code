@@ -614,6 +614,10 @@
 }
 
 @media screen and (max-width: 980px){
+    .add_match_top .match_top{
+        margin: 0!important;
+        margin-left: 13%!important;
+    }
     .skill_smartphone{
         display:block!important;
     }
@@ -657,7 +661,7 @@
         display: none;
     }
     .match_top{
-        margin-left: 7%!important;
+        margin-left: 10%!important;
     }
     .help_message{
         top: 29%;
@@ -688,6 +692,7 @@
     }
     .page_title.serach{
         margin-top: 12rem;
+        margin-bottom: 3rem;
         margin-left: -5rem;
     }
     .page_title.message_title{
@@ -773,7 +778,8 @@
     .login_message,
     .top_message,
     .add_message,
-    .match_message{
+    .match_message,
+    .mail_message{
         font-size: 2.5rem;
         bottom: 15%;
     }
@@ -988,7 +994,7 @@
 
 .skill_select,
 .licence_select {
-    font-size: 3rem;
+    font-size: 2.5rem;
     width: 70%!important;
     margin-top: 0.1rem;
 }
@@ -1087,7 +1093,7 @@ ul.main_ul li a{
 .edit_occupation,
 .edit_profile,
 .edit_workhistory{
-    font-size: 3rem;
+    font-size: 2.5rem;
     width: 70%!important;
     height: auto!important;
 }
@@ -1364,13 +1370,13 @@ a.top_link_header_login img{
     left: 30%;
 }
 .help_message3{
-    top: 80%;
+    top: 88%;
     left: 35%;
     font-size: 2rem;
 }
 
 .help_message4{
-    top: 80%;
+    top: 88%;
     left: 7%;
     font-size: 2rem;
 }
