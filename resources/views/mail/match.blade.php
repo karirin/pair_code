@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="saling_mail" style="margin: 0 24%;">
+    <div style="text-align: center;">
         <h2>Pair Codeでマッチングしました！</h2>
         <span>下のURLをクリックして、マッチした相手とメッセージでやり取りしましょう。</span>
         <div style="text-align: center;"><a href="{{$url}}" class="btn-square">トップ画面へ</a></div>
