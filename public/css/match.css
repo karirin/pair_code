@@ -614,6 +614,24 @@
 }
 
 @media screen and (max-width: 980px){
+    .skill_smartphone{
+        display:block!important;
+    }
+    .licence_smartphone{
+        display:block!important;
+    }
+    #skill_myprofile_input{
+        display:none!important;
+    }
+    #myprofile_skill{
+        display:none!important;
+    }
+    #licence_input{
+        display:none!important;
+    }
+    #licence{
+        display:none!important;
+    }
     .saling_mail{
         margin: 0 16%!important;
     }
@@ -968,6 +986,13 @@
     width: 70%;
 }
 
+.skill_select,
+.licence_select {
+    font-size: 3rem;
+    width: 70%!important;
+    margin-top: 0.1rem;
+}
+
 .user_add_top{
     flex: none;
     max-width: none;
@@ -1068,7 +1093,8 @@ ul.main_ul li a{
 }
 
 #skill_myprofile_input,
-#licence_input{
+#licence_input
+{
     padding: 1rem 2rem;
     font-size: 3rem;
     width: 80%!important;
@@ -1644,7 +1670,9 @@ a.top_link_header_login img{
 .profile_top_form .fas.fa-plus.licence_btn,
 .profile_top_form .fas.fa-plus.myprofile_skill_btn,
 .profile_top_form .fas.fa-plus.myprofile_licence_btn,
-.profile_top_form .user_workhistory{
+.profile_top_form .user_workhistory,
+.profile_top_form .fas.fa-minus.licence_btn,
+.profile_top_form .fas.fa-minus.skill_btn{
     font-size: 3rem;
 }
 

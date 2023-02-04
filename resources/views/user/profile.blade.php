@@ -38,7 +38,7 @@
                         </div>
                     </div>
                     <div class="col-8" style="margin-top: 1rem;margin-left: 1rem;">
-                        <div class="tags" style="width: 60%;">
+                        <div class="tags">
                             <div class="tag_skill" style="margin-bottom: 1rem;">
                                 <p class="tag_tittle" style="margin-top: 0;">スキル</p>
                                 @php
@@ -145,11 +145,15 @@
                                 @endforeach<i class="fas fa-plus myprofile_skill_btn"></i>
                         </div>
                         <input placeholder="PHP　JavaScript" name="skills" id="skill_myprofile_input" style="display:block;" />
+                        <div class="skill_smartphone" style="display:none;">
+                            <input type="hidden" class="skill_select">
+                            <div class="image_size" style="font-size:0.9rem;">※スキル単位で半角スペースを空けてください</div>
+                        </div>
                         <input type="hidden" name="myprofile_skills" id="myprofile_skills">
                         <input type="hidden" name="skill_count" id="myprofile_skill_count">
-                        <input type="hidden" name="myskills" value="{{$current_user->skill}}">
+                        <input type="hidden" name="myskills" class="myskills" value="{{$current_user->skill}}">
                         <p class="tag_tittle">取得資格</p>
-                        <div id="licence" style="width: 60%;">
+                        <div id="licence">
                             @php
                             $l = 0;
                             @endphp
@@ -163,9 +167,13 @@
                                 @endforeach<i class="fas fa-plus myprofile_licence_btn"></i>
                         </div>
                         <input placeholder="ITパスポート　基本情報技術者" name="name" id="licence_input" />
+                        <div class="licence_smartphone" style="display:none;">
+                            <input type="hidden" class="licence_select">
+                            <div class="image_size" style="font-size:0.9rem;">※資格単位で半角スペースを空けてください</div>
+                        </div>
                         <input type="hidden" name="myprofile_licences" id="myprofile_licences">
                         <input type="hidden" name="licence_count" id="licence_count">
-                        <input type="hidden" name="mylicences" value="{{$current_user->licence}}">
+                        <input type="hidden" name="mylicences" class="mylicences" value="{{$current_user->licence}}">
                         <div class="background">
                             <p class="tag_tittle">自己紹介</p>
                             <p class="edit_profile">{{$current_user->workhistory}}</p>

@@ -1673,9 +1673,14 @@ $(document).on('click', '.edit_done', function() {
     licences = licences.join(' ');
     licences_narrow = licences_narrow.join(' ');
     // licences_narrower = licences_narrower.join(' ');
-    skill_div_narrow.value = skills_narrow;
-    myprofile_skill_div.value = myprofile_skills;
-    licence_div.value = licences;
+    //skill_div_narrow.value = skills_narrow;
+    if ($(window).width() <= 980) {
+        myprofile_skill_div.value = $('.skill_select')[0].value;
+        licence_div.value = $('.licence_select')[0].value;
+    }else{
+        myprofile_skill_div.value = myprofile_skills;
+        licence_div.value = licences;
+    }
     // licence_div_narrow.value = licences_narrow;
     // licence_div_narrower.value = licences_narrower;
 
