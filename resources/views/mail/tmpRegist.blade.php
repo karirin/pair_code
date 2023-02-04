@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="saling_mail" style="margin: 0 24%;">
+    <div class="saling_mail">
         <h2>Pair Codeへのご登録ありがとうございます！</h2>
         <span>下のURLをクリックして、メールアドレスの認証を完了してください。</span>
         <div style="text-align: center;"><a href="{{$url}}" class="btn-square">認証を完了する</a></div>

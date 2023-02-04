@@ -1676,10 +1676,13 @@ a.top_link_header_login img{
 .profile_top_form .fas.fa-plus.licence_btn,
 .profile_top_form .fas.fa-plus.myprofile_skill_btn,
 .profile_top_form .fas.fa-plus.myprofile_licence_btn,
-.profile_top_form .user_workhistory,
 .profile_top_form .fas.fa-minus.licence_btn,
 .profile_top_form .fas.fa-minus.skill_btn{
     font-size: 3rem;
+}
+
+.profile_top_form .user_workhistory{
+    font-size: 2.5rem;
 }
 
 .profile_top_form .profile_top{
