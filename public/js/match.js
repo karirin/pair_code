@@ -7,9 +7,13 @@ var user_age = $('.form .age').text(),
     user_address_narrow = $('.form .address_narrow').text(),
     user_workhistory = $('.form .workhistory').text(),
     user_workhistory_narrow = $('.form .workhistory_narrow').text(),
-    user_profile = $('.user_profile').text(),
-    user_skill = $('.myskills')[0].value,
-    user_licence = $('.mylicences')[0].value;
+    user_profile = $('.user_profile').text();
+    if ($('.myskills').length) {
+        user_skill = $('.myskills')[0].value;
+    }
+    if ($('.mylicences').length) {
+        user_licence = $('.mylicences')[0].value;
+    }
 
 window.onload = function() {
     $("#splash").delay(100).fadeOut('slow'); //ローディング画面を1.5秒（1500ms）待機してからフェードアウト
