@@ -311,6 +311,15 @@ nav.navbar.navbar-dark {
     border-radius: 2rem;
 }
 
+.haikei{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: -5%;
+    z-index: -1;
+    left: 0%;
+}
+
 .user_add_btn,
 .user_login_btn{
     position: absolute;
@@ -321,14 +330,14 @@ nav.navbar.navbar-dark {
 }
 
 .user_add_btn{
-    bottom: 9%;
-    right: 10%;
+    bottom: 16%;
+    right: 13%;
     padding: 0.5rem;
 }
 
 .user_login_btn{
-    bottom: 22%;
-    right: 10%;
+    bottom: 30%;
+    right: 13%;
     padding: 0.5rem;
 }
 

@@ -6,10 +6,11 @@
 @section('content')
 <h2 class="user_detail_message1">メール認証が完了しました</h2>
 <h2 class="user_detail_message2" style="display: none;">ユーザー詳細情報の登録をお願いします</h2>
-<h2 class="edit_detail_top_tittle" style="text-align: center;display:none;">新規登録</h2>
-<form method="post" action="{{ asset('user/edit_detail') }}" enctype="multipart/form-data">
+
+<form method="post" class="edit_detail_top_form" style="display:none;" action="{{ asset('user/edit_detail') }}" enctype="multipart/form-data">
     @csrf
-    <div class="row edit_detail_top" style="margin-left: 30%;height: 66%;display:none;">
+    <h2 class="edit_detail_top_tittle" style="text-align: center;display:none;">新規登録</h2>
+    <div class="row edit_detail_top" style="margin-left: 30%;height: 66%;display: flex;">
         <div class="col-3">
             <div class="user_age">
                 <p class="tag_tittle">年齢</p>
@@ -93,30 +94,30 @@
                     <span class="user_occupation_error" style="display:none;color: #dc3545;">職種を入力してください</span>
                 </div>
             </div>
-        </div>
-        <div class="col-7" style="margin-left: 4rem;">
             <p class="tag_tittle">スキル</p>
             <div id="myprofile_skill">
                 <input type="hidden" name="myprofile_skills" id="myprofile_skills">
                 <input type="hidden" name="skill_count" id="myprofile_skill_count">
                 <input type="hidden" name="myskills">
             </div>
-            <div class="skill_smartphone" style="display:none;">
-                <input type="text" class="skill_select" name="skills" placeholder="PHP JavaScript">
-                <div class="image_size" style="font-size:0.9rem;">※スキル単位で半角スペースを空けてください</div>
-            </div>
-            <input placeholder="PHP　JavaScript" name="skills" id="skill_myprofile_input" style="display:block;width: 50%;" class="ui-autocomplete-input" autocomplete="off">
+            <input placeholder="PHP　JavaScript" name="skills" id="skill_myprofile_input" style="display:block;width: 125%;" class="ui-autocomplete-input" autocomplete="off">
             <p class="tag_tittle">取得資格</p>
-            <div class="licence_smartphone" style="display:none;">
-                <input type="text" class="licence_select" name="licences" placeholder="ITパスポート 基本情報技術者試験">
-                <div class="image_size" style="font-size:0.9rem;">※資格単位で半角スペースを空けてください</div>
-            </div>
             <div id="licence">
                 <input type="hidden" name="myprofile_licences" id="myprofile_licences">
                 <input type="hidden" name="licence_count" id="licence_count">
                 <input type="hidden" name="mylicences">
             </div>
-            <input placeholder="ITパスポート　基本情報技術者" name="name" id="licence_input" style="display: block;width: 50%;" />
+            <input placeholder="ITパスポート　基本情報技術者" name="name" id="licence_input" style="display: block;width: 125%;" />
+        </div>
+        <div class="col-7" style="margin-left: 4rem;">
+            <div class="skill_smartphone" style="display:none;">
+                <input type="text" class="skill_select" name="skills" placeholder="PHP JavaScript">
+                <div class="image_size" style="font-size:0.9rem;">※スキル単位で半角スペースを空けてください</div>
+            </div>
+            <div class="licence_smartphone" style="display:none;">
+                <input type="text" class="licence_select" name="licences" placeholder="ITパスポート 基本情報技術者試験">
+                <div class="image_size" style="font-size:0.9rem;">※資格単位で半角スペースを空けてください</div>
+            </div>
             <div class="my_profile">
                 <p class="tag_tittle">自己紹介</p>
                 <textarea placeholder="100文字以内" class="edit_profile form-control" style="width: auto;" type="text" name="user_profile">{{$profile}}</textarea>
@@ -135,10 +136,10 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="flex_btn margin_top edit_detail_btn" style="margin: 0 34%;width: 35%;margin-top: 4.5rem;margin-bottom: 2rem;display:none;">
-        <input style="width: 90px;" class="btn btn-outline-dark edit_detail_top_btn" type="button" onclick="history.back()" value="戻る">
-        <input style="width: 90px;" class="btn btn-outline-info edit_done edit_detail_top_btn" type="submit" value="登録">
+        <div class="flex_btn margin_top edit_detail_btn" style="margin: 2rem 11% 2rem;width: 35%;display:none;">
+            <input style="width: 90px;" class="btn btn-outline-dark edit_detail_top_btn" type="button" onclick="history.back()" value="戻る">
+            <input style="width: 90px;" class="btn btn-outline-info edit_done edit_detail_top_btn" type="submit" value="登録">
+        </div>
     </div>
     <input type="hidden" name="name" value="{{$name}}">
     <input type="hidden" name="email" value="{{$email}}">
@@ -164,7 +165,7 @@
         $(".user_detail_message2").fadeIn();
     }, 3000);
     setTimeout(function() {
-        $(".edit_detail_top").fadeIn().css("display", "flex");
+        $(".edit_detail_top_form").fadeIn();
         $(".edit_detail_top_tittle").fadeIn();
         $(".edit_detail_btn").fadeIn().css("display", "flex");
         $(".user_detail_message2").css("display", "none");

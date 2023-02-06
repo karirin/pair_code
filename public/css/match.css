@@ -11,6 +11,10 @@
     font-family: sans-serif
 }
 
+.top_image{
+    margin-top: 2rem;
+}
+
 .match_top{
     text-align: left;
 }
@@ -184,7 +188,7 @@
 .top_logo{
     width: 53%;
     position: absolute;
-    top: 8%;
+    top: 0%;
     right: 1%;
     height: auto;
 }
@@ -620,6 +624,9 @@ border-bottom: none;/*線を消す*/
 }
 
 @media screen and (max-width: 980px){
+    .haikei{
+        display: none;
+    }
     .add_match_top .match_top{
         margin: 0!important;
         margin-left: 13%!important;
@@ -853,6 +860,7 @@ border-bottom: none;/*線を消す*/
         width: 62%!important; 
         height: auto!important;
         margin-top: 34rem;
+        margin-left:0!important;
     }
     
     .test_btn{
@@ -1122,7 +1130,7 @@ ul.main_ul li a{
 }
 
 .edit_detail_btn.flex_btn{
-    margin: 2rem 12rem 4rem 12rem!important;
+    margin: 4rem 12rem 4rem 8rem!important
 }
 
 .match_box{
