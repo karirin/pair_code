@@ -56,7 +56,6 @@ class User extends Authenticatable
         }
 
         // 新しいユーザーを作成
-        log::debug($providerUser);
         $user = new User();
         $user->unique_id = $providerUser->nickname;
         $user->name = $providerUser->name;
@@ -72,8 +71,6 @@ class User extends Authenticatable
         });
 
         Auth::login($user, true);
-        log::debug($user);
-        log::debug("user");
         return redirect('user/add_match');
     }
 

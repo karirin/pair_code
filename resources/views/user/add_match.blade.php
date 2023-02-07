@@ -4,15 +4,15 @@
 @parent
 @endsection
 @section('content')
-<div id="splash">Loading...</div>
+<div id="splash" style="left: 48%;bottom: 53%;"></div>
 <div class="modal_help"></div>
 <div class="modal_unclick"></div>
 <h2 class="welcome">ありがとうございます</br>新規登録完了しました</h2>
 <div class="match_box">
-    <span class="box-title">いいねした人数</span>
+    <span class="box-title"><span style="background-color:#ffe1ae24;display: inline-block;">いいねした人数</span></span>
     <span class="match_count">0</span>人/3人
 </div>
-<i class="fa-regular fa-circle-xmark help_close1" style="display: none;"></i>
+<i class="fa-regular fa-circle-xmark help_close1" style="display: none;z-index: 20;"></i>
 <i class="fa-regular fa-circle-xmark help_close2" style="display: none;"></i>
 <div class="help_message" style="display:none;">
     <span class="help-title">いいねの流れ</span>
@@ -20,10 +20,10 @@
 </div>
 <div class="help_message2" style="display:none;">
     <span class="help-title">いいねの流れ</span>
-    「いいね」ボタンをクリックします
+    「いいね」ボタンをクリックします<br>３人にいいねを送ると新規登録が完了します
 </div>
 <div class="row">
-    <div class="col-8 offset-2 center">
+    <div class="col-8 offset-2 center add_match_top">
         <h2 style="font-family: system-ui;" class="three_good">3人に「いいね」を送ってみましょう</h2>
         <i class="fa-solid fa-circle-question help_btn"></i>
         <div class="match_top" style="display: none;margin: 0 9%">
@@ -66,8 +66,8 @@
 @endsection
 @section('footer')
 @parent
-<i class="fa-solid fa-arrow-pointer pointer" id="pointer" style="display: none;"></i>
-<i class="fa-solid fa-arrow-pointer pointer2" id="pointer2" style="display: none;"></i>
+<i class="fa-solid fa-arrow-pointer pointer add_match" id="pointer" style="display: none;"></i>
+<i class="fa-solid fa-arrow-pointer pointer2 add_match" id="pointer2" style="display: none;"></i>
 <script>
     window.onload = function() {
         $("#splash").delay(100).fadeOut('slow'); //ローディング画面を1.5秒（1500ms）待機してからフェードアウト
@@ -90,18 +90,33 @@
                 'z-index': '15',
                 'position': 'relative'
             });
-            setInterval(function() {
-                $('.pointer').animate({
-                    'left': '34%',
-                    'top': '30%'
-                });
-                $('.pointer').fadeOut();
-                $('.pointer').animate({
-                    'left': '30%',
-                    'top': '40%'
-                });
-                $('.pointer').fadeIn();
-            }, 1000);
+            if ($(window).width() <= 980) {
+                setInterval(function() {
+                    $('.pointer').animate({
+                        'left': '28%',
+                        'top': '21%'
+                    });
+                    $('.pointer').fadeOut();
+                    $('.pointer').animate({
+                        'left': '22%',
+                        'top': '25%'
+                    });
+                    $('.pointer').fadeIn();
+                }, 1000);
+            } else {
+                setInterval(function() {
+                    $('.pointer').animate({
+                        'left': '33%',
+                        'top': '33%'
+                    });
+                    $('.pointer').fadeOut();
+                    $('.pointer').animate({
+                        'left': '28%',
+                        'top': '40%'
+                    });
+                    $('.pointer').fadeIn();
+                }, 1000);
+            }
             // ユーザー詳細画面
             $(document).on('click', "#sample_user", function() {
                 var $target_modal = $(this).data("target");
@@ -140,18 +155,33 @@
                 $('.pointer').fadeOut();
                 $('#pointer2').addClass('pointer2');
                 $('.pointer2').fadeIn();
-                setInterval(function() {
-                    $('.pointer2').animate({
-                        'left': '45%',
-                        'top': '73%'
-                    });
-                    $('.pointer2').fadeOut();
-                    $('.pointer2').animate({
-                        'left': '38%',
-                        'top': '80%'
-                    });
-                    $('.pointer2').fadeIn();
-                }, 1000);
+                if ($(window).width() <= 980) {
+                    setInterval(function() {
+                        $('.pointer2').animate({
+                            'left': '72%',
+                            'top': '66%'
+                        });
+                        $('.pointer2').fadeOut();
+                        $('.pointer2').animate({
+                            'left': '60%',
+                            'top': '70%'
+                        });
+                        $('.pointer2').fadeIn();
+                    }, 1000);
+                } else {
+                    setInterval(function() {
+                        $('.pointer2').animate({
+                            'left': '45%',
+                            'top': '71%'
+                        });
+                        $('.pointer2').fadeOut();
+                        $('.pointer2').animate({
+                            'left': '38%',
+                            'top': '80%'
+                        });
+                        $('.pointer2').fadeIn();
+                    }, 1000);
+                }
                 $(document).on('click', ".match_good_btn", function() {
                     $('#pointer2').removeClass('pointer2');
                     $('#pointer2').fadeOut();
@@ -210,18 +240,33 @@
             'z-index': '15',
             'position': 'relative'
         });
-        setInterval(function() {
-            $('.pointer').animate({
-                'left': '34%',
-                'top': '30%'
-            });
-            $('.pointer').fadeOut();
-            $('.pointer').animate({
-                'left': '30%',
-                'top': '40%'
-            });
-            $('.pointer').fadeIn();
-        }, 1000);
+        if ($(window).width() <= 980) {
+            setInterval(function() {
+                $('.pointer').animate({
+                    'left': '28%',
+                    'top': '21%'
+                });
+                $('.pointer').fadeOut();
+                $('.pointer').animate({
+                    'left': '22%',
+                    'top': '25%'
+                });
+                $('.pointer').fadeIn();
+            }, 1000);
+        } else {
+            setInterval(function() {
+                $('.pointer').animate({
+                    'left': '33%',
+                    'top': '33%'
+                });
+                $('.pointer').fadeOut();
+                $('.pointer').animate({
+                    'left': '28%',
+                    'top': '40%'
+                });
+                $('.pointer').fadeIn();
+            }, 1000);
+        }
         // ユーザー詳細画面
         $(document).on('click', "#sample_user", function() {
             var $target_modal = $(this).data("target");
@@ -260,18 +305,33 @@
             $('.pointer').fadeOut();
             $('#pointer2').addClass('pointer2');
             $('.pointer2').fadeIn();
-            setInterval(function() {
-                $('.pointer2').animate({
-                    'left': '45%',
-                    'top': '73%'
-                });
-                $('.pointer2').fadeOut();
-                $('.pointer2').animate({
-                    'left': '38%',
-                    'top': '80%'
-                });
-                $('.pointer2').fadeIn();
-            }, 1000);
+            if ($(window).width() <= 980) {
+                setInterval(function() {
+                    $('.pointer2').animate({
+                        'left': '72%',
+                        'top': '66%'
+                    });
+                    $('.pointer2').fadeOut();
+                    $('.pointer2').animate({
+                        'left': '60%',
+                        'top': '70%'
+                    });
+                    $('.pointer2').fadeIn();
+                }, 1000);
+            } else {
+                setInterval(function() {
+                    $('.pointer2').animate({
+                        'left': '45%',
+                        'top': '71%'
+                    });
+                    $('.pointer2').fadeOut();
+                    $('.pointer2').animate({
+                        'left': '38%',
+                        'top': '80%'
+                    });
+                    $('.pointer2').fadeIn();
+                }, 1000);
+            }
             $(document).on('click', ".match_good_btn", function() {
                 $('#pointer2').removeClass('pointer2');
                 $('#pointer2').fadeOut();

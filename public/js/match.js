@@ -7,7 +7,13 @@ var user_age = $('.form .age').text(),
     user_address_narrow = $('.form .address_narrow').text(),
     user_workhistory = $('.form .workhistory').text(),
     user_workhistory_narrow = $('.form .workhistory_narrow').text(),
-    user_profile = $('.form .profile').text();
+    user_profile = $('.user_profile').text();
+    if ($('.myskills').length) {
+        user_skill = $('.myskills')[0].value;
+    }
+    if ($('.mylicences').length) {
+        user_licence = $('.mylicences')[0].value;
+    }
 
 window.onload = function() {
     $("#splash").delay(100).fadeOut('slow'); //ローディング画面を1.5秒（1500ms）待機してからフェードアウト
@@ -114,14 +120,18 @@ window.onload = function() {
             $('.add_message').fadeOut(3000);
         }
     }
+
+    if ($('.mail_message').length) {
+        if ($('.mail_message')[0].textContent !== "") {
+            $('.mail_message').fadeIn();
+            $('.mail_message').fadeOut(3000);
+        }
+    }
 }
 
 // 編集ボタン押下時の処理
 $(document).on('click', '.profile_edit_btn', function() {
     scroll_position = $(this).scrollTop();
-    // $('.profile_edit_btn').fadeOut();
-    // $('.myprofile_count').fadeOut();
-    // $('.follow_user').fadeOut();
     $('.profile_edit_btn').hide();
     $('.myprofile_count').hide();
     $('.follow_user').hide();
@@ -131,11 +141,14 @@ $(document).on('click', '.profile_edit_btn', function() {
     $('.form .age').replaceWith('<input class="edit_age form-control" type="number" name="user_age" value="' + user_age + '" style="width: 30%;display: inline-block;margin-right: 0.5rem;">');
     $('.form .age_narrow').replaceWith('<input class="edit_age form-control" type="number" name="user_age_narrow" value="' + user_age_narrow + '" style="width: 30%;display: inline-block;margin-right: 0.5rem;">');
     $('.form .occupation').replaceWith('<select name="occupation" class="form-control edit_occupation" style="width: 93%;" value="' + user_occupation + '"><option value="">--選択してください--</option><option value="ネットワークエンジニア">ネットワークエンジニア</option><option value="Webエンジニア">Webエンジニア</option><option value="フロントエンドエンジニア">フロントエンドエンジニア</option><option value="インフラエンジニア">インフラエンジニア</option><option value="サーバーエンジニア">サーバーエンジニア</option><option value="データベースエンジニア">データベースエンジニア</option><option value="IoTエンジニア">IoTエンジニア</option><option value="制御・組み込みエンジニア">制御・組み込みエンジニア</option><option value="テストエンジニア">テストエンジニア</option><option value="その他">その他</option></select>');
-    $('.form .occupation_narrow').replaceWith('<select name="occupation_narrow" class="form-control edit_occupation" value="' + user_occupation_narrow + '"><option value="">--選択してください--</option><option value="ネットワークエンジニア">ネットワークエンジニア</option><option value="Webエンジニア">Webエンジニア</option><option value="フロントエンドエンジニア">フロントエンドエンジニア</option><option value="インフラエンジニア">インフラエンジニア</option><option value="サーバーエンジニア">サーバーエンジニア</option><option value="データベースエンジニア">データベースエンジニア</option><option value="IoTエンジニア">IoTエンジニア</option><option value="制御・組み込みエンジニア">制御・組み込みエンジニア</option><option value="テストエンジニア">テストエンジニア</option><option value="その他">その他</option></select>');
+    $('.form .occupation_narrow').replaceWith('<select name="occupation_narrow" class="form-control edit_occupation" value="' + user_occupation_narrow + '"><option value="">--選択してください--</option><option value="ネットワークエンジニア">ネットワークエンジニア</option><option value="Webエンジニア">Webエンジニア</option><option value="フロントエンドエンジニア">フロントエンドエンジニア</option><option value="インフラエンジニア">インフラエンジニア</option><option value="サーバーエンジニア">サーバーエンジニア</option><option value="データベースエンジニア">データベースエンジニア</option><option value="IoTエンジニア">IoTエンジニア</option><option value="制御・組み込みエンジニア">制御・組み込みエンジニア</option><option value="テストエンジニア">テストエンジニア</option><option value="その他">その他</option></select>');    
     $(".form .edit_occupation option[value='" + user_occupation + "']").prop('selected', true);
     $('.form .address').replaceWith('<select name="address" class="form-control edit_address" value="' + user_address + '"><option value="">--選択してください--</option><option value="北海道">北海道</option><option value="青森県">青森県</option><option value="岩手県">岩手県</option><option value="宮城県">宮城県</option><option value="秋田県">秋田県</option><option value="山形県">山形県</option><option value="福島県">福島県</option><option value="茨城県">茨城県</option><option value="栃木県">栃木県</option><option value="群馬県">群馬県</option><option value="埼玉県">埼玉県</option><option value="千葉県">千葉県</option><option value="東京都">東京都</option><option value="神奈川県">神奈川県</option><option value="新潟県">新潟県</option><option value="富山県">富山県</option><option value="石川県">石川県</option><option value="福井県">福井県</option><option value="山梨県">山梨県</option><option value="長野県">長野県</option><option value="岐阜県">岐阜県</option><option value="静岡県">静岡県</option><option value="愛知県">愛知県</option><option value="三重県">三重県</option><option value="滋賀県">滋賀県</option><option value="京都府">京都府</option><option value="大阪府">大阪府</option><option value="兵庫県">兵庫県</option><option value="奈良県">奈良県</option><option value="和歌山県">和歌山県</option><option value="鳥取県">鳥取県</option><option value="島根県">島根県</option><option value="岡山県">岡山県</option><option value="広島県">広島県</option><option value="山口県">山口県</option><option value="徳島県">徳島県</option><option value="香川県">香川県</option><option value="愛媛県">愛媛県</option><option value="高知県">高知県</option><option value="福岡県">福岡県</option><option value="佐賀県">佐賀県</option><option value="長崎県">長崎県</option><option value="熊本県">熊本県</option><option value="大分県">大分県</option><option value="宮崎県">宮崎県</option><option value="鹿児島県">鹿児島県</option><option value="沖縄県">沖縄県</option></select>');
     $('.form .address_narrow').replaceWith('<select name="address_narrow" class="form-control edit_address" value="' + user_address_narrow + '"><option value="">--選択してください--</option><option value="北海道">北海道</option><option value="青森県">青森県</option><option value="岩手県">岩手県</option><option value="宮城県">宮城県</option><option value="秋田県">秋田県</option><option value="山形県">山形県</option><option value="福島県">福島県</option><option value="茨城県">茨城県</option><option value="栃木県">栃木県</option><option value="群馬県">群馬県</option><option value="埼玉県">埼玉県</option><option value="千葉県">千葉県</option><option value="東京都">東京都</option><option value="神奈川県">神奈川県</option><option value="新潟県">新潟県</option><option value="富山県">富山県</option><option value="石川県">石川県</option><option value="福井県">福井県</option><option value="山梨県">山梨県</option><option value="長野県">長野県</option><option value="岐阜県">岐阜県</option><option value="静岡県">静岡県</option><option value="愛知県">愛知県</option><option value="三重県">三重県</option><option value="滋賀県">滋賀県</option><option value="京都府">京都府</option><option value="大阪府">大阪府</option><option value="兵庫県">兵庫県</option><option value="奈良県">奈良県</option><option value="和歌山県">和歌山県</option><option value="鳥取県">鳥取県</option><option value="島根県">島根県</option><option value="岡山県">岡山県</option><option value="広島県">広島県</option><option value="山口県">山口県</option><option value="徳島県">徳島県</option><option value="香川県">香川県</option><option value="愛媛県">愛媛県</option><option value="高知県">高知県</option><option value="福岡県">福岡県</option><option value="佐賀県">佐賀県</option><option value="長崎県">長崎県</option><option value="熊本県">熊本県</option><option value="大分県">大分県</option><option value="宮崎県">宮崎県</option><option value="鹿児島県">鹿児島県</option><option value="沖縄県">沖縄県</option></select>');
     $(".form .edit_address option[value='" + user_address + "']").prop('selected', true);
+    //$('.form .skill_select').replaceWith('<select name="skills" class="form-control edit_skill_select" style="width: 93%;" value="' + user_occupation + '"><option value="">--選択してください--</option><option value="AWS">AWS</option><option value="Bootstrap">Bootstrap</option><option value="C">C</option><option value="CakePHP">CakePHP</option><option value="C#">C#</option><option value="C++">C++</option><option value="COBOL">COBOL</option><option value="CSS">CSS</option><option value="Docker">Docker</option><option value="Go">Go</option><option value="Git">Git</option><option value="HTTP">HTTP</option><option value="HTML">HTML</option><option value="iOS">iOS</option><option value="Java">Java</option><option value="JavaScript">JavaScript</option><option value="JIRA">JIRA</option><option value="Kotlin">Kotlin</option><option value="Laravel">Laravel</option><option value="MATLAB">MATLAB</option><option value="MySQL">MySQL</option><option value="Oracle Database">Oracle Database</option><option value="Perl">Perl</option><option value="PHP">PHP</option><option value="PostgreSQL">PostgreSQL</option><option value="Python">Python</option><option value="R">R</option><option value="React">React</option><option value="Ruby">Ruby</option><option value="Ruby on Rails">Ruby on Rails</option><option value="Rust">Rust</option><option value="SVN">SVN</option><option value="SSL">SSL</option><option value="SQLite">SQLite</option><option value="TypeScript">TypeScript</option><option value="Vue.js">Vue.js</option></select>');
+    $('.form .skill_select').replaceWith('<input type="text" class="skill_select" name="skills" value="'+user_skill+'" placeholder="PHP JavaScript">');
+    $('.form .licence_select').replaceWith('<input type="text" class="licence_select" name="licences" value="'+user_licence+'" placeholder="ITパスポート 基本情報技術者試験">');
     $('.workhistory').replaceWith('<textarea class="edit_workhistory form-control" type="text" style="width: 60%;height: auto;" name="user_workhistory" value="' + user_workhistory + '">' + user_workhistory);
     $('.workhistory_narrow').replaceWith('<textarea class="edit_workhistory form-control" type="text" name="user_workhistory_narrow" value="' + user_workhistory_narrow + '">' + user_workhistory_narrow);
     $('.workhistory_narrower').replaceWith('<textarea class="edit_workhistory form-control" type="text" name="user_workhistory_narrower" >' + user_workhistory_narrower);
@@ -186,6 +199,7 @@ $(document).on('click', ".profile_close", function() {
     $('.content').css('position','unset');
     $('#match_btn').prop("disabled", false);
     $('#unmatch_btn').prop("disabled", false);
+    $('.match_top').css('position', '');
 });
 
 $(document).on('click', ".profile_narrow_close", function() {
@@ -230,6 +244,7 @@ $(document).on('click', ".match_user", function() {
     $('.matchuser_detaile .matchs_flg').val($($target_modal + ' > .matchs_flg')[0].value);
     $('.matchuser_detaile_prof').fadeIn();
     $(window).scrollTop(0);
+    console.log($($target_modal + ' > .click_flg')[0].value);
     if ($($target_modal + ' > .click_flg')[0].value != 0) {
         $('.match_good_btn').hide();
     } else {
@@ -250,7 +265,7 @@ $(document).on('click', ".modal_match", function() {
     $('.modal_match').fadeOut();
     $('.matchuser_detaile').fadeOut();
     $('.matchuser_detaile_prof').fadeOut();
-    $('.content').css('position', 'unset');
+    $('.match_top').css('position', '');
     $('#match_btn').prop("disabled", false);
     $('#unmatch_btn').prop("disabled", false);
 });
@@ -346,11 +361,11 @@ $(document).on('click', ".message_submit", function() {
         mmi = ('0' + mi).slice(-2),
         day = hh + ':' + mmi;
         // //アップロードするファイルのデータ取得
-        var fileData = document.getElementById("my_image").files[0];
+        //var fileData = document.getElementById("my_image").files[0];
         // //フォームデータを作成する
-        var form = new FormData();
+        // var form = new FormData();
 
-        form.append("file", fileData);
+        // form.append("file", fileData);
         let input = document.getElementById('my_image');
         $.ajax({
         type: 'POST',
@@ -379,7 +394,7 @@ $(document).on('click', '#match_btn', function() {
         target_modal = $(this).data("target"),
         match_modal = $(this).data("match"),
         card = $('.match_card:last')[0],
-        user_id = card.id.substr(5, 2),
+        user_id = card.id.substr(5),
         user_name = $('#' + card.id + ' > #matchuser_'+ user_id +' > .profile_name').text();
     $('#' + card.id + ' > .match_card_color').fadeIn();
     $('#' + card.id + ' > #matchuser_'+ user_id +' > .profile_name').css({'z-index': '15'});
@@ -461,9 +476,17 @@ $(document).ready(function() {
             $('.user_pass_error').fadeOut();
         }
     });
+    $('.user_mail_input').change(function() {
+        var str = $(this).value;
+        if (str != '') {
+            $('.user_mail_input')[0].setAttribute("style", "border-color: #ced4da;");
+            $('.user_mail_error').fadeOut();
+        }
+    });
 });
 
 $(document).on('click', '.submit_btn', function() {
+    var error=0;
     if ($('.user_name_input')[0].value == '' && $('.user_pass_input')[0].value == '') {
         $('.user_name_input')[0].setAttribute("style", "border-color: #dc3545;");
         $('.user_pass_input')[0].setAttribute("style", "border-color: #dc3545;");
@@ -473,11 +496,40 @@ $(document).on('click', '.submit_btn', function() {
     if ($('.user_name_input')[0].value == '') {
         $('.user_name_input')[0].setAttribute("style", "border-color: #dc3545;");
         $('.user_name_error').fadeIn();
-        return false;
+        error++;
     }
     if ($('.user_pass_input')[0].value == '') {
         $('.user_pass_input')[0].setAttribute("style", "border-color: #dc3545;");
         $('.user_pass_error').fadeIn();
+        error++;
+    }
+    if ($('.user_mail_input')[0].value == '') {
+        $('.user_mail_input')[0].setAttribute("style", "border-color: #dc3545;");
+        $('.user_mail_error').fadeIn();
+        error++;
+    }
+    if(0 < error){
         return false;
     }
+});
+
+$(document).on('click', '.edit_done', function() {
+    console.log("teste");
+    //console.log($('.edit_age')[0].value);
+    // if ($('.edit_age')[0].value == '' && $('.edit_profile')[0].value == '') {
+    //     $('.user_name_input')[0].setAttribute("style", "border-color: #dc3545;");
+    //     $('.user_pass_input')[0].setAttribute("style", "border-color: #dc3545;");
+    //     $('.user_name_error').fadeIn();
+    //     $('.user_pass_error').fadeIn();
+    // }
+    // if ($('.user_name_input')[0].value == '') {
+    //     $('.user_name_input')[0].setAttribute("style", "border-color: #dc3545;");
+    //     $('.user_name_error').fadeIn();
+    //     return false;
+    // }
+    // if ($('.user_pass_input')[0].value == '') {
+    //     $('.user_pass_input')[0].setAttribute("style", "border-color: #dc3545;");
+    //     $('.user_pass_error').fadeIn();
+    //     return false;
+    // }
 });

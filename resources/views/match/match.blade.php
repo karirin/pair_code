@@ -4,8 +4,8 @@
 @parent
 @endsection
 @section('content')
-<div id="splash">Loading...</div>
-<div class="col-9.5 match_top aite_top" style="margin-left: 22%;display: none;">
+<div id="splash"></div>
+<div class="col-9.5 match_top aite_top" style="margin-left: 22%;height: 94%;margin-left: 23%;padding-left: 3rem;display: none;">
     <div class="help_message3" style="display:none;">
         <span class="help-title">マッチングの流れ</span>
         「いいね」ボタンをクリックすると</br>
@@ -16,7 +16,7 @@
         「スキップ」ボタンをクリックすると</br>
         マッチングをキャンセルすることができます
     </div>
-    <h3 class="page_title match_title">お相手から</h3>
+    <h3 class="page_title match_title">もらったいいね</h3>
     <i class="fa-solid fa-circle-question help_btn" style="position: absolute;right: 3%;top: 8%;font-size: 2rem;"></i>
     <input type="hidden" class="match_sample_user">
     <input type="hidden" class="m_flg" value="{{$current_user->match_flg}}">
@@ -30,7 +30,7 @@
     <div id="match{{$user->id}}" class="match_card card match_user" data-target="#matchuser_{{$user->id}}" data-toggle="matchuser" style="display: flex;">
         <span class="match_card_color" style="display:none;">
             <i class="fa-regular fa-thumbs-up" style="margin:40% 0;font-size: 3rem;">
-                <div style="font-size: 1.8rem;font-weight:900;margin-top: 0.5rem;">いいかもしました</div>
+                <div style="font-size: 1.8rem;font-weight:900;margin-top: 0.5rem;">いいねしました</div>
             </i>
         </span>
         <span class="unmatch_card_color" style="display:none;">
@@ -40,7 +40,7 @@
         </span>
         <span class="back_card_color" style="background:linear-gradient(rgb(0 0 0 / 0%) 0, #000 2000px);">
         </span>
-        <div id="matchuser_{{$user->id}}">
+        <div id="matchuser_{{$user->id}}" style="height: 100%;">
             <input type="hidden" class="match_flg" value="{{$user->check_match($user->id,$current_user->id)}}">
             <input type="hidden" class="matchs_flg" value="{{$user->check_matchs($user->id,$current_user->id)}}">
             <input type="hidden" class="match_user_id" value="{{$user->id}}">
@@ -56,7 +56,7 @@
                 </div>
                 <input type="hidden" class="match_user_prof" value="{{$user->profile}}">
             </div>
-            <input type="hidden" class="click_flg" value="0">
+            <input type="hidden" class="click_flg" value="1">
             <img src="{{asset($user->image)}}" class="match_user_img" style="width: 100%;height: 100%;border-radius: 8px;">
             <label>
                 <i class="far fa-times-circle profile_clear"></i>
@@ -113,25 +113,40 @@
                     $('#sample_unmatch_btn').prop("disabled", true);
                     $('.help_close').fadeIn();
                     $('.help_message3').fadeIn();
-                    $('.match_sample_user').replaceWith('<div id="match0" class="match_card card match_user" data-target="#matchuser_0" data-toggle="matchuser" style="display: flex;z-index:20;pointer-events: none;"><span class="match_card_color" style="display:none;"><i class="fa-regular fa-thumbs-up" style="margin:40% 0;font-size: 3rem;"><div style="font-size: 1.8rem;font-weight:900;margin-top: 0.5rem;">いいかもしました</div></i></span><span class="unmatch_card_color" style="display:none;"><i class="fa-solid fa-reply" style="margin:40% 0;font-size: 3rem;"><div style="font-size: 1.8rem;font-weight:900;margin-top: 0.5rem;">スキップしました</div></i></span><span class="back_card_color" style="background:linear-gradient(rgb(0 0 0 / 0%) 0, #000 2000px);"></span><div id="matchuser_0"><img src="../storage/user/sample_user.png" class="match_user_img" style="width: 100%;height: 100%;border-radius: 8px;"><label><i class="far fa-times-circle profile_clear"></i><input type="button" id="profile_clear"></label><h3 class="profile_name" style="color: #fff;">サンプルユーザー</h3></div></div>');
+                    $('.match_sample_user').replaceWith('<div id="match0" class="match_card card match_user" data-target="#matchuser_0" data-toggle="matchuser" style="display: flex;z-index:20;pointer-events: none;"><span class="match_card_color" style="display:none;"><i class="fa-regular fa-thumbs-up" style="margin:40% 0;font-size: 3rem;"><div style="font-size: 1.8rem;font-weight:900;margin-top: 0.5rem;">いいねしました</div></i></span><span class="unmatch_card_color" style="display:none;"><i class="fa-solid fa-reply" style="margin:40% 0;font-size: 3rem;"><div style="font-size: 1.8rem;font-weight:900;margin-top: 0.5rem;">スキップしました</div></i></span><span class="back_card_color" style="background:linear-gradient(rgb(0 0 0 / 0%) 0, #000 2000px);"></span><div id="matchuser_0"><img src="../storage/user/sample_user.png" class="match_user_img" style="width: 100%;height: 100%;border-radius: 8px;"><label><i class="far fa-times-circle profile_clear"></i><input type="button" id="profile_clear"></label><h3 class="profile_name" style="color: #fff;">サンプルユーザー</h3></div></div>');
                     $('.matching_btn').css({
                         'z-index': '20'
                     });
                     $('.fa-image_range.fa').css({
                         'background-color': '#fff'
                     });
-                    setInterval(function() {
-                        $('.pointer3').animate({
-                            'left': '66%',
-                            'top': '81%'
-                        });
-                        $('.pointer3').fadeOut();
-                        $('.pointer3').animate({
-                            'left': '60%',
-                            'top': '88%'
-                        });
-                        $('.pointer3').fadeIn();
-                    }, 1000);
+                    if ($(window).width() <= 980) {
+                        setInterval(function() {
+                            $('.pointer3').animate({
+                                'left': '71%',
+                                'top': '77%'
+                            });
+                            $('.pointer3').fadeOut();
+                            $('.pointer3').animate({
+                                'left': '63%',
+                                'top': '82%'
+                            });
+                            $('.pointer3').fadeIn();
+                        }, 1000);
+                    } else {
+                        setInterval(function() {
+                            $('.pointer3').animate({
+                                'left': '61%',
+                                'top': '80%'
+                            });
+                            $('.pointer3').fadeOut();
+                            $('.pointer3').animate({
+                                'left': '55%',
+                                'top': '88%'
+                            });
+                            $('.pointer3').fadeIn();
+                        }, 1000);
+                    }
                     $(document).on('click', '#sample_match_btn', function() {
                         $('.profile_name').css({
                             'z-index': '15'
@@ -148,18 +163,33 @@
                             "marginLeft": "50px",
                             transform: 'rotate(50deg)'
                         }, 1000);
-                        setInterval(function() {
-                            $('.pointer4').animate({
-                                'left': '51%',
-                                'top': '81%'
-                            });
-                            $('.pointer4').fadeOut();
-                            $('.pointer4').animate({
-                                'left': '44%',
-                                'top': '88%'
-                            });
-                            $('.pointer4').fadeIn();
-                        }, 1000);
+                        if ($(window).width() <= 980) {
+                            setInterval(function() {
+                                $('.pointer4').animate({
+                                    'left': '35%',
+                                    'top': '77%'
+                                });
+                                $('.pointer4').fadeOut();
+                                $('.pointer4').animate({
+                                    'left': '27%',
+                                    'top': '82%'
+                                });
+                                $('.pointer4').fadeIn();
+                            }, 1000);
+                        } else {
+                            setInterval(function() {
+                                $('.pointer4').animate({
+                                    'left': '46%',
+                                    'top': '80%'
+                                });
+                                $('.pointer4').fadeOut();
+                                $('.pointer4').animate({
+                                    'left': '40%',
+                                    'top': '88%'
+                                });
+                                $('.pointer4').fadeIn();
+                            }, 1000);
+                        }
                         $(document).on('click', '#sample_unmatch_btn', function() {
                             $('#pointer4').removeClass('pointer4');
                             $('#pointer4').fadeOut();
@@ -206,25 +236,40 @@
             $('#sample_unmatch_btn').prop("disabled", true);
             $('.help_close').fadeIn();
             $('.help_message3').fadeIn();
-            $('.match_sample_user').replaceWith('<div id="match0" class="match_card card match_user" data-target="#matchuser_0" data-toggle="matchuser" style="display: flex;z-index:20;pointer-events: none;"><span class="match_card_color" style="display:none;"><i class="fa-regular fa-thumbs-up" style="margin:40% 0;font-size: 3rem;"><div style="font-size: 1.8rem;font-weight:900;margin-top: 0.5rem;">いいかもしました</div></i></span><span class="unmatch_card_color" style="display:none;"><i class="fa-solid fa-reply" style="margin:40% 0;font-size: 3rem;"><div style="font-size: 1.8rem;font-weight:900;margin-top: 0.5rem;">スキップしました</div></i></span><span class="back_card_color" style="background:linear-gradient(rgb(0 0 0 / 0%) 0, #000 2000px);"></span><div id="matchuser_0"><img src="../storage/user/sample_user.png" class="match_user_img" style="width: 100%;height: 100%;border-radius: 8px;"><label><i class="far fa-times-circle profile_clear"></i><input type="button" id="profile_clear"></label><h3 class="profile_name" style="color: #fff;">サンプルユーザー</h3></div></div>');
+            $('.match_sample_user').replaceWith('<div id="match0" class="match_card card match_user" data-target="#matchuser_0" data-toggle="matchuser" style="display: flex;z-index:20;pointer-events: none;"><span class="match_card_color" style="display:none;"><i class="fa-regular fa-thumbs-up" style="margin:40% 0;font-size: 3rem;"><div style="font-size: 1.8rem;font-weight:900;margin-top: 0.5rem;">いいねしました</div></i></span><span class="unmatch_card_color" style="display:none;"><i class="fa-solid fa-reply" style="margin:40% 0;font-size: 3rem;"><div style="font-size: 1.8rem;font-weight:900;margin-top: 0.5rem;">スキップしました</div></i></span><span class="back_card_color" style="background:linear-gradient(rgb(0 0 0 / 0%) 0, #000 2000px);"></span><div id="matchuser_0"><img src="../storage/user/sample_user.png" class="match_user_img" style="width: 100%;height: 100%;border-radius: 8px;"><label><i class="far fa-times-circle profile_clear"></i><input type="button" id="profile_clear"></label><h3 class="profile_name" style="color: #fff;">サンプルユーザー</h3></div></div>');
             $('.matching_btn').css({
                 'z-index': '20'
             });
             $('.fa-image_range.fa').css({
                 'background-color': '#fff'
             });
-            setInterval(function() {
-                $('.pointer3').animate({
-                    'left': '66%',
-                    'top': '81%'
-                });
-                $('.pointer3').fadeOut();
-                $('.pointer3').animate({
-                    'left': '60%',
-                    'top': '88%'
-                });
-                $('.pointer3').fadeIn();
-            }, 1000);
+            if ($(window).width() <= 980) {
+                setInterval(function() {
+                    $('.pointer3').animate({
+                        'left': '71%',
+                        'top': '77%'
+                    });
+                    $('.pointer3').fadeOut();
+                    $('.pointer3').animate({
+                        'left': '63%',
+                        'top': '82%'
+                    });
+                    $('.pointer3').fadeIn();
+                }, 1000);
+            } else {
+                setInterval(function() {
+                    $('.pointer3').animate({
+                        'left': '61%',
+                        'top': '80%'
+                    });
+                    $('.pointer3').fadeOut();
+                    $('.pointer3').animate({
+                        'left': '55%',
+                        'top': '88%'
+                    });
+                    $('.pointer3').fadeIn();
+                }, 1000);
+            }
             $(document).on('click', '#sample_match_btn', function() {
                 $('.profile_name').css({
                     'z-index': '15'
@@ -241,18 +286,33 @@
                     "marginLeft": "50px",
                     transform: 'rotate(50deg)'
                 }, 1000);
-                setInterval(function() {
-                    $('.pointer4').animate({
-                        'left': '51%',
-                        'top': '81%'
-                    });
-                    $('.pointer4').fadeOut();
-                    $('.pointer4').animate({
-                        'left': '44%',
-                        'top': '88%'
-                    });
-                    $('.pointer4').fadeIn();
-                }, 1000);
+                if ($(window).width() <= 980) {
+                    setInterval(function() {
+                        $('.pointer4').animate({
+                            'left': '35%',
+                            'top': '77%'
+                        });
+                        $('.pointer4').fadeOut();
+                        $('.pointer4').animate({
+                            'left': '27%',
+                            'top': '82%'
+                        });
+                        $('.pointer4').fadeIn();
+                    }, 1000);
+                } else {
+                    setInterval(function() {
+                        $('.pointer4').animate({
+                            'left': '46%',
+                            'top': '80%'
+                        });
+                        $('.pointer4').fadeOut();
+                        $('.pointer4').animate({
+                            'left': '40%',
+                            'top': '88%'
+                        });
+                        $('.pointer4').fadeIn();
+                    }, 1000);
+                }
                 $(document).on('click', '#sample_unmatch_btn', function() {
                     $('#pointer4').removeClass('pointer4');
                     $('#pointer4').fadeOut();

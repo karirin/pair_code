@@ -4,13 +4,13 @@
 @parent
 @endsection
 @section('content')
-<div class="col-9 message_disp" style="margin-left: 22%;display: inline-block;">
-    <div class="message_disp_div" style="background-color:#ffffffb0;width: 100%;height: 10%;position: fixed;z-index: 10;font-size: 2rem;">
-        <div class="message_disp_name" style="width: 28%;background-color: #fff;">
-            <span style="background-color:#fdff8b0a;width: 100%;height: 100%;display: inline-block;line-height: 2;"><a href="{{ asset('message/message_top') }}" style="color: #000;"><i class="fa-solid fa-angle-left" style="margin-right: 1rem;margin-top: 0.4rem;vertical-align: text-top;font-size:2.2rem;"></i></a>{{$destination_user->name}}</span>
+<div class="col-9 message_disp" style="height:auto;padding-left: 3rem;margin-left: 23%;display: inline-block;">
+    <div class="message_disp_div" style="background-color:#ffffffb5;width: 100%;height: 10%;position: fixed;z-index: 10;font-size: 2rem;">
+        <div class="message_disp_name" style="background-color: #ffe1ae00;">
+            <span class="message_disp_name_span" style="background-color:#ffe1ae24;width: 100%;height: 100%;display: inline-block;line-height: 2;"><a href="{{ asset('message/message_top') }}" style="color: #000;"><i class="fa-solid fa-angle-left" style="margin-right: 1rem;margin-top: 0.4rem;vertical-align: text-top;font-size:2.2rem;"></i></a>{{$destination_user->name}}</span>
         </div>
     </div>
-    <div class="message" style="margin-top: 5rem;">
+    <div class="message">
         @foreach ($messages as $message)
         <div class="my_message">
             @if ($message->user_id == $current_user->id)
@@ -48,12 +48,12 @@
                 <input type="hidden" class="image" name="image" value="{{asset($current_user->image)}}">
             </div>
             <div class="message_btn">
-                <div class="message_image">
+                <!-- <div class="message_image">
                     <label>
                         <i class="far fa-image"></i>
                         <input type="file" name="image" id="my_image" accept="image/*" multiple>
                     </label>
-                </div>
+                </div> -->
                 <button class="btn btn-outline-primary message_submit" name="post" value="post" id="post">送信</button>
             </div>
             <div class="message_image_detail">

@@ -4,14 +4,20 @@
 @parent
 @endsection
 @section('content')
-<h2 class="edit_detail_top_tittle" style="text-align: center;">新規登録</h2>
-<form method="post" action="{{ asset('user/edit_detail') }}" enctype="multipart/form-data">
+<h2 class="user_detail_message1">メール認証が完了しました</h2>
+<h2 class="user_detail_message2" style="display: none;">ユーザー詳細情報の登録をお願いします</h2>
+
+<form method="post" class="edit_detail_top_form" style="display:none;" action="{{ asset('user/edit_detail') }}" enctype="multipart/form-data">
     @csrf
-    <div class="row edit_detail_top" style="margin-left: 30%;height: 60%;">
+    <h2 class="edit_detail_top_tittle" style="text-align: center;display:none;">新規登録</h2>
+    <div class="row edit_detail_top" style="margin-left: 30%;height: 66%;display: flex;">
         <div class="col-3">
             <div class="user_age">
                 <p class="tag_tittle">年齢</p>
                 <input class="edit_age form-control" type="number" name="age" style="width: 35%;display: inline-block;margin-right: 0.5rem;"><span class="sai">歳</span>
+                <div class="error_age_form" style="height: 8px;text-align:left;">
+                    <span class="user_age_error" style="display:none;color: #dc3545;">年齢を入力してください</span>
+                </div>
             </div>
             <div class="user_address" style="margin-top: 0.5rem;">
                 <p class="tag_tittle" style="display: inline-block;">住所</p>
@@ -65,6 +71,9 @@
                     <option value="鹿児島県">鹿児島県</option>
                     <option value="沖縄県">沖縄県</option>
                 </select>
+                <div class="error_address_form" style="height: 8px;text-align:left;">
+                    <span class="user_address_error" style="display:none;color: #dc3545;">住所を入力してください</span>
+                </div>
             </div>
             <div class="user_occupation" style="margin-top: 0.5rem;">
                 <p class="tag_tittle" style="display: inline-block;">職種</p>
@@ -81,44 +90,59 @@
                     <option value="テストエンジニア">テストエンジニア</option>
                     <option value="その他">その他</option>
                 </select>
-            </div>
-            <div class="my_profile">
-                <p class="tag_tittle">自己紹介</p>
-                <textarea class="edit_profile form-control" style="height: 30%;width: 126%;" type="text" name="user_profile">{{$profile}}</textarea>
-                <div class="error_workhistory" style="display: none;">
-                    <span style="color:rgb(220, 53, 69);">100文字以内で入力してください</span>
+                <div class="error_occupation_form" style="height: 14px;text-align:left;">
+                    <span class="user_occupation_error" style="display:none;color: #dc3545;">職種を入力してください</span>
                 </div>
             </div>
-        </div>
-        <div class="col-7" style="margin-left: 4rem;">
             <p class="tag_tittle">スキル</p>
             <div id="myprofile_skill">
                 <input type="hidden" name="myprofile_skills" id="myprofile_skills">
                 <input type="hidden" name="skill_count" id="myprofile_skill_count">
                 <input type="hidden" name="myskills">
             </div>
-            <input placeholder="skill Stack" name="skills" id="skill_myprofile_input" style="display:block;" class="ui-autocomplete-input" autocomplete="off">
+            <input placeholder="PHP　JavaScript" name="skills" id="skill_myprofile_input" style="display:block;width: 125%;" class="ui-autocomplete-input" autocomplete="off">
             <p class="tag_tittle">取得資格</p>
             <div id="licence">
                 <input type="hidden" name="myprofile_licences" id="myprofile_licences">
                 <input type="hidden" name="licence_count" id="licence_count">
                 <input type="hidden" name="mylicences">
             </div>
-            <input placeholder="licence Stack" name="name" id="licence_input" style="display: block;" />
+            <input placeholder="ITパスポート　基本情報技術者" name="name" id="licence_input" style="display: block;width: 125%;" />
+        </div>
+        <div class="col-7" style="margin-left: 4rem;">
+            <div class="skill_smartphone" style="display:none;">
+                <input type="text" class="skill_select" name="skills" placeholder="PHP JavaScript">
+                <div class="image_size" style="font-size:0.9rem;">※スキル単位で半角スペースを空けてください</div>
+            </div>
+            <div class="licence_smartphone" style="display:none;">
+                <input type="text" class="licence_select" name="licences" placeholder="ITパスポート 基本情報技術者試験">
+                <div class="image_size" style="font-size:0.9rem;">※資格単位で半角スペースを空けてください</div>
+            </div>
+            <div class="my_profile">
+                <p class="tag_tittle">自己紹介</p>
+                <textarea placeholder="100文字以内" class="edit_profile form-control" style="width: auto;" type="text" name="user_profile">{{$profile}}</textarea>
+                <div class="error_profile_form" style="height: 8px;text-align:left;width: 13rem;">
+                    <span class="user_profile_error" style="display:none;color: #dc3545;">自己紹介を入力してください</span>
+                </div>
+            </div>
             <div class="background">
                 <p class="tag_tittle">職歴</p>
-                <textarea class="edit_workhistory form-control" style="height: 30%;width: 70%;" type="text" name="user_workhistory"></textarea>
-                <div class="error_workhistory" style="display: none;">
-                    <span style="color:rgb(220, 53, 69);">100文字以内で入力してください</span>
+                <textarea placeholder="2018年～2022年　
+株式会社XXX 
+・SEとして自社サービスの運用・保守を担当 
+・チームリーダーの経験も有り" class="edit_workhistory form-control" style="height: 40%;" type="text" name="user_workhistory"></textarea>
+                <div class="error_workhistory">
+                    <span class="user_workhistory_error" style="color:rgb(220, 53, 69);display: none;">100文字以内で入力してください</span>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="flex_btn margin_top edit_detail_btn" style="margin: 0 34%;width: 35%;margin-top: 2rem;">
-        <input style="width: 90px;" class="btn btn-outline-info edit_detail_top_btn" type="button" onclick="history.back()" value="戻る">
-        <input style="width: 90px;" class="btn btn-outline-dark edit_done edit_detail_top_btn" type="submit" value="登録">
+        <div class="flex_btn margin_top edit_detail_btn" style="margin: 2rem 11% 2rem;width: 35%;display:none;">
+            <input style="width: 90px;" class="btn btn-outline-dark edit_detail_top_btn" type="button" onclick="history.back()" value="戻る">
+            <input style="width: 90px;" class="btn btn-outline-info edit_done edit_detail_top_btn" type="submit" value="登録">
+        </div>
     </div>
     <input type="hidden" name="name" value="{{$name}}">
+    <input type="hidden" name="email" value="{{$email}}">
     <input type="hidden" name="password" value="{{$password}}">
     <input type="hidden" name="hash_password" value="{{$hash_password}}">
     <input type="hidden" name="image" value="{{$image}}">
@@ -135,4 +159,16 @@
 @endsection
 @section('footer')
 @parent
+<script>
+    setTimeout(function() {
+        $(".user_detail_message1").css("display", "none");
+        $(".user_detail_message2").fadeIn();
+    }, 3000);
+    setTimeout(function() {
+        $(".edit_detail_top_form").fadeIn();
+        $(".edit_detail_top_tittle").fadeIn();
+        $(".edit_detail_btn").fadeIn().css("display", "flex");
+        $(".user_detail_message2").css("display", "none");
+    }, 5000);
+</script>
 @endsection

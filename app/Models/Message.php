@@ -27,7 +27,7 @@ class Message extends Model
         $date = new DateTime();
         $date->modify('+9 hour');
         $now = strtotime($date->format('Y-m-d H:i:s'));
-        log::debug($now2);
+        log::debug($now);
         $diff_sec = $now - $unix;
         if ($diff_sec < 86400) {
             $time   = date("H", $unix);

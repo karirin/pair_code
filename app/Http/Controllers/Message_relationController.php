@@ -38,7 +38,8 @@ class Message_relationController extends Controller
         }
         $message_class = new Message;
         $match_flg = Match::where('matched_user_id', $current_user->id)->where('match_flg', '!=', 1)->where('unmatch_flg', '!=', 1)->first();
-        $param = ['current_user' => $current_user, 'users' => $users, 'message_relations' => $message_relations, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'message_class' => $message_class, 'match_flg' => $match_flg];
+        $mail_message = "";
+        $param = ['current_user' => $current_user, 'users' => $users, 'message_relations' => $message_relations, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'message_class' => $message_class, 'match_flg' => $match_flg, 'mail_message' => $mail_message];
         return view('message.message_top', $param);
     }
 }

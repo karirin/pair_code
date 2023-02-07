@@ -252,9 +252,20 @@ $(document).on('click', '.follow_btn', function(e) {
 $('.slide_menu').show();
 $('.show_menu').on('click', function() {
     scroll_position = $(window).scrollTop();
-    $('body').addClass('fixed').css({ 'top': -scroll_position });
-    $('.modal').fadeIn();
+    $('.modal_footer').fadeIn();
+    if(location.pathname != "/match/match"){
+        $('body').addClass('fixed').css({ 'top': -scroll_position });
+    }
+    if(location.pathname=="/"){
+        $('.modal_footer').css({ 'z-index': '9' });
+    }
     $('.slide_menu').addClass('open');
+    $('.top_title').css({ 'position': 'unset' });
+    $('.smartphone_header').fadeOut();
+    $('.page_title').css({ 'margin-top': '4.5rem' });
+    $('.top_logo').css({ 'top': '3%' });
+    $('.message_disp .message').css({ 'margin-top': '8rem' });
+    $('.message_disp .message_disp_div').css({ 'margin-top': '0rem','position': 'unset' });
 })
 
 $('.slide_prof').on('click', function() {
@@ -290,6 +301,13 @@ $(document).on('click', ".modal_close", function() {
     $('.edit_workhistory_narrower').replaceWith('<p class="workhistory_narrow">' + user_workhistory_narrower + '</p>');
     $('.edit_btn').fadeIn();
     $('.slide_menu').removeClass('open');
+    $('.modal_footer').fadeOut();
+    $('.top_title').css({ 'position': 'fixed' });
+    $('.smartphone_header').fadeIn();
+    $('.page_title').css({ 'margin-top': '15rem' });
+    $('.message_disp .message').css({ 'margin-top': '17rem','height':'7rem' });
+    $('.message_disp .message_disp_div').css({ 'margin-top': '8rem','position':'fixed' });
+    $('.top_logo').css({ 'top': '10%' });
 });
 
 // // 編集ボタン押下時の処理
@@ -1655,13 +1673,87 @@ $(document).on('click', '.edit_done', function() {
     licences = licences.join(' ');
     licences_narrow = licences_narrow.join(' ');
     // licences_narrower = licences_narrower.join(' ');
-    skill_div_narrow.value = skills_narrow;
-    myprofile_skill_div.value = myprofile_skills;
-    licence_div.value = licences;
-    licence_div_narrow.value = licences_narrow;
+    //skill_div_narrow.value = skills_narrow;
+    if ($(window).width() <= 980) {
+        myprofile_skill_div.value = $('.skill_select')[0].value;
+        licence_div.value = $('.licence_select')[0].value;
+    }else{
+        myprofile_skill_div.value = myprofile_skills;
+        licence_div.value = licences;
+    }
+    // licence_div_narrow.value = licences_narrow;
     // licence_div_narrower.value = licences_narrower;
 
     //$('.workhistory').val() = $('.edit_workhistory').val;
+
+    // var error=0;
+    // if ($('.edit_age')[0].value == '') {
+    //     $('.edit_age')[0].setAttribute("style", "border-color: #dc3545;width: 35%;display: inline-block;margin-right: 0.5rem;");
+    //     $('.user_age_error').fadeIn();
+    //     error++;
+    // }
+    // if($('.edit_profile')[0].value == ''){
+    //     $('.edit_profile')[0].setAttribute("style", "border-color: #dc3545;height: 30%;width: 126%;");
+    //     $('.user_profile_error').fadeIn();
+    //     error++;
+    // }
+    // if ($('.edit_address')[0].value == '') {
+    //     $('.edit_address')[0].setAttribute("style", "border-color: #dc3545;");
+    //     $('.user_address_error').fadeIn();
+    //     error++;
+    // }
+    // if ($('.edit_occupation')[0].value == '') {
+    //     $('.edit_occupation')[0].setAttribute("style", "border-color: #dc3545;width:auto;");
+    //     $('.user_occupation_error').fadeIn();
+    //     error++;
+    // }
+    // if ($('.edit_workhistory')[0].value == '') {
+    //     $('.edit_workhistory')[0].setAttribute("style", "border-color: #dc3545;height: 40%;width: 75%;");
+    //     $('.user_workhistory_error').fadeIn();
+    //     error++;
+    // }
+    // if(0 < error){
+    //     return false;
+    // }
+});
+
+// 必須チェック解除
+$(document).ready(function() {
+    $('.edit_age').change(function() {
+        var str = $(this).value;
+        if (str != '') {
+            $('.edit_age')[0].setAttribute("style", "border-color: #ced4da;width: 35%;display: inline-block;margin-right: 0.5rem;");
+            $('.user_age_error').fadeOut();
+        }
+    });
+    $('.edit_address').change(function() {
+        var str = $(this).value;
+        if (str != '') {
+            $('.edit_address')[0].setAttribute("style", "border-color: #ced4da;");
+            $('.user_address_error').fadeOut();
+        }
+    });
+    $('.edit_occupation').change(function() {
+        var str = $(this).value;
+        if (str != '') {
+            $('.edit_occupation')[0].setAttribute("style", "border-color: #ced4da;width:auto;");
+            $('.user_occupation_error').fadeOut();
+        }
+    });
+    $('.edit_profile').change(function() {
+        var str = $(this).value;
+        if (str != '') {
+            $('.edit_profile')[0].setAttribute("style", "border-color: #ced4da;height: 30%;width: 126%;");
+            $('.user_profile_error').fadeOut();
+        }
+    });
+    $('.edit_workhistory').change(function() {
+        var str = $(this).value;
+        if (str != '') {
+            $('.edit_workhistory')[0].setAttribute("style", "border-color: #ced4da;height: 40%;width: 75%;");
+            $('.user_workhistory_error').fadeOut();
+        }
+    });
 });
 
 $('.skill_btn').on('click', function() {

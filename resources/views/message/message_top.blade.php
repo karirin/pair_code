@@ -4,12 +4,12 @@
 @parent
 @endsection
 @section('content')
-<div id="splash">Loading...</div>
-<div class="col-9 message_top" style="margin-left: 22%;margin-bottom: 1.5rem;display: none;">
+<div id="splash"></div>
+<div class="col-9 message_top" style="height:auto;margin-left: 23%;padding-left: 3rem;margin-bottom: 2rem;display: none;">
     <h3 class="page_title message_title">メッセージ</h3>
     @foreach ($message_relations as $message_relation)
     <div class="message_list">
-        <a href='message?user_id={{$message_relation->destination_user_id}}' id="message_link">
+        <a href='/message/message?user_id={{$message_relation->destination_user_id}}' id="message_link">
             <div class="destination_user_list">
                 <div class='col-11 destination_user_info'>
 
@@ -44,6 +44,7 @@
         </div>
     </div>
 </div>
+<p class="mail_message">{{$mail_message}}</p>
 @endforeach
 @endsection
 @section('footer')
