@@ -41,6 +41,7 @@
     border-radius: 10rem;
     width: 12rem;
     height: 12rem;
+    object-fit: cover;
 }
 
 .match_top .match_user_profile {
@@ -386,7 +387,7 @@ border-bottom: none;/*線を消す*/
     position: absolute;
     left: 41%;
     right: 0;
-    top: 15%;
+    top: 18%;
     text-align: center;
     border-radius: 8px;
     background-color: #fefefb;
@@ -479,7 +480,7 @@ border-bottom: none;/*線を消す*/
 .matching_btn {
     position: absolute;
     left: 43.5%;
-    top: 76%;
+    top: 79%;
     z-index: 15!important;
 }
 

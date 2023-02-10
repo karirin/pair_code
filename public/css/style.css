@@ -432,6 +432,16 @@ nav.navbar.navbar-dark {
     margin-top: 3rem;
 }
 
+.page_title.serach,
+.page_title.match_title,
+.page_title.message_title{
+    margin-bottom: 2rem;
+}
+
+.page_title.profile_title{
+    margin-bottom: 1rem;
+}
+
 .content {
     min-height: 94%;
     margin-bottom: -16px;
@@ -1425,7 +1435,7 @@ img.mypage {
 /* ///////////////////////// */
 
 .destination_user_list {
-    border: solid;
+    border: solid 1px;
     border-radius: 3rem;
     padding: 1rem;
     margin: 1rem 0;
