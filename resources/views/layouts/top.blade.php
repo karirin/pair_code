@@ -151,15 +151,15 @@
             @yield('profile')
             @if (Auth::check())
             @if(request()->path()=='user/profile')
-            <div class="content" style="min-height: 94%;">
+            <div class="content firefox" style="min-height: 94%;">
                 @else
                 <div class="content">
                     @endif
                     @else
                     @if(request()->path()=='user/register')
-                    <div class="content" style="min-height: 86.3%;">
+                    <div class="content firefox" style="min-height: 86.3%;">
                         @else
-                        <div class="content" style="min-height: 86.3%;">
+                        <div class="content firefox" style="min-height: 86.3%;">
                             @endif
                             @endif
                             @yield('content')
@@ -179,8 +179,8 @@
                                 <span class="matchuser_occupation"></span>
                                 <div class="matchuser_profile"></div>
                                 <div style="text-align:right;">
-                                    <a href="#" class="match_good_btn" id="match_good_btn"><i class="fas fa-thumbs-up"></i>いいね</a>
-                                    <a href="#" class="good_btn" id="good_btn" style="display: none;"><i class="fas fa-thumbs-up"></i>いいね</a>
+                                    <a class="match_good_btn" id="match_good_btn"><i class="fas fa-thumbs-up"></i>いいね</a>
+                                    <a class="good_btn" id="good_btn" style="display: none;"><i class="fas fa-thumbs-up"></i>いいね</a>
                                     <input type="hidden" class="user_id">
                                     <input type="hidden" class="matchs_flg">
                                 </div>

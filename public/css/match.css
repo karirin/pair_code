@@ -235,7 +235,7 @@ border-bottom: none;/*線を消す*/
     display: none;
     top: 0;
     left: 0;
-    background-color: rgba(152, 152, 152, 0.7);
+    background-color: rgba(0, 0, 0, 0.3);
     width: 100%;
     height: 100%;
     z-index: 10;
@@ -349,7 +349,8 @@ border-bottom: none;/*線を消す*/
 .match_message,
 .top_message,
 .add_message,
-.mail_message {
+.mail_message,
+.tumi_message {
     padding: 0.5em 1em;
     background: -moz-linear-gradient(#FFC107, #ff8b5f);
     background: -webkit-linear-gradient(#FFC107, #ff8b5f);

@@ -223,10 +223,11 @@ $(document).on('click', ".profile_narrow_close", function() {
 $(document).on('click', ".match_user", function() {
     var $target_modal = $(this).data("target");
     $height = $(window).scrollTop();
-    $('.footer').hide();
+    $height = $height + 70;
+    //$('.footer').hide();
     $('#match_btn').prop("disabled", true);
     $('#unmatch_btn').prop("disabled", true);
-    $('.match_top.sarch_top').css('position', 'fixed');
+    //$('.match_top.sarch_top').css('position', 'fixed');
     $('.modal_match').fadeIn();
     $('.profile_close').fadeIn();
     $('.matchuser_detaile').fadeIn();
@@ -243,21 +244,26 @@ $(document).on('click', ".match_user", function() {
     $('.matchuser_detaile .user_id').val($($target_modal + ' > .match_user_id')[0].value);
     $('.matchuser_detaile .matchs_flg').val($($target_modal + ' > .matchs_flg')[0].value);
     $('.matchuser_detaile_prof').fadeIn();
-    $(window).scrollTop(0);
-    console.log($($target_modal + ' > .click_flg')[0].value);
+    $('.matchuser_detaile').offset({
+        top: $height
+    });
+    $('.matchuser_detaile_prof').offset({
+        top: $height
+    });
+    // $(window).scrollTop(0);
     if ($($target_modal + ' > .click_flg')[0].value != 0) {
         $('.match_good_btn').hide();
     } else {
         $('.match_good_btn').show();
     }
-    $(document).on('click', ".profile_close", function() {
-        $('body').scrollTop($height);
-        $('.footer').show();
-    });
-    $(document).on('click', ".modal_match", function() {
-        $('body').scrollTop($height);
-        $('.footer').show();
-    });
+    // $(document).on('click', ".profile_close", function() {
+    //     $('body').scrollTop($height);
+    //     $('.footer').show();
+    // });
+    // $(document).on('click', ".modal_match", function() {
+    //     $('body').scrollTop($height);
+    //     $('.footer').show();
+    // });
 });
 
 // モーダル画面の灰色の背景をクリックしたら戻るように
@@ -278,17 +284,17 @@ $(document).on('click', ".far.fa-times-circle", function() {
 });
 
 // いいねをクリックしたとき
-$(document).one('click', ".match_good_btn", function() {
+$(document).on('click', ".match_good_btn", function() {
     $.ajaxSetup({
         headers: {
             "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
         },
     });
-
     var user_id = $(this).next().next().val(),
         user_name = $(this).parent().prev().prev().prev().prev().prev().text(),
         matchs_flg = $(this).next().next().next()[0].value,
         match_good_btn = $(this);
+//        $height = $(window).scrollTop();
     $.ajax({
         type: 'POST',
         url: '/ajax_match_process',
