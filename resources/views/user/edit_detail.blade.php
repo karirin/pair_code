@@ -10,7 +10,7 @@
 <form method="post" class="edit_detail_top_form" style="display:none;" action="{{ asset('user/edit_detail') }}" enctype="multipart/form-data">
     @csrf
     <h2 class="edit_detail_top_tittle" style="text-align: center;display:none;">新規登録</h2>
-    <div class="row edit_detail_top" style="margin-left: 30%;height: 66%;display: flex;">
+    <div class="row edit_detail_top" style="margin-left: 30%;height: 62%;display: flex;">
         <div class="col-3">
             <div class="user_age">
                 <p class="tag_tittle">年齢</p>
@@ -126,7 +126,7 @@
                 </div>
             </div>
             <div class="background">
-                <p class="tag_tittle">職歴</p>
+                <p class="tag_tittle" style="margin-top: 1rem;">職歴</p>
                 <textarea placeholder="2018年～2022年　
 株式会社XXX 
 ・SEとして自社サービスの運用・保守を担当 
@@ -136,10 +136,9 @@
                 </div>
             </div>
         </div>
-        <div class="flex_btn margin_top edit_detail_btn" style="margin: 2rem 11% 2rem;width: 35%;display:none;">
-            <input style="width: 90px;" class="btn btn-outline-dark edit_detail_top_btn" type="button" onclick="history.back()" value="戻る">
-            <input style="width: 90px;" class="btn btn-outline-info edit_done edit_detail_top_btn" type="submit" value="登録">
-        </div>
+    </div>
+    <div style="text-align: right;width:77%;">
+        <input style="width: 90px;font-size:1.5rem;" class="btn btn-outline-info edit_done edit_detail_top_btn" type="submit" value="登録">
     </div>
     <input type="hidden" name="name" value="{{$name}}">
     <input type="hidden" name="email" value="{{$email}}">
@@ -170,5 +169,44 @@
         $(".edit_detail_btn").fadeIn().css("display", "flex");
         $(".user_detail_message2").css("display", "none");
     }, 5000);
+
+    $(document).on('click', '.edit_done', function() {
+
+        var error = 0;
+        if ($('.edit_age')[0].value == '') {
+            //$('.edit_age')[0].setAttribute("style", "border-color: #dc3545;width: 35%;display: inline-block;margin-right: 0.5rem;");
+            $('.edit_age').css("border-color", "#dc3545");
+            $('.user_age_error').fadeIn();
+            error++;
+        }
+        if ($('.edit_profile')[0].value == '') {
+            //$('.edit_profile')[0].setAttribute("style", "border-color: #dc3545;height: auto;width: auto;");
+            $('.edit_profile').css("border-color", "#dc3545");
+            $('.user_profile_error').fadeIn();
+            error++;
+        }
+        if ($('.edit_address')[0].value == '') {
+            //$('.edit_address')[0].setAttribute("style", "border-color: #dc3545;");
+            $('.edit_address').css("border-color", "#dc3545");
+            $('.user_address_error').fadeIn();
+            error++;
+        }
+        if ($('.edit_occupation')[0].value == '') {
+            //$('.edit_occupation')[0].setAttribute("style", "border-color: #dc3545;width:auto;");
+            $('.edit_occupation').css("border-color", "#dc3545");
+            $('.user_occupation_error').fadeIn();
+            error++;
+        }
+        if ($('.edit_workhistory')[0].value == '') {
+            //$('.edit_workhistory')[0].setAttribute("style", "border-color: #dc3545;height: 40%;width: 60%;");
+            $('.edit_workhistory').css("border-color", "#dc3545");
+            $('.user_workhistory_error').fadeIn();
+            error++;
+        }
+        if (0 < error) {
+            return false;
+        }
+
+    });
 </script>
 @endsection

@@ -338,13 +338,13 @@ nav.navbar.navbar-dark {
 }
 
 .user_add_btn{
-    bottom: 10%;
+    bottom: 15%;
     right: 18%;
     padding: 0.5rem;
 }
 
 .user_login_btn{
-    bottom: 24%;
+    bottom: 28%;
     right: 18%;
     padding: 0.5rem;
 }

@@ -69,7 +69,7 @@
                     <div class="test_btn">
                         <input type="hidden" name="name" class="user_name_input" value="test_user">
                         <input type="hidden" name="password" class="user_pass_input" value="karirin3948">
-                        <input style="" class="test_login btn btn-outline-dark" type="submit" name="test_login" value="おためしログイン">
+                        <input style="display:none;" class="test_login btn btn-outline-dark" type="submit" name="test_login" value="おためしログイン">
                     </div>
                 </form>
                 <div style="text-align: center;">

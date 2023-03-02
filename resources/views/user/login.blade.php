@@ -6,7 +6,7 @@
 @section('content')
 <div class="row">
     <div class="col-6 offset-3 center user_login_top">
-        <h2 style="margin-top: 2rem;">ログイン</h2>
+        <h2 style="margin-top: 3rem;">ログイン</h2>
         <form action="/user/login" method="post">
             @csrf
             <div class="user_title">ユーザー名</div>
@@ -24,7 +24,7 @@
                 <input class="btn btn-outline-info submit_btn edit_detail_top_btn" type="submit" value="ログイン">
             </div>
         </form>
-        <a href="/auth/twitter" class="btn-social-long-twitter">
+        <a href="/auth/twitter" class="btn-social-long-twitter" style="display:none;">
             <i class="fa-brands fa-twitter edit_detail_top_btn" style="margin-right: 1rem;"></i><span class="twitter_login">Twitterでログイン</span>
         </a>
     </div>
