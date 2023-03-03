@@ -94,14 +94,14 @@
                     <span class="user_occupation_error" style="display:none;color: #dc3545;">職種を入力してください</span>
                 </div>
             </div>
-            <p class="tag_tittle">スキル</p>
+            <p class="tag_tittle skill_tittle">スキル</p>
             <div id="myprofile_skill">
                 <input type="hidden" name="myprofile_skills" id="myprofile_skills">
                 <input type="hidden" name="skill_count" id="myprofile_skill_count">
                 <input type="hidden" name="myskills">
             </div>
             <input placeholder="PHP　JavaScript" name="skills" id="skill_myprofile_input" style="display:block;width: 125%;" class="ui-autocomplete-input" autocomplete="off">
-            <p class="tag_tittle">取得資格</p>
+            <p class="tag_tittle licence_tittle">取得資格</p>
             <div id="licence">
                 <input type="hidden" name="myprofile_licences" id="myprofile_licences">
                 <input type="hidden" name="licence_count" id="licence_count">
@@ -111,10 +111,12 @@
         </div>
         <div class="col-7" style="margin-left: 4rem;">
             <div class="skill_smartphone" style="display:none;">
+                <p class="tag_tittle">スキル</p>
                 <input type="text" class="skill_select" name="skills" placeholder="PHP JavaScript">
                 <div class="image_size" style="font-size:0.9rem;">※スキル単位で半角スペースを空けてください</div>
             </div>
             <div class="licence_smartphone" style="display:none;">
+                <p class="tag_tittle">取得資格</p>
                 <input type="text" class="licence_select" name="licences" placeholder="ITパスポート 基本情報技術者試験">
                 <div class="image_size" style="font-size:0.9rem;">※資格単位で半角スペースを空けてください</div>
             </div>
@@ -138,7 +140,7 @@
         </div>
     </div>
     <div style="text-align: right;width:77%;">
-        <input style="width: 90px;font-size:1.5rem;" class="btn btn-outline-info edit_done edit_detail_top_btn" type="submit" value="登録">
+        <input style="font-size:1.5rem;" class="btn btn-outline-info edit_done edit_detail_top_btn edit_detail_btn" type="submit" value="登録">
     </div>
     <input type="hidden" name="name" value="{{$name}}">
     <input type="hidden" name="email" value="{{$email}}">
@@ -166,7 +168,7 @@
     setTimeout(function() {
         $(".edit_detail_top_form").fadeIn();
         $(".edit_detail_top_tittle").fadeIn();
-        $(".edit_detail_btn").fadeIn().css("display", "flex");
+        $(".edit_detail_btn").fadeIn().css("display", "inline-block");
         $(".user_detail_message2").css("display", "none");
     }, 5000);
 
@@ -207,6 +209,50 @@
             return false;
         }
 
+    });
+
+    // 必須チェック解除
+    $(document).ready(function() {
+        $('.edit_age').change(function() {
+            var str = $(this).value;
+            if (str != '') {
+                //$('.edit_age')[0].setAttribute("style", "border-color: #ced4da;width: 35%;display: inline-block;margin-right: 0.5rem;");
+                $('.edit_age')[0].css("border-color", "#ced4da");
+                $('.user_age_error').fadeOut();
+            }
+        });
+        $('.edit_address').change(function() {
+            var str = $(this).value;
+            if (str != '') {
+                //$('.edit_address')[0].setAttribute("style", "border-color: #ced4da;");
+                $('.edit_address')[0].css("border-color", "#ced4da");
+                $('.user_address_error').fadeOut();
+            }
+        });
+        $('.edit_occupation').change(function() {
+            var str = $(this).value;
+            if (str != '') {
+                //$('.edit_occupation')[0].setAttribute("style", "border-color: #ced4da;width:auto;");
+                $('.edit_occupation')[0].css("border-color", "#ced4da");
+                $('.user_occupation_error').fadeOut();
+            }
+        });
+        $('.edit_profile').change(function() {
+            var str = $(this).value;
+            if (str != '') {
+                //$('.edit_profile')[0].setAttribute("style", "border-color: #ced4da;height: auto;width: auto;");
+                $('.edit_profile')[0].css("border-color", "#ced4da");
+                $('.user_profile_error').fadeOut();
+            }
+        });
+        $('.edit_workhistory').change(function() {
+            var str = $(this).value;
+            if (str != '') {
+                //$('.edit_workhistory')[0].setAttribute("style", "border-color: #ced4da;height: 40%;width: 60%;");
+                $('.edit_workhistory')[0].css("border-color", "#ced4da");
+                $('.user_workhistory_error').fadeOut();
+            }
+        });
     });
 </script>
 @endsection

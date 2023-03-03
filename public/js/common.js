@@ -1693,7 +1693,7 @@ $(document).ready(function() {
         var str = $(this).value;
         if (str != '') {
             //$('.edit_age')[0].setAttribute("style", "border-color: #ced4da;width: 35%;display: inline-block;margin-right: 0.5rem;");
-            $('.edit_age')[0].css("border-color","#ced4da");
+            $('.edit_age').css("border-color","#ced4da");
             $('.user_age_error').fadeOut();
         }
     });
@@ -1701,7 +1701,7 @@ $(document).ready(function() {
         var str = $(this).value;
         if (str != '') {
             //$('.edit_address')[0].setAttribute("style", "border-color: #ced4da;");
-            $('.edit_address')[0].css("border-color","#ced4da");
+            $('.edit_address').css("border-color","#ced4da");
             $('.user_address_error').fadeOut();
         }
     });
@@ -1709,7 +1709,7 @@ $(document).ready(function() {
         var str = $(this).value;
         if (str != '') {
             //$('.edit_occupation')[0].setAttribute("style", "border-color: #ced4da;width:auto;");
-            $('.edit_occupation')[0].css("border-color","#ced4da");
+            $('.edit_occupation').css("border-color","#ced4da");
             $('.user_occupation_error').fadeOut();
         }
     });
@@ -1717,7 +1717,7 @@ $(document).ready(function() {
         var str = $(this).value;
         if (str != '') {
             //$('.edit_profile')[0].setAttribute("style", "border-color: #ced4da;height: auto;width: auto;");
-            $('.edit_profile')[0].css("border-color","#ced4da");
+            $('.edit_profile').css("border-color","#ced4da");
             $('.user_profile_error').fadeOut();
         }
     });
@@ -1725,7 +1725,7 @@ $(document).ready(function() {
         var str = $(this).value;
         if (str != '') {
             //$('.edit_workhistory')[0].setAttribute("style", "border-color: #ced4da;height: 40%;width: 60%;");
-            $('.edit_workhistory')[0].css("border-color","#ced4da");
+            $('.edit_workhistory').css("border-color","#ced4da");
             $('.user_workhistory_error').fadeOut();
         }
     });
