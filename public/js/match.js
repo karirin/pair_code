@@ -257,8 +257,12 @@ $(document).on('click', ".match_user", function() {
         $('.match_good_btn').show();
     }
     // $(document).on('click', ".profile_close", function() {
-    //     $('body').scrollTop($height);
-    //     $('.footer').show();
+    //     $('.matchuser_detaile').offset({
+    //         top: "0%"
+    //     });
+    //     $('.matchuser_detaile_prof').offset({
+    //         top: "0%"
+    //     });
     // });
     // $(document).on('click', ".modal_match", function() {
     //     $('body').scrollTop($height);

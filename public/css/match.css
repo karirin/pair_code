@@ -308,13 +308,17 @@ border-bottom: none;/*線を消す*/
     font-size: x-small;
 }
 
+.matchuser_detaile_sample.matchuser_detaile_sample{
+    padding: 0.5rem;
+}
+
 #match_good_btn,
 .good_btn {
     display: inline-block;
     padding: 7px 20px;
     border-radius: 25px;
     text-decoration: none;
-    color: #FFF;
+    color: #FFF!important;
     background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
     transition: .4s;
     font-size: 0.8rem;
@@ -533,6 +537,18 @@ border-bottom: none;/*線を消す*/
 
 .message_list:nth-last-child(){
     margin-bottom: 2rem;
+}
+
+.edit_detail_btn .edit_detail_top_btn{
+    font-size: 1.5rem;
+    display: inline-block;
+    position: absolute;
+    right: 16%;
+}
+
+.edit_detail_top_btn.edit_detail_btn{
+    right: 16%;
+    position: absolute;
 }
 
 /* ///////////////////////// */
@@ -880,38 +896,38 @@ border-bottom: none;/*線を消す*/
 
     .pointer{
         font-size: 5rem;
-        left: 20%;
-        top: 25%;
+        left: 28%;
+        top: 22%;
     }
 
     .add_match.pointer{
         font-size: 5rem;
-        top: 25%;
-        left: 22%;
+        top: 18%;
+        left: 26%;
     }
 
     .add_match.pointer2{
         font-size: 5rem;
-        top: 70%;
-        left: 60%;
+        top: 49%;
+        left: 73%;
     }
 
     .pointer2{
         font-size: 5rem;
-        left: 65%;
-        top: 69%;
+        left: 73%;
+        top: 50%;
     }
 
     .pointer3{
         font-size: 5rem;
-        left: 63%;
-        top: 82%;
+        left: 71%;
+        top: 78%;
     }
 
     .pointer4{
         font-size: 5rem;
-        left: 27%;
-        top: 84%;
+        left: 34%;
+        top: 78%;
     }
 
     .show_menu{
@@ -936,14 +952,6 @@ border-bottom: none;/*線を消す*/
         height: 7rem;
         font-size: 3rem!important;
     }
-
-    /* .edit_detail_btn .edit_detail_top_btn{
-        width: auto!important;
-        margin-right: 5rem;
-        padding: 1.375rem 1.75rem;
-        width: 15rem!important;
-        font-size: 3rem!important;
-    } */
 
     .user_add_btn{
         bottom: 33%;

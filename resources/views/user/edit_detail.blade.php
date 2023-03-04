@@ -94,20 +94,13 @@
                     <span class="user_occupation_error" style="display:none;color: #dc3545;">職種を入力してください</span>
                 </div>
             </div>
-            <p class="tag_tittle skill_tittle">スキル</p>
-            <div id="myprofile_skill">
-                <input type="hidden" name="myprofile_skills" id="myprofile_skills">
-                <input type="hidden" name="skill_count" id="myprofile_skill_count">
-                <input type="hidden" name="myskills">
+            <div class="my_profile">
+                <p class="tag_tittle">自己紹介</p>
+                <textarea placeholder="100文字以内" class="edit_profile form-control" style="height: 10rem;width: 120%;" type="text" name="user_profile">{{$profile}}</textarea>
+                <div class="error_profile_form" style="height: 8px;text-align:left;width: 13rem;">
+                    <span class="user_profile_error" style="display:none;color: #dc3545;">自己紹介を入力してください</span>
+                </div>
             </div>
-            <input placeholder="PHP　JavaScript" name="skills" id="skill_myprofile_input" style="display:block;width: 125%;" class="ui-autocomplete-input" autocomplete="off">
-            <p class="tag_tittle licence_tittle">取得資格</p>
-            <div id="licence">
-                <input type="hidden" name="myprofile_licences" id="myprofile_licences">
-                <input type="hidden" name="licence_count" id="licence_count">
-                <input type="hidden" name="mylicences">
-            </div>
-            <input placeholder="ITパスポート　基本情報技術者" name="name" id="licence_input" style="display: block;width: 125%;" />
         </div>
         <div class="col-7" style="margin-left: 4rem;">
             <div class="skill_smartphone" style="display:none;">
@@ -120,13 +113,20 @@
                 <input type="text" class="licence_select" name="licences" placeholder="ITパスポート 基本情報技術者試験">
                 <div class="image_size" style="font-size:0.9rem;">※資格単位で半角スペースを空けてください</div>
             </div>
-            <div class="my_profile">
-                <p class="tag_tittle">自己紹介</p>
-                <textarea placeholder="100文字以内" class="edit_profile form-control" style="width: auto;" type="text" name="user_profile">{{$profile}}</textarea>
-                <div class="error_profile_form" style="height: 8px;text-align:left;width: 13rem;">
-                    <span class="user_profile_error" style="display:none;color: #dc3545;">自己紹介を入力してください</span>
-                </div>
+            <p class="tag_tittle skill_tittle">スキル</p>
+            <div id="myprofile_skill">
+                <input type="hidden" name="myprofile_skills" id="myprofile_skills">
+                <input type="hidden" name="skill_count" id="myprofile_skill_count">
+                <input type="hidden" name="myskills">
             </div>
+            <input placeholder="PHP　JavaScript" name="skills" id="skill_myprofile_input" style="display:block;width: 15rem;" class="ui-autocomplete-input" autocomplete="off">
+            <p class="tag_tittle licence_tittle">取得資格</p>
+            <div id="licence">
+                <input type="hidden" name="myprofile_licences" id="myprofile_licences">
+                <input type="hidden" name="licence_count" id="licence_count">
+                <input type="hidden" name="mylicences">
+            </div>
+            <input placeholder="ITパスポート　基本情報技術者" name="name" id="licence_input" style="display: block;width: 15rem;" />
             <div class="background">
                 <p class="tag_tittle" style="margin-top: 1rem;">職歴</p>
                 <textarea placeholder="2018年～2022年　
@@ -139,9 +139,8 @@
             </div>
         </div>
     </div>
-    <div style="text-align: right;width:77%;">
-        <input style="font-size:1.5rem;" class="btn btn-outline-info edit_done edit_detail_top_btn edit_detail_btn" type="submit" value="登録">
-    </div>
+
+    <input style="font-size:1.5rem;" class="btn btn-outline-info edit_done edit_detail_top_btn edit_detail_btn" type="submit" value="登録">
     <input type="hidden" name="name" value="{{$name}}">
     <input type="hidden" name="email" value="{{$email}}">
     <input type="hidden" name="password" value="{{$password}}">

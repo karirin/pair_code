@@ -113,40 +113,48 @@
                     $('#sample_unmatch_btn').prop("disabled", true);
                     $('.help_close').fadeIn();
                     $('.help_message3').fadeIn();
-                    $('.match_sample_user').replaceWith('<div id="match0" class="match_card card match_user" data-target="#matchuser_0" data-toggle="matchuser" style="display: flex;z-index:20;pointer-events: none;"><span class="match_card_color" style="display:none;"><i class="fa-regular fa-thumbs-up" style="margin:40% 0;font-size: 3rem;"><div style="font-size: 1.8rem;font-weight:900;margin-top: 0.5rem;">いいねしました</div></i></span><span class="unmatch_card_color" style="display:none;"><i class="fa-solid fa-reply" style="margin:40% 0;font-size: 3rem;"><div style="font-size: 1.8rem;font-weight:900;margin-top: 0.5rem;">スキップしました</div></i></span><span class="back_card_color" style="background:linear-gradient(rgb(0 0 0 / 0%) 0, #000 2000px);"></span><div id="matchuser_0"><img src="../storage/user/sample_user.png" class="match_user_img" style="width: 100%;height: 100%;border-radius: 8px;"><label><i class="far fa-times-circle profile_clear"></i><input type="button" id="profile_clear"></label><h3 class="profile_name" style="color: #fff;">サンプルユーザー</h3></div></div>');
+                    $('.match_sample_user').replaceWith('<div id="match0" class="match_card card match_user" data-target="#matchuser_0" data-toggle="matchuser" style="display: flex;z-index:20;pointer-events: none;"><span class="match_card_color" style="display:none;"><i class="fa-regular fa-thumbs-up" style="margin:40% 0;font-size: 3rem;"><div style="font-size: 1.8rem;font-weight:900;margin-top: 0.5rem;">いいねしました</div></i></span><span class="unmatch_card_color" style="display:none;"><i class="fa-solid fa-reply" style="margin:40% 0;font-size: 3rem;"><div style="font-size: 1.8rem;font-weight:900;margin-top: 0.5rem;">スキップしました</div></i></span><span class="back_card_color" style="background:linear-gradient(rgb(0 0 0 / 0%) 0, #000 2000px);"></span><div id="matchuser_0" style="height: 100%;"><img src="../storage/user/sample_user.png" class="match_user_img" style="width: 100%;height: 100%;border-radius: 8px;"><label><i class="far fa-times-circle profile_clear"></i><input type="button" id="profile_clear"></label><h3 class="profile_name" style="color: #fff;">サンプルユーザー</h3></div></div>');
                     $('.matching_btn').css({
                         'z-index': '20'
                     });
                     $('.fa-image_range.fa').css({
                         'background-color': '#fff'
                     });
-                    if ($(window).width() <= 980) {
-                        setInterval(function() {
-                            $('.pointer3').animate({
-                                'left': '71%',
-                                'top': '77%'
-                            });
-                            $('.pointer3').fadeOut();
-                            $('.pointer3').animate({
-                                'left': '63%',
-                                'top': '82%'
-                            });
-                            $('.pointer3').fadeIn();
-                        }, 1000);
-                    } else {
-                        setInterval(function() {
-                            $('.pointer3').animate({
-                                'left': '61%',
-                                'top': '80%'
-                            });
-                            $('.pointer3').fadeOut();
-                            $('.pointer3').animate({
-                                'left': '55%',
-                                'top': '88%'
-                            });
-                            $('.pointer3').fadeIn();
-                        }, 1000);
-                    }
+                    setInterval(function() {
+                        $('.pointer3').animate({
+                            'color': '#000'
+                        }, 2000, 'linear')
+                        $('.pointer3').animate({
+                            'color': '#FFF'
+                        }, 2000, 'linear');
+                    }, 2000);
+                    // if ($(window).width() <= 980) {
+                    //     setInterval(function() {
+                    //         $('.pointer3').animate({
+                    //             'left': '71%',
+                    //             'top': '77%'
+                    //         });
+                    //         $('.pointer3').fadeOut();
+                    //         $('.pointer3').animate({
+                    //             'left': '63%',
+                    //             'top': '82%'
+                    //         });
+                    //         $('.pointer3').fadeIn();
+                    //     }, 1000);
+                    // } else {
+                    //     setInterval(function() {
+                    //         $('.pointer3').animate({
+                    //             'left': '61%',
+                    //             'top': '80%'
+                    //         });
+                    //         $('.pointer3').fadeOut();
+                    //         $('.pointer3').animate({
+                    //             'left': '55%',
+                    //             'top': '88%'
+                    //         });
+                    //         $('.pointer3').fadeIn();
+                    //     }, 1000);
+                    // }
                     $(document).on('click', '#sample_match_btn', function() {
                         $('.profile_name').css({
                             'z-index': '15'
@@ -236,47 +244,56 @@
             $('#sample_unmatch_btn').prop("disabled", true);
             $('.help_close').fadeIn();
             $('.help_message3').fadeIn();
-            $('.match_sample_user').replaceWith('<div id="match0" class="match_card card match_user" data-target="#matchuser_0" data-toggle="matchuser" style="display: flex;z-index:20;pointer-events: none;"><span class="match_card_color" style="display:none;"><i class="fa-regular fa-thumbs-up" style="margin:40% 0;font-size: 3rem;"><div style="font-size: 1.8rem;font-weight:900;margin-top: 0.5rem;">いいねしました</div></i></span><span class="unmatch_card_color" style="display:none;"><i class="fa-solid fa-reply" style="margin:40% 0;font-size: 3rem;"><div style="font-size: 1.8rem;font-weight:900;margin-top: 0.5rem;">スキップしました</div></i></span><span class="back_card_color" style="background:linear-gradient(rgb(0 0 0 / 0%) 0, #000 2000px);"></span><div id="matchuser_0"><img src="../storage/user/sample_user.png" class="match_user_img" style="width: 100%;height: 100%;border-radius: 8px;"><label><i class="far fa-times-circle profile_clear"></i><input type="button" id="profile_clear"></label><h3 class="profile_name" style="color: #fff;">サンプルユーザー</h3></div></div>');
+            $('.match_sample_user').replaceWith('<div id="match0" class="match_card card match_user" data-target="#matchuser_0" data-toggle="matchuser" style="display: flex;z-index:20;pointer-events: none;"><span class="match_card_color" style="display:none;"><i class="fa-regular fa-thumbs-up" style="margin:40% 0;font-size: 3rem;"><div style="font-size: 1.8rem;font-weight:900;margin-top: 0.5rem;">いいねしました</div></i></span><span class="unmatch_card_color" style="display:none;"><i class="fa-solid fa-reply" style="margin:40% 0;font-size: 3rem;"><div style="font-size: 1.8rem;font-weight:900;margin-top: 0.5rem;">スキップしました</div></i></span><span class="back_card_color" style="background:linear-gradient(rgb(0 0 0 / 0%) 0, #000 2000px);"></span><div id="matchuser_0" style="height: 100%;"><img src="../storage/user/sample_user.png" class="match_user_img" style="width: 100%;height: 100%;border-radius: 8px;"><label><i class="far fa-times-circle profile_clear"></i><input type="button" id="profile_clear"></label><h3 class="profile_name" style="color: #fff;">サンプルユーザー</h3></div></div>');
             $('.matching_btn').css({
                 'z-index': '20'
             });
             $('.fa-image_range.fa').css({
                 'background-color': '#fff'
             });
-            if ($(window).width() <= 980) {
-                setInterval(function() {
-                    $('.pointer3').animate({
-                        'left': '71%',
-                        'top': '77%'
-                    });
-                    $('.pointer3').fadeOut();
-                    $('.pointer3').animate({
-                        'left': '63%',
-                        'top': '82%'
-                    });
-                    $('.pointer3').fadeIn();
-                }, 1000);
-            } else {
-                setInterval(function() {
-                    $('.pointer3').animate({
-                        'left': '61%',
-                        'top': '80%'
-                    });
-                    $('.pointer3').fadeOut();
-                    $('.pointer3').animate({
-                        'left': '55%',
-                        'top': '88%'
-                    });
-                    $('.pointer3').fadeIn();
-                }, 1000);
-            }
+            $('.pointer3').fadeIn();
+            setInterval(function() {
+                $('.pointer3').animate({
+                    'color': '#000'
+                }, 2000, 'linear')
+                $('.pointer3').animate({
+                    'color': '#FFF'
+                }, 2000, 'linear');
+            }, 2000);
+            // if ($(window).width() <= 980) {
+            //     setInterval(function() {
+            //         $('.pointer3').animate({
+            //             'left': '71%',
+            //             'top': '77%'
+            //         });
+            //         $('.pointer3').fadeOut();
+            //         $('.pointer3').animate({
+            //             'left': '63%',
+            //             'top': '82%'
+            //         });
+            //         $('.pointer3').fadeIn();
+            //     }, 1000);
+            // } else {
+            //     setInterval(function() {
+            //         $('.pointer3').animate({
+            //             'left': '61%',
+            //             'top': '80%'
+            //         });
+            //         $('.pointer3').fadeOut();
+            //         $('.pointer3').animate({
+            //             'left': '55%',
+            //             'top': '88%'
+            //         });
+            //         $('.pointer3').fadeIn();
+            //     }, 1000);
+            // }
             $(document).on('click', '#sample_match_btn', function() {
                 $('.profile_name').css({
                     'z-index': '15'
                 });
                 $('.help_message3').fadeOut();
                 $('#pointer3').removeClass('pointer3');
-                $('#pointer3').fadeOut();
+                $('#pointer3').hide();
                 $('#pointer4').addClass('pointer4');
                 $('.help_message4').fadeIn();
                 $('#match0 > .match_card_color').fadeIn();
@@ -286,36 +303,45 @@
                     "marginLeft": "50px",
                     transform: 'rotate(50deg)'
                 }, 1000);
-                if ($(window).width() <= 980) {
-                    setInterval(function() {
-                        $('.pointer4').animate({
-                            'left': '35%',
-                            'top': '77%'
-                        });
-                        $('.pointer4').fadeOut();
-                        $('.pointer4').animate({
-                            'left': '27%',
-                            'top': '82%'
-                        });
-                        $('.pointer4').fadeIn();
-                    }, 1000);
-                } else {
-                    setInterval(function() {
-                        $('.pointer4').animate({
-                            'left': '46%',
-                            'top': '80%'
-                        });
-                        $('.pointer4').fadeOut();
-                        $('.pointer4').animate({
-                            'left': '40%',
-                            'top': '88%'
-                        });
-                        $('.pointer4').fadeIn();
-                    }, 1000);
-                }
+                $('.pointer4').fadeIn();
+                setInterval(function() {
+                    $('.pointer4').animate({
+                        'color': '#000'
+                    }, 2000, 'linear')
+                    $('.pointer4').animate({
+                        'color': '#FFF'
+                    }, 2000, 'linear');
+                }, 2000);
+                // if ($(window).width() <= 980) {
+                //     setInterval(function() {
+                //         $('.pointer4').animate({
+                //             'left': '35%',
+                //             'top': '77%'
+                //         });
+                //         $('.pointer4').fadeOut();
+                //         $('.pointer4').animate({
+                //             'left': '27%',
+                //             'top': '82%'
+                //         });
+                //         $('.pointer4').fadeIn();
+                //     }, 1000);
+                // } else {
+                //     setInterval(function() {
+                //         $('.pointer4').animate({
+                //             'left': '46%',
+                //             'top': '80%'
+                //         });
+                //         $('.pointer4').fadeOut();
+                //         $('.pointer4').animate({
+                //             'left': '40%',
+                //             'top': '88%'
+                //         });
+                //         $('.pointer4').fadeIn();
+                //     }, 1000);
+                // }
                 $(document).on('click', '#sample_unmatch_btn', function() {
                     $('#pointer4').removeClass('pointer4');
-                    $('#pointer4').fadeOut();
+                    $('#pointer4').hide();
                     $('#match0 > .match_card_color').fadeOut();
                     $('#match0 > .unmatch_card_color').fadeIn();
                     $('#match0')[0].animate({
