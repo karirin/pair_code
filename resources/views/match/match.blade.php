@@ -120,6 +120,7 @@
                     $('.fa-image_range.fa').css({
                         'background-color': '#fff'
                     });
+                    $('.pointer3').fadeIn();
                     setInterval(function() {
                         $('.pointer3').animate({
                             'color': '#000'
@@ -161,7 +162,7 @@
                         });
                         $('.help_message3').fadeOut();
                         $('#pointer3').removeClass('pointer3');
-                        $('#pointer3').fadeOut();
+                        $('#pointer3').hide();
                         $('#pointer4').addClass('pointer4');
                         $('.help_message4').fadeIn();
                         $('#match0 > .match_card_color').fadeIn();
@@ -171,36 +172,45 @@
                             "marginLeft": "50px",
                             transform: 'rotate(50deg)'
                         }, 1000);
-                        if ($(window).width() <= 980) {
-                            setInterval(function() {
-                                $('.pointer4').animate({
-                                    'left': '35%',
-                                    'top': '77%'
-                                });
-                                $('.pointer4').fadeOut();
-                                $('.pointer4').animate({
-                                    'left': '27%',
-                                    'top': '82%'
-                                });
-                                $('.pointer4').fadeIn();
-                            }, 1000);
-                        } else {
-                            setInterval(function() {
-                                $('.pointer4').animate({
-                                    'left': '46%',
-                                    'top': '80%'
-                                });
-                                $('.pointer4').fadeOut();
-                                $('.pointer4').animate({
-                                    'left': '40%',
-                                    'top': '88%'
-                                });
-                                $('.pointer4').fadeIn();
-                            }, 1000);
-                        }
+                        $('.pointer4').fadeIn();
+                        setInterval(function() {
+                            $('.pointer4').animate({
+                                'color': '#000'
+                            }, 2000, 'linear')
+                            $('.pointer4').animate({
+                                'color': '#FFF'
+                            }, 2000, 'linear');
+                        }, 2000);
+                        // if ($(window).width() <= 980) {
+                        //     setInterval(function() {
+                        //         $('.pointer4').animate({
+                        //             'left': '35%',
+                        //             'top': '77%'
+                        //         });
+                        //         $('.pointer4').fadeOut();
+                        //         $('.pointer4').animate({
+                        //             'left': '27%',
+                        //             'top': '82%'
+                        //         });
+                        //         $('.pointer4').fadeIn();
+                        //     }, 1000);
+                        // } else {
+                        //     setInterval(function() {
+                        //         $('.pointer4').animate({
+                        //             'left': '46%',
+                        //             'top': '80%'
+                        //         });
+                        //         $('.pointer4').fadeOut();
+                        //         $('.pointer4').animate({
+                        //             'left': '40%',
+                        //             'top': '88%'
+                        //         });
+                        //         $('.pointer4').fadeIn();
+                        //     }, 1000);
+                        // }
                         $(document).on('click', '#sample_unmatch_btn', function() {
                             $('#pointer4').removeClass('pointer4');
-                            $('#pointer4').fadeOut();
+                            $('#pointer4').hide();
                             $('#match0 > .match_card_color').fadeOut();
                             $('#match0 > .unmatch_card_color').fadeIn();
                             $('#match0')[0].animate({
