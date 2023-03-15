@@ -18,20 +18,16 @@
                 <span class="message_created_at">
                     {{@$message_class->convert_to_fuzzy_time($message->created_at)}}
                 </span>
-                <p>{{$message->text}}
-                    @if (!empty($message->image))
-                    <img src="{{asset($message->image)}}">
-                    @endif
-                </p><img src="{{asset($current_user->image)}}" class="message_user_img">
+                <p>{{$message->text}}@if (!empty($message->image))<img src="{{asset($message->image)}}">@endif</p>
+                <img src="{{ Storage::disk('s3')->url($current_user->image) }}" class="message_user_img">
+                <!-- <img src="{{asset($current_user->image)}}" class="message_user_img"> -->
             </div>
             @else
 
-            <div class="left"><img src="{{asset($destination_user->image)}}" class="message_user_img">
-                <div class="says">{{$message->text}}
-                    @if (!empty($message->image))
-                    <img src="{{asset($message->image)}}">
-                    @endif
-                </div><span class="message_created_at">{{@$message_class->convert_to_fuzzy_time($message->created_at)}}</span>
+            <div class="left">
+                <img src="{{ Storage::disk('s3')->url($destination_user->image) }}" class="message_user_img">
+                <!-- <img src="{{asset($destination_user->image)}}" class="message_user_img"> -->
+                <div class="says">{{$message->text}}@if (!empty($message->image))<img src="{{asset($message->image)}}">@endif</div><span class="message_created_at">{{@$message_class->convert_to_fuzzy_time($message->created_at)}}</span>
             </div>
             @endif
         </div>
@@ -45,7 +41,7 @@
                 </div>
                 <input type="hidden" class="destination_user_id" name="destination_user_id" value="{{$destination_user->id}}">
                 <input type="hidden" class="current_user_id" name="current_user_id" value="{{$current_user->id}}">
-                <input type="hidden" class="image" name="image" value="{{asset($current_user->image)}}">
+                <input type="hidden" class="image" name="image" value="{{ Storage::disk('s3')->url($current_user->image) }}">
             </div>
             <div class="message_btn">
                 <!-- <div class="message_image">

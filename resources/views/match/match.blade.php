@@ -57,7 +57,8 @@
                 <input type="hidden" class="match_user_prof" value="{{$user->profile}}">
             </div>
             <input type="hidden" class="click_flg" value="1">
-            <img src="{{asset($user->image)}}" class="match_user_img" style="width: 100%;height: 100%;border-radius: 8px;">
+            <img src="{{ Storage::disk('s3')->url($user->image) }}" class="match_user_img" style="width: 100%;height: 100%;border-radius: 8px;">
+            <!-- <img src="{{asset($user->image)}}" class="match_user_img" style="width: 100%;height: 100%;border-radius: 8px;"> -->
             <label>
                 <i class="far fa-times-circle profile_clear"></i>
                 <input type="button" id="profile_clear">

@@ -20,7 +20,8 @@
             <div class="tag" style="display: block;">
                 <div class="row profile_top">
                     <div class="col-3">
-                        <img src="{{asset($current_user->image)}}" class="mypage" style="margin-top: 1rem;">
+                        <img src="{{ Storage::disk('s3')->url($current_user->image) }}" class="mypage" style="margin-top: 1rem;">
+                        <!-- <img src="{{asset($current_user->image)}}" class="mypage" style="margin-top: 1rem;"> -->
                         <h3 class="profile_name_prof">{{$current_user->name}}</h3>
                         <input type="hidden" class="current_user_id" value="{{$current_user->id}}">
                         <input type="hidden" value="{{$current_user->id}}">
@@ -101,7 +102,8 @@
                                 </div>
                                 <input type="file" name="image_name" id="edit_profile_img" accept="image/*" multiple>
                             </label>
-                            <img class="editing_profile_img" src="{{asset($current_user->image)}}" name="profile_image">
+                            <img class="editing_profile_img" src="{{ Storage::disk('s3')->url($current_user->image) }}" name="profile_image">
+                            <!-- <img class="editing_profile_img" src="{{asset($current_user->image)}}" name="profile_image"> -->
                             <label>
                                 <i class="far fa-times-circle profile_clear"></i>
                                 <input type="button" id="profile_clear">

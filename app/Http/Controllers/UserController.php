@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Hash;
 use DateTime;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -35,6 +36,16 @@ class UserController extends Controller
     protected function create(Request $request)
     {
         $this->validate($request, User::$rules);
+
+        $disk = Storage::disk('s3');
+
+        // S3にファイルを保存し、保存したファイル名を取得する
+        $fileName = $disk->put('', $request->file('image'));
+
+        // $fileNameには
+        // https://saitobucket3.s3.amazonaws.com/uhgKiZeJXMFhL9Vr7yT7XvlJqonPNx30xbJYoEo0.jpeg
+        // のような画像へのフルパスが格納されている
+        // このフルパスをDBに格納しておくと、画像を表示させるのは簡単になる
         $user_flg = User::where('name', $request->name)->first();
 
         if ($user_flg != '') {
@@ -70,7 +81,8 @@ class UserController extends Controller
                 'password' => $request->password,
                 'email' => $request->email,
                 'hash_password' => Hash::make($request->password),
-                'image' => 'storage/sample/' . $file_name,
+                //'image' => 'storage/sample/' . $file_name,
+                'image' => $fileName,
                 'token' => $token,
             ];
         } else {
@@ -422,9 +434,11 @@ class UserController extends Controller
         $current_user = Auth::user();
         $current_user->name = $request->user_name;
         if ($request->file('image_name') != '') {
-            $file_name = $request->file('image_name')->getClientOriginalName();
-            $request->file('image_name')->storeAs('public/sample', $file_name);
-            $current_user->image = 'storage/sample/' . $file_name;
+            $disk = Storage::disk('s3');
+
+            // S3にファイルを保存し、保存したファイル名を取得する
+            $fileName = $disk->put('', $request->file('image_name'));
+            $current_user->image = $fileName;
         }
         $current_user->age = $request->user_age;
         $current_user->occupation = $request->occupation;

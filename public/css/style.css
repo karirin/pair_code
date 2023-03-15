@@ -1664,6 +1664,7 @@ img.mypage {
     background: #edf1ee;
     word-wrap: break-word;
     margin-right: 1rem;
+    white-space: pre;
 }
 
 .says:after {

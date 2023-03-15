@@ -15,7 +15,8 @@
     @if ($user->check_match($user->id,$current_user->id) === 0)
     <div class="match_user" data-target="#matchuser_{{$user->id}}" data-toggle="matchuser">
         <div id="matchuser_{{$user->id}}">
-            <img class="match_user_img" src="{{asset($user->image)}}">
+            <!-- <img class="match_user_img" src="{{asset($user->image)}}"> -->
+            <img src="{{ Storage::disk('s3')->url($user->image) }}" class="match_user_img">
             <div class="match_user_profile">
                 <div>
                     <span class="match_user_occupation">{{$user->occupation}}</span>
@@ -34,7 +35,8 @@
             <input type="hidden" class="match_user_workhistory" value="{{$user->workhistory}}">
             <input type="hidden" class="click_flg" value>
             <input type="hidden" class="flg" value="{{$current_user->top_flg}}">
-            <img src="{{$user->image}}" class="match_user_img" style="display:none;">
+            <!-- <img src="{{$user->image}}" class="match_user_img" style="display:none;"> -->
+            <img src="{{ Storage::disk('s3')->url($user->image) }}" class="match_user_img" style="display:none;">
         </div>
     </div>
     @endif

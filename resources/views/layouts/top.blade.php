@@ -227,7 +227,8 @@
                                             <input type="button" id="profile_clear">
                                         </label>
                                     </div>
-                                    <img src="{{asset($current_user->image)}}" class="mypage">
+                                    <img src="{{ Storage::disk('s3')->url($current_user->image) }}" class="mypage">
+                                    <!-- <img src="{{asset($current_user->image)}}" class="mypage"> -->
                                     <!-- <h3 class="profile_name_narrow">{{$current_user->name}}</h3> -->
                                     <input type="hidden" name="id" class="user_id" value="{{$current_user->id}}">
                                     <input type="file" name="image" class="image" value="{{asset($current_user->image)}}" style="display:none;">
