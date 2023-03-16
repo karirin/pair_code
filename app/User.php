@@ -92,18 +92,27 @@ class User extends Authenticatable
     public function check_match($user_id, $current_user_id)
     {
         $match_flg = DB::select('select user_id from matches where user_id = ' . $current_user_id . ' and matched_user_id = ' . $user_id);
+        log::debug("check_match");
+        log::debug($match_flg);
+        log::debug("check_match");
         return count($match_flg);
     }
 
     public function check_matchs($user_id, $current_user_id)
     {
         $matchs_flg = DB::select('select * from matches where (user_id = ' . $current_user_id . ' and matched_user_id = ' . $user_id . ') or (user_id = ' . $user_id  . ' and matched_user_id = ' . $current_user_id . ')');
+        log::debug("check_matchs");
+        log::debug($matchs_flg);
+        log::debug("check_matchs");
         return count($matchs_flg);
     }
 
     public function check_unmatch($user_id, $current_user_id)
     {
         $unmatchs_flg = DB::select('select * from matches where user_id = ' . $current_user_id . ' and matched_user_id = ' . $user_id . ' and unmatch_flg = 1');
+        log::debug('check_unmatch');
+        log::debug($unmatchs_flg);
+        log::debug('check_unmatch');
         return count($unmatchs_flg);
     }
 

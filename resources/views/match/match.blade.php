@@ -26,7 +26,7 @@
     @foreach ($users as $user)
     @if($user_class->check_match($current_user->id,$user->id))
     @if($user_class->check_unmatch($current_user->id,$user->id)==0)
-    @if($user_class->check_matchs($current_user->id,$user->id)!=2)
+    @if($user_class->check_matchs($current_user->id,$user->id)>2)
     <div id="match{{$user->id}}" class="match_card card match_user" data-target="#matchuser_{{$user->id}}" data-toggle="matchuser" style="display: flex;">
         <span class="match_card_color" style="display:none;">
             <i class="fa-regular fa-thumbs-up" style="margin:40% 0;font-size: 3rem;">
