@@ -7,6 +7,7 @@ use App\User;
 use App\Models\Message_relation;
 use App\Match;
 use App\AuthMail2;
+use App\AuthMail3;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
@@ -67,6 +68,15 @@ class MatchController extends Controller
                 DB::update('update matches set match_flg = 1 where matched_user_id = ' . $current_user->id . ' and user_id = ' . $request->user_id . '');
                 DB::update('update matches set match_flg = 1 where user_id = ' . $current_user->id . ' and matched_user_id = ' . $request->user_id . '');
                 Message_relation::where('destination_user_id', $request->user_id)->where('user_id', $current_user->id)->orwhere('user_id', $request->user_id)->where('destination_user_id', $current_user->id)->update(['message_count' => "match"]);
+            } else {
+                $matched_user = DB::table('users')->where([
+                    'id' => $request->user_id
+                ])->first();
+                $matched_preuser = DB::table('preusers')->where([
+                    'name' => $current_user->name
+                ])->first();
+                $url3 = request()->getSchemeAndHttpHost() . "/user/auth2?name=" . $matched_user->name . "&password=" . $matched_preuser->password . "&user_id=" . $current_user->id;
+                Mail::to($current_user->email)->send(new AuthMail3($url3));
             }
         }
     }
