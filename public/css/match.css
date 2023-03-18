@@ -824,8 +824,16 @@ border-bottom: none;/*線を消す*/
     }
 
     .user_name_error,
-    .user_pass_error{
+    .user_mail_error,
+    .user_pass_error,
+    .user_img_error{
         font-size: 2.8rem;
+    }
+
+    .error_mail_form,
+    .error_img_form{
+        height:65px!important;
+        margin: 0 15%!important;
     }
 
     .matchuser_detaile .far.fa-times-circle{
