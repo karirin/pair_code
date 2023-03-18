@@ -75,7 +75,7 @@ class MatchController extends Controller
                 $matched_preuser = DB::table('preusers')->where([
                     'name' => $current_user->name
                 ])->first();
-                $url3 = request()->getSchemeAndHttpHost() . "/user/auth2?name=" . $matched_user->name . "&password=" . $matched_preuser->password . "&user_id=" . $current_user->id;
+                $url3 = request()->getSchemeAndHttpHost() . "/user/auth3?name=" . $matched_user->name . "&password=" . $matched_preuser->password . "&user_id=" . $current_user->id;
                 Mail::to($current_user->email)->send(new AuthMail3($url3));
             }
         }

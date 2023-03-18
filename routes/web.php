@@ -30,6 +30,7 @@ Route::get('user/login', 'UserController@login');
 
 Route::post('user/login', 'UserController@auth');
 Route::get('user/auth2', 'UserController@auth2');
+Route::get('user/auth3', 'UserController@auth3');
 Route::post('user/test_login', 'UserController@test_login');
 Route::get('user/add', 'UserController@add');
 Route::post('user/edit', 'UserController@edit');
