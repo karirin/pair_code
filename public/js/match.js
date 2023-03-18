@@ -493,10 +493,18 @@ $(document).ready(function() {
             $('.user_mail_error').fadeOut();
         }
     });
+    $('#my_image').change(function() {
+        var str = $(this).value;
+        if (str != '') {
+            $('.post_btn').css("color", "#000");
+            $('.user_img_error').fadeOut();
+        }
+    });
 });
 
 $(document).on('click', '.submit_btn', function() {
     var error=0;
+    console.log($('.my_preview').attr('src'));
     if ($('.user_name_input')[0].value == '' && $('.user_pass_input')[0].value == '') {
         $('.user_name_input')[0].setAttribute("style", "border-color: #dc3545;");
         $('.user_pass_input')[0].setAttribute("style", "border-color: #dc3545;");
@@ -517,6 +525,10 @@ $(document).on('click', '.submit_btn', function() {
         $('.user_mail_input')[0].setAttribute("style", "border-color: #dc3545;");
         $('.user_mail_error').fadeIn();
         error++;
+    }
+    if($('.my_preview').attr('src') === undefined){
+        $('.post_btn').css("color", "darkred");
+        $('.user_img_error').fadeIn();
     }
     if(0 < error){
         return false;

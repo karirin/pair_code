@@ -37,9 +37,11 @@
                 </div>
                 <div class="image_size" style="font-size:0.9rem;">※（縦横200px×200px以上推奨、5MB未満）</div>
             </div>
+            <div class="error_img_form" style="height: 27px;text-align:left;margin: 0 20%;">
+                <span class="user_img_error" style="display:none;color: #dc3545;">画像を選択してください</span>
+            </div>
             <p class="preview_img"><img class="my_preview"></p>
             <input type="button" id="my_clear" value="ファイルをクリアする">
-
             <div class="flex_btn margin_top" style="margin-bottom: 2rem;">
                 <input class="btn btn-outline-dark" type="button" onclick="history.back()" value="戻る">
                 <input class="btn btn-outline-info submit_btn" type="submit" value="次へ">
