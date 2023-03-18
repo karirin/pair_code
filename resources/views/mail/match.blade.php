@@ -13,6 +13,6 @@
     <div style="text-align: center;">
         <h2>Pair Codeでマッチングしました！</h2>
         <span>下のURLをクリックして、マッチした相手とメッセージでやり取りしましょう。</span>
-        <div style="text-align: center;"><a href="{{$url}}" class="btn-square">トップ画面へ</a></div>
+        <div style="text-align: center;"><a href="{{$url}}" class="btn-square">メッセージ画面へ</a></div>
     </div>
 </body>

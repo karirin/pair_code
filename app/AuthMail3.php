@@ -21,7 +21,7 @@ class AuthMail3 extends Mailable
     //メール送信で使うビュー、タイトル、ビューに渡す認証用URLを設定
     public function build()
     {
-        return $this->view('mail.match')
+        return $this->view('mail.match_good')
             ->subject('【Pair Code】いいねが届いています！')
             ->with(['url' => $this->url]);
     }
