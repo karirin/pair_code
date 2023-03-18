@@ -376,6 +376,7 @@ class UserController extends Controller
         $this->validate($request, User::$rules);
         $name = $request->name;
         $password = $request->password;
+        $user_class = new User;
         if (Auth::attempt([
             'name' => $name,
             'password' => $password
