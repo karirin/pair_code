@@ -209,6 +209,33 @@
                             </div>
                         </div>
 
+                        <div class="matchuser_detaile_phone">
+                            <i class="far fa-times-circle profile_close" style="display:inline;"></i>
+                            <img class="matchuser_img">
+                            <div style="padding: 1rem;">
+                                <div class="matchuser_name"></div>
+                                <span class="matchuser_age"></span>
+                                <span class="matchuser_address"></span>
+                                <span class="matchuser_occupation"></span>
+                                <h1 style="margin-top: 1rem;">自己紹介</h1>
+                                <div class="matchuser_profile"></div>
+                            </div>
+                            <div style="padding: 1rem;">
+                                <h1>スキル</h1>
+                                <div class="matchuser_skill"></div>
+                                <h1 style="margin-top: 1rem;">資格</h1>
+                                <span class="matchuser_licence"></span>
+                                <h1 style="margin-top: 1rem;">職歴</h1>
+                                <span class="matchuser_workhistory"></span>
+                                <div style="text-align:right;">
+                                    <a class="match_good_btn" id="match_good_btn"><i class="fas fa-thumbs-up"></i>いいね</a>
+                                    <a class="good_btn" id="good_btn" style="display: none;"><i class="fas fa-thumbs-up"></i>いいね</a>
+                                    <input type="hidden" class="user_id">
+                                    <input type="hidden" class="matchs_flg">
+                                </div>
+                            </div>
+                        </div>
+
 
                         @if (Auth::check())
                         <div class="modal_prof"></div>

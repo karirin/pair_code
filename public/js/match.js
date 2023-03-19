@@ -230,26 +230,44 @@ $(document).on('click', ".match_user", function() {
     //$('.match_top.sarch_top').css('position', 'fixed');
     $('.modal_match').fadeIn();
     $('.profile_close').fadeIn();
-    $('.matchuser_detaile').fadeIn();
-    $('.matchuser_detaile_prof').fadeIn();
-    $('.matchuser_detaile .matchuser_img').attr('src', $($target_modal + ' > .match_user_img')[0].getAttribute('src'));
-    $('.matchuser_detaile .matchuser_name').replaceWith('<div class="matchuser_name">' + $($target_modal + ' > .match_user_name')[0].value + '</div>');
-    $('.matchuser_detaile .matchuser_age').replaceWith('<span class="matchuser_age">' + $($target_modal + ' > .match_user_profile > div > .match_user_age').text() + '</span>');
-    $('.matchuser_detaile .matchuser_address').replaceWith('<span class="matchuser_address">' + $($target_modal + ' > .match_user_address')[0].value + '</span>');
-    $('.matchuser_detaile .matchuser_profile').replaceWith('<div class="matchuser_profile">' + $($target_modal + ' > .match_user_profile > .match_user_prof').val() + '</div>');
-    $('.matchuser_detaile .matchuser_occupation').replaceWith('<span class="matchuser_occupation">' + $($target_modal + ' > .match_user_occupation')[0].value + '</span>');
-    $('.matchuser_detaile_prof .matchuser_skill').replaceWith('<span id="child-span_myprofile" class="matchuser_skill" style="font-size: 1rem;">' + $($target_modal + ' > .match_user_skill')[0].value + '</span>');
-    $('.matchuser_detaile_prof .matchuser_licence').replaceWith('<span id="child-span_myprofile" class="matchuser_licence" style="font-size: 1rem;">' + $($target_modal + '  > .match_user_licence')[0].value + '</span>');
-    $('.matchuser_detaile_prof .matchuser_workhistory').replaceWith('<span class="matchuser_workhistory" style="font-size: 1rem;">' + $($target_modal + ' > .match_user_workhistory')[0].value + '</span>');
-    $('.matchuser_detaile .user_id').val($($target_modal + ' > .match_user_id')[0].value);
-    $('.matchuser_detaile .matchs_flg').val($($target_modal + ' > .matchs_flg')[0].value);
-    $('.matchuser_detaile_prof').fadeIn();
-    $('.matchuser_detaile').offset({
-        top: $height
-    });
-    $('.matchuser_detaile_prof').offset({
-        top: $height
-    });
+    if ($(window).width() <= 980) {
+        $('.matchuser_detaile_phone').fadeIn();
+        $('.matchuser_detaile_phone .matchuser_img').attr('src', $($target_modal + ' > .match_user_img')[0].getAttribute('src'));
+        $('.matchuser_detaile_phone .matchuser_name').replaceWith('<div class="matchuser_name">' + $($target_modal + ' > .match_user_name')[0].value + '</div>');
+        $('.matchuser_detaile_phone .matchuser_age').replaceWith('<span class="matchuser_age">' + $($target_modal + ' > .match_user_profile > div > .match_user_age').text() + '</span>');
+        $('.matchuser_detaile_phone .matchuser_address').replaceWith('<span class="matchuser_address">' + $($target_modal + ' > .match_user_address')[0].value + '</span>');
+        $('.matchuser_detaile_phone .matchuser_profile').replaceWith('<div class="matchuser_profile">' + $($target_modal + ' > .match_user_profile > .match_user_prof').val() + '</div>');
+        $('.matchuser_detaile_phone .matchuser_occupation').replaceWith('<span class="matchuser_occupation">' + $($target_modal + ' > .match_user_occupation')[0].value + '</span>');
+        $('.matchuser_detaile_phone .matchuser_skill').replaceWith('<span id="child-span_myprofile" class="matchuser_skill" style="font-size: 1rem;">' + $($target_modal + ' > .match_user_skill')[0].value + '</span>');
+        $('.matchuser_detaile_phone .matchuser_licence').replaceWith('<span id="child-span_myprofile" class="matchuser_licence" style="font-size: 1rem;">' + $($target_modal + '  > .match_user_licence')[0].value + '</span>');
+        $('.matchuser_detaile_phone .matchuser_workhistory').replaceWith('<span class="matchuser_workhistory" style="font-size: 1rem;">' + $($target_modal + ' > .match_user_workhistory')[0].value + '</span>');
+        $('.matchuser_detaile_phone .user_id').val($($target_modal + ' > .match_user_id')[0].value);
+        $('.matchuser_detaile_phone .matchs_flg').val($($target_modal + ' > .matchs_flg')[0].value);
+        $height += 100;
+        $('.matchuser_detaile_phone').offset({
+            top: $height
+        });
+    }else{
+        $('.matchuser_detaile').fadeIn();
+        $('.matchuser_detaile_prof').fadeIn();
+        $('.matchuser_detaile .matchuser_img').attr('src', $($target_modal + ' > .match_user_img')[0].getAttribute('src'));
+        $('.matchuser_detaile .matchuser_name').replaceWith('<div class="matchuser_name">' + $($target_modal + ' > .match_user_name')[0].value + '</div>');
+        $('.matchuser_detaile .matchuser_age').replaceWith('<span class="matchuser_age">' + $($target_modal + ' > .match_user_profile > div > .match_user_age').text() + '</span>');
+        $('.matchuser_detaile .matchuser_address').replaceWith('<span class="matchuser_address">' + $($target_modal + ' > .match_user_address')[0].value + '</span>');
+        $('.matchuser_detaile .matchuser_profile').replaceWith('<div class="matchuser_profile">' + $($target_modal + ' > .match_user_profile > .match_user_prof').val() + '</div>');
+        $('.matchuser_detaile .matchuser_occupation').replaceWith('<span class="matchuser_occupation">' + $($target_modal + ' > .match_user_occupation')[0].value + '</span>');
+        $('.matchuser_detaile_prof .matchuser_skill').replaceWith('<span id="child-span_myprofile" class="matchuser_skill" style="font-size: 1rem;">' + $($target_modal + ' > .match_user_skill')[0].value + '</span>');
+        $('.matchuser_detaile_prof .matchuser_licence').replaceWith('<span id="child-span_myprofile" class="matchuser_licence" style="font-size: 1rem;">' + $($target_modal + '  > .match_user_licence')[0].value + '</span>');
+        $('.matchuser_detaile_prof .matchuser_workhistory').replaceWith('<span class="matchuser_workhistory" style="font-size: 1rem;">' + $($target_modal + ' > .match_user_workhistory')[0].value + '</span>');
+        $('.matchuser_detaile .user_id').val($($target_modal + ' > .match_user_id')[0].value);
+        $('.matchuser_detaile .matchs_flg').val($($target_modal + ' > .matchs_flg')[0].value);
+        $('.matchuser_detaile').offset({
+            top: $height
+        });
+        $('.matchuser_detaile_prof').offset({
+            top: $height
+        });
+    }
     // $(window).scrollTop(0);
     if ($($target_modal + ' > .click_flg')[0].value != 0) {
         $('.match_good_btn').hide();
