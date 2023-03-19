@@ -529,6 +529,7 @@ $(document).on('click', '.submit_btn', function() {
     if($('.my_preview').attr('src') === undefined){
         $('.post_btn').css("color", "darkred");
         $('.user_img_error').fadeIn();
+        error++;
     }
     if(0 < error){
         return false;
