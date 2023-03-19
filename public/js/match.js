@@ -292,6 +292,7 @@ $(document).on('click', ".match_user", function() {
 $(document).on('click', ".modal_match", function() {
     $('.modal_match').fadeOut();
     $('.matchuser_detaile').fadeOut();
+    $('.matchuser_detaile_phone').fadeOut();
     $('.matchuser_detaile_prof').fadeOut();
     $('.match_top').css('position', '');
     $('#match_btn').prop("disabled", false);
@@ -302,7 +303,11 @@ $(document).on('click', ".modal_match", function() {
 $(document).on('click', ".far.fa-times-circle", function() {
     $('.modal_match').fadeOut();
     $('.matchuser_detaile').fadeOut();
+    $('.matchuser_detaile_phone').fadeOut();
     $('.matchuser_detaile_prof').fadeOut();
+    $('.match_top').css('position', '');
+    $('#match_btn').prop("disabled", false);
+    $('#unmatch_btn').prop("disabled", false);
 });
 
 // いいねをクリックしたとき
