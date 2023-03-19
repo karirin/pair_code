@@ -217,15 +217,13 @@
                                 <span class="matchuser_age"></span>
                                 <span class="matchuser_address"></span>
                                 <span class="matchuser_occupation"></span>
-                                <h1 style="margin-top: 1rem;">自己紹介</h1>
+                                <h6 style="margin-top: 1rem;">自己紹介</h6>
                                 <div class="matchuser_profile"></div>
-                            </div>
-                            <div style="padding: 1rem;">
-                                <h1>スキル</h1>
+                                <h6>スキル</h6>
                                 <div class="matchuser_skill"></div>
-                                <h1 style="margin-top: 1rem;">資格</h1>
+                                <h6 style="margin-top: 1rem;">資格</h6>
                                 <span class="matchuser_licence"></span>
-                                <h1 style="margin-top: 1rem;">職歴</h1>
+                                <h6 style="margin-top: 1rem;">職歴</h6>
                                 <span class="matchuser_workhistory"></span>
                                 <div style="text-align:right;">
                                     <a class="match_good_btn" id="match_good_btn"><i class="fas fa-thumbs-up"></i>いいね</a>

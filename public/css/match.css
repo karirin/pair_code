@@ -291,6 +291,7 @@ border-bottom: none;/*線を消す*/
 }
 
 .matchuser_detaile_prof h6,
+.matchuser_detaile_phone h6,
 .matchuser_detaile_prof_sample h6 {
     padding: 0em 0.5em;
     color: #494949;
@@ -714,7 +715,7 @@ border-bottom: none;/*線を消す*/
         margin-left: 11%!important;
     }
     .help_message{
-        top: 32%;
+        top: 34%;
         font-size: 2rem;
     }
     .help_message2{
@@ -777,6 +778,10 @@ border-bottom: none;/*線を消す*/
         width:630px;
     }
     .matchuser_detaile_prof h6,
+    .matchuser_detaile_prof_sample h6{
+        font-size:3rem!important;
+    }
+    .matchuser_detaile_phone h6,
     .matchuser_detaile_prof_sample h6{
         font-size:3rem!important;
     }
