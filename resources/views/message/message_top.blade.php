@@ -5,7 +5,7 @@
 @endsection
 @section('content')
 <div id="splash"></div>
-<div class="col-9 message_top" style="height:auto;margin-left: 23%;padding-left: 3rem;margin-bottom: 2rem;display: none;">
+<div class="message_top" style="height:auto;margin-left: 23%;margin-bottom: 2rem;display: none;">
     <h3 class="page_title message_title">メッセージ</h3>
     @foreach ($message_relations as $message_relation)
     <div class="message_list">
