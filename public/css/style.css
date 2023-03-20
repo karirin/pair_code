@@ -1497,6 +1497,7 @@ img.mypage {
 
 .destination_user_list .destination_user_info .destination_user_text {
     color: rgb(168, 168, 168);
+    word-break: break-all;
 }
 
 .new_message_time {
@@ -1662,9 +1663,9 @@ img.mypage {
     max-width: 250px;
     border-radius: 12px;
     background: #edf1ee;
-    word-wrap: break-word;
     margin-right: 1rem;
-    white-space: pre;
+    word-break: break-all;
+    white-space: pre-wrap;
 }
 
 .says:after {
@@ -1736,8 +1737,8 @@ img.mypage {
     border-radius: 12px;
     background: rgb(240, 240, 240);
     font-size: 15px;
-    word-wrap: break-word;
-    white-space: pre;
+    word-break: break-all;
+    white-space: pre-wrap;
     text-align: left;
 }
 
