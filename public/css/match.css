@@ -1066,6 +1066,11 @@ border-bottom: none;/*線を消す*/
         display: inline-block;
     }
 
+    .matchs_user{
+        margin-left: 20%!important;
+        font-size: 3rem;
+    }
+
 /* ///////////////////////// */
 
 
