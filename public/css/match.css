@@ -223,6 +223,16 @@ border-bottom: none;/*線を消す*/
     text-align: center;
 }
 
+.matchs_user{
+    margin-left: 60%;
+    color: burlywood;
+}
+
+.matchs_user:hover{
+    color: burlywood;
+    opacity: 0.5;
+}
+
 /* ///////////////////////// */
 
 

@@ -49,6 +49,7 @@ Route::get('user/register', 'UserController@register');
 Route::get('user/add_match', 'UserController@add_match');
 
 Route::get('match/match', 'MatchController@index');
+Route::get('match/match_user', 'MatchController@match_user');
 
 Route::get('message/message', 'MessageController@index');
 Route::get('message/add', 'MessageController@index');

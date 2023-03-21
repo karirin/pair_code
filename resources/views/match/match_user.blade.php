@@ -7,12 +7,12 @@
 @if (Auth::check())
 <div id="splash"></div>
 <div class="col-9 match_top sarch_top" style="margin-left: 23%;padding-left: 3rem;display:none;">
-    <h3 class="page_title serach">さがす<a href='/match/match_user?user_id={{$current_user->id}}' class="matchs_user"><i class="fa-solid fa-user" style="margin-right:0.5rem;"></i>マッチした人</a></h3>
+    <h3 class="page_title serach">マッチした人<a href="{{ asset('/') }}" class="matchs_user" style="margin-left: 60%;"><i class="fa-solid fa-share" style="margin-right:0.5rem;"></i>戻る</a></h3>
     <i class="fa-solid fa-circle-question help_btn"></i>
     <input type="hidden" class="sample_user">
     @foreach ($users as $user)
     @if ($user->id != $current_user->id)
-    @if ($user->check_match($user->id,$current_user->id) === 0)
+    @if ($user->check_match($user->id,$current_user->id) !== 0)
     <div class="match_user" data-target="#matchuser_{{$user->id}}" data-toggle="matchuser">
         <div id="matchuser_{{$user->id}}">
             <!-- <img class="match_user_img" src="{{asset($user->image)}}"> -->
