@@ -33,7 +33,7 @@
             <input type="hidden" class="match_user_skill" value="{{$user->skill}}">
             <input type="hidden" class="match_user_licence" value="{{$user->licence}}">
             <input type="hidden" class="match_user_workhistory" value="{{$user->workhistory}}">
-            <input type="hidden" class="click_flg" value>
+            <input type="hidden" class="click_flg" value="1">
             <input type="hidden" class="flg" value="{{$current_user->top_flg}}">
             <!-- <img src="{{$user->image}}" class="match_user_img" style="display:none;"> -->
             <img src="{{ Storage::disk('s3')->url($user->image) }}" class="match_user_img" style="display:none;">
