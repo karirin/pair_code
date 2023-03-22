@@ -12,7 +12,7 @@
     <input type="hidden" class="sample_user">
     @foreach ($users as $user)
     @if ($user->id != $current_user->id)
-    @if ($user->check_match($user->id,$current_user->id) !== 0)
+    @if ($user->check_matchs($user->id,$current_user->id) > 2)
     <div class="match_user" data-target="#matchuser_{{$user->id}}" data-toggle="matchuser">
         <div id="matchuser_{{$user->id}}">
             <!-- <img class="match_user_img" src="{{asset($user->image)}}"> -->
