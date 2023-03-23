@@ -435,6 +435,7 @@
             $('.modal_match').fadeOut();
             $('.welcome').fadeIn();
             $('.match_box').fadeOut();
+            $('.footer').fadeOut();
             setTimeout(function() {
                 window.location.href = "/";
             }, 2000);

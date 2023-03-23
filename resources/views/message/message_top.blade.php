@@ -6,7 +6,7 @@
 @section('content')
 <div id="splash"></div>
 <div class="message_top" style="height:auto;margin-left: 23%;margin-bottom: 2rem;display: none;">
-    <h3 class="page_title message_title">メッセージ</h3>
+    <h3 class="page_title message_title" style="margin-top:0;">メッセージ</h3>
     @foreach ($message_relations as $message_relation)
     <div class="message_list">
         <a href='/message/message?user_id={{$message_relation->destination_user_id}}' id="message_link">
@@ -18,10 +18,17 @@
                     <div class="destination_user_info_detail">
                         <div class="destination_user_name">{{$message_relation->name}}</div>
                         <div class="destination_user_message_info">
+                            @if($message_relation->message_count!=0)
                             <span class="destination_user_text">{{@$message_relation->getNewmessage($current_user->id,$message_relation->destination_user_id)}}</span>
                             <span id="message_count">
-                                @if($message_relation->message_count!=0){{@$message_relation->getNewmessagecount($current_user->id,$message_relation->destination_user_id)}}@elseif($message_relation->message_count=='match')マッチしたユーザーにメッセージを送りましょう@endif
+                                {{@$message_relation->getNewmessagecount($current_user->id,$message_relation->destination_user_id)}}マッチしたユーザーにメッセージを送りましょう
                             </span>
+                            @elseif($message_relation->message_count=='match')
+                            <span class="destination_user_text"></span>
+                            <span id="message_count">
+                                マッチしたユーザーにメッセージを送りましょう
+                            </span>
+                            @endif
                         </div>
                     </div>
 
@@ -52,7 +59,8 @@
 @parent
 <script>
     setTimeout(function() {
-        $(".message_top").css("display", "inline-block");
+        //$(".message_top").css("display", "inline-block");
+        $(".message_top").fadeIn();
     }, 840);
 </script>
 @endsection
