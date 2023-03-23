@@ -24,7 +24,7 @@
                 <input class="btn btn-outline-info submit_btn edit_detail_top_btn" type="submit" value="ログイン">
             </div>
         </form>
-        <a href="/auth/twitter" class="btn-social-long-twitter">
+        <a href="/auth/twitter" class="btn-social-long-twitter" style="display:none;">
             <i class="fa-brands fa-twitter edit_detail_top_btn" style="margin-right: 1rem;"></i><span class="twitter_login">Twitterでログイン</span>
         </a>
     </div>

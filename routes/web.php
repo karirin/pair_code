@@ -39,6 +39,7 @@ Route::get('user/profile', 'UserController@profile');
 Route::post('user/add', 'UserController@create');
 
 Route::post('user/edit_detail', 'UserController@edit_detail');
+Route::post('user/edit_detail1', 'UserController@edit_detail1');
 
 Route::get('user/logout', 'UserController@logout')->name('logout');
 
