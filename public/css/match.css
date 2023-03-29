@@ -1383,6 +1383,10 @@ img.my_preview {
     font-size: 3rem;
 }
 
+.user_login_top .google_login{
+    font-size: 3rem;
+}
+
 /* .user_login_top .flex_btn{
     margin: 0 20%!important;
 } */
@@ -1392,6 +1396,10 @@ img.my_preview {
 }
 
 .user_login_top .btn-social-long-twitter{
+    margin-top: 3rem;
+}
+
+.user_login_top .btn-social-long-google{
     margin-top: 3rem;
 }
 

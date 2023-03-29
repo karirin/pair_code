@@ -127,9 +127,9 @@
                 <input type="hidden" name="mylicences">
             </div>
             <input placeholder="ITパスポート　基本情報技術者" name="name" id="licence_input" style="display: block;width: 15rem;" />
-            <div class="user_title">メールアドレス</div>
-            <input type="text" name="email" class="user_mail_input form-control" style="margin-bottom:0;" placeholder="info@paircode.work" autocomplete="off">
-            <div class="error_mail_form" style="height: 27px;text-align:left;margin: 0 20%;">
+            <div class="tag_tittle" style="margin-top:1rem;">メールアドレス</div>
+            <input type="text" name="email" class="user_mail_input form-control" style="margin-bottom:0;margin-top:0;" placeholder="info@paircode.work" autocomplete="off">
+            <div class="error_mail_form" style="height: 27px;text-align:left;">
                 <span class="user_mail_error" style="display:none;color: #dc3545;">メールを入力してください</span>
             </div>
             <div class="background">
@@ -202,10 +202,16 @@
             $('.user_occupation_error').fadeIn();
             error++;
         }
-        if ($('.edit_workhistory')[0].value == '') {
+        // if ($('.edit_workhistory')[0].value == '') {
+        //     //$('.edit_workhistory')[0].setAttribute("style", "border-color: #dc3545;height: 40%;width: 60%;");
+        //     $('.edit_workhistory').css("border-color", "#dc3545");
+        //     $('.user_workhistory_error').fadeIn();
+        //     error++;
+        // }
+        if ($('.user_mail_input')[0].value == '') {
             //$('.edit_workhistory')[0].setAttribute("style", "border-color: #dc3545;height: 40%;width: 60%;");
-            $('.edit_workhistory').css("border-color", "#dc3545");
-            $('.user_workhistory_error').fadeIn();
+            $('.user_mail_input').css("border-color", "#dc3545");
+            $('.user_mail_error').fadeIn();
             error++;
         }
         if (0 < error) {
@@ -248,14 +254,14 @@
                 $('.user_profile_error').fadeOut();
             }
         });
-        $('.edit_workhistory').change(function() {
-            var str = $(this).value;
-            if (str != '') {
-                //$('.edit_workhistory')[0].setAttribute("style", "border-color: #ced4da;height: 40%;width: 60%;");
-                $('.edit_workhistory')[0].css("border-color", "#ced4da");
-                $('.user_workhistory_error').fadeOut();
-            }
-        });
+        // $('.edit_workhistory').change(function() {
+        //     var str = $(this).value;
+        //     if (str != '') {
+        //         //$('.edit_workhistory')[0].setAttribute("style", "border-color: #ced4da;height: 40%;width: 60%;");
+        //         $('.edit_workhistory')[0].css("border-color", "#ced4da");
+        //         $('.user_workhistory_error').fadeOut();
+        //     }
+        // });
     });
 </script>
 @endsection

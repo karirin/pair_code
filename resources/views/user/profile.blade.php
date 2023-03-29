@@ -20,7 +20,11 @@
             <div class="tag" style="display: block;">
                 <div class="row profile_top">
                     <div class="col-3">
+                        @if ($current_user->google_id != "")
+                        <img src="{{asset($current_user->image)}}" class="mypage" style="margin-top: 1rem;">
+                        @else
                         <img src="{{ Storage::disk('s3')->url($current_user->image) }}" class="mypage" style="margin-top: 1rem;">
+                        @endif
                         <!-- <img src="{{asset($current_user->image)}}" class="mypage" style="margin-top: 1rem;"> -->
                         <h3 class="profile_name_prof">{{$current_user->name}}</h3>
                         <input type="hidden" class="current_user_id" value="{{$current_user->id}}">

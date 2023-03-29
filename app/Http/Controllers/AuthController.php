@@ -11,6 +11,7 @@ use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Socialite;
+use Illuminate\Support\Facades\Storage;
 
 class AuthController extends Controller
 {
@@ -33,10 +34,21 @@ class AuthController extends Controller
         }
 
         // 新しいユーザーを作成
+        $disk = Storage::disk('s3');
+
+        // S3にファイルを保存し、保存したファイル名を取得する
+        $fileName = $disk->put('', $providerUser->user['profile_image_url_https']);
+
+        // $file_name = $request->file('image')->getClientOriginalName();
+        // $request->file('image')->storeAs('public/sample', $file_name);
+
+        // 'image' => $fileName,
+        //dd($providerUser);
         $current_user = new User();
         $current_user->unique_id = $providerUser->nickname;
         $current_user->name = $providerUser->name;
-        $current_user->image = 'https://twitars.now.sh/' . $providerUser->id . '/original';
+        //$current_user->image = 'https://twitars.now.sh/' . $providerUser->id . '/original';
+        $current_user->image = $providerUser->user['profile_image_url_https'];
         $current_user->profile = $providerUser->user['description'];
         $socialUser = new SocialUser();
         $socialUser->provider_user_id = $providerUser->id;
@@ -61,7 +73,7 @@ class AuthController extends Controller
 
         $match_flg = Match::where('matched_user_id', $current_user->id)->where('match_flg', '!=', 1)->where('unmatch_flg', '!=', 1)->first();
 
-        $param = ['current_user' => $current_user, 'profile' => $current_user->profile, 'name' => $current_user->name, 'password' => '', 'hash_password' => '', 'image' => $current_user->image, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'message' => $message, 'top_message' => '', 'match_flg' => $match_flg, 'email' => $email];
-        return view('user.edit_detail1', $param);
+        $param = ['current_user' => $current_user, 'profile' => $current_user->profile, 'name' => $current_user->name, 'password' => '', 'hash_password' => '', 'image' => $current_user->image, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'message' => $message, 'top_message' => '', 'match_flg' => $match_flg];
+        return view('user.edit_detail_twitter', $param);
     }
 }

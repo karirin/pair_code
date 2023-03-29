@@ -24,9 +24,14 @@
                 <input class="btn btn-outline-info submit_btn edit_detail_top_btn" type="submit" value="ログイン">
             </div>
         </form>
-        <a href="/auth/twitter" class="btn-social-long-twitter" style="display:none;">
-            <i class="fa-brands fa-twitter edit_detail_top_btn" style="margin-right: 1rem;"></i><span class="twitter_login">Twitterでログイン</span>
+        <a href="/auth/twitter" class="btn-social-long-twitter">
+            <i class="fa-brands fa-twitter edit_detail_top_btn" style="margin-right: 1rem;vertical-align:bottom;font-size: 25px;"></i><span class="twitter_login">Twitterでログイン</span>
         </a>
+        <p>
+            <a href="/auth/redirect" class="btn-social-long-google">
+                <img src="/storage/top/google.png" style="width:1.5rem;margin-right: 1rem;"><span class="google_login" style="color:#727272;">Googleでログイン</span>
+            </a>
+        </p>
     </div>
 
 </div>

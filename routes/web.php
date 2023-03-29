@@ -40,6 +40,10 @@ Route::post('user/add', 'UserController@create');
 
 Route::post('user/edit_detail', 'UserController@edit_detail');
 Route::post('user/edit_detail1', 'UserController@edit_detail1');
+Route::post('user/edit_detail_google', 'UserController@edit_detail_google');
+
+Route::get('/auth/redirect', 'GoogleLoginController@getGoogleAuth');
+Route::get('/login/callback', 'GoogleLoginController@authGoogleCallback');
 
 Route::get('user/logout', 'UserController@logout')->name('logout');
 

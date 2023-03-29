@@ -47,6 +47,14 @@
                 <input class="btn btn-outline-info submit_btn" type="submit" value="次へ">
             </div>
         </form>
+        <a href="/auth/twitter" style="margin-top: 0;" class="btn-social-long-twitter">
+            <i class="fa-brands fa-twitter edit_detail_top_btn" style="margin-right: 1rem;vertical-align:bottom;font-size: 25px;"></i><span class="twitter_login">Twitterでログイン</span>
+        </a>
+        <p>
+            <a href="/auth/redirect" class="btn-social-long-google" style="margin-bottom: 1rem;">
+                <img src="/storage/top/google.png" style="width:1.5rem;margin-right: 1rem;"><span class="google_login" style="color:#727272;">Googleでログイン</span>
+            </a>
+        </p>
     </div>
 </div>
 <p class="add_message">{{$add_message}}</p>

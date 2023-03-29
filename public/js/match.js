@@ -498,21 +498,21 @@ $(document).ready(function() {
     $('.user_name_input').change(function() {
         var str = $(this).value;
         if (str != '') {
-            $('.user_name_input')[0].setAttribute("style", "border-color: #ced4da;");
+            $('.user_name_input').css("border-color","#ced4da");
             $('.user_name_error').fadeOut();
         }
     });
     $('.user_pass_input').change(function() {
         var str = $(this).value;
         if (str != '') {
-            $('.user_pass_input')[0].setAttribute("style", "border-color: #ced4da;");
+            $('.user_pass_input').css("border-color","#ced4da");
             $('.user_pass_error').fadeOut();
         }
     });
     $('.user_mail_input').change(function() {
         var str = $(this).value;
         if (str != '') {
-            $('.user_mail_input')[0].setAttribute("style", "border-color: #ced4da;");
+            $('.user_mail_input').css("border-color","#ced4da");
             $('.user_mail_error').fadeOut();
         }
     });
@@ -527,7 +527,6 @@ $(document).ready(function() {
 
 $(document).on('click', '.submit_btn', function() {
     var error=0;
-    console.log($('.my_preview').attr('src'));
     if ($('.user_name_input')[0].value == '' && $('.user_pass_input')[0].value == '') {
         $('.user_name_input')[0].setAttribute("style", "border-color: #dc3545;");
         $('.user_pass_input')[0].setAttribute("style", "border-color: #dc3545;");
