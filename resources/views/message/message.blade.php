@@ -19,14 +19,20 @@
                     {{@$message_class->convert_to_fuzzy_time($message->created_at)}}
                 </span>
                 <p>{{$message->text}}@if (!empty($message->image))<img src="{{asset($message->image)}}">@endif</p>
+                @if ($current_user->social_flg != "")
+                <img src="{{asset($current_user->image)}}" class="message_user_img">
+                @else
                 <img src="{{ Storage::disk('s3')->url($current_user->image) }}" class="message_user_img">
-                <!-- <img src="{{asset($current_user->image)}}" class="message_user_img"> -->
+                @endif
             </div>
             @else
 
             <div class="left">
+                @if ($destination_user->social_flg != "")
+                <img src="{{asset($destination_user->image)}}" class="message_user_img">
+                @else
                 <img src="{{ Storage::disk('s3')->url($destination_user->image) }}" class="message_user_img">
-                <!-- <img src="{{asset($destination_user->image)}}" class="message_user_img"> -->
+                @endif
                 <div class="says">{{$message->text}}@if (!empty($message->image))<img src="{{asset($message->image)}}">@endif</div><span class="message_created_at">{{@$message_class->convert_to_fuzzy_time($message->created_at)}}</span>
             </div>
             @endif

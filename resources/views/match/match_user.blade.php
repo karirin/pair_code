@@ -15,8 +15,11 @@
     @if ($user->check_matchs($user->id,$current_user->id) >= 2)
     <div class="match_user" data-target="#matchuser_{{$user->id}}" data-toggle="matchuser">
         <div id="matchuser_{{$user->id}}">
-            <!-- <img class="match_user_img" src="{{asset($user->image)}}"> -->
+            @if ($user->social_flg != "")
+            <img class="match_user_img" src="{{asset($user->image)}}">
+            @else
             <img src="{{ Storage::disk('s3')->url($user->image) }}" class="match_user_img">
+            @endif
             <div class="match_user_profile">
                 <div>
                     <span class="match_user_occupation">{{$user->occupation}}</span>

@@ -12,9 +12,11 @@
         <a href='/message/message?user_id={{$message_relation->destination_user_id}}' id="message_link">
             <div class="destination_user_list">
                 <div class='col-11 destination_user_info'>
-
-                    <!-- <img src="{{asset($message_relation->image)}}" class="message_user_img"> -->
+                    @if ($current_user->social_flg != "")
+                    <img src="{{asset($message_relation->image)}}" class="message_user_img">
+                    @else
                     <img src="{{ Storage::disk('s3')->url($message_relation->image) }}" class="message_user_img">
+                    @endif
                     <div class="destination_user_info_detail">
                         <div class="destination_user_name">{{$message_relation->name}}</div>
                         <div class="destination_user_message_info">
