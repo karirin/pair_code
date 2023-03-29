@@ -261,32 +261,40 @@ class UserController extends Controller
         //3. ユーザデータを保存
         //DB::table('users')->insert($form);
 
-        $action = session()->get($this->method_action_key);
-        $is_reload = ($action == '');
-        if (is_null($action)) {
-            DB::table('users')->insert($form);
-        } else if ($is_reload) { }
-        if (Auth::attempt([
-            'name' => $request->name,
-            'password' => $request->password
-        ])) {
-            $current_user = Auth::user();
-            $users = User::get();
-            $skills = explode(" ", $current_user->skill);
-            $licences = explode(" ", $current_user->licence);
-            $message = new Message_relation;
-            $message_cs = Message_relation::where('user_id', $current_user->id)->get();
-            $message_count = 0;
-            foreach ($message_cs as $message_c) {
-                if ($message_c->message_count != 0 || $message_c->message_count == 'match') {
-                    $message_count++;
-                }
+        // $action = session()->get($this->method_action_key);
+        // $is_reload = ($action == '');
+        // if (is_null($action)) {
+        //     DB::table('users')->insert($form);
+        // } else if ($is_reload) { }
+        // if (Auth::attempt([
+        //     'name' => $request->name,
+        //     'password' => $request->password
+        // ])) {
+        $current_user = Auth::user();
+        $current_user->age = $request->age;
+        $current_user->occupation = $request->occupation;
+        $current_user->address = $request->address;
+        $current_user->skill = $request->myprofile_skills;
+        $current_user->licence = $request->myprofile_licences;
+        $current_user->workhistory = $request->user_workhistory;
+        $current_user->profile = $request->user_profile;
+        $current_user->save();
+        $users = User::get();
+        $skills = explode(" ", $current_user->skill);
+        $licences = explode(" ", $current_user->licence);
+        $message = new Message_relation;
+        $message_cs = Message_relation::where('user_id', $current_user->id)->get();
+        $message_count = 0;
+        foreach ($message_cs as $message_c) {
+            if ($message_c->message_count != 0 || $message_c->message_count == 'match') {
+                $message_count++;
             }
-            $top_message = $request->name . 'さんがログインしました';
-            $match_flg = Match::where('matched_user_id', $current_user->id)->where('match_flg', '!=', 1)->where('unmatch_flg', '!=', 1)->first();
-            $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'message' => $message, 'top_message' => $top_message, 'match_flg' => $match_flg];
-            return view('user.add_match', $param);
         }
+        $top_message = $request->name . 'さんがログインしました';
+        $match_flg = Match::where('matched_user_id', $current_user->id)->where('match_flg', '!=', 1)->where('unmatch_flg', '!=', 1)->first();
+        $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'message' => $message, 'top_message' => $top_message, 'match_flg' => $match_flg];
+        return view('user.add_match', $param);
+        //}
     }
 
     protected function edit_detail_google(Request $request)
@@ -305,35 +313,6 @@ class UserController extends Controller
             'workhistory' => $request->user_workhistory,
             'google_id' => $request->google_id
         ];
-        // $current_user = array();
-        // $current_user = new User();
-        // $current_user = DB::table('users')->where([
-        //     'google_id' => $request->google_id
-        // ])->first();
-        //dd($current_user);
-        // log::debug($current_user);
-        //3. ユーザデータを保存
-        // DB::table('users')->insert($form);
-        // $current_user = new User();
-        // $current_user->name = $request->name;
-        // $current_user->password = 'google';
-        // $current_user->save();
-        // $action = session()->get($this->method_action_key);
-        // $is_reload = ($action == '');
-        // if (is_null($action)) {
-        //     DB::table('users')->insert($form);
-        // } else if ($is_reload) { }
-        // log::debug("test1");
-        // if (Auth::attempt([
-        //     'name' => $request->name,
-        //     'password' => $request->google_id
-        // ])) {
-
-        // $gUser = Socialite::driver('google')->stateless()->user();
-        // // email が合致するユーザーを取得
-        // $current_user = User::where('email', $gUser->email)->first();
-
-        // Auth::login($current_user, true);
 
         $current_user = Auth::user();
         $current_user->age = $request->age;
@@ -343,7 +322,7 @@ class UserController extends Controller
         $current_user->licence = $request->myprofile_licences;
         $current_user->workhistory = $request->user_workhistory;
         $current_user->profile = $request->user_profile;
-        $current_user->save(); // https://yama-weblog.com/using-fill-method-to-be-a-simple-code/
+        $current_user->save();
         $users = User::get();
         $skills = explode(" ", $current_user->skill);
         $licences = explode(" ", $current_user->licence);

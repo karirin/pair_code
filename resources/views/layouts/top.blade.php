@@ -30,7 +30,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @section('header')
     @if (Auth::check())
-    @if(request()->path()!='privacy_poricy' && request()->path()!='terms_of_service' && request()->path()!='user/edit_detail' && request()->path()!='auth/twitter/callback' && request()->path()!='user/edit_detail_google'&& request()->path()!='login/callback')
+    @if(request()->path()!='privacy_poricy' && request()->path()!='terms_of_service' && request()->path()!='user/edit_detail' && request()->path()!='auth/twitter/callback' && request()->path()!='user/edit_detail_google' && request()->path()!='login/callback' && request()->path()!='user/edit_detail_twitter')
     <span class="line"></span>
     <div class="top_title" style="position: fixed;">
         <ul>
@@ -93,7 +93,7 @@
 
                 </ul>
             </div>
-            @if(request()->path()!='privacy_poricy' && request()->path()!='terms_of_service' && request()->path()!='user/edit_detail' && request()->path()!='auth/twitter/callback'&& request()->path()!='user/edit_detail_google'&& request()->path()!='login/callback')
+            @if(request()->path()!='privacy_poricy' && request()->path()!='terms_of_service' && request()->path()!='user/edit_detail' && request()->path()!='auth/twitter/callback'&& request()->path()!='user/edit_detail_google'&& request()->path()!='login/callback'&& request()->path()!='user/edit_detail_twitter')
             <div class="smartphone_header">
                 <div style="width: 100%;height:100%;background-color: #ffe1ae24;padding-top: 1rem;">
                     <span style="display:inline-block;">

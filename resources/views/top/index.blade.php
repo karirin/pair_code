@@ -15,7 +15,7 @@
     @if ($user->check_match($user->id,$current_user->id) === 0)
     <div class="match_user" data-target="#matchuser_{{$user->id}}" data-toggle="matchuser">
         <div id="matchuser_{{$user->id}}">
-            @if ($user->google_id != "")
+            @if ($user->social_flg != "")
             <img class="match_user_img" src="{{asset($user->image)}}">
             @else
             <img src="{{ Storage::disk('s3')->url($user->image) }}" class="match_user_img">

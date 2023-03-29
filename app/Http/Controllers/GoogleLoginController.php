@@ -49,7 +49,8 @@ class GoogleLoginController extends Controller
             'image' => $googleUser->avatar,
             'email' => $googleUser->email,
             'email_verified_at' => now(),
-            'google_id' => $googleUser->getId()
+            'google_id' => $googleUser->getId(),
+            'social_flg' => 1
         ];
         DB::table('users')->insert($form);
         $user = User::where('email', $gUser->email)->first();

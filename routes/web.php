@@ -39,7 +39,7 @@ Route::get('user/profile', 'UserController@profile');
 Route::post('user/add', 'UserController@create');
 
 Route::post('user/edit_detail', 'UserController@edit_detail');
-Route::post('user/edit_detail1', 'UserController@edit_detail1');
+Route::post('user/edit_detail_twitter', 'UserController@edit_detail_twitter');
 Route::post('user/edit_detail_google', 'UserController@edit_detail_google');
 
 Route::get('/auth/redirect', 'GoogleLoginController@getGoogleAuth');

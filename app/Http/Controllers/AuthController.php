@@ -34,10 +34,10 @@ class AuthController extends Controller
         }
 
         // 新しいユーザーを作成
-        $disk = Storage::disk('s3');
+        // $disk = Storage::disk('s3');
 
         // S3にファイルを保存し、保存したファイル名を取得する
-        $fileName = $disk->put('', $providerUser->user['profile_image_url_https']);
+        // $fileName = $disk->put('', $providerUser->user['profile_image_url_https']);
 
         // $file_name = $request->file('image')->getClientOriginalName();
         // $request->file('image')->storeAs('public/sample', $file_name);
@@ -50,6 +50,7 @@ class AuthController extends Controller
         //$current_user->image = 'https://twitars.now.sh/' . $providerUser->id . '/original';
         $current_user->image = $providerUser->user['profile_image_url_https'];
         $current_user->profile = $providerUser->user['description'];
+        $current_user->social_flg = 1;
         $socialUser = new SocialUser();
         $socialUser->provider_user_id = $providerUser->id;
 

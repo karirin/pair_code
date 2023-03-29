@@ -7,7 +7,7 @@
 <h2 class="user_detail_message1">Twitter認証が完了しました</h2>
 <h2 class="user_detail_message2" style="display: none;">ユーザー詳細情報の登録をお願いします</h2>
 
-<form method="post" class="edit_detail_top_form" style="display:none;" action="{{ asset('user/edit_detail') }}" enctype="multipart/form-data">
+<form method="post" class="edit_detail_top_form" style="display:none;" action="{{ asset('user/edit_detail_twitter') }}" enctype="multipart/form-data">
     @csrf
     <h2 class="edit_detail_top_tittle" style="text-align: center;display:none;">新規登録</h2>
     <div class="row edit_detail_top" style="margin-left: 30%;height: 62%;display: flex;">

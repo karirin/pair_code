@@ -20,7 +20,7 @@
             <div class="tag" style="display: block;">
                 <div class="row profile_top">
                     <div class="col-3">
-                        @if ($current_user->google_id != "")
+                        @if ($current_user->social_flg != "")
                         <img src="{{asset($current_user->image)}}" class="mypage" style="margin-top: 1rem;">
                         @else
                         <img src="{{ Storage::disk('s3')->url($current_user->image) }}" class="mypage" style="margin-top: 1rem;">
