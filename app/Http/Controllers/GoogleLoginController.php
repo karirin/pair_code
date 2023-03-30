@@ -53,6 +53,17 @@ class GoogleLoginController extends Controller
             'social_flg' => 1
         ];
         DB::table('users')->insert($form);
+
+        $param = [
+            'name' => $googleUser->name,
+            'password' => $googleUser->getId(),
+            'email' => $googleUser->email,
+            'hash_password' => Hash::make($googleUser->getId()),
+            'image' => $googleUser->avatar
+        ];
+
+        DB::table('preusers')->insert($param);
+
         $user = User::where('email', $gUser->email)->first();
         // $user = DB::table('users')->where([
         //     'google_id' => $googleUser->id

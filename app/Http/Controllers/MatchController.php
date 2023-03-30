@@ -84,8 +84,8 @@ class MatchController extends Controller
                 ])->first();
 
                 //メールに記載する認証用URlを組み立てている(認証用ページURL+トークン)。
-                $url = request()->getSchemeAndHttpHost() . "/user/auth2?name=" . $current_user->name . "&password=" . $user->password . "&user_id=" . $request->user_id;
-                $url2 = request()->getSchemeAndHttpHost() . "/user/auth2?name=" . $matched_user->name . "&password=" . $matched_preuser->password . "&user_id=" . $current_user->id;
+                $url = request()->getSchemeAndHttpHost() . "/user/auth2?name=" . $current_user->name . "&user_id=" . $request->user_id;
+                $url2 = request()->getSchemeAndHttpHost() . "/user/auth2?name=" . $matched_user->name . "&user_id=" . $current_user->id;
                 Mail::to($current_user->email)->send(new AuthMail2($url));
                 Mail::to($matched_user->email)->send(new AuthMail2($url2));
                 DB::table('message_relations')->insert(['user_id' => $current_user->id, 'destination_user_id' => $request->user_id]);
@@ -100,7 +100,7 @@ class MatchController extends Controller
                 $matched_preuser = DB::table('preusers')->where([
                     'name' => $current_user->name
                 ])->first();
-                $url3 = request()->getSchemeAndHttpHost() . "/user/auth3?name=" . $matched_user->name . "&password=" . $matched_preuser->password . "&user_id=" . $current_user->id;
+                $url3 = request()->getSchemeAndHttpHost() . "/user/auth3?name=" . $matched_user->name . "&user_id=" . $current_user->id;
                 Mail::to($current_user->email)->send(new AuthMail3($url3));
             }
         }

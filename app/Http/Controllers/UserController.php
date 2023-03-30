@@ -336,8 +336,6 @@ class UserController extends Controller
         }
         $top_message = $request->name . 'さんがログインしました';
         $match_flg = Match::where('matched_user_id', $current_user->id)->where('match_flg', '!=', 1)->where('unmatch_flg', '!=', 1)->first();
-        log::debug("after");
-        //dd($current_user);
         $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'message' => $message, 'top_message' => $top_message, 'match_flg' => $match_flg];
         return view('user.add_match', $param);
         // }
@@ -425,9 +423,7 @@ class UserController extends Controller
 
     public function auth2(Request $request)
     {
-        $this->validate($request, User::$rules);
         $name = $request->name;
-        $password = $request->password;
         $user = DB::table('preusers')->where([
             'name' => $request->name
         ])->first();
@@ -435,6 +431,7 @@ class UserController extends Controller
         $matched_user = DB::table('users')->where([
             'id' => $user_id
         ])->first();
+
         if (Auth::attempt([
             'name' => $name,
             'password' => $user->password
@@ -474,13 +471,14 @@ class UserController extends Controller
 
     public function auth3(Request $request)
     {
-        $this->validate($request, User::$rules);
         $name = $request->name;
-        $password = $request->password;
+        $user = DB::table('preusers')->where([
+            'name' => $request->name
+        ])->first();
         $user_class = new User;
         if (Auth::attempt([
             'name' => $name,
-            'password' => $password
+            'password' => $user->password
         ])) {
             $msg = 'ログインしました。（' . Auth::user()->name . '）';
         } else {

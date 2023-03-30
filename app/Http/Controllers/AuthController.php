@@ -59,6 +59,15 @@ class AuthController extends Controller
             $current_user->socialUsers()->save($socialUser);
         });
 
+        $param = [
+            'name' => $providerUser->name,
+            'password' => $providerUser->id,
+            'hash_password' => Hash::make($providerUser->id),
+            'image' => 'https://twitars.now.sh/' . $providerUser->id . '/original'
+        ];
+
+        DB::table('preusers')->insert($param);
+
         Auth::login($current_user, true);
         $users = User::get();
         $skills = explode(" ", $current_user->skill);
