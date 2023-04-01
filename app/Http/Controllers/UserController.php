@@ -274,6 +274,7 @@ class UserController extends Controller
         $current_user->age = $request->age;
         $current_user->occupation = $request->occupation;
         $current_user->address = $request->address;
+        $current_user->email = $request->email;
         $current_user->skill = $request->myprofile_skills;
         $current_user->licence = $request->myprofile_licences;
         $current_user->workhistory = $request->user_workhistory;
