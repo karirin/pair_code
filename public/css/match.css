@@ -877,6 +877,10 @@ border-bottom: none;/*線を消す*/
         margin: 0 15%!important;
     }
 
+    .edit_detail_top .error_mail_form{
+        margin: 0!important;
+    }
+
     .matchuser_detaile .far.fa-times-circle,
     .matchuser_detaile_phone .far.fa-times-circle{
         top: -14%;
@@ -1030,6 +1034,19 @@ border-bottom: none;/*線を消す*/
         font-size: 4rem;
         margin: 0 9%;
     }
+
+    .user_detail_message1.twitter{
+        margin: 0 5%;
+    }
+
+    .user_detail_message1.google{
+        margin: 0 5%;
+    }
+
+    .user_detail_message1.line{
+        margin: 0 11%;
+    }
+
 
     .user_detail_message2{
         font-size: 4rem;
@@ -1338,7 +1355,8 @@ img.my_preview {
 .edit_detail_top .user_address_error,
 .edit_detail_top .user_occupation_error,
 .edit_detail_top .user_profile_error,
-.edit_detail_top .user_workhistory_error{
+.edit_detail_top .user_workhistory_error,
+.edit_detail_top .user_mail_error{
     font-size: 2.2rem;
 }
 

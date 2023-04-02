@@ -4,7 +4,7 @@
 @parent
 @endsection
 @section('content')
-<h2 class="user_detail_message1">Line認証が完了しました</h2>
+<h2 class="user_detail_message1 line">Line認証が完了しました</h2>
 <h2 class="user_detail_message2" style="display: none;">ユーザー詳細情報の登録をお願いします</h2>
 
 <form method="post" class="edit_detail_top_form" style="display:none;" action="{{ asset('user/edit_detail_line') }}" enctype="multipart/form-data">
