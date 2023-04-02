@@ -24,14 +24,26 @@
                 <input class="btn btn-outline-info submit_btn edit_detail_top_btn" type="submit" value="ログイン">
             </div>
         </form>
-        <a href="/auth/twitter" class="btn-social-long-twitter">
-            <i class="fa-brands fa-twitter edit_detail_top_btn" style="margin-right: 1rem;vertical-align:bottom;font-size: 25px;"></i><span class="twitter_login">Twitterでログイン</span>
-        </a>
-        <p>
+        <div style="text-align: right;margin: 0 20%;">
+            <a href="/user/reset">
+                <span>パスワードを忘れた場合</span>
+            </a>
+        </div>
+        <div>
+            <a href="/auth/twitter" class="btn-social-long-twitter">
+                <i class="fa-brands fa-twitter edit_detail_top_btn" style="margin-right: 1rem;vertical-align:bottom;font-size: 25px;"></i><span class="twitter_login">Twitterでログイン</span>
+            </a>
+        </div>
+        <div>
             <a href="/auth/redirect" class="btn-social-long-google">
                 <img src="/storage/top/google.png" style="width:1.5rem;margin-right: 1rem;"><span class="google_login" style="color:#727272;">Googleでログイン</span>
             </a>
-        </p>
+        </div>
+        <div>
+            <a href="/linelogin" class="btn-social-long-line">
+                <img src="/storage/top/line.png" style="width:1.5rem;margin-right: 1rem;"><span class="line_login" style="color:#fff;vertical-align: bottom;">LINEでログイン　</span>
+            </a>
+        </div>
     </div>
 
 </div>

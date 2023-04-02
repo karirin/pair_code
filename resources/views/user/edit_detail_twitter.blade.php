@@ -254,14 +254,13 @@
                 $('.user_profile_error').fadeOut();
             }
         });
-        // $('.edit_workhistory').change(function() {
-        //     var str = $(this).value;
-        //     if (str != '') {
-        //         //$('.edit_workhistory')[0].setAttribute("style", "border-color: #ced4da;height: 40%;width: 60%;");
-        //         $('.edit_workhistory')[0].css("border-color", "#ced4da");
-        //         $('.user_workhistory_error').fadeOut();
-        //     }
-        // });
+        $('.user_mail_input').change(function() {
+            var str = $(this).value;
+            if (str != '') {
+                $('.user_mail_input')[0].css("border-color", "#ced4da");
+                $('.user_mail_error').fadeOut();
+            }
+        });
     });
 </script>
 @endsection

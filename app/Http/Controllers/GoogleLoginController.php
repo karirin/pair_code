@@ -51,6 +51,7 @@ class GoogleLoginController extends Controller
             'email' => $googleUser->email,
             'email_verified_at' => now(),
             'google_id' => $googleUser->getId(),
+            'provider' => 'Google',
             'social_flg' => 1
         ];
         DB::table('users')->insert($form);

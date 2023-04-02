@@ -11,6 +11,7 @@ use App\Person;
 use App\User;
 use Illuminate\Support\Facades\Mail;
 use App\AuthMail;
+use App\AuthMail4;
 use App\TokenService;
 use App\Match;
 use App\Token;
@@ -43,10 +44,6 @@ class UserController extends Controller
         // S3にファイルを保存し、保存したファイル名を取得する
         $fileName = $disk->put('', $request->file('image'));
 
-        // $fileNameには
-        // https://saitobucket3.s3.amazonaws.com/uhgKiZeJXMFhL9Vr7yT7XvlJqonPNx30xbJYoEo0.jpeg
-        // のような画像へのフルパスが格納されている
-        // このフルパスをDBに格納しておくと、画像を表示させるのは簡単になる
         $user_flg = User::where('name', $request->name)->first();
 
         if ($user_flg != '') {
@@ -106,34 +103,6 @@ class UserController extends Controller
 
         //メール送信完了画面へリダイレクト
         return view('join', ['email' => $email]);
-
-        // if ($user_flg != '') {
-        //     $add_message = 'すでに存在するユーザー名です';
-        //     return view('user.add', ['add_message' => $add_message]);
-        // } else {
-        //     if ($request->file('image') != '') {
-        //         $file_name = $request->file('image')->getClientOriginalName();
-        //         $request->file('image')->storeAs('public/sample', $file_name);
-        //         $param = [
-        //             'name' => $request->name,
-        //             'password' => $request->password,
-        //             'email' => $request->email,
-        //             'hash_password' => Hash::make($request->password),
-        //             'image' => 'storage/sample/' . $file_name,
-        //             'profile' => '',
-        //         ];
-        //     } else {
-        //         $param = [
-        //             'name' => $request->name,
-        //             'password' => $request->password,
-        //             'email' => $request->email,
-        //             'hash_password' => Hash::make($request->password),
-        //             'image' => 'storage/sample/noimage.jpg',
-        //             'profile' => '',
-        //         ];
-        //     }
-        //     return view('user.edit_detail', $param);
-        // }
     }
 
     protected function register(Request $request)
@@ -152,19 +121,6 @@ class UserController extends Controller
         $authResult = $tokenService->matchToken($token);
 
         if ($authResult == "OK") {
-            //9. 認証処理(ユーザテーブルのメールアドレス認証フラグ立てる)
-            //$userService->changeEmailFlag($data->email);
-
-            //$email = $tokenService->getEmailByToken($token);
-            //$id = $userService->getIdByEmail($data->$email);
-
-            //10. ログイン状態にしてユーザトップページへリダイレクト
-            // $request->session()->put('logind', 'true');
-            // $request->session()->put('id', $id);
-            //return redirect('/user/'.$id);
-            // $user = User::where([
-            //     'token' => $token
-            // ])->first();
 
             $user = DB::table('preusers')->where([
                 'token' => $token
@@ -212,15 +168,6 @@ class UserController extends Controller
             'licence' => $request->myprofile_licences,
             'workhistory' => $request->user_workhistory,
         ];
-        log::debug($request);
-        //3. ユーザデータを保存
-        //DB::table('users')->insert($form);
-        log::debug("edit_detail");
-        // $action = session()->get($this->method_action_key);
-        // $is_reload = ($action == '');
-        // if (is_null($action)) {
-        DB::table('users')->insert($form);
-        // } else if ($is_reload) { }
         if (Auth::attempt([
             'name' => $request->name,
             'password' => $request->password
@@ -258,18 +205,6 @@ class UserController extends Controller
             'licence' => $request->myprofile_licences,
             'workhistory' => $request->user_workhistory,
         ];
-        //3. ユーザデータを保存
-        //DB::table('users')->insert($form);
-
-        // $action = session()->get($this->method_action_key);
-        // $is_reload = ($action == '');
-        // if (is_null($action)) {
-        //     DB::table('users')->insert($form);
-        // } else if ($is_reload) { }
-        // if (Auth::attempt([
-        //     'name' => $request->name,
-        //     'password' => $request->password
-        // ])) {
         $current_user = Auth::user();
         $current_user->age = $request->age;
         $current_user->occupation = $request->occupation;
@@ -340,6 +275,48 @@ class UserController extends Controller
         $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'message' => $message, 'top_message' => $top_message, 'match_flg' => $match_flg];
         return view('user.add_match', $param);
         // }
+    }
+
+    protected function edit_detail_line(Request $request)
+    {
+        $form = [
+            'name' => $request->name,
+            'password' => $request->hash_password,
+            'image' => $request->image,
+            'age' => $request->age,
+            'address' => $request->address,
+            'profile' => $request->user_profile,
+            'occupation' => $request->occupation,
+            'skill' => $request->myprofile_skills,
+            'licence' => $request->myprofile_licences,
+            'workhistory' => $request->user_workhistory,
+        ];
+        $current_user = Auth::user();
+        $current_user->age = $request->age;
+        $current_user->occupation = $request->occupation;
+        $current_user->address = $request->address;
+        $current_user->email = $request->email;
+        $current_user->skill = $request->myprofile_skills;
+        $current_user->licence = $request->myprofile_licences;
+        $current_user->workhistory = $request->user_workhistory;
+        $current_user->profile = $request->user_profile;
+        $current_user->save();
+        $users = User::get();
+        $skills = explode(" ", $current_user->skill);
+        $licences = explode(" ", $current_user->licence);
+        $message = new Message_relation;
+        $message_cs = Message_relation::where('user_id', $current_user->id)->get();
+        $message_count = 0;
+        foreach ($message_cs as $message_c) {
+            if ($message_c->message_count != 0 || $message_c->message_count == 'match') {
+                $message_count++;
+            }
+        }
+        $top_message = $request->name . 'さんがログインしました';
+        $match_flg = Match::where('matched_user_id', $current_user->id)->where('match_flg', '!=', 1)->where('unmatch_flg', '!=', 1)->first();
+        $param = ['current_user' => $current_user, 'users' => $users, 'skills' => $skills, 'licences' => $licences, 'message_count' => $message_count, 'message' => $message, 'top_message' => $top_message, 'match_flg' => $match_flg];
+        return view('user.add_match', $param);
+        //}
     }
 
     public function skip(Request $request)
@@ -594,66 +571,34 @@ class UserController extends Controller
         return view('user.add_match', $param);
     }
 
-    // public function edit(Request $request)
-    // {
-    //     $current_user = Auth::user();
-    //     if ($request->current_name != $request->user_name) {
-    //         $current_user->name = $request->user_name;
-    //     }
-    //     if ($request->current_name != $request->user_name_narrow) {
-    //         $current_user->name = $request->user_name_narrow;
-    //     }
-    //     if ($request->current_age != $request->user_age) {
-    //         $current_user->age = $request->user_age;
-    //     }
-    //     if ($request->current_age != $request->user_age_narrow) {
-    //         $current_user->age = $request->user_age_narrow;
-    //     }
-    //     if ($request->current_occupation != $request->occupation) {
-    //         $current_user->occupation = $request->occupation;
-    //     }
-    //     if ($request->current_occupation != $request->occupation_narrow) {
-    //         $current_user->occupation = $request->occupation_narrow;
-    //     }
-    //     if ($request->current_address != $request->address) {
-    //         $current_user->address = $request->address;
-    //     }
-    //     if ($request->current_address != $request->address_narrow) {
-    //         $current_user->address = $request->address_narrow;
-    //     }
-    //     if ($request->current_skill != $request->myprofile_skills) {
-    //         $current_user->skill = $request->myprofile_skills;
-    //     }
-    //     if ($request->current_skill != $request->skills) {
-    //         $current_user->skill = $request->skills;
-    //     }
-    //     log::debug("||||||||");
-    //     log::debug($request->current_licence);
-    //     log::debug($request->myprofile_licences);
-    //     log::debug("||||||||");
-    //     if ($request->current_licence != $request->myprofile_licences) {
-    //         log::debug("test1");
-    //         $current_user->licence = $request->myprofile_licences;
-    //     }
-    //     log::debug("||||||||");
-    //     log::debug($request->current_licence);
-    //     log::debug($request->myprofile_licences_narrow);
-    //     log::debug("||||||||");
-    //     if ($request->current_licence != $request->myprofile_licences_narrow) {
-    //         log::debug("test2");
-    //         $current_user->licence = $request->myprofile_licences_narrow;
-    //     }
-    //     if ($request->current_workhistory != $request->user_workhistory) {
-    //         $current_user->workhistory = $request->user_workhistory;
-    //     }
-    //     if ($request->current_workhistory != $request->user_workhistory_narrow) {
-    //         $current_user->workhistory = $request->user_workhistory_narrow;
-    //     }
-    //     log::debug($request);
-    //     log::debug($current_user);
-    //     $current_user->save(); // https://yama-weblog.com/using-fill-method-to-be-a-simple-code/
-    //     return redirect('/user/profile');
-    // }
+    public function reset(Request $request)
+    {
+        return view('user.reset');
+    }
+
+    public function reset_send(Request $request)
+    {
+        //メールに記載する認証用URlを組み立てている(認証用ページURL+トークン)。
+        $url = request()->getSchemeAndHttpHost() . "/user/reset_send?email=" . $request->email;
+
+        Mail::to($request->email)->send(new AuthMail4($url));
+
+        //メール送信完了画面へリダイレクト
+        return view('user.reset_send', ['email' => $request->email]);
+    }
+
+    public function reset_password(Request $request)
+    {
+        log::debug("reset_password");
+        log::debug($request);
+        return view('user.reset_password', ['email' => $request->email]);
+    }
+
+    public function reset_password_send(Request $request)
+    {
+        DB::update('update users set password = ' . Hash::make($request->password) . ' where email = ' . $request->email);
+        return redirect('/');
+    }
 
     public function ajax_flg(Request $request)
     {

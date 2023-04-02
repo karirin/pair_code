@@ -52,6 +52,7 @@ class AuthController extends Controller
         // $current_user->image = $providerUser->user['profile_image_url_https'];
         $current_user->profile = $providerUser->user['description'];
         $current_user->social_flg = 1;
+        $current_user->provider = 'Twitter';
         $socialUser = new SocialUser();
         $socialUser->provider_user_id = $providerUser->id;
 

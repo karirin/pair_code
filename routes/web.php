@@ -31,6 +31,10 @@ Route::get('user/login', 'UserController@login');
 Route::post('user/login', 'UserController@auth');
 Route::get('user/auth2', 'UserController@auth2');
 Route::get('user/auth3', 'UserController@auth3');
+Route::get('user/reset', 'UserController@reset');
+Route::get('user/reset_send', 'UserController@reset_password');
+Route::post('user/reset_password_send', 'UserController@reset_password_send');
+Route::post('user/reset_send', 'UserController@reset_send');
 Route::post('user/test_login', 'UserController@test_login');
 Route::get('user/add', 'UserController@add');
 Route::post('user/edit', 'UserController@edit');
@@ -41,6 +45,7 @@ Route::post('user/add', 'UserController@create');
 Route::post('user/edit_detail', 'UserController@edit_detail');
 Route::post('user/edit_detail_twitter', 'UserController@edit_detail_twitter');
 Route::post('user/edit_detail_google', 'UserController@edit_detail_google');
+Route::post('user/edit_detail_line', 'UserController@edit_detail_line');
 
 Route::get('/auth/redirect', 'GoogleLoginController@getGoogleAuth');
 Route::get('/login/callback', 'GoogleLoginController@authGoogleCallback');
@@ -93,6 +98,9 @@ Route::post('board/add', 'BoardController@create');
 Route::resource('rest', 'RestappController');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/linelogin', 'LineLoginController@lineLogin');
+Route::get('/callback', 'LineLoginController@callback');
 
 Route::prefix('auth')->group(function () {
     Route::get('twitter', 'AuthController@login');
