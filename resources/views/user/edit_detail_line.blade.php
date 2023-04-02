@@ -184,12 +184,12 @@
             $('.user_age_error').fadeIn();
             error++;
         }
-        if ($('.edit_profile')[0].value == '') {
-            //$('.edit_profile')[0].setAttribute("style", "border-color: #dc3545;height: auto;width: auto;");
-            $('.edit_profile').css("border-color", "#dc3545");
-            $('.user_profile_error').fadeIn();
-            error++;
-        }
+        // if ($('.edit_profile')[0].value == '') {
+        //     //$('.edit_profile')[0].setAttribute("style", "border-color: #dc3545;height: auto;width: auto;");
+        //     $('.edit_profile').css("border-color", "#dc3545");
+        //     $('.user_profile_error').fadeIn();
+        //     error++;
+        // }
         if ($('.edit_address')[0].value == '') {
             //$('.edit_address')[0].setAttribute("style", "border-color: #dc3545;");
             $('.edit_address').css("border-color", "#dc3545");
@@ -246,14 +246,14 @@
                 $('.user_occupation_error').fadeOut();
             }
         });
-        $('.edit_profile').change(function() {
-            var str = $(this).value;
-            if (str != '') {
-                //$('.edit_profile')[0].setAttribute("style", "border-color: #ced4da;height: auto;width: auto;");
-                $('.edit_profile')[0].css("border-color", "#ced4da");
-                $('.user_profile_error').fadeOut();
-            }
-        });
+        // $('.edit_profile').change(function() {
+        //     var str = $(this).value;
+        //     if (str != '') {
+        //         //$('.edit_profile')[0].setAttribute("style", "border-color: #ced4da;height: auto;width: auto;");
+        //         $('.edit_profile')[0].css("border-color", "#ced4da");
+        //         $('.user_profile_error').fadeOut();
+        //     }
+        // });
         $('.user_mail_input').change(function() {
             var str = $(this).value;
             if (str != '') {

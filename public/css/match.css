@@ -1359,6 +1359,12 @@ img.my_preview {
 
 .edit_detail_top_btn{
     font-size: 2.5rem!important;
+    vertical-align: unset!important;
+}
+
+.google_mark{
+    width: 3rem!important;
+    vertical-align: text-bottom!important;
 }
 
 .user_login_top .flex_btn .edit_detail_top_btn{
@@ -1379,12 +1385,21 @@ img.my_preview {
     font-size: 2rem!important;
 }
 
-.user_login_top .twitter_login{
+.twitter_login{
     font-size: 3rem;
 }
 
-.user_login_top .google_login{
+.google_login{
     font-size: 3rem;
+}
+
+.btn-social-long-line{
+    font-size: 3rem;
+}
+
+.line_mark{
+    width: 3rem!important;
+    margin-bottom: 0.8rem;
 }
 
 /* .user_login_top .flex_btn{
@@ -1395,15 +1410,17 @@ img.my_preview {
     margin-top: 4rem;
 }
 
-.user_login_top .btn-social-long-twitter{
+.btn-social-long-twitter{
     margin-top: 3rem;
 }
 
-.user_login_top .btn-social-long-google{
+/* .user_login_top .btn-social-long-google{
     margin-top: 3rem;
-}
+} */
 
-.user_name_error
+.password_reset{
+    font-size: 2.5rem;
+}
 
 .error_name_form{
     margin: 0 15%!important;

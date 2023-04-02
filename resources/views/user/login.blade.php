@@ -24,7 +24,7 @@
                 <input class="btn btn-outline-info submit_btn edit_detail_top_btn" type="submit" value="ログイン">
             </div>
         </form>
-        <div style="text-align: right;margin: 0 20%;">
+        <div style="text-align: right;margin: 0 20%;" class="password_reset">
             <a href="/user/reset">
                 <span>パスワードを忘れた場合</span>
             </a>
@@ -36,12 +36,12 @@
         </div>
         <div>
             <a href="/auth/redirect" class="btn-social-long-google">
-                <img src="/storage/top/google.png" style="width:1.5rem;margin-right: 1rem;"><span class="google_login" style="color:#727272;">Googleでログイン</span>
+                <img src="/storage/top/google.png" style="width:1.5rem;margin-right: 1rem;" class="google_mark"><span class="google_login" style="color:#727272;">Googleでログイン</span>
             </a>
         </div>
         <div>
             <a href="/linelogin" class="btn-social-long-line">
-                <img src="/storage/top/line.png" style="width:1.5rem;margin-right: 1rem;"><span class="line_login" style="color:#fff;vertical-align: bottom;">LINEでログイン　</span>
+                <img src="/storage/top/line.png" style="width:1.5rem;margin-right: 1rem;" class="line_mark"><span class="line_login" style="color:#fff;vertical-align: bottom;">LINEでログイン　</span>
             </a>
         </div>
     </div>

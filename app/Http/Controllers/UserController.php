@@ -596,7 +596,7 @@ class UserController extends Controller
 
     public function reset_password_send(Request $request)
     {
-        DB::update('update users set password = ' . Hash::make($request->password) . ' where email = ' . $request->email);
+        DB::update('update users set password = ' . Hash::make($request->password) . ' where email = ' . $request->email . '');
         return redirect('/');
     }
 

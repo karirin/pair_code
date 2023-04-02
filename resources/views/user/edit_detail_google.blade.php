@@ -19,11 +19,11 @@
                     <span class="user_age_error" style="display:none;color: #dc3545;">年齢を入力してください</span>
                 </div>
             </div>
-            <div class="tag_tittle user_title" style="margin-top:1rem;">ユーザー名</div>
+            <!-- <div class="tag_tittle user_title" style="margin-top:1rem;">ユーザー名</div>
             <input type="text" style="margin-top:0;width:auto;" name="name" class="user_name_input form-control" placeholder="ニックネーム" autocomplete="off">
             <div class="error_name_form" style="height: 8px;text-align:left;width: 14rem;">
                 <span class="user_name_error" style="display:none;color: #dc3545;">ユーザー名を入力してください</span>
-            </div>
+            </div> -->
             <div class="user_address" style="margin-top: 0.5rem;">
                 <p class="tag_tittle" style="display: inline-block;">住所</p>
                 <select name="address" class="form-control edit_address">
@@ -211,11 +211,11 @@
         //     error++;
         // }
 
-        if ($('.user_name_input')[0].value == '') {
-            $('.user_name_input').css("border-color", "#dc3545");
-            $('.user_name_error').fadeIn();
-            error++;
-        }
+        // if ($('.user_name_input')[0].value == '') {
+        //     $('.user_name_input').css("border-color", "#dc3545");
+        //     $('.user_name_error').fadeIn();
+        //     error++;
+        // }
 
 
         if (0 < error) {
@@ -226,13 +226,13 @@
 
     // 必須チェック解除
     $(document).ready(function() {
-        $('.user_name_input').change(function() {
-            var str = $(this).value;
-            if (str != '') {
-                $('.user_name_input').css("border-color", "#ced4da;");
-                $('.user_name_error').fadeOut();
-            }
-        });
+        // $('.user_name_input').change(function() {
+        //     var str = $(this).value;
+        //     if (str != '') {
+        //         $('.user_name_input').css("border-color", "#ced4da;");
+        //         $('.user_name_error').fadeOut();
+        //     }
+        // });
         $('.edit_age').change(function() {
             var str = $(this).value;
             if (str != '') {
