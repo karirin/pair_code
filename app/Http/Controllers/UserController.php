@@ -168,6 +168,7 @@ class UserController extends Controller
             'licence' => $request->myprofile_licences,
             'workhistory' => $request->user_workhistory,
         ];
+        DB::table('users')->insert($form);
         if (Auth::attempt([
             'name' => $request->name,
             'password' => $request->password
