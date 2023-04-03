@@ -7,7 +7,7 @@
 <div class="row">
     <div class="col-6 offset-3 center user_add_top">
         <h2 style="margin-top: 2rem;">新規登録</h2>
-        <form method="post" action="{{ asset('user/add') }}" enctype="multipart/form-data">
+        <form method="post" action="{{ asset('user/add') }}" enctype="multipart/form-data" class="user_add_form" style="display: none;">
             @csrf
             <div class="user_title">ユーザー名</div>
             <input type="text" name="name" class="user_name_input form-control" placeholder="ニックネーム" autocomplete="off">
@@ -42,25 +42,38 @@
             </div>
             <p class="preview_img"><img class="my_preview"></p>
             <input type="button" id="my_clear" value="ファイルをクリアする">
+            <div style="text-align: right;margin: 0 20%;margin-top: 1rem">
+                <a class="sns_btn" style="color:#007bff;">
+                    <span>SNSで登録する方はこちら</span>
+                </a>
+            </div>
             <div class="flex_btn margin_top" style="margin-bottom: 2rem;">
                 <input class="btn btn-outline-dark" type="button" onclick="history.back()" value="戻る">
-                <input class="btn btn-outline-info submit_btn" type="submit" value="次へ">
+                <input class="btn btn-outline-info submit_btn" type="submit" value="登録">
             </div>
         </form>
-        <div>
-            <a href="/auth/twitter" class="btn-social-long-twitter">
-                <i class="fa-brands fa-twitter edit_detail_top_btn" style="margin-right: 1rem;vertical-align:bottom;font-size: 25px;"></i><span class="twitter_login">Twitterでログイン</span>
-            </a>
-        </div>
-        <div>
-            <a href="/auth/redirect" class="btn-social-long-google">
-                <img src="/storage/top/google.png" style="width:1.5rem;margin-right: 1rem;" class="google_mark"><span class="google_login" style="color:#727272;">Googleでログイン</span>
-            </a>
-        </div>
-        <div>
-            <a href="/linelogin" class="btn-social-long-line">
-                <img src="/storage/top/line.png" style="width:1.5rem;margin-right: 1rem;" class="line_mark"><span class="line_login" style="color:#fff;vertical-align: bottom;">LINEでログイン　</span>
-            </a>
+        <div class="social_btn">
+            <h4 class="social_tittle">SNSアカウントで登録</h4>
+            <div style="margin-top: 1rem;">
+                <a href="/auth/twitter" class="btn-social-long-twitter">
+                    <i class="fa-brands fa-twitter edit_detail_top_btn" style="margin-right: 1rem;vertical-align:bottom;font-size: 25px;"></i><span class="twitter_login">Twitterで新規登録</span>
+                </a>
+            </div>
+            <div>
+                <a href="/auth/redirect" class="btn-social-long-google">
+                    <img src="/storage/top/google.png" style="width:1.5rem;margin-right: 1rem;" class="google_mark"><span class="google_login" style="color:#727272;">Googleで新規登録</span>
+                </a>
+            </div>
+            <div>
+                <a href="/linelogin" class="btn-social-long-line">
+                    <img src="/storage/top/line.png" style="width:1.5rem;margin-right: 1rem;" class="line_mark"><span class="line_login" style="color:#fff;vertical-align: bottom;">LINEで新規登録　</span>
+                </a>
+            </div>
+            <div style="text-align: right;margin: 0 20%;margin-top: 2rem">
+                <a class=" mail_address" style="color:#007bff;">
+                    <span>メールアドレスで登録する方はこちら</span>
+                </a>
+            </div>
         </div>
     </div>
 </div>
@@ -69,6 +82,14 @@
 @section('footer')
 @parent
 <script>
-
+    $(document).on('click', '.mail_address', function() {
+        $('.social_btn').hide();
+        $('.user_add_form').fadeIn();
+        $('html, body').scrollTop(0);
+    });
+    $(document).on('click', '.sns_btn', function() {
+        $('.social_btn').fadeIn();
+        $('.user_add_form').hide();
+    });
 </script>
 @endsection

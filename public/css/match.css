@@ -187,8 +187,7 @@
 }
 
 .top_logo{
-    width: 53%;
-    position: absolute;
+    width: 100%;
     top: 0%;
     right: 1%;
     height: auto;
@@ -231,6 +230,10 @@ border-bottom: none;/*線を消す*/
 .matchs_user:hover{
     color: burlywood;
     opacity: 0.5;
+}
+
+.mobile{
+    display:none;
 }
 
 /* ///////////////////////// */
@@ -676,6 +679,12 @@ border-bottom: none;/*線を消す*/
 }
 
 @media screen and (max-width: 980px){
+    .PC{
+        display: none;
+    }
+    .mobile{
+        display: flex;
+    }
     .haikei{
         display: none;
     }
@@ -935,10 +944,10 @@ border-bottom: none;/*線を消す*/
     }
 
     .top_image{
-        width: 62%!important; 
+        width: 113%!important;
         height: auto!important;
-        margin-top: 34rem;
-        margin-left:0!important;
+        /* margin-top: 34rem; */
+        margin-left: 0!important;
     }
     
     .test_btn{
@@ -1007,6 +1016,7 @@ border-bottom: none;/*線を消す*/
         right: -5%;
         width: auto!important;
         margin-right: 5rem;
+        margin-left: 0rem;
         padding: 1.375rem 1.75rem;
         width: 22rem!important;
         height: 7rem;
@@ -1088,6 +1098,15 @@ border-bottom: none;/*線を消す*/
     .matchs_user{
         margin-left: 20%!important;
         font-size: 3rem;
+    }
+
+    .social_tittle{
+        font-size: 3rem;
+    }
+
+    .mail_address,
+    .sns_btn{
+        font-size: 2rem;
     }
 
 /* ///////////////////////// */

@@ -330,11 +330,12 @@ nav.navbar.navbar-dark {
 
 .user_add_btn,
 .user_login_btn{
-    position: absolute;
+    /* position: absolute; */
     width: 15rem;
     height: 3rem;
     font-size: 1.5rem;
     border-radius: 3rem;
+    margin-top: 3rem;
 }
 
 .user_add_btn{
@@ -464,6 +465,21 @@ nav.navbar.navbar-dark {
     color: #FFF;
 }
 
+.mail_address:hover{
+    opacity: 0.5;
+}
+
+.sns_btn:hover{
+    opacity: 0.5;
+}
+
+.social_tittle{
+    padding: 0.25em 0.5em;/*上下 左右の余白*/
+    margin: 0 14%;
+    margin-top: 2rem;
+    border-bottom: solid 1px;
+    padding-bottom: 1rem;
+}
 
 /* Twitterログインボタン */
 
@@ -1833,7 +1849,6 @@ img.my_preview {
     height: 7rem;
     border: solid 0.1rem rgb(163, 163, 163);
     padding: 0.5rem;
-    margin-top: 1rem;
 }
 
 .skill_tag {
